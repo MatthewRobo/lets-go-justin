@@ -33,3 +33,5 @@ if (restart > 45) {
 if (quit > 45) {
 	room_goto(Pad_Select);
 }
+
+roundstart--;

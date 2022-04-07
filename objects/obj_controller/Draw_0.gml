@@ -15,4 +15,11 @@ draw_set_valign(fa_bottom);
 
 draw_set_colour(c_white);
 draw_set_halign(fa_center);
+
+draw_rectangle(room_width/2, 4, room_width/2+2, 59,0);
+
+if (roundstart > 0) {
+	draw_text(room_width/2, room_height/2, "Ready?");
+	draw_rectangle(room_width/2-roundstart, 388, room_width/2+roundstart, 392,0);
+}
 draw_text(room_width / 2, 768-4, "Hold Start to quit / Hold Select to restart");
