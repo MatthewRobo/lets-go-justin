@@ -29,6 +29,14 @@ invultime = 150;
 
 recovery = 0;
 
+var gp_num = gamepad_get_device_count();
+for (var i = 0; i < gp_num; i++;)
+{
+	if (gamepad_is_connected(i) && global.gp[i] == team) gamepad = i;
+}
+
+ 
+
 shoot = false;
 parry = false;
 slash = false;
@@ -84,3 +92,5 @@ spr_idle = spr_player;
 spr_empty = spr_idle;
 spr_parry = spr_idle;
 spr_recovery = spr_idle;
+
+
