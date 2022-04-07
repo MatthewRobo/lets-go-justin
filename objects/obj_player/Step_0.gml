@@ -193,7 +193,7 @@ if (global.hitstop <= 0) {
 	case status.parry:
 		recovery--;
 		if ((!heldparry && recovery <= 0) || (recovery <= -parrymax)) {
-			recovery = parryrecovery;
+			recovery = parryrecovery - recovery;
 			state = status.recovery;
 			sprite_index = ammo > 0 ? spr_idle : spr_empty;
 		}
