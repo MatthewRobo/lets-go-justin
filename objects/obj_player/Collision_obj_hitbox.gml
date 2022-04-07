@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (other.team != team) {
+if (other.team != team && collision_line(x, y, other.x, other.y, obj_wall, false, false) == noone) {
 	if (state == status.parry) {
 		invul += 5;
 		state = status.idle;
