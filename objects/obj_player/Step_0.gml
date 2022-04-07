@@ -75,7 +75,13 @@ if (global.hitstop <= 0) {
 		y = spawnpoint.y;
 		state = status.recovery;
 		recovery = 1;
-		instance_create_layer(x, y, "hitboxes", obj_boom);
+		boom = instance_create_layer(x, y, "hitboxes", obj_boom);
+		boom.image_xscale = 2;
+		boom.image_yscale = 2;
+		boom.image_blend = color;
+		boom = instance_create_layer(x, y, "hitboxes", obj_boom);
+		boom.image_xscale = 2.6;
+		boom.image_yscale = 2.6;
 	}
 		
 	

@@ -48,7 +48,9 @@ if (other.team != team && collision_line(x, y, other.x, other.y, obj_wall, false
 			trail.gravity = random_range(grav - 0.1, grav + 0.1);
 			trail.gravity_direction = other.direction + random_range(-5, 5);
 		}
-		
+		trail = instance_create_layer(x,y,"trails",obj_burst);
+		trail.image_blend = color;
+		trail.image_angle = other.direction;
 
 	}
 }
