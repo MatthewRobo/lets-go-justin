@@ -3,13 +3,9 @@
 
 pads = "";
 
-var gp_num = gamepad_get_device_count();
-for (var i = 0; i < gp_num; i++;)
+for (var i = 0; i < global.gpnum; i++;)
 {
-	if gamepad_is_connected(i) {
 		pads += string(global.gp[i]) + "\n";
-	} 
-	
 }
 
 

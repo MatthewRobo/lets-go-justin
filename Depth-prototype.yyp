@@ -61,7 +61,7 @@
     {"id":{"name":"obj_slashdead","path":"objects/obj_slashdead/obj_slashdead.yy",},"order":5,},
     {"id":{"name":"spr_p2recovery","path":"sprites/spr_p2recovery/spr_p2recovery.yy",},"order":7,},
     {"id":{"name":"spr_playertrail","path":"sprites/spr_playertrail/spr_playertrail.yy",},"order":5,},
-    {"id":{"name":"obj_gpselect","path":"objects/obj_gpselect/obj_gpselect.yy",},"order":1,},
+    {"id":{"name":"obj_gpassign","path":"objects/obj_gpassign/obj_gpassign.yy",},"order":1,},
     {"id":{"name":"snd_jump","path":"sounds/snd_jump/snd_jump.yy",},"order":1,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
