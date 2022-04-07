@@ -34,14 +34,21 @@ if (other.team != team && collision_line(x, y, other.x, other.y, obj_wall, false
 		global.hitstop = 20;
 		spawnpoint = instance_furthest(other.owner.x, other.owner.y, obj_respawn);
 		invul = invultime;
+		
 		for (i = 0; i < 20; i++) {
 			trail = instance_create_layer(x, y, "trails", obj_dust);
 			trail.image_blend = color;
-			trail.speed = random_range(other.spd - 2, other.spd + 2);
-			trail.direction = other.direction + random_range(-5, 5);
+			//trail.speed = random_range(other.spd - 2, other.spd + 2);
+			//trail.direction = other.direction + random_range(-5, 5);
+			//trail.gravity = random_range(grav - 0.1, grav + 0.1);
+			//trail.gravity_direction = 270;
+			
+			trail.speed = random(2);
+			trail.direction = random(360);
 			trail.gravity = random_range(grav - 0.1, grav + 0.1);
-			trail.gravity_direction = 270;
-
+			trail.gravity_direction = other.direction + random_range(-5, 5);
 		}
+		
+
 	}
 }
