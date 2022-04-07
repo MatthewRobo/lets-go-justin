@@ -48,6 +48,7 @@
     {"id":{"name":"Room4","path":"rooms/Room4/Room4.yy",},"order":5,},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},"order":2,},
     {"id":{"name":"Font2","path":"fonts/Font2/Font2.yy",},"order":1,},
+    {"id":{"name":"obj_player3","path":"objects/obj_player3/obj_player3.yy",},"order":3,},
     {"id":{"name":"Pad_Select","path":"rooms/Pad_Select/Pad_Select.yy",},"order":1,},
     {"id":{"name":"obj_player2","path":"objects/obj_player2/obj_player2.yy",},"order":2,},
     {"id":{"name":"obj_boom","path":"objects/obj_boom/obj_boom.yy",},"order":4,},
