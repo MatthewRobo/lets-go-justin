@@ -32,6 +32,7 @@ shoot = false;
 parry = false;
 slash = false;
 spawning = false;
+spawntime = 20;
 jump = false;
 jumpmax = 30
 airjumps = jumpmax;

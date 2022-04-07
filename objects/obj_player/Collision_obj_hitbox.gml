@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (other.team != team && other.object_index != obj_parry) {
+if (other.team != team) {
 	if (state == status.parry) {
 		invul += 5;
 		state = status.idle;
@@ -33,7 +33,7 @@ if (other.team != team && other.object_index != obj_parry) {
 		instance_create_layer(x, y, "hitboxes", obj_boom);
 		audio_play_sound(snd_dies, 1, false);
 		bullet = true;
-		spawning = true;
+		spawning = spawntime;
 		for (i = 0; i < 20; i++) {
 			trail = instance_create_layer(x, y, "trails", obj_dust);
 			trail.image_blend = color;

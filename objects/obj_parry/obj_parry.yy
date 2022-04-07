@@ -7,10 +7,7 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obj_hitbox",
-    "path": "objects/obj_hitbox/obj_hitbox.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -31,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "attacks",
-    "path": "folders/Objects/attacks.yy",
+    "name": "trails",
+    "path": "folders/Objects/trails.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_parry",

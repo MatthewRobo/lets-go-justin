@@ -67,14 +67,21 @@ if (global.hitstop <= 0) {
 		break;
 	}
 	
-	if (spawning) {
-		x = obj_controller.x;
-		y = obj_controller.y;
+	if (spawning == spawntime) {
+		audio_play_sound(snd_spawn, 0, false);
+		x = obj_respawn.x;
+		y = obj_respawn.y;
 		state = status.recovery;
 		recovery = 1;
 		instance_create_layer(x, y, "hitboxes", obj_boom);
-		audio_play_sound(snd_spawn, 0, false);
-		spawning = false;
+	}
+		
+	
+	if (spawning > 0) {
+		shoot = false;
+		parry = false;
+		slash = false;
+		spawning--;
 	}
 	
 	switch (state) {
