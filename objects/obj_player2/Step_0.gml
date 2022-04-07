@@ -53,5 +53,10 @@ if (keyboard_check_pressed(191)
 	slash = true;
 }
 
+if (keyboard_check(191)
+		|| gamepad_button_check(gamepad, gp_face2)
+		|| gamepad_button_check(gamepad, gp_shoulderr)) {
+	heldparry = true;
+} else heldparry = false;
 event_inherited();
 

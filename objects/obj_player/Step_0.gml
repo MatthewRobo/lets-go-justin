@@ -68,7 +68,7 @@ if (global.hitstop <= 0) {
 	}
 	
 	if (spawning == spawntime) {
-		invul = invultime;
+		
 		ammo = 1;
 		audio_play_sound(snd_spawn, 0, false);
 		x = spawnpoint.x;
@@ -186,7 +186,7 @@ if (global.hitstop <= 0) {
 		break;
 	case status.parry:
 		recovery--;
-		if (recovery <= 0) {
+		if ((!heldparry && recovery <= 0) || (recovery <= -parrymax)) {
 			recovery = parryrecovery;
 			state = status.recovery;
 			sprite_index = ammo > 0 ? spr_idle : spr_empty;

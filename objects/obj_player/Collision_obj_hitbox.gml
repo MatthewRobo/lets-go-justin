@@ -28,11 +28,12 @@ if (other.team != team && collision_line(x, y, other.x, other.y, obj_wall, false
 		}
 	} else if (invul <= 0) {
 		deaths += 1;
-		global.hitstop = 20;
 		instance_create_layer(x, y, "hitboxes", obj_boom);
 		audio_play_sound(snd_dies, 1, false);
 		spawning = spawntime;
+		global.hitstop = 20;
 		spawnpoint = instance_furthest(other.owner.x, other.owner.y, obj_respawn);
+		invul = invultime;
 		for (i = 0; i < 20; i++) {
 			trail = instance_create_layer(x, y, "trails", obj_dust);
 			trail.image_blend = color;

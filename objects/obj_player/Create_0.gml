@@ -40,6 +40,7 @@ for (var i = 0; i < gp_num; i++;)
 shoot = false;
 parry = false;
 slash = false;
+heldparry = false;
 spawning = false;
 spawntime = 20;
 jump = false;
@@ -61,6 +62,7 @@ slashactive = 5;
 slashrecovery = 9;
 
 parryactive = 10;
+parrymax = 30 - parryactive;
 parryrecovery = 19;
 parrystop = 5;
 reflectmult = 1.1;
