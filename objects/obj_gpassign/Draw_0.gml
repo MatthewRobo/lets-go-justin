@@ -14,3 +14,7 @@ for (var i = 0; i < global.gpnum; i++;)
 	}
 	
 }
+
+draw_set_font(Font1);
+draw_set_halign(fa_center);
+draw_text(xdraw, 512, "Press left/right to select\nPress start/enter when ready");
