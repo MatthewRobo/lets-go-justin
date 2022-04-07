@@ -43,7 +43,7 @@ thrust = 0.9;
 
 grav = 0.5;
 
-bullet = true;
+ammo = 1;
 bulletspeed = 24;
 gunrecovery = 22;
 gunreload = 38;

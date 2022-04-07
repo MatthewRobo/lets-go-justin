@@ -101,7 +101,7 @@ if (global.hitstop <= 0) {
 			audio_sound_pitch(sfx, lerp(2, 1, airjumps / jumpmax));
 			for (i = 0; i < 3; i++) {
 				trail = instance_create_layer(x, y, "trails", obj_dust);
-				if (!bullet) trail.image_alpha = 0.5;
+				if (ammo <= 0) trail.image_alpha = 0.5;
 				trail.image_blend = color;
 				trail.vspeed = thrust;
 				trail.hspeed = random_range(-0.5, 0.5);
@@ -139,7 +139,7 @@ if (global.hitstop <= 0) {
 		}
 		if (shoot) {
 			invul = 1;
-			if (bullet) {
+			if (ammo > 0) {
 				spark = instance_create_layer(x, y, "parryfx", obj_parry);
 				spark.owner = id;
 				spark.direction = direction + 180;
@@ -156,13 +156,13 @@ if (global.hitstop <= 0) {
 				attack.vsp = lengthdir_y(attack.spd, attack.direction);
 				attack.image_angle = attack.direction;
 				recovery = gunrecovery;
-				bullet = false;
+				ammo--;
 				state = status.recovery;
 				sprite_index = spr_recovery;
 			} else {
 				audio_play_sound(snd_reload, 0, false);
 				recovery = gunreload;
-				bullet = true;
+				ammo = 1;
 				state = status.recovery;
 				sprite_index = spr_recovery;
 			}
@@ -179,7 +179,7 @@ if (global.hitstop <= 0) {
 		recovery--;
 		if (recovery <= 0) {
 			state = status.idle;
-			sprite_index = bullet ? spr_idle : spr_empty;
+			sprite_index = ammo > 0 ? spr_idle : spr_empty;
 		}
 		break;
 	case status.parry:
@@ -187,11 +187,11 @@ if (global.hitstop <= 0) {
 		if (recovery <= 0) {
 			recovery = parryrecovery;
 			state = status.recovery;
-			sprite_index = bullet ? spr_idle : spr_empty;
+			sprite_index = ammo > 0 ? spr_idle : spr_empty;
 		}
 		trail = instance_create_layer(x, y, "trails", obj_playertrail);
 		trail.image_index = image_index;
-		if (!bullet) trail.image_alpha = 0.5;
+		if (ammo <= 0) trail.image_alpha = 0.5;
 		trail.image_blend = color;
 		trail.image_xscale = lerp(1, 1.5, (recovery + 1) / parryrecovery) * image_xscale;
 		trail.image_yscale = lerp(1, 1.5, (recovery + 1) / parryrecovery);
@@ -200,7 +200,7 @@ if (global.hitstop <= 0) {
 		recovery--;
 		if (recovery <= 0) {
 			state = status.idle;
-			sprite_index = bullet ? spr_idle : spr_empty;
+			sprite_index = ammo > 0 ? spr_idle : spr_empty;
 		}
 		break;
 	}
@@ -228,7 +228,7 @@ if (global.hitstop <= 0) {
 	}
 	trail = instance_create_layer(x, y, "trails", obj_playertrail);
 	trail.image_index = image_index;
-	if (!bullet) trail.image_alpha = 0.5;
+	if (ammo <= 0) trail.image_alpha = 0.5;
 	trail.image_blend = color;
 	trail.image_xscale = image_xscale;
 	if (invul >= 0) {

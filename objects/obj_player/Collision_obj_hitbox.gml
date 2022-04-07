@@ -5,7 +5,7 @@ if (other.team != team) {
 	if (state == status.parry) {
 		invul += 5;
 		state = status.idle;
-		sprite_index = bullet ? spr_idle : spr_empty;
+		sprite_index = ammo > 0 ? spr_idle : spr_empty;
 		spark = instance_create_layer(x, y, "parryfx", obj_parry);
 		spark.owner = id;
 		spark.direction = other.direction + 180;
@@ -32,7 +32,7 @@ if (other.team != team) {
 		deaths += 1;
 		instance_create_layer(x, y, "hitboxes", obj_boom);
 		audio_play_sound(snd_dies, 1, false);
-		bullet = true;
+		ammo = 1;
 		spawning = spawntime;
 		spawnpoint = instance_furthest(other.owner.x, other.owner.y, obj_respawn);
 		for (i = 0; i < 20; i++) {
