@@ -60,4 +60,4 @@ if (keyboard_check(ord("H"))
 } else heldparry = false;
 
 event_inherited();
-
+gamepad_set_colour(gamepad, color);

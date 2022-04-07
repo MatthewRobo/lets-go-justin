@@ -59,4 +59,4 @@ if (keyboard_check(191)
 	heldparry = true;
 } else heldparry = false;
 event_inherited();
-
+gamepad_set_colour(gamepad, color);
