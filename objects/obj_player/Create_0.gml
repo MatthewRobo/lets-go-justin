@@ -13,6 +13,7 @@ grounded = 5;
 coyote = 5;
 
 team = 0;
+spawnpoint = obj_respawn;
 
 deaths = 0;
 

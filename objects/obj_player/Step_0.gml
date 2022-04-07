@@ -69,8 +69,8 @@ if (global.hitstop <= 0) {
 	
 	if (spawning == spawntime) {
 		audio_play_sound(snd_spawn, 0, false);
-		x = obj_respawn.x;
-		y = obj_respawn.y;
+		x = spawnpoint.x;
+		y = spawnpoint.y;
 		state = status.recovery;
 		recovery = 1;
 		instance_create_layer(x, y, "hitboxes", obj_boom);

@@ -34,6 +34,7 @@ if (other.team != team) {
 		audio_play_sound(snd_dies, 1, false);
 		bullet = true;
 		spawning = spawntime;
+		spawnpoint = instance_furthest(other.owner.x, other.owner.y, obj_respawn);
 		for (i = 0; i < 20; i++) {
 			trail = instance_create_layer(x, y, "trails", obj_dust);
 			trail.image_blend = color;
