@@ -10,10 +10,13 @@ select = false;
 for (var i = 0; i < global.gpnum; i++;)
 {
 
-	if gamepad_button_check(i, gp_start) {
+	if gamepad_button_check(i, gp_start) 
+	|| keyboard_check(vk_enter) 
+	|| keyboard_check(vk_escape) {
 		start = true;
 	} 
-	if gamepad_button_check(i, gp_select) {
+	if gamepad_button_check(i, gp_select) 
+	|| keyboard_check(vk_backspace) {
 		select = true;
 	}
 
