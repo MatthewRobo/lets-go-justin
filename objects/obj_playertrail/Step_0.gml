@@ -3,8 +3,11 @@
 
 if (global.hitstop <= 0) {
 
-if (image_alpha > -1) image_alpha -= 0.2;
-else instance_destroy();
-
+	if (timer < 0) instance_destroy();
+	timer -= 0.1;
+	if (timer < 0.6) image_alpha -= 0.2;
 }
-else image_alpha = 1;
+else {
+	timer = 1;
+	image_alpha = 1;
+}
