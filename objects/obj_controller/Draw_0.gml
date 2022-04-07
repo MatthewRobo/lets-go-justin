@@ -15,4 +15,4 @@ draw_set_valign(fa_bottom);
 
 draw_set_colour(c_white);
 draw_set_halign(fa_center);
-draw_text(room_width / 2, 768-8, "Hold backspace to restart");
+draw_text(room_width / 2, 768-4, "Hold Start to quit / Hold Select to restart");
