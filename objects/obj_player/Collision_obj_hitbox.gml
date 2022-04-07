@@ -27,12 +27,10 @@ if (other.team != team) {
 			break;
 		}
 	} else if (invul <= 0) {
-		invul = invultime;
-		global.hitstop = 20;
 		deaths += 1;
+		global.hitstop = 20;
 		instance_create_layer(x, y, "hitboxes", obj_boom);
 		audio_play_sound(snd_dies, 1, false);
-		ammo = 1;
 		spawning = spawntime;
 		spawnpoint = instance_furthest(other.owner.x, other.owner.y, obj_respawn);
 		for (i = 0; i < 20; i++) {

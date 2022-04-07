@@ -68,6 +68,8 @@ if (global.hitstop <= 0) {
 	}
 	
 	if (spawning == spawntime) {
+		invul = invultime;
+		ammo = 1;
 		audio_play_sound(snd_spawn, 0, false);
 		x = spawnpoint.x;
 		y = spawnpoint.y;
