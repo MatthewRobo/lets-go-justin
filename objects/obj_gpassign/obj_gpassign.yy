@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "menuhandlers",
-    "path": "folders/Objects/menuhandlers.yy",
+    "name": "controllers",
+    "path": "folders/Objects/controllers.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_gpassign",

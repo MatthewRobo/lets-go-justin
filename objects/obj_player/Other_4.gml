@@ -8,4 +8,4 @@ for (var i = 0; i < global.gpnum; i++;)
 	if (global.gp[i] == team) gamepad = i;
 }
 
- 
+recovery = 30;

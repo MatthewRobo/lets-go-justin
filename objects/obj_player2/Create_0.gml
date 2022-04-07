@@ -13,3 +13,5 @@ spr_idle = spr_p2idle;
 spr_empty = spr_p2empty;
 spr_parry = spr_p2parry;
 spr_recovery = spr_p2recovery;
+
+teamstr = "2";

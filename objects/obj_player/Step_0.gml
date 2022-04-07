@@ -200,7 +200,7 @@ if (global.hitstop <= 0) {
 		trail = instance_create_layer(x, y, "trails", obj_playertrail);
 		trail.image_index = image_index;
 		if (ammo <= 0) trail.image_alpha = 0.5;
-		trail.image_blend = color;
+		trail.image_blend = c_aqua;
 		trail.image_xscale = lerp(1, 1.5, (recovery + 1) / parryrecovery) * image_xscale;
 		trail.image_yscale = lerp(1, 1.5, (recovery + 1) / parryrecovery);
 		break;
@@ -241,7 +241,7 @@ if (global.hitstop <= 0) {
 	trail.image_xscale = image_xscale;
 	if (invul >= 0) {
 		invul--;
-		image_alpha = abs(sin(invul));
+		image_alpha = abs(dsin(20 * invul));
 	} else {
 		image_alpha = 1;
 	}

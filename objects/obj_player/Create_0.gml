@@ -13,6 +13,7 @@ grounded = 5;
 coyote = 5;
 
 team = 0;
+teamstr = "";
 spawnpoint = obj_respawn;
 
 deaths = 0;
@@ -96,3 +97,10 @@ spr_parry = spr_idle;
 spr_recovery = spr_idle;
 
 
+		boom = instance_create_layer(x, y, "hitboxes", obj_boom);
+		boom.image_xscale = 2;
+		boom.image_yscale = 2;
+		boom.image_blend = color;
+		boom = instance_create_layer(x, y, "hitboxes", obj_boom);
+		boom.image_xscale = 2.6;
+		boom.image_yscale = 2.6;
