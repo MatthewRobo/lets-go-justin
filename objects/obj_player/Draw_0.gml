@@ -11,5 +11,9 @@ draw_vertex(x, y-24);
 draw_vertex(x-8, y-32);
 draw_vertex(x+8, y-32);
 draw_primitive_end();
+if (state != status.idle) {
+	draw_rectangle(x,y-33,x+recovery,y-38,0);
+	draw_rectangle(x,y-33,x-recovery,y-38,0);
+}
 
 draw_text(x, y-32, "(P" + teamstr + ")");
