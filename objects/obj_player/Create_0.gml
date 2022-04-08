@@ -52,24 +52,11 @@ thrust = 0.9;
 grav = 0.5;
 recoil = 0;
 
+ammo = 1;
+bulletspeed = 24;
+gunrecovery = 22;
+gunreload = 38;
 shotactive = 999;
-switch shottype {
-	case shot.bullet:
-		ammo = 1;
-		bulletspeed = 24;
-		gunrecovery = 22;
-		gunreload = 38;
-		break;
-	case shot.shotgun:
-		ammo = 1;
-		bulletspeed = 16;
-		gunrecovery = 30;
-		gunreload = 60;
-		shotactive = 8;
-		recoil = 6;
-		break;
-}
-
 
 slashspeed = 16;
 slashactive = 5;

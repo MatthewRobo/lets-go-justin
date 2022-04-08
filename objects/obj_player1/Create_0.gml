@@ -15,4 +15,4 @@ spr_recovery = spr_p1recovery;
 
 teamstr = "1";
 
-
+shottype = global.p1shot;

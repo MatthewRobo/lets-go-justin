@@ -16,4 +16,4 @@ spr_recovery = spr_p2recovery;
 
 teamstr = "2";
 
-
+shottype = global.p2shot;

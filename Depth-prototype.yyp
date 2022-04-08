@@ -60,6 +60,7 @@
     {"id":{"name":"spr_boom","path":"sprites/spr_boom/spr_boom.yy",},"order":8,},
     {"id":{"name":"obj_parry","path":"objects/obj_parry/obj_parry.yy",},"order":7,},
     {"id":{"name":"spr_playersmall","path":"sprites/spr_playersmall/spr_playersmall.yy",},"order":7,},
+    {"id":{"name":"obj_charassign","path":"objects/obj_charassign/obj_charassign.yy",},"order":5,},
     {"id":{"name":"obj_bullettrail","path":"objects/obj_bullettrail/obj_bullettrail.yy",},"order":2,},
     {"id":{"name":"spr_Room1Prev","path":"sprites/spr_Room1Prev/spr_Room1Prev.yy",},"order":16,},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},"order":0,},

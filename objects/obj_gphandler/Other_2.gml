@@ -4,3 +4,6 @@
 
 global.gpnum = 12;
 global.gp = array_create(global.gpnum, -99);
+
+global.p1shot = 0;
+global.p2shot = 1;

@@ -10,3 +10,20 @@ for (var i = 0; i < global.gpnum; i++;)
 
 recovery = obj_controller.roundstart;
 state = status.recovery;
+
+switch shottype {
+	case shot.bullet:
+		ammo = 1;
+		bulletspeed = 24;
+		gunrecovery = 22;
+		gunreload = 38;
+		break;
+	case shot.shotgun:
+		ammo = 1;
+		bulletspeed = 16;
+		gunrecovery = 30;
+		gunreload = 60;
+		shotactive = 8;
+		recoil = 6;
+		break;
+}
