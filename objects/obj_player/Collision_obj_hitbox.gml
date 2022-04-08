@@ -35,18 +35,22 @@ if (other.team != team && collision_line(x, y, other.x, other.y, obj_wall, false
 		spawnpoint = instance_furthest(other.owner.x, other.owner.y, obj_respawn);
 		invul = invultime;
 		
-		for (i = 0; i < 20; i++) {
-			trail = instance_create_layer(x, y, "trails", obj_dust);
+		for (i = 0; i < 500; i++) {
+			trail = instance_create_layer(x, y, "trails", obj_glitter);
 			trail.image_blend = color;
 			//trail.speed = random_range(other.spd - 2, other.spd + 2);
 			//trail.direction = other.direction + random_range(-5, 5);
 			//trail.gravity = random_range(grav - 0.1, grav + 0.1);
 			//trail.gravity_direction = 270;
-			
-			trail.speed = random(2);
+			if (irandom(1)) trail.image_blend = c_white;
+			trail.speed = random(5);
+			trail.image_index = random(8);
+			trail.friction = 0.25;
 			trail.direction = random(360);
-			trail.gravity = random_range(grav - 0.1, grav + 0.1);
-			trail.gravity_direction = other.direction + random_range(-5, 5);
+			trail.gravity = random_range(0.1, 0.3);
+			trail.gravity_direction = other.direction;
+							trail.x = random_range(bbox_left, bbox_right);
+				trail.y = random_range(bbox_bottom, bbox_top);
 		}
 		trail = instance_create_layer(x,y,"trails",obj_burst);
 		trail.image_blend = color;

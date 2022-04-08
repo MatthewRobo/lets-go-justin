@@ -108,7 +108,7 @@ if (global.hitstop <= 0) {
 			sfx = audio_play_sound(snd_hover, 0, false);
 			audio_sound_pitch(sfx, lerp(2, 1, airjumps / jumpmax));
 			for (i = 0; i < 3; i++) {
-				trail = instance_create_layer(x, y, "trails", obj_dust);
+				trail = instance_create_layer(x, y, "trails", obj_glitter);
 				if (ammo <= 0) trail.image_alpha = 0.5;
 				trail.image_blend = color;
 				trail.vspeed = thrust;
@@ -118,6 +118,9 @@ if (global.hitstop <= 0) {
 					trail.vspeed += vsp;
 				}
 				trail.vspeed += random_range(-0.25, 0.25);
+				if (irandom(1)) trail.image_blend = c_white;
+				trail.x = random_range(bbox_left, bbox_right);
+				trail.y = random_range(bbox_bottom, bbox_top);
 			}
 			vsp -= thrust;
 			airjumps--;
