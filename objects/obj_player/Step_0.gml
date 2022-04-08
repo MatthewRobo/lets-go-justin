@@ -3,7 +3,7 @@
 
 if (global.hitstop <= 0) {
 	// handles spawning reflected bullet
-	// code block is here so that the bullet only spawns 
+	// code block is here so that the bullet only spawns
 	if (reflected != noone) {
 		attack = instance_create_layer(x, y, "hitboxes", obj_bullet);
 		attack.owner = self;
@@ -25,7 +25,7 @@ if (global.hitstop <= 0) {
 		}
 		grounded = coyote;
 	} else grounded--;
-	
+
 	// input handling
 	dir = 5;
 	if (left && !right) dir = 4;
@@ -66,9 +66,9 @@ if (global.hitstop <= 0) {
 		direction = 45;
 		break;
 	}
-	
+
 	if (spawning == spawntime) {
-		
+
 		ammo = 1;
 		audio_play_sound(snd_spawn, 0, false);
 		x = spawnpoint.x;
@@ -83,15 +83,15 @@ if (global.hitstop <= 0) {
 		boom.image_xscale = 2.6;
 		boom.image_yscale = 2.6;
 	}
-		
-	
+
+
 	if (spawning > 0) {
 		shoot = false;
 		parry = false;
 		slash = false;
 		spawning--;
 	}
-	
+
 	switch (state) {
 	case status.idle:
 		if (left && !right) image_xscale = -1;
@@ -148,21 +148,46 @@ if (global.hitstop <= 0) {
 		if (shoot) {
 			invul = 1;
 			if (ammo > 0) {
-				spark = instance_create_layer(x, y, "parryfx", obj_parry);
-				spark.owner = id;
-				spark.direction = direction + 180;
-				spark.x += lengthdir_x(32, direction);
-				spark.y += lengthdir_y(32, direction);
-				spark.image_angle = spark.direction;
-				audio_play_sound(snd_shoot, 0, false);
-				attack = instance_create_layer(x, y, "hitboxes", obj_bullet);
-				attack.owner = self;
-				attack.team = team;
-				attack.direction = direction;
-				attack.spd = bulletspeed;
-				attack.hsp = lengthdir_x(attack.spd, attack.direction);
-				attack.vsp = lengthdir_y(attack.spd, attack.direction);
-				attack.image_angle = attack.direction;
+
+				switch shottype {
+					case shot.bullet:
+						spark = instance_create_layer(x, y, "parryfx", obj_parry);
+						spark.owner = id;
+						spark.direction = direction + 180;
+						spark.x += lengthdir_x(32, direction);
+						spark.y += lengthdir_y(32, direction);
+						spark.image_angle = spark.direction;
+						audio_play_sound(snd_shoot, 0, false);
+						attack = instance_create_layer(x, y, "hitboxes", obj_bullet);
+						attack.owner = self;
+						attack.team = team;
+						attack.direction = direction;
+						attack.spd = bulletspeed;
+						attack.hsp = lengthdir_x(attack.spd, attack.direction);
+						attack.vsp = lengthdir_y(attack.spd, attack.direction);
+						break;
+					case shot.shotgun:
+						spark = instance_create_layer(x, y, "parryfx", obj_parry);
+						spark.owner = id;
+						spark.direction = direction + 180;
+						spark.x += lengthdir_x(32, direction);
+						spark.y += lengthdir_y(32, direction);
+						spark.image_angle = spark.direction;
+						audio_play_sound(snd_shoot, 0, false);
+						for (i = -30; i <= 30; i += 20) {
+							attack = instance_create_layer(x, y, "hitboxes", obj_shotgun);
+							attack.owner = self;
+							attack.timer = shotactive;
+							attack.team = team;
+							attack.direction = i + direction;
+							attack.spd = bulletspeed;
+							attack.hsp = lengthdir_x(attack.spd, attack.direction);
+							attack.vsp = lengthdir_y(attack.spd, attack.direction);
+						}
+						break;
+				}
+				hsp += lengthdir_x(-recoil, direction);
+				vsp += lengthdir_y(-recoil, direction);
 				recovery = gunrecovery;
 				ammo--;
 				state = status.recovery;
@@ -213,6 +238,8 @@ if (global.hitstop <= 0) {
 		break;
 	}
 	if (state != status.parried) {
+
+		// *** PHYSICS AND COLLISION ***
 		if ((grounded >= 3 && (dir == 1 || dir == 3) ) || dir == 2 || dir == 5 || dir == 8 || state != status.idle) {
 			hsp = abs(hsp) <= deccel ? 0 : hsp - sign(hsp) * deccel;
 		}

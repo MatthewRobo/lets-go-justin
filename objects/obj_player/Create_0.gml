@@ -8,7 +8,13 @@ enum status {
 	parried
 }
 
+enum shot {
+	bullet,
+	shotgun
+}
+
 state = status.idle;
+shottype = shot.bullet;
 grounded = 5;
 coyote = 5;
 
@@ -44,11 +50,26 @@ jumpsp = 13;
 thrust = 0.9;
 
 grav = 0.5;
+recoil = 0;
 
-ammo = 1;
-bulletspeed = 24;
-gunrecovery = 22;
-gunreload = 38;
+shotactive = 999;
+switch shottype {
+	case shot.bullet:
+		ammo = 1;
+		bulletspeed = 24;
+		gunrecovery = 22;
+		gunreload = 38;
+		break;
+	case shot.shotgun:
+		ammo = 1;
+		bulletspeed = 16;
+		gunrecovery = 30;
+		gunreload = 60;
+		shotactive = 8;
+		recoil = 6;
+		break;
+}
+
 
 slashspeed = 16;
 slashactive = 5;
@@ -89,10 +110,10 @@ spr_parry = spr_idle;
 spr_recovery = spr_idle;
 
 
-		boom = instance_create_layer(x, y, "hitboxes", obj_boom);
-		boom.image_xscale = 2;
-		boom.image_yscale = 2;
-		boom.image_blend = color;
-		boom = instance_create_layer(x, y, "hitboxes", obj_boom);
-		boom.image_xscale = 2.6;
-		boom.image_yscale = 2.6;
+boom = instance_create_layer(x, y, "hitboxes", obj_boom);
+boom.image_xscale = 2;
+boom.image_yscale = 2;
+boom.image_blend = color;
+boom = instance_create_layer(x, y, "hitboxes", obj_boom);
+boom.image_xscale = 2.6;
+boom.image_yscale = 2.6;
