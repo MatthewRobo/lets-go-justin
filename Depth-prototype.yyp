@@ -27,6 +27,7 @@
     {"id":{"name":"spr_dpad","path":"sprites/spr_dpad/spr_dpad.yy",},"order":14,},
     {"id":{"name":"spr_p1empty","path":"sprites/spr_p1empty/spr_p1empty.yy",},"order":0,},
     {"id":{"name":"spr_dust","path":"sprites/spr_dust/spr_dust.yy",},"order":11,},
+    {"id":{"name":"obj_wallbang","path":"objects/obj_wallbang/obj_wallbang.yy",},"order":2,},
     {"id":{"name":"snd_dies","path":"sounds/snd_dies/snd_dies.yy",},"order":0,},
     {"id":{"name":"spr_slashwhiff","path":"sprites/spr_slashwhiff/spr_slashwhiff.yy",},"order":9,},
     {"id":{"name":"obj_burst","path":"objects/obj_burst/obj_burst.yy",},"order":8,},

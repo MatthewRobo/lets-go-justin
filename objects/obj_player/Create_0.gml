@@ -10,7 +10,8 @@ enum status {
 
 enum shot {
 	bullet,
-	shotgun
+	shotgun,
+	wallbang
 }
 
 state = status.idle;
