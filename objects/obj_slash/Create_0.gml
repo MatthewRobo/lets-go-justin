@@ -4,6 +4,6 @@
 // Inherit the parent event
 event_inherited();
 
-alarm[1] = obj_player.slashactive;
+timer = obj_player.slashactive;
 
 image_yscale = 2;

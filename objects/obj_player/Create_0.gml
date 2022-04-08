@@ -28,7 +28,7 @@ hsp = 0;
 invul = 0;
 invultime = 150;
 
-recovery = obj_controller.roundstart;
+recovery = 0;
 
 shoot = false;
 parry = false;

@@ -4,6 +4,7 @@
 // Inherit the parent event
 event_inherited();
 if (global.hitstop <= 0) {
+	if (timer <= 0) instance_destroy();
 	if (image_alpha >= 0) {
 		// image_alpha -= 1.01/(obj_player.slashactive + 1);
 		image_yscale -= 0.2;
@@ -14,12 +15,8 @@ if (global.hitstop <= 0) {
 	} else {
 		instance_destroy();
 	}
-} else {
-	alarm[0]++;
-	alarm[1]++;
+	timer--;
 }
-
-
 
 if (position_meeting(x, y, obj_wall)) {
 	instance_destroy();
