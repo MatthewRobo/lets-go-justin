@@ -217,6 +217,7 @@ if (global.hitstop <= 0) {
 		break;
 	case status.parry:
 		recovery--;
+		audio_play_sound(snd_heldparry, 0,0);
 		if ((!heldparry && recovery <= 0) || (recovery <= -parrymax)) {
 			recovery = parryrecovery - recovery;
 			state = status.recovery;
