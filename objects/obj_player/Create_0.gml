@@ -11,7 +11,9 @@ enum status {
 enum shot {
 	bullet,
 	shotgun,
-	wallbang
+	wallbang,
+	whiffpunisher,
+	booster
 }
 
 state = status.idle;

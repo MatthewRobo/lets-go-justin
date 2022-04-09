@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-shotcount = 3;
+shotcount = 5;
 
 for (var i = 0; i < global.gpnum; i++;)
 {
