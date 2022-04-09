@@ -31,6 +31,12 @@ if (other.team != team && collision_line(x, y, other.x, other.y, obj_wall, false
 			instance_destroy(other);
 			global.hitstop = 9 * counterspeed / bulletspeed;
 			break;
+		case obj_wallbang:
+			reflected = other.owner;
+			counterspeed = other.spd;
+			instance_destroy(other);
+			global.hitstop = 9 * counterspeed / bulletspeed;
+			break;
 		}
 	} else if (invul <= 0) {
 		deaths += 1;

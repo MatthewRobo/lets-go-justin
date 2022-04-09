@@ -54,7 +54,9 @@ grav = 0.5;
 recoil = 0;
 
 ammo = 1;
+ammomax = 1;
 bulletspeed = 24;
+bulletmaxspeed = bulletspeed;
 gunrecovery = 22;
 gunreload = 38;
 shotactive = 999;
@@ -105,3 +107,8 @@ boom.image_blend = color;
 boom = instance_create_layer(x, y, "hitboxes", obj_boom);
 boom.image_xscale = 2.6;
 boom.image_yscale = 2.6;
+
+scale = 1.5;
+image_xscale = scale;
+image_yscale = scale;
+y -= 16;

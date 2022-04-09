@@ -5,7 +5,7 @@
 event_inherited();
 color = $00ccff;
 //color = $d000ff
-image_xscale = 1;
+image_xscale = 1 * scale;
 team = -2;
 
 spr_idle = spr_p1idle;

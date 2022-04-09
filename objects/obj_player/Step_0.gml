@@ -69,7 +69,7 @@ if (global.hitstop <= 0) {
 
 	if (spawning == spawntime) {
 
-		ammo = 1;
+		ammo = ammomax;
 		audio_play_sound(snd_spawn, 0, false);
 		x = spawnpoint.x;
 		y = spawnpoint.y;
@@ -94,8 +94,8 @@ if (global.hitstop <= 0) {
 
 	switch (state) {
 	case status.idle:
-		if (left && !right) image_xscale = -1;
-		else if (right && !left) image_xscale = 1;
+		if (left && !right) image_xscale = -scale;
+		else if (right && !left) image_xscale = scale;
 		if (jump) {
 			if (grounded > 0) {
 				vsp = -jumpsp;
@@ -177,7 +177,7 @@ if (global.hitstop <= 0) {
 						spark.y += lengthdir_y(32, direction);
 						spark.image_angle = spark.direction;
 						audio_play_sound(snd_shoot, 0, false);
-						for (i = -30; i <= 30; i += 15) {
+						for (i = -20; i <= 20; i += 10) {
 							attack = instance_create_layer(x, y, "hitboxes", obj_shotgun);
 							attack.owner = self;
 							attack.timer = shotactive;
@@ -201,6 +201,7 @@ if (global.hitstop <= 0) {
 						attack.team = team;
 						attack.direction = direction;
 						attack.spd = bulletspeed;
+						attack.maxspd = bulletmaxspeed;
 						attack.hsp = lengthdir_x(attack.spd, attack.direction);
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						attack.timer = shotactive;
@@ -215,7 +216,7 @@ if (global.hitstop <= 0) {
 			} else {
 				audio_play_sound(snd_reload, 0, false);
 				recovery = gunreload;
-				ammo = 1;
+				ammo = ammomax;
 				state = status.recovery;
 				sprite_index = spr_recovery;
 			}
@@ -247,8 +248,8 @@ if (global.hitstop <= 0) {
 		trail.image_index = image_index;
 		if (ammo <= 0) trail.image_alpha = 0.5;
 		trail.image_blend = c_aqua;
-		trail.image_xscale = lerp(1, 1.5, (recovery + 1) / parryrecovery) * image_xscale;
-		trail.image_yscale = lerp(1, 1.5, (recovery + 1) / parryrecovery);
+		trail.image_xscale = lerp(1, 1.5, (recovery + 1) / parryrecovery) * sign(image_xscale) * scale;
+		trail.image_yscale = lerp(1, 1.5, (recovery + 1) / parryrecovery) * scale;
 		break;
 	case status.parried:
 		recovery--;
@@ -287,6 +288,7 @@ if (global.hitstop <= 0) {
 	if (ammo <= 0) trail.image_alpha = 0.5;
 	trail.image_blend = color;
 	trail.image_xscale = image_xscale;
+	trail.image_yscale = image_yscale;
 	if (invul >= 0) {
 		invul--;
 		image_alpha = abs(dsin(20 * invul));
