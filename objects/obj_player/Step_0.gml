@@ -126,9 +126,9 @@ if (global.hitstop <= 0) {
 			airjumps--;
 		}
 		if (dir == 4 || dir == 7 || (dir == 1 && grounded < 3) ) {
-			hsp = hsp > -maxspeed ? hsp - accel : -maxspeed;
+			hsp = hsp > -maxspeed ? hsp - accel : hsp + 1;
 		} else if (dir == 6 || dir == 9 || (dir == 3 && grounded < 3)  ) {
-			hsp = hsp <  maxspeed ? hsp + accel :  maxspeed;
+			hsp = hsp <  maxspeed ? hsp + accel :  hsp - 1;
 		}
 		if (vsp < 0 && uprelease) {
 			vsp /= 2; // cut player's jump short if player releases early

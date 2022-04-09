@@ -50,6 +50,6 @@ switch shottype {
 		gunrecovery = 0;
 		gunreload = 45;
 		shotactive = 5;
-		recoil = -24;
+		recoil = -18;
 		break;
 }
