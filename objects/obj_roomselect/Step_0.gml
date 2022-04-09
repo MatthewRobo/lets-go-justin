@@ -7,7 +7,7 @@ pads = "";
 for (var i = 0; i < global.gpnum; i++;)
 {
 	// if (global.gp[i] != 0 && global.gp[i] != -99) {
-		if gamepad_button_check_pressed(i, gp_padl) || keyboard_check_pressed(vk_left) {
+		if gamepad_button_check_pressed(i, gp_padl) || keyboard_check_pressed(vk_left) || global.pressed[0][input.U]{
 			room_goto(Room1);
 		} else if gamepad_button_check_pressed(i, gp_padu) || keyboard_check_pressed(vk_up){
 			room_goto(Room2);

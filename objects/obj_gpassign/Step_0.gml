@@ -7,11 +7,11 @@ for (var i = 0; i < global.gpnum; i++;)
 {
 	if gamepad_button_check_pressed(i, gp_padl) {
 		if (global.gp[i] == -99) global.gp[i] = 0;
-		else global.gp[i] = global.gp[i] == 1 ? 0 : -1;
+		else global.gp[i] = global.gp[i] == 2 ? 0 : 1;
 	}
 	if gamepad_button_check_pressed(i, gp_padr) {
 		if (global.gp[i] == -99) global.gp[i] = 0;
-		else global.gp[i] = global.gp[i] == -1 ? 0 : 1;
+		else global.gp[i] = global.gp[i] == 2 ? 0 : 1;
 	}
 
 	if gamepad_button_check_pressed(i, gp_start) || keyboard_check_pressed(vk_enter) {

@@ -22,7 +22,7 @@
     {"id":{"name":"obj_playertrail","path":"objects/obj_playertrail/obj_playertrail.yy",},"order":0,},
     {"id":{"name":"spr_Room4Prev","path":"sprites/spr_Room4Prev/spr_Room4Prev.yy",},"order":19,},
     {"id":{"name":"obj_glitter","path":"objects/obj_glitter/obj_glitter.yy",},"order":9,},
-    {"id":{"name":"obj_gphandler","path":"objects/obj_gphandler/obj_gphandler.yy",},"order":0,},
+    {"id":{"name":"obj_inputhandler","path":"objects/obj_inputhandler/obj_inputhandler.yy",},"order":0,},
     {"id":{"name":"spr_p1recovery","path":"sprites/spr_p1recovery/spr_p1recovery.yy",},"order":3,},
     {"id":{"name":"spr_dpad","path":"sprites/spr_dpad/spr_dpad.yy",},"order":14,},
     {"id":{"name":"spr_p1empty","path":"sprites/spr_p1empty/spr_p1empty.yy",},"order":0,},

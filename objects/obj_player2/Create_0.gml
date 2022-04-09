@@ -7,7 +7,7 @@ event_inherited();
 //color = $ff0033;
 color = $ff8000;
 image_xscale = -1 * scale;
-team = 1;
+team = 2;
 
 spr_idle = spr_p2idle;
 spr_empty = spr_p2empty;
