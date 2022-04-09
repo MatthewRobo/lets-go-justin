@@ -1,21 +1,31 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-pads = "";
 
 
-for (var i = 0; i < global.gpnum; i++;)
-{
-	// if (global.gp[i] != 0 && global.gp[i] != -99) {
-		if gamepad_button_check_pressed(i, gp_padl) || keyboard_check_pressed(vk_left) || global.pressed[0][input.U]{
+for (var p = 0; p < PLAYERS; p++;) {
+		for (var i = 0; i < global.gpnum; i++;) {
+		if ((global.pressed[p][input.L] && i == p)
+		|| (gamepad_button_check_pressed(i, gp_padl) && global.gp[i] == p))
+		{
 			room_goto(Room1);
-		} else if gamepad_button_check_pressed(i, gp_padu) || keyboard_check_pressed(vk_up){
+		}
+		if ((global.pressed[p][input.U] && i == p)
+		|| (gamepad_button_check_pressed(i, gp_padu) && global.gp[i] == p))
+		{
 			room_goto(Room2);
-		} else if gamepad_button_check_pressed(i, gp_padd) || keyboard_check_pressed(vk_down){
+		}
+		if ((global.pressed[p][input.D] && i == p)
+		|| (gamepad_button_check_pressed(i, gp_padd) && global.gp[i] == p))
+		{
 			room_goto(Room3);
-		} else if gamepad_button_check_pressed(i, gp_padr) || keyboard_check_pressed(vk_right){
+		}
+		if ((global.pressed[p][input.R] && i == p)
+		|| (gamepad_button_check_pressed(i, gp_padr) && global.gp[i] == p))
+		{
 			room_goto(Room4);
 		}
-	// }
+	}
 }
+
 

@@ -36,7 +36,6 @@ for (var p = 0; p < PLAYERS; p++) {
 					break;
 			}
 		}
-		
 		global.pressed[p][i] = global.down[p][i] && !global.last[p][i];
 		global.released[p][i] = !global.down[p][i] && global.last[p][i];
 	}

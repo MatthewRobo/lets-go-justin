@@ -21,8 +21,7 @@ enum input {
 global.gpnum = 12;
 global.gp = array_create(global.gpnum, -99);
 
-global.p1shot = 0;
-global.p2shot = 1;
+global.shots = array_create(PLAYERS, 0);
 
 // global.INPUTS[player][input]
 global.down     = array_create(PLAYERS,array_create(INPUTS,0));

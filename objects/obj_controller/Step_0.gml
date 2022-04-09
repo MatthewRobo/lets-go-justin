@@ -12,11 +12,13 @@ for (var i = 0; i < global.gpnum; i++;)
 
 	if gamepad_button_check(i, gp_start) 
 	|| keyboard_check(vk_enter) 
-	|| keyboard_check(vk_escape) {
+	|| keyboard_check(vk_escape) 
+	|| global.down[0][input.ST] {
 		start = true;
 	} 
 	if gamepad_button_check(i, gp_select) 
-	|| keyboard_check(vk_backspace) {
+	|| keyboard_check(vk_backspace)
+	|| global.down[0][input.SE] {
 		select = true;
 	}
 

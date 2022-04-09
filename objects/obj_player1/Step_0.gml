@@ -5,55 +5,60 @@
 
 
 
-if (keyboard_check(ord("A"))
-		|| gamepad_button_check(gamepad, gp_padl)) {
+left = false;
+right = false;
+down = false;
+up = false;
+
+if (global.down[team][input.L]
+|| gamepad_button_check(gamepad, gp_padl)) {
 	left = true;
-} else left = false;
-if (keyboard_check(ord("D"))
-		|| gamepad_button_check(gamepad, gp_padr)) {
+} 
+if (global.down[team][input.R]
+|| gamepad_button_check(gamepad, gp_padr)) {
 	right = true;
 } else right = false;
-if (keyboard_check(ord("W"))
+if (global.down[team][input.U]
 		|| gamepad_button_check(gamepad, gp_padu)) {
 	up = true;
 } else up = false;
-if (keyboard_check(ord("S"))
+if (global.down[team][input.D]
 		|| gamepad_button_check(gamepad, gp_padd)) {
 	down = true;
 } else down = false;
 
-if (keyboard_check_pressed(ord("C"))
+if (global.pressed[team][input.JU]
 		|| gamepad_button_check_pressed(gamepad, gp_face1)
 		|| gamepad_button_check_pressed(gamepad, gp_shoulderl)) {
 	jump = true;
 }
 
-if (keyboard_check(ord("C"))
+if (global.down[team][input.JU]
 		|| gamepad_button_check(gamepad, gp_face1)
 		|| gamepad_button_check(gamepad, gp_shoulderl)) {
 	hover = true;
 } else hover = false;
 
-if (keyboard_check_released(ord("C"))
+if (global.released[team][input.JU]
 		|| gamepad_button_check_released(gamepad, gp_face1)
 		|| gamepad_button_check_released(gamepad, gp_shoulderl)) {
 	uprelease = true;
 	canhover = true;
 }
 
-if (keyboard_check_pressed(ord("H"))
+if (global.pressed[team][input.PA]
 		|| gamepad_button_check_pressed(gamepad, gp_face2)
 		|| gamepad_button_check_pressed(gamepad, gp_shoulderr)) {
 	parry = true;
-} else if (keyboard_check_pressed(ord("G"))
+} else if (global.pressed[team][input.SH]
 		   || gamepad_button_check_pressed(gamepad, gp_face4)) {
 	shoot = true;
-} else if (keyboard_check_pressed(ord("F"))
+} else if (global.pressed[team][input.SL]
 		   || gamepad_button_check_pressed(gamepad, gp_face3)) {
 	slash = true;
 }
 
-if (keyboard_check(ord("H"))
+if (global.down[team][input.PA]
 		|| gamepad_button_check(gamepad, gp_face2)
 		|| gamepad_button_check(gamepad, gp_shoulderr)) {
 	heldparry = true;
