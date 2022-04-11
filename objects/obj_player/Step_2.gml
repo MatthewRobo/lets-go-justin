@@ -216,11 +216,12 @@ if (global.hitstop <= 0) {
 						spark.y += lengthdir_y(32, direction);
 						spark.image_angle = spark.direction;
 						audio_play_sound(snd_shoot, 0, false);
-						attack = instance_create_layer(x, y, "hitboxes", obj_shotgun);
+						attack = instance_create_layer(x, y, "hitboxes", obj_slash);
 						attack.owner = self;
 						attack.timer = shotactive;
 						attack.team = team;
 						attack.direction = direction;
+						attack.image_angle = direction;
 						attack.spd = bulletspeed;
 						attack.hsp = lengthdir_x(attack.spd, attack.direction);
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);

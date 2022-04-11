@@ -6,15 +6,13 @@ event_inherited();
 if (global.hitstop <= 0) {
 	if (timer <= 0) instance_destroy();
 	if (image_alpha >= 0) {
-		// image_alpha -= 1.01/(obj_player.slashactive + 1);
 		image_yscale -= 0.2;
+		if (image_yscale < 0.9) image_yscale = 0.9;
 		trail = instance_create_layer(x, y, "trails", obj_slashtrail);
 		trail.image_yscale = image_yscale;
 		trail.image_angle = direction;
 		trail.image_blend = owner.color;
-	} else {
-		instance_destroy();
-	}
+	} 
 	timer--;
 }
 
