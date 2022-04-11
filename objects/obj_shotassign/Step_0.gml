@@ -7,11 +7,11 @@ for (var p = 0; p < PLAYERS; p++;)
 {
 	i = global.lookup[p];
 	if (!ready[p]) {
-		if global.pressed[i][input.L] {
+		if global.pressed[i][input.U] {
 			global.shots[p]--;
 			audio_play_sound(snd_shield,0,0);
 		}
-		if global.pressed[i][input.R] {
+		if global.pressed[i][input.D] {
 			global.shots[p]++;
 			audio_play_sound(snd_shield,0,0);
 		}
