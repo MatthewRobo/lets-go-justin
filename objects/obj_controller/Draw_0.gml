@@ -24,6 +24,8 @@ if (roundstart > 0) {
 }
 draw_text(room_width / 2, 768-4, "Hold Start to quit / Hold Select to restart");
 
+draw_rectangle(room_width/2, 768-4, room_width/2 - 2 * quit, 768-8,0);
+draw_rectangle(room_width/2, 768-4, room_width/2 + 2 * restart, 768-8,0);
 
 draw_set_valign(fa_middle);
 if (obj_player1.deaths == global.firstto) {
