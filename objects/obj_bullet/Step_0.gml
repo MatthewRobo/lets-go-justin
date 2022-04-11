@@ -11,3 +11,10 @@ if (collision_line(x,y,x+hsp,y+vsp,obj_wall,0,0)) {
 	trail.image_angle = direction;
 	trail.image_blend = owner.color;
 }
+
+if (global.hitstop <= 0) {
+	if (timer <= 0) instance_destroy();
+	timer--;
+	vsp += grav;
+
+}

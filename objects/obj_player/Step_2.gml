@@ -180,7 +180,7 @@ if (global.hitstop <= 0) {
 						spark.image_angle = spark.direction;
 						audio_play_sound(snd_shoot, 0, false);
 						for (i = -20; i <= 20; i += 10) {
-							attack = instance_create_layer(x, y, "hitboxes", obj_shotgun);
+							attack = instance_create_layer(x, y, "hitboxes", obj_bullet);
 							attack.owner = self;
 							attack.timer = shotactive;
 							attack.team = team;
@@ -234,7 +234,7 @@ if (global.hitstop <= 0) {
 						spark.y += lengthdir_y(32, direction);
 						spark.image_angle = spark.direction;
 						audio_play_sound(snd_shoot, 0, false);
-						attack = instance_create_layer(x, y, "hitboxes", obj_shotgun);
+						attack = instance_create_layer(x, y, "hitboxes", obj_bullet);
 						attack.owner = self;
 						attack.timer = shotactive;
 						attack.team = team;

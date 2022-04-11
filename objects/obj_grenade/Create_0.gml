@@ -4,5 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
-timer = 1;
 grav = 0.8;

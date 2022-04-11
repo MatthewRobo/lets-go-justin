@@ -5,7 +5,7 @@
 event_inherited();
 
 for (i = 0; i < 360; i += 45) {
-		attack = instance_create_layer(x, y, "hitboxes", obj_shotgun);
+		attack = instance_create_layer(x, y, "hitboxes", obj_bullet);
 		attack.owner = owner;
 		attack.team = team;
 		attack.direction = i;

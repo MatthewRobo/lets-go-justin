@@ -4,5 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
-if (global.hitstop <= 0) vsp += grav;
 

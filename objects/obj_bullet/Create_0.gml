@@ -4,8 +4,5 @@
 // Inherit the parent event
 event_inherited();
 
-
-if (global.hitstop <= 0) {
-	if (timer <= 0) instance_destroy();
-	timer--;
-}
+timer = 999;
+grav = 0;

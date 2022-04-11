@@ -5,7 +5,6 @@
     {"id":{"name":"obj_slashtrail","path":"objects/obj_slashtrail/obj_slashtrail.yy",},"order":1,},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},"order":3,},
     {"id":{"name":"Room_Select","path":"rooms/Room_Select/Room_Select.yy",},"order":4,},
-    {"id":{"name":"obj_shotgun","path":"objects/obj_shotgun/obj_shotgun.yy",},"order":1,},
     {"id":{"name":"obj_hitbox","path":"objects/obj_hitbox/obj_hitbox.yy",},"order":3,},
     {"id":{"name":"spr_x","path":"sprites/spr_x/spr_x.yy",},"order":13,},
     {"id":{"name":"spr_glitter","path":"sprites/spr_glitter/spr_glitter.yy",},"order":15,},
