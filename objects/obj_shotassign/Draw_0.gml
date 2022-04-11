@@ -25,7 +25,9 @@ for (p = -1; p < 2; p++) {
 		if (ready[p]) draw_set_colour(c_red);
 		
 		for (i = 0; i < shot.length; i++) {
+			text += "[";
 			if (i == global.shots[p]) text += "P" + string(p+1);
+			text += "]";
 			text += "\n";
 		}
 	}
