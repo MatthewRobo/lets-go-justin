@@ -4,6 +4,7 @@
 if (global.hitstop <= 0) {
 	// handles spawning reflected bullet
 	// code block is here so that the bullet only spawns
+	image_speed = 1;
 	if (reflected != noone) {
 		attack = instance_create_layer(x, y, "hitboxes", obj_bullet);
 		attack.owner = self;
@@ -334,4 +335,6 @@ if (global.hitstop <= 0) {
 	shoot = false;
 	parry = false;
 	jump = false;
+} else {
+		image_speed = 0;
 }

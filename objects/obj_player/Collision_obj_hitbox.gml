@@ -44,6 +44,11 @@ if (other.team != team && collision_line(x, y, other.x, other.y, obj_wall, false
 		audio_play_sound(snd_dies, 1, false);
 		spawning = spawntime;
 		global.hitstop = 20;
+		if (deaths == global.firstto) {
+			global.hitstop += 120;
+			ultradies = audio_play_sound(snd_dies, 1, false);
+			audio_sound_pitch(ultradies, 20/120);
+		}
 		spawnpoint = instance_furthest(other.owner.x, other.owner.y, obj_respawn);
 		invul = invultime;
 		
