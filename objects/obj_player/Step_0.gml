@@ -49,3 +49,6 @@ if (global.pressed[gamepad][input.PA]){
 if (global.down[gamepad][input.PA]) {
 	heldparry = true;
 }
+
+hvec = right - left;
+vvec = down - up;

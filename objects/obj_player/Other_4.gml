@@ -60,6 +60,6 @@ switch shottype {
 		bulletspeed = 10;
 		gunrecovery = 40;
 		gunreload = 50;
-		shotactive = 60;
+		shotactive = 40;
 		break;
 }

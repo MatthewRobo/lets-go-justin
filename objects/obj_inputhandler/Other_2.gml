@@ -24,6 +24,7 @@ global.gpnum = 12;
 global.gp = array_create(global.gpnum, -99);
 
 global.shots = array_create(PLAYERS, 0);
+global.shots[1] = shot.length - 1;
 global.lookup = array_create(PLAYERS, GP+KB);
 
 // global.INPUTS[player][input]
