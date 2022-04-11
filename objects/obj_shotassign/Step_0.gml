@@ -1,8 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-shotcount = 7;
-
 pads = "";
 
 for (var p = 0; p < PLAYERS; p++;)
@@ -22,8 +20,8 @@ for (var p = 0; p < PLAYERS; p++;)
 			audio_play_sound(snd_parry,0,0);
 		}
 	}
-	if (global.shots[p] < 0) global.shots[p] += shotcount;
-	global.shots[p] = global.shots[p] mod shotcount;
+	if (global.shots[p] < 0) global.shots[p] += shot.length;
+	global.shots[p] = global.shots[p] mod shot.length;
 }
 
 if (ready[0] && ready[1]) room_goto_next();

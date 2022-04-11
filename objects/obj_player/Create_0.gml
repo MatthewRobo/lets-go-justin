@@ -9,13 +9,14 @@ enum status {
 }
 
 enum shot {
-	bullet,
+	bullet = 0,
 	shotgun,
 	wallbang,
 	whiffpunisher,
 	booster,
 	trailer,
-	grenade
+	grenade,
+	length
 }
 
 state = status.idle;

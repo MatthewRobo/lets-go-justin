@@ -5,7 +5,6 @@ if (global.hitstop <= 0) {
 	x += hsp;
 	y += vsp;
 	
-	
 	if position_meeting(x, y, obj_wall) {
 		image_xscale = 2;
 		image_yscale = 2;
