@@ -10,8 +10,8 @@ xdraw = 1344 / 2;
 ydraw = 120;
 
 
-draw_text(xdraw, ydraw, "Player 1");
-draw_text(xdraw - 256, ydraw, "Controller");
+draw_text(xdraw - 256, ydraw, "Player 1");
+draw_text(xdraw + 000, ydraw, "Controller");
 draw_text(xdraw + 256, ydraw, "Player 2");
 
 ydraw += 120;
@@ -30,7 +30,16 @@ for (var i = 0; i < GP+KB; i++;)
 		} else {
 			label = "Keyboard " + string(i mod KB + 1);
 		}
-		draw_text(xdraw + 256 * position[i], ydraw, label);
+		posdraw = position[i];
+		switch position[i] {
+		case 0: posdraw = -1;
+		break;
+		case 1: posdraw = 1;
+		break;
+		case -1: posdraw = 0;
+		break;
+		}
+		draw_text(xdraw + 256 * posdraw, ydraw, label);
 		ydraw += 60;
 	}
 }

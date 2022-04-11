@@ -7,12 +7,12 @@ for (var i = 0; i < GP+KB; i++;)
 {
 	if global.pressed[i][input.L] {
 		if (position[i] == -99) position[i] = -1;
-		else position[i]--;
+		else position[i]++;
 		audio_play_sound(snd_shield,0,0);
 	}
 	if global.pressed[i][input.R] {
 		if (position[i] == -99) position[i] = -1;
-		else position[i]++;
+		else position[i]--;
 		audio_play_sound(snd_shield,0,0);
 	}
 	
