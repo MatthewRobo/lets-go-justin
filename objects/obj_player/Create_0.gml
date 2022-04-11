@@ -23,6 +23,7 @@ coyote = 5;
 
 team = 0;
 teamstr = "";
+gamepad = 0;
 spawnpoint = obj_respawn;
 
 deaths = 0;

@@ -3,33 +3,36 @@
 
 draw_set_colour(c_white);
 
-xdraw = 1366 / 2;
+xdraw = 1344 / 2;
 ydraw = 120;
 
 
-draw_text(xdraw - 256, ydraw, "Player 1");
-draw_text(xdraw, ydraw, "Controller");
+draw_text(xdraw, ydraw, "Player 1");
+draw_text(xdraw - 256, ydraw, "Controller");
 draw_text(xdraw + 256, ydraw, "Player 2");
 
 ydraw += 120;
 
 
-for (var i = 0; i < global.gpnum; i++;)
+for (var i = 0; i < GP+KB; i++;)
 {
-	if (global.gp[i] != -99) {
-		/*
-		draw_primitive_begin(pr_trianglelist);
-		draw_vertex(xdraw, ydraw);
-		draw_vertex(xdraw + 256 * global.gp[i], ydraw-20);
-		draw_vertex(xdraw + 256 * global.gp[i], ydraw+22);
-		draw_primitive_end();
-		draw_circle(xdraw + 256 * global.gp[i], ydraw, 20,0);
-		*/
-		draw_text(xdraw + 256 * global.gp[i], ydraw, "Gamepad " + string(i));
+	draw_set_colour(c_white);
+	if (position[i] != -99) {
+		for (p = 0; p < PLAYERS; p++) {
+			if (ready[p] == i) draw_set_colour(c_red);
+		}
+		label = "";
+		if (i < GP) {
+			label = "Gamepad " + string(i + 1);
+		} else {
+			label = "Keyboard " + string(i mod KB + 1);
+		}
+		draw_text(xdraw + 256 * position[i], ydraw, label);
 		ydraw += 60;
 	}
-	
 }
+
+draw_set_colour(c_white);
 
 draw_set_font(Font1);
 draw_set_halign(fa_center);

@@ -12,6 +12,7 @@
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"order":3,},
     {"id":{"name":"obj_dust","path":"objects/obj_dust/obj_dust.yy",},"order":6,},
     {"id":{"name":"spr_burst","path":"sprites/spr_burst/spr_burst.yy",},"order":16,},
+    {"id":{"name":"Init","path":"rooms/Init/Init.yy",},"order":7,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":1,},
     {"id":{"name":"spr_p2idle","path":"sprites/spr_p2idle/spr_p2idle.yy",},"order":5,},
     {"id":{"name":"spr_spark","path":"sprites/spr_spark/spr_spark.yy",},"order":6,},
@@ -96,6 +97,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"Init","path":"rooms/Init/Init.yy",},},
     {"roomId":{"name":"Pad_Select","path":"rooms/Pad_Select/Pad_Select.yy",},},
     {"roomId":{"name":"Shot_Select","path":"rooms/Shot_Select/Shot_Select.yy",},},
     {"roomId":{"name":"Room_Select","path":"rooms/Room_Select/Room_Select.yy",},},

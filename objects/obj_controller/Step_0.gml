@@ -7,18 +7,18 @@ if (global.hitstop >= 0) {
 
 start = false;
 select = false;
-for (var i = 0; i < global.gpnum; i++;)
+for (var i = 0; i < GP+KB; i++;)
 {
 
 	if gamepad_button_check(i, gp_start) 
 	|| keyboard_check(vk_enter) 
 	|| keyboard_check(vk_escape) 
-	|| global.down[0][input.ST] {
+	|| global.down[i][input.ST] {
 		start = true;
 	} 
 	if gamepad_button_check(i, gp_select) 
 	|| keyboard_check(vk_backspace)
-	|| global.down[0][input.SE] {
+	|| global.down[i][input.SE] {
 		select = true;
 	}
 

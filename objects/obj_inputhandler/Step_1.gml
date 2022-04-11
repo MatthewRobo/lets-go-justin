@@ -9,35 +9,83 @@ for (var i = 0; i < global.gpnum; i++;)
 }
 
 
-for (var p = 0; p < PLAYERS; p++) {
+
+for (var d = 0; d < GP+KB; d++) {
 	for (var i = 0; i < INPUTS; i++) {
-		global.last[p][i] = global.down[p][i];
-		if (p == 0) {
+		global.last[d][i] = global.down[d][i];
+		if (d < GP) {
 			switch i {
-				case input.L: global.down[0][input.L] = keyboard_check(ord("S"));
+				case input.L: global.down[d][input.L] = gamepad_button_check(d, gp_padl);
 					break;
-				case input.D: global.down[0][input.D] = keyboard_check(ord("D"));
+				case input.D: global.down[d][input.D] = gamepad_button_check(d, gp_padd);
 					break;
-				case input.U: global.down[0][input.U] = keyboard_check(ord("E"));
+				case input.U: global.down[d][input.U] = gamepad_button_check(d, gp_padu);
 					break;
-				case input.R: global.down[0][input.R] = keyboard_check(ord("F"));
+				case input.R: global.down[d][input.R] = gamepad_button_check(d, gp_padr);
 					break;
-				case input.ST: global.down[0][input.ST] = keyboard_check(ord("Q"));
+				case input.ST: global.down[d][input.ST] = gamepad_button_check(d, gp_start);
 					break;
-				case input.SE: global.down[0][input.SE] = keyboard_check(ord("W"));
+				case input.SE: global.down[d][input.SE] = gamepad_button_check(d, gp_select);
 					break;
-				case input.JU: global.down[0][input.JU] = keyboard_check(ord("K"));
+				case input.JU: global.down[d][input.JU] = gamepad_button_check(d, gp_face1) || gamepad_button_check(d, gp_shoulderl);
 					break;
-				case input.SL: global.down[0][input.SL] = keyboard_check(ord("J"));
+				case input.SL: global.down[d][input.SL] = gamepad_button_check(d, gp_face3);
 					break;
-				case input.SH: global.down[0][input.SH] = keyboard_check(ord("L"));
+				case input.SH: global.down[d][input.SH] = gamepad_button_check(d, gp_face4) || gamepad_button_check(d, gp_shoulderrb);
 					break;
-				case input.PA: global.down[0][input.PA] = keyboard_check(vk_space);
+				case input.PA: global.down[d][input.PA] = gamepad_button_check(d, gp_face2) || gamepad_button_check(d, gp_shoulderr);
 					break;
 			}
 		}
-		global.pressed[p][i] = global.down[p][i] && !global.last[p][i];
-		global.released[p][i] = !global.down[p][i] && global.last[p][i];
+		else if (d == GP + 0) {
+			switch i {
+				case input.L: global.down[d][input.L] = keyboard_check(ord("S"));
+					break;
+				case input.D: global.down[d][input.D] = keyboard_check(ord("D"));
+					break;
+				case input.U: global.down[d][input.U] = keyboard_check(ord("E"));
+					break;
+				case input.R: global.down[d][input.R] = keyboard_check(ord("F"));
+					break;
+				case input.ST: global.down[d][input.ST] = keyboard_check(ord("Q"));
+					break;
+				case input.SE: global.down[d][input.SE] = keyboard_check(ord("W"));
+					break;
+				case input.JU: global.down[d][input.JU] = keyboard_check(ord("K"));
+					break;
+				case input.SL: global.down[d][input.SL] = keyboard_check(ord("J"));
+					break;
+				case input.SH: global.down[d][input.SH] = keyboard_check(ord("L"));
+					break;
+				case input.PA: global.down[d][input.PA] = keyboard_check(vk_space);
+					break;
+			}
+		} else if (d == GP + 1) {
+			switch i {
+				case input.L: global.down[d][input.L] = keyboard_check(vk_left);
+					break;
+				case input.D: global.down[d][input.D] = keyboard_check(vk_down);
+					break;
+				case input.U: global.down[d][input.U] = keyboard_check(vk_up);
+					break;
+				case input.R: global.down[d][input.R] = keyboard_check(vk_right);
+					break;
+				case input.ST: global.down[d][input.ST] = keyboard_check(vk_enter);
+					break;
+				case input.SE: global.down[d][input.SE] = keyboard_check(vk_backspace);
+					break;
+				case input.JU: global.down[d][input.JU] = keyboard_check(vk_numpad5);
+					break;
+				case input.SL: global.down[d][input.SL] = keyboard_check(vk_numpad4);
+					break;
+				case input.SH: global.down[d][input.SH] = keyboard_check(vk_numpad6);
+					break;
+				case input.PA: global.down[d][input.PA] = keyboard_check(vk_numpad0);
+					break;
+			}
+		}
+		global.pressed[d][i] = global.down[d][i] && !global.last[d][i];
+		global.released[d][i] = !global.down[d][i] && global.last[d][i];
 	}
 }
 

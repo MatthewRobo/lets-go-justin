@@ -3,22 +3,40 @@
 
 pads = "";
 
-for (var i = 0; i < global.gpnum; i++;)
+for (var i = 0; i < GP+KB; i++;)
 {
-	if gamepad_button_check_pressed(i, gp_padl) {
-		if (global.gp[i] == -99) global.gp[i] = -1;
-		else global.gp[i]--;
+	if global.pressed[i][input.L] {
+		if (position[i] == -99) position[i] = -1;
+		else position[i]--;
 	}
-	if gamepad_button_check_pressed(i, gp_padr) {
-		if (global.gp[i] == -99) global.gp[i] = -1;
-		else global.gp[i]++;
+	if global.pressed[i][input.R] {
+		if (position[i] == -99) position[i] = -1;
+		else position[i]++;
 	}
-
-	if gamepad_button_check_pressed(i, gp_start)
-	|| keyboard_check_pressed(vk_enter) 
-	|| global.pressed[0][input.ST]{
-		room_goto_next();
+	
+	if (position[i] != -99) {
+		if (position[i] < -1) position[i] += 3;
+		position[i] = ((position[i] + 1) mod 3) - 1;
 	}
-	pads += string(global.gp[i]) + "\n";
+	if global.pressed[i][input.ST] {
+		if (position[i] >= 0 && position[i] < PLAYERS) {
+			for (p = 0; p < GP+KB; p++) {
+				if (position[p] == position[i] && p != i) {
+					ready[p] = -99;
+					position[p] = -1;
+				}
+			}
+			global.lookup[position[i]] = i;
+			ready[position[i]] = i;
+		}
+	}
+	
+	for (p = 0; p < PLAYERS; p++) {
+		if (ready[p] == i) position[i] = p;
+	}
 }
 
+if (ready[0] > -99 && ready[1] > -99) room_goto_next();
+show_debug_message("ready" + string(ready));
+show_debug_message(position);
+show_debug_message(global.lookup);
