@@ -9,9 +9,6 @@ for (var i = 0; i < global.gpnum; i++;)
 	if (global.gp[i] == team) gamepad = i;
 }
 
-recovery = obj_controller.roundstart;
-state = status.recovery;
-
 switch shottype {
 	case shot.bullet:
 		ammo = 1;

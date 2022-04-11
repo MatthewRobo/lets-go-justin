@@ -114,4 +114,3 @@ boom.image_yscale = 2.6;
 scale = 1.5;
 image_xscale = scale;
 image_yscale = scale;
-y -= 16;

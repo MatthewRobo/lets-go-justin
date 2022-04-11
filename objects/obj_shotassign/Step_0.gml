@@ -17,6 +17,7 @@ for (var p = 0; p < PLAYERS; p++;)
 		}
 		if global.pressed[i][input.ST] {
 			ready[p] = true;
+			audio_play_sound(snd_parry,0,0);
 		}
 	}
 	if (global.shots[p] < 0) global.shots[p] += shotcount;

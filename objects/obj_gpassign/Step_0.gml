@@ -28,6 +28,7 @@ for (var i = 0; i < GP+KB; i++;)
 			}
 			global.lookup[position[i]] = i;
 			ready[position[i]] = i;
+			audio_play_sound(snd_parry,0,0);
 		}
 	}
 	
