@@ -5,6 +5,9 @@ gamepad = 0;
 gamepad = global.lookup[team];
 shottype = global.shots[team];
 
+recovery = obj_controller.roundstart;
+state = status.recovery;
+
 switch shottype {
 	case shot.bullet:
 		ammo = 1;

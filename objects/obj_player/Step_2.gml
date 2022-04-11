@@ -277,8 +277,8 @@ if (global.hitstop <= 0) {
 						attack.hsp = lengthdir_x(attack.spd, attack.direction);
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						attack.vsp -= 6;
-						attack.vsp += vsp / 6;
-						attack.hsp += hsp / 6;
+						attack.vsp += vsp / 4;
+						attack.hsp += hsp / 4;
 						break;
 				}
 

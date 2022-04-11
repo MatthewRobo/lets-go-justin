@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 roundstart = 80;
-global.hitstop = roundstart;
+global.hitstop = 0;
 restart = 0;
 quit = 0;
 global.firstto = 30;
