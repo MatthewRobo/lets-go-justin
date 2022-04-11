@@ -50,4 +50,18 @@ switch shottype {
 		shotactive = 1;
 		recoil = -18;
 		break;
+	case shot.trailer:
+		ammo = 1;
+		ammomax = 1;
+		bulletspeed = 20;
+		gunrecovery = 35;
+		gunreload = 90;
+		shotactive = 20;
+	case shot.grenade:
+		ammo = 1;
+		ammomax = 1;
+		bulletspeed = 10;
+		gunrecovery = 40;
+		gunreload = 50;
+		shotactive = 60;
 }

@@ -242,6 +242,43 @@ if (global.hitstop <= 0) {
 						attack.hsp = lengthdir_x(attack.spd, attack.direction);
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						break;
+					case shot.trailer:
+						spark = instance_create_layer(x, y, "parryfx", obj_parry);
+						spark.owner = id;
+						spark.direction = direction + 180;
+						spark.x += lengthdir_x(32, direction);
+						spark.y += lengthdir_y(32, direction);
+						spark.image_angle = spark.direction;
+						audio_play_sound(snd_shoot, 0, false);
+						attack = instance_create_layer(x, y, "hitboxes", obj_trailer);
+						attack.owner = self;
+						attack.timer = shotactive;
+						attack.team = team;
+						attack.direction = direction;
+						attack.spd = bulletspeed;
+						attack.hsp = lengthdir_x(attack.spd, attack.direction);
+						attack.vsp = lengthdir_y(attack.spd, attack.direction);
+						break;
+					case shot.grenade:
+						spark = instance_create_layer(x, y, "parryfx", obj_parry);
+						spark.owner = id;
+						spark.direction = direction + 180;
+						spark.x += lengthdir_x(32, direction);
+						spark.y += lengthdir_y(32, direction);
+						spark.image_angle = spark.direction;
+						audio_play_sound(snd_shoot, 0, false);
+						attack = instance_create_layer(x, y, "hitboxes", obj_grenade);
+						attack.owner = self;
+						attack.timer = shotactive;
+						attack.team = team;
+						attack.direction = direction;
+						attack.spd = bulletspeed;
+						attack.hsp = lengthdir_x(attack.spd, attack.direction);
+						attack.vsp = lengthdir_y(attack.spd, attack.direction);
+						attack.vsp -= 6;
+						attack.vsp += vsp / 6;
+						attack.hsp += hsp / 6;
+						break;
 				}
 
 				recovery = gunrecovery;

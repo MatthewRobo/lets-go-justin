@@ -89,4 +89,6 @@ for (var d = 0; d < GP+KB; d++) {
 	}
 }
 
+var count = 0;
+
 

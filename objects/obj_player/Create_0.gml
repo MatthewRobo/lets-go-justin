@@ -13,7 +13,9 @@ enum shot {
 	shotgun,
 	wallbang,
 	whiffpunisher,
-	booster
+	booster,
+	trailer,
+	grenade
 }
 
 state = status.idle;

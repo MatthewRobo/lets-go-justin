@@ -11,32 +11,20 @@ if (other.team != team && collision_line(x, y, other.x, other.y, obj_wall, false
 		spark.direction = other.direction + 180;
 		spark.image_angle = spark.direction;
 		audio_play_sound(snd_parry, 1, false);
-		switch (other.object_index) {
-		case obj_slash:
+		if (other.object_index == obj_slash) {
 			other.owner.state = status.parried;
 			other.owner.sprite_index = spr_recovery;
 			other.owner.recovery = parrystop;
 			instance_destroy(other);
 			global.hitstop = 16;
-			break;
-		case obj_bullet:
+		}
+		else {
+
 			reflected = other.owner;
-			counterspeed = other.spd;
+			counterspeed = other.spd < 32 ? 32 : other.spd;
 			instance_destroy(other);
-			global.hitstop = 9 * counterspeed / bulletspeed;
-			break;
-		case obj_shotgun:
-			reflected = other.owner;
-			counterspeed = other.spd;
-			instance_destroy(other);
-			global.hitstop = 9 * counterspeed / bulletspeed;
-			break;
-		case obj_wallbang:
-			reflected = other.owner;
-			counterspeed = other.spd;
-			instance_destroy(other);
-			global.hitstop = 9 * counterspeed / bulletspeed;
-			break;
+			global.hitstop = 9 * counterspeed / 32;
+
 		}
 	} else if (invul <= 0) {
 		deaths += 1;
@@ -52,7 +40,7 @@ if (other.team != team && collision_line(x, y, other.x, other.y, obj_wall, false
 		spawnpoint = instance_furthest(other.owner.x, other.owner.y, obj_respawn);
 		invul = invultime;
 		
-		for (i = 0; i < 500; i++) {
+		for (i = 0; i < 250; i++) {
 			trail = instance_create_layer(x, y, "trails", obj_glitter);
 			trail.image_blend = color;
 			//trail.speed = random_range(other.spd - 2, other.spd + 2);
