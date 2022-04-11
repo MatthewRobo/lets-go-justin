@@ -9,3 +9,4 @@ for (i = 0; i < PLAYERS; i++) {
 	}
 }
 
+readypos = array_create(GP+KB, false);

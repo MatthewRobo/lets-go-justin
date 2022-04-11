@@ -8,12 +8,12 @@ for (var i = 0; i < GP+KB; i++;)
 	if global.pressed[i][input.L] {
 		if (position[i] == -99) position[i] = -1;
 		else position[i]++;
-		audio_play_sound(snd_shield,0,0);
+		if (!readypos[i]) audio_play_sound(snd_shield,0,0);
 	}
 	if global.pressed[i][input.R] {
 		if (position[i] == -99) position[i] = -1;
 		else position[i]--;
-		audio_play_sound(snd_shield,0,0);
+		if (!readypos[i]) audio_play_sound(snd_shield,0,0);
 	}
 	
 	if (position[i] != -99) {
@@ -26,10 +26,12 @@ for (var i = 0; i < GP+KB; i++;)
 				if (position[p] == position[i] && p != i) {
 					ready[p] = -99;
 					position[p] = -1;
+					readypos[p] = false;
 				}
 			}
 			global.lookup[position[i]] = i;
 			ready[position[i]] = i;
+			readypos[i] = true;
 			audio_play_sound(snd_parry,0,0);
 		}
 	}

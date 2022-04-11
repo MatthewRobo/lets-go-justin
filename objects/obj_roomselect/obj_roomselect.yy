@@ -23,8 +23,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "controllers",
-    "path": "folders/Objects/controllers.yy",
+    "name": "menus",
+    "path": "folders/Objects/controllers/menus.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_roomselect",
