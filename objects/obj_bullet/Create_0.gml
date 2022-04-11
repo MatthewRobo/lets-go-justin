@@ -6,3 +6,4 @@ event_inherited();
 
 timer = 999;
 grav = 0;
+maxspd = 40;

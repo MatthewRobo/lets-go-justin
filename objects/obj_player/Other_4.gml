@@ -4,10 +4,6 @@
 gamepad = 0;
 gamepad = global.lookup[team];
 shottype = global.shots[team];
-for (var i = 0; i < global.gpnum; i++;)
-{
-	if (global.gp[i] == team) gamepad = i;
-}
 
 switch shottype {
 	case shot.bullet:
@@ -53,10 +49,11 @@ switch shottype {
 	case shot.trailer:
 		ammo = 1;
 		ammomax = 1;
-		bulletspeed = 40;
+		bulletspeed = 16;
 		gunrecovery = 35;
 		gunreload = 90;
-		shotactive = 5;
+		shotactive = 25;
+		break;
 	case shot.grenade:
 		ammo = 1;
 		ammomax = 1;
@@ -64,4 +61,5 @@ switch shottype {
 		gunrecovery = 40;
 		gunreload = 50;
 		shotactive = 60;
+		break;
 }
