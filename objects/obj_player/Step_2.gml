@@ -152,7 +152,8 @@ if (global.hitstop <= 0) {
 		if (shoot) {
 			invul = 1;
 			if (ammo > 0) {
-
+				hsp += lengthdir_x(-recoil, direction);
+				vsp += lengthdir_y(-recoil, direction);
 				switch shottype {
 					case shot.bullet:
 						spark = instance_create_layer(x, y, "parryfx", obj_parry);
@@ -236,14 +237,13 @@ if (global.hitstop <= 0) {
 						attack.owner = self;
 						attack.timer = shotactive;
 						attack.team = team;
-						attack.direction = direction;
-						attack.spd = bulletspeed;
+						attack.direction = direction + 180;
+						attack.spd = point_distance(0,0,hsp,vsp);
 						attack.hsp = lengthdir_x(attack.spd, attack.direction);
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						break;
 				}
-				hsp += lengthdir_x(-recoil, direction);
-				vsp += lengthdir_y(-recoil, direction);
+
 				recovery = gunrecovery;
 				ammo--;
 				state = status.recovery;
