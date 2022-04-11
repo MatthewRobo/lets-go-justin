@@ -4,6 +4,8 @@
 position = array_create(GP+KB,-99);
 ready = array_create(PLAYERS,-99);
 for (i = 0; i < PLAYERS; i++) {
-	global.lookup[i] = GP+KB;
+	if (global.lookup[i] != GP+KB) {
+		position[global.lookup[i]] = i;
+	}
 }
 

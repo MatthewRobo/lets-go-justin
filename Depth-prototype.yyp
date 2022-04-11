@@ -49,7 +49,6 @@
     {"id":{"name":"spr_slash","path":"sprites/spr_slash/spr_slash.yy",},"order":1,},
     {"id":{"name":"snd_shoot","path":"sounds/snd_shoot/snd_shoot.yy",},"order":4,},
     {"id":{"name":"snd_parry","path":"sounds/snd_parry/snd_parry.yy",},"order":2,},
-    {"id":{"name":"spr_spark21","path":"sprites/spr_spark21/spr_spark21.yy",},"order":12,},
     {"id":{"name":"Room4","path":"rooms/Room4/Room4.yy",},"order":5,},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},"order":2,},
     {"id":{"name":"Font2","path":"fonts/Font2/Font2.yy",},"order":1,},
