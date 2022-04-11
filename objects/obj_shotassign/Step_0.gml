@@ -11,9 +11,11 @@ for (var p = 0; p < PLAYERS; p++;)
 	if (!ready[p]) {
 		if global.pressed[i][input.L] {
 			global.shots[p]--;
+			audio_play_sound(snd_shield,0,0);
 		}
 		if global.pressed[i][input.R] {
 			global.shots[p]++;
+			audio_play_sound(snd_shield,0,0);
 		}
 		if global.pressed[i][input.ST] {
 			ready[p] = true;
