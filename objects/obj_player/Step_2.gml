@@ -95,8 +95,8 @@ if (global.hitstop <= 0) {
 
 	switch (state) {
 	case status.idle:
-		if (hvec < 0) image_xscale = -scale;
-		else if (hvec > 0) image_xscale = scale;
+		if (left && !right) image_xscale = -scale;
+		else if (right && !left) image_xscale = scale;
 		if (jump) {
 			if (grounded > 0) {
 				vsp = -jumpsp;
@@ -126,10 +126,10 @@ if (global.hitstop <= 0) {
 			vsp -= thrust;
 			airjumps--;
 		}
-		if ((hvec < 0 && vvec <= 0) || (vvec > 0 && grounded < 3)) {
+		if (dir == 4 || dir == 7 || (dir == 1 && grounded < 3) ) {
 			hsp = hsp > -maxspeed ? hsp - accel : hsp + 1;
-		} else if ((hvec > 0 && vvec <= 0) || (vvec > 0 && grounded < 3)) {
-			hsp = hsp <  maxspeed ? hsp + accel : hsp - 1;
+		} else if (dir == 6 || dir == 9 || (dir == 3 && grounded < 3)  ) {
+			hsp = hsp <  maxspeed ? hsp + accel :  hsp - 1;
 		}
 		if (vsp < 0 && uprelease) {
 			vsp /= 2; // cut player's jump short if player releases early
@@ -335,7 +335,7 @@ if (global.hitstop <= 0) {
 	if (state != status.parried) {
 
 		// *** PHYSICS AND COLLISION ***
-		if ((grounded >= 3 && (vvec = 1) ) || hvec == 0 || state != status.idle || sign(hvec) == -sign(hsp)) {
+		if ((grounded >= 3 && (dir == 1 || dir == 3) ) || dir == 2 || dir == 5 || dir == 8 || state != status.idle) {
 			hsp = abs(hsp) <= deccel ? 0 : hsp - sign(hsp) * deccel;
 		}
 		if place_meeting(x + hsp, y, obj_wall) {
