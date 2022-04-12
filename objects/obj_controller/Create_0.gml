@@ -7,4 +7,9 @@ restart = 0;
 quit = 0;
 global.firstto = 30;
 
+if (global.mode == gamemode.training) {
+	roundstart = 0;
+	global.firstto = 999;
+}
+
 audio_play_sound(snd_dies,0,0);

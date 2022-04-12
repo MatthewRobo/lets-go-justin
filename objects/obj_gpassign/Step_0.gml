@@ -36,6 +36,16 @@ for (var i = 0; i < GP+KB; i++;)
 		}
 	}
 	
+	if global.pressed[i][input.SE] {
+		global.mode = gamemode.training;
+		global.lookup[0] = i;
+		if (global.lookup[1] < 0) {
+			global.lookup[1] = GP+KB;
+		}
+		audio_play_sound(snd_parry,0,0)
+		room_goto_next();
+	}
+	
 	for (p = 0; p < PLAYERS; p++) {
 		if (ready[p] == i) position[i] = p;
 	}

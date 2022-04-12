@@ -17,7 +17,11 @@ enum input {
 	SL,
 	SH,
 	PA
-	
+}
+
+enum gamemode {
+	versus,
+	training
 }
 
 global.gpnum = 12;
@@ -32,5 +36,7 @@ global.down     = array_create(GP+KB+1,array_create(INPUTS,0));
 global.last     = array_create(GP+KB+1,array_create(INPUTS,0));
 global.pressed  = array_create(GP+KB+1,array_create(INPUTS,0));
 global.released = array_create(GP+KB+1,array_create(INPUTS,0));
+
+global.mode = gamemode.versus;
 
 room_goto_next();

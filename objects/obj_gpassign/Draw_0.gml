@@ -7,7 +7,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 
 xdraw = room_width / 2;
-ydraw = 120;
+ydraw = 60;
 
 
 draw_text(xdraw - 256, ydraw, "Player 1");
@@ -48,4 +48,5 @@ draw_set_colour(c_white);
 
 draw_set_font(Font1);
 draw_set_halign(fa_center);
-draw_text(xdraw, 600, "Press left/right to select\nPress start/enter when ready");
+draw_set_valign(fa_bottom);
+draw_text(xdraw, room_height - 20, "Press left/right to select\nPress start when ready\nPress select for training mode");

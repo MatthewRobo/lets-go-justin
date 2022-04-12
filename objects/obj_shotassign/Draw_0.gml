@@ -4,11 +4,26 @@
 draw_set_colour(c_white);
 
 xdraw = room_width / 2;
-ydraw = room_height / 2;
+
 
 draw_set_font(Font1);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
+
+ydraw = room_height / 8;
+
+switch global.mode {
+	case gamemode.versus:
+		text = "Local VS";
+		break;
+	case gamemode.training:
+		text = "Training Mode";
+		break;
+}
+draw_text(xdraw, ydraw, text);
+
+
+ydraw = room_height / 2;
 
 //for (p = -1; p < PLAYERS; p++) {
 for (p = -1; p < 2; p++) {

@@ -21,7 +21,12 @@ for (var i = 0; i < GP+KB; i++;)
 	|| global.down[i][input.SE] {
 		select = true;
 	}
-
+	
+	if (global.mode == gamemode.training) {
+		if (global.pressed[i][input.SE]) {
+			room_restart();
+		}
+	}
 }
 
 if (start) quit++;
@@ -35,6 +40,9 @@ if (restart > 45) {
 if (quit > 45) {
 	room_goto(Pad_Select);
 }
+
+
+
 
 roundstart--;
 if (roundstart == 0) audio_play_sound(snd_spawn,0,0);
