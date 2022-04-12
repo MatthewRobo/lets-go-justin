@@ -12,5 +12,5 @@ for (i = 0; i < 360; i += 45) {
 		attack.spd = 12;
 		attack.hsp = lengthdir_x(attack.spd, attack.direction);
 		attack.vsp = lengthdir_y(attack.spd, attack.direction);
-		attack.timer = 4;
+		attack.timer = 6;
 }

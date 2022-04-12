@@ -62,7 +62,7 @@ switch shottype {
 		ammomax = 1;
 		bulletspeed = 10;
 		gunrecovery = 40;
-		gunreload = 50;
+		gunreload = 40;
 		shotactive = 40;
 		break;
 }
