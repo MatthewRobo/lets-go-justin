@@ -15,11 +15,7 @@ if (global.hitstop <= 0) {
 	y += vsp;
 }
 
-trail = instance_create_layer(x, y, "trails", obj_bullettrail);
-trail.image_angle = direction;
-trail.image_blend = owner.color;
-trail.image_xscale = image_xscale;
-trail.image_yscale = image_yscale;
+
 
 
 if (global.hitstop <= 0) {
@@ -27,5 +23,10 @@ if (global.hitstop <= 0) {
 	timer--;
 	vsp += lengthdir_y(grav, gravdir);
 	hsp += lengthdir_x(grav, gravdir);
+	trail = instance_create_layer(x, y, "trails", obj_bullettrail);
+	trail.image_angle = direction;
+	trail.image_blend = owner.color;
+	trail.image_xscale = image_xscale;
+	trail.image_yscale = image_yscale;
 
 }
