@@ -260,6 +260,16 @@ if (global.hitstop <= 0) {
 							}
 						}
 						break;
+					case shot.sin:
+						attack = instance_create_layer(x, y, "hitboxes", obj_sin);
+						attack.owner = self;
+						attack.team = team;
+						attack.direction = direction;
+						attack.spd = bulletspeed;
+						attack.hsp = lengthdir_x(attack.spd, attack.direction);
+						attack.vsp = lengthdir_y(attack.spd, attack.direction);
+						break;
+					
 				}
 
 				recovery = gunrecovery;

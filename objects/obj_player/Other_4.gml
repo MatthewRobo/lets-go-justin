@@ -10,6 +10,7 @@ enum shot {
 	trailer,
 	grenade,
 	geyser,
+	sin,
 	length
 }
 
@@ -75,6 +76,11 @@ switch shottype {
 		gunrecovery = 20;
 		gunreload = 37;
 		shotactive = 8;
+	case shot.sin:
+		bulletspeed = 0;
+		gunrecovery = 30;
+		gunreload = 40;
+		break;
 }
 
 ammo = ammomax;

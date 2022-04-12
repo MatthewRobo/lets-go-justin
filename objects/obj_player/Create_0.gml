@@ -54,7 +54,7 @@ bulletspeed = 24;
 bulletmaxspeed = bulletspeed;
 gunrecovery = 22;
 gunreload = 38;
-shotactive = 999;
+shotactive = 1080;
 
 slashspeed = 16;
 slashactive = 5;

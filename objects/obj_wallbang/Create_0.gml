@@ -6,3 +6,4 @@ event_inherited();
 
 grav = 0.5;
 maxsize = 2.5;
+maxspd = 40;

@@ -4,8 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
-timer = 1080;
-grav = 0;
-gravdir = 270;
-maxspd = spd;
-
+maxspd = 10;

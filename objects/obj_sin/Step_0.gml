@@ -4,8 +4,6 @@
 // Inherit the parent event
 event_inherited();
 
-timer = 1080;
-grav = 0;
-gravdir = 270;
-maxspd = spd;
-
+spd = lerp(0, maxspd, abs(dsin(4 * timer)));
+hsp = lengthdir_x(spd, direction);
+vsp = lengthdir_y(spd, direction);
