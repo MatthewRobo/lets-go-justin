@@ -1,6 +1,18 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+enum shot {
+	bullet = 0,
+	shotgun,
+	wallbang,
+	whiffpunisher,
+	booster,
+	trailer,
+	grenade,
+	geyser,
+	length
+}
+
 gamepad = 0;
 gamepad = global.lookup[team];
 shottype = global.shots[team];
@@ -10,14 +22,11 @@ state = status.recovery;
 
 switch shottype {
 	case shot.bullet:
-		ammo = 1;
 		bulletspeed = 32;
 		gunrecovery = 22;
 		gunreload = 38;
 		break;
 	case shot.shotgun:
-		ammo = 1;
-		ammomax = 1;
 		bulletspeed = 28;
 		gunrecovery = 28;
 		gunreload = 45;
@@ -25,7 +34,6 @@ switch shottype {
 		recoil = 6;
 		break;
 	case shot.wallbang:
-		ammo = 1;
 		bulletspeed = -5;
 		bulletmaxspeed = 40;
 		gunrecovery = 50;
@@ -33,7 +41,6 @@ switch shottype {
 		shotactive = 240;
 		break;
 	case shot.whiffpunisher:
-		ammo = 2;
 		ammomax = 2;
 		bulletspeed = 32;
 		gunrecovery = 6;
@@ -41,7 +48,6 @@ switch shottype {
 		shotactive = 8;
 		break;
 	case shot.booster:
-		ammo = 5;
 		ammomax = 5;
 		bulletspeed = 0;
 		gunrecovery = 0;
@@ -50,7 +56,6 @@ switch shottype {
 		recoil = -18;
 		break;
 	case shot.trailer:
-		ammo = 1;
 		ammomax = 1;
 		bulletspeed = 16;
 		gunrecovery = 35;
@@ -58,11 +63,18 @@ switch shottype {
 		shotactive = 25;
 		break;
 	case shot.grenade:
-		ammo = 1;
 		ammomax = 1;
 		bulletspeed = 10;
 		gunrecovery = 40;
 		gunreload = 40;
 		shotactive = 40;
 		break;
+	case shot.geyser:
+		ammomax = 2;
+		bulletspeed = 1;
+		gunrecovery = 17;
+		gunreload = 37;
+		shotactive = 8;
 }
+
+ammo = ammomax;

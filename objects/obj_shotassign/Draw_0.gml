@@ -30,13 +30,29 @@ for (p = -1; p < 2; p++) {
 	draw_set_colour(c_white);
 	text = "";
 	desc = "";
-	if (p < 0) text = "Marksman\n" +
-	                  "Shotgun\n" +
-	                  "Wallbanger\n" +
-	                  "Flicker\n" +
-	                  "Booster\n" +
-	                  "Wall\n" +
-	                  "Grenade";
+	if (p < 0) {
+		for (i = 0; i < shot.length; i++) {
+			switch i {
+				case shot.bullet: text += "Marksman"; 
+				break;
+				case shot.shotgun: text += "Shotgun"; 
+				break;
+				case shot.wallbang: text += "Wallbanger"; 
+				break;
+				case shot.whiffpunisher: text += "Flicker"; 
+				break;
+				case shot.booster: text += "Booster"; 
+				break;
+				case shot.trailer: text += "Wall"; 
+				break;
+				case shot.grenade: text += "Grenade"; 
+				break;
+				case shot.geyser: text += "Geyser"; 
+				break;
+			}
+			text += "\n";
+		}
+	}
 	else {
 		if (ready[p]) draw_set_colour(c_red);
 		
@@ -58,6 +74,8 @@ for (p = -1; p < 2; p++) {
 					case shot.trailer: desc += "Deadly wall.\nVery slow.";
 					break;
 					case shot.grenade: desc += "Has gravity.\nExplodes.";
+					break;
+					case shot.geyser: desc += "Hits far, then near.\nTwo ammo.";
 					break;
 				}
 			}

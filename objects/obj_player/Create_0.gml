@@ -8,17 +8,6 @@ enum status {
 	parried
 }
 
-enum shot {
-	bullet = 0,
-	shotgun,
-	wallbang,
-	whiffpunisher,
-	booster,
-	trailer,
-	grenade,
-	length
-}
-
 state = status.idle;
 shottype = shot.bullet;
 grounded = 5;

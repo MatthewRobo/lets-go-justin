@@ -160,10 +160,9 @@ if (global.hitstop <= 0) {
 				spark.x += lengthdir_x(32, direction);
 				spark.y += lengthdir_y(32, direction);
 				spark.image_angle = spark.direction;
+				audio_play_sound(snd_shoot, 0, false);
 				switch shottype {
 					case shot.bullet:
-
-						audio_play_sound(snd_shoot, 0, false);
 						attack = instance_create_layer(x, y, "hitboxes", obj_bullet);
 						attack.owner = self;
 						attack.team = team;
@@ -173,7 +172,6 @@ if (global.hitstop <= 0) {
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						break;
 					case shot.shotgun:
-						audio_play_sound(snd_shoot, 0, false);
 						for (i = -60; i <= 60; i += 15) {
 							attack = instance_create_layer(x, y, "hitboxes", obj_bullet);
 							attack.owner = self;
@@ -186,7 +184,6 @@ if (global.hitstop <= 0) {
 						}
 						break;
 					case shot.wallbang:
-						audio_play_sound(snd_shoot, 0, false);
 						attack = instance_create_layer(x, y, "hitboxes", obj_wallbang);
 						attack.owner = self;
 						attack.team = team;
@@ -199,7 +196,6 @@ if (global.hitstop <= 0) {
 						attack.timer = shotactive;
 						break;
 					case shot.whiffpunisher:
-						audio_play_sound(snd_shoot, 0, false);
 						attack = instance_create_layer(x, y, "hitboxes", obj_slash);
 						attack.owner = self;
 						attack.timer = shotactive;
@@ -211,7 +207,6 @@ if (global.hitstop <= 0) {
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						break;
 					case shot.booster:
-						audio_play_sound(snd_shoot, 0, false);
 						attack = instance_create_layer(x, y, "hitboxes", obj_anchor);
 						attack.owner = self;
 						attack.timer = shotactive;
@@ -220,7 +215,6 @@ if (global.hitstop <= 0) {
 						attack.spd = point_distance(0,0,hsp,vsp);
 						break;
 					case shot.trailer:
-						audio_play_sound(snd_shoot, 0, false);
 						attack = instance_create_layer(x, y, "hitboxes", obj_trailer);
 						attack.owner = self;
 						attack.timer = shotactive;
@@ -231,7 +225,6 @@ if (global.hitstop <= 0) {
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						break;
 					case shot.grenade:
-						audio_play_sound(snd_shoot, 0, false);
 						attack = instance_create_layer(x, y, "hitboxes", obj_grenade);
 						attack.owner = self;
 						attack.timer = shotactive;
@@ -243,6 +236,29 @@ if (global.hitstop <= 0) {
 						attack.vsp -= 6;
 						attack.vsp += vsp / 4;
 						attack.hsp += hsp / 4;
+						break;
+					case shot.geyser:
+						dist = ammo == ammomax ? 40 * 8 : 40 * 4;
+						if (collision_line(x, y, x + lengthdir_x(dist, direction), y + lengthdir_y(dist, direction), obj_wall, 0, 0)) {
+							dist = 0;
+							while (!position_meeting(x + lengthdir_x(dist, direction), y + lengthdir_y(dist, direction), obj_wall)) { //whilst the next pixel isn't a wall
+								dist ++;
+							}
+						}
+						gap = 30;
+						for (i = 0; i < 3; i ++) {
+							for (j = -1; j <= 1; j += 2) {
+								attack = instance_create_layer(x + lengthdir_x(dist - i * gap, direction), y + lengthdir_y(dist - i * gap, direction), "hitboxes", obj_slash);
+								attack.owner = self;
+								attack.timer = shotactive;
+								attack.team = team;
+								attack.direction = direction + 120 * j;
+								attack.image_angle = attack.direction;
+								attack.spd = bulletspeed + i * 4;
+								attack.hsp = lengthdir_x(attack.spd, attack.direction);
+								attack.vsp = lengthdir_y(attack.spd, attack.direction);
+							}
+						}
 						break;
 				}
 
