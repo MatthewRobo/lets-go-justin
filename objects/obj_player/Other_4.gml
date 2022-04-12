@@ -21,7 +21,7 @@ switch shottype {
 		bulletspeed = 28;
 		gunrecovery = 28;
 		gunreload = 45;
-		shotactive = 9;
+		shotactive = 8;
 		recoil = 6;
 		break;
 	case shot.wallbang:

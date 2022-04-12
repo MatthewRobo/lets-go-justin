@@ -179,7 +179,7 @@ if (global.hitstop <= 0) {
 						spark.y += lengthdir_y(32, direction);
 						spark.image_angle = spark.direction;
 						audio_play_sound(snd_shoot, 0, false);
-						for (i = -30; i <= 30; i += 15) {
+						for (i = -60; i <= 60; i += 15) {
 							attack = instance_create_layer(x, y, "hitboxes", obj_bullet);
 							attack.owner = self;
 							attack.timer = shotactive;
