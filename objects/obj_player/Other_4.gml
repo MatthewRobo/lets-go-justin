@@ -26,11 +26,11 @@ switch shottype {
 		break;
 	case shot.wallbang:
 		ammo = 1;
-		bulletspeed = 24;
+		bulletspeed = -5;
 		bulletmaxspeed = 40;
 		gunrecovery = 50;
 		gunreload = 75;
-		shotactive = 10;
+		shotactive = 999;
 		break;
 	case shot.whiffpunisher:
 		ammo = 2;

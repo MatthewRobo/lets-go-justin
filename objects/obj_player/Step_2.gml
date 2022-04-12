@@ -202,6 +202,7 @@ if (global.hitstop <= 0) {
 						attack.owner = self;
 						attack.team = team;
 						attack.direction = direction;
+						attack.gravdir = direction;
 						attack.spd = bulletspeed;
 						attack.maxspd = bulletmaxspeed;
 						attack.hsp = lengthdir_x(attack.spd, attack.direction);
