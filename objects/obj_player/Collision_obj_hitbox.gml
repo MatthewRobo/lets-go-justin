@@ -4,7 +4,7 @@
 if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, false, false) == noone || other.object_index == obj_wallbang))  {
 	if (state == status.parry) {
 		invul += 5;
-		state = status.idle;
+		
 		sprite_index = ammo > 0 ? spr_idle : spr_empty;
 		spark = instance_create_layer(x, y, "parryfx", obj_parry);
 		spark.owner = id;
@@ -22,6 +22,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			other.owner.recovery = parrystop;
 			global.hitstop = 16;
 		}
+		
 		var _list = ds_list_create();
 		var _num = instance_place_list(x, y, obj_hitbox, _list, false);
 		if _num > 0
@@ -32,6 +33,17 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		    }
 		}
 		ds_list_destroy(_list);
+		if (_num > 2) {
+			state = status.parry;
+			recovery = 1;
+		}
+		else {
+			state = status.idle;
+		}
+		
+
+
+
 	} else if (invul <= 0) {
 		deaths += 1;
 		instance_create_layer(x, y, "hitboxes", obj_boom);
