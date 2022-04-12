@@ -51,7 +51,10 @@ for (var i = 0; i < GP+KB; i++;)
 	}
 }
 
-if (ready[0] > -99 && ready[1] > -99) room_goto_next();
+if (ready[0] > -99 && ready[1] > -99) {
+	room_goto_next();
+	global.mode = gamemode.versus;
+}
 show_debug_message("ready" + string(ready));
 show_debug_message(position);
 show_debug_message(global.lookup);
