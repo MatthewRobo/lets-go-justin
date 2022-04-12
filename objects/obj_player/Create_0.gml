@@ -10,6 +10,7 @@ enum status {
 
 state = status.idle;
 shottype = shot.bullet;
+shotobj = obj_bullet;
 grounded = 5;
 coyote = 5;
 

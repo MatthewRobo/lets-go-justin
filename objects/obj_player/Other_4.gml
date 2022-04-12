@@ -35,6 +35,7 @@ switch shottype {
 		recoil = 6;
 		break;
 	case shot.wallbang:
+		shotobj = obj_wallbang;
 		bulletspeed = -5;
 		bulletmaxspeed = 40;
 		gunrecovery = 50;
@@ -49,6 +50,7 @@ switch shottype {
 		shotactive = 8;
 		break;
 	case shot.booster:
+		shotobj = obj_anchor;
 		ammomax = 5;
 		bulletspeed = 0;
 		gunrecovery = 0;
@@ -57,14 +59,14 @@ switch shottype {
 		recoil = -18;
 		break;
 	case shot.trailer:
-		ammomax = 1;
+		shotobj = obj_trailer;
 		bulletspeed = 16;
 		gunrecovery = 35;
 		gunreload = 85;
 		shotactive = 25;
 		break;
 	case shot.grenade:
-		ammomax = 1;
+		shotobj = obj_grenade;
 		bulletspeed = 10;
 		gunrecovery = 40;
 		gunreload = 40;
@@ -72,11 +74,13 @@ switch shottype {
 		break;
 	case shot.geyser:
 		ammomax = 2;
-		bulletspeed = 1;
+		bulletspeed = 4;
 		gunrecovery = 20;
 		gunreload = 37;
 		shotactive = 8;
+		break;
 	case shot.sin:
+		shotobj = obj_sin;
 		bulletspeed = 0;
 		gunrecovery = 30;
 		gunreload = 40;
