@@ -154,14 +154,15 @@ if (global.hitstop <= 0) {
 			if (ammo > 0) {
 				hsp += lengthdir_x(-recoil, direction);
 				vsp += lengthdir_y(-recoil, direction);
+				spark = instance_create_layer(x, y, "parryfx", obj_parry);
+				spark.owner = id;
+				spark.direction = direction + 180;
+				spark.x += lengthdir_x(32, direction);
+				spark.y += lengthdir_y(32, direction);
+				spark.image_angle = spark.direction;
 				switch shottype {
 					case shot.bullet:
-						spark = instance_create_layer(x, y, "parryfx", obj_parry);
-						spark.owner = id;
-						spark.direction = direction + 180;
-						spark.x += lengthdir_x(32, direction);
-						spark.y += lengthdir_y(32, direction);
-						spark.image_angle = spark.direction;
+
 						audio_play_sound(snd_shoot, 0, false);
 						attack = instance_create_layer(x, y, "hitboxes", obj_bullet);
 						attack.owner = self;
@@ -172,12 +173,6 @@ if (global.hitstop <= 0) {
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						break;
 					case shot.shotgun:
-						spark = instance_create_layer(x, y, "parryfx", obj_parry);
-						spark.owner = id;
-						spark.direction = direction + 180;
-						spark.x += lengthdir_x(32, direction);
-						spark.y += lengthdir_y(32, direction);
-						spark.image_angle = spark.direction;
 						audio_play_sound(snd_shoot, 0, false);
 						for (i = -60; i <= 60; i += 15) {
 							attack = instance_create_layer(x, y, "hitboxes", obj_bullet);
@@ -191,12 +186,6 @@ if (global.hitstop <= 0) {
 						}
 						break;
 					case shot.wallbang:
-						spark = instance_create_layer(x, y, "parryfx", obj_parry);
-						spark.owner = id;
-						spark.direction = direction + 180;
-						spark.x += lengthdir_x(32, direction);
-						spark.y += lengthdir_y(32, direction);
-						spark.image_angle = spark.direction;
 						audio_play_sound(snd_shoot, 0, false);
 						attack = instance_create_layer(x, y, "hitboxes", obj_wallbang);
 						attack.owner = self;
@@ -210,12 +199,6 @@ if (global.hitstop <= 0) {
 						attack.timer = shotactive;
 						break;
 					case shot.whiffpunisher:
-						spark = instance_create_layer(x, y, "parryfx", obj_parry);
-						spark.owner = id;
-						spark.direction = direction + 180;
-						spark.x += lengthdir_x(32, direction);
-						spark.y += lengthdir_y(32, direction);
-						spark.image_angle = spark.direction;
 						audio_play_sound(snd_shoot, 0, false);
 						attack = instance_create_layer(x, y, "hitboxes", obj_slash);
 						attack.owner = self;
@@ -228,12 +211,6 @@ if (global.hitstop <= 0) {
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						break;
 					case shot.booster:
-						spark = instance_create_layer(x, y, "parryfx", obj_parry);
-						spark.owner = id;
-						spark.direction = direction + 180;
-						spark.x += lengthdir_x(32, direction);
-						spark.y += lengthdir_y(32, direction);
-						spark.image_angle = spark.direction;
 						audio_play_sound(snd_shoot, 0, false);
 						attack = instance_create_layer(x, y, "hitboxes", obj_anchor);
 						attack.owner = self;
@@ -243,12 +220,6 @@ if (global.hitstop <= 0) {
 						attack.spd = point_distance(0,0,hsp,vsp);
 						break;
 					case shot.trailer:
-						spark = instance_create_layer(x, y, "parryfx", obj_parry);
-						spark.owner = id;
-						spark.direction = direction + 180;
-						spark.x += lengthdir_x(32, direction);
-						spark.y += lengthdir_y(32, direction);
-						spark.image_angle = spark.direction;
 						audio_play_sound(snd_shoot, 0, false);
 						attack = instance_create_layer(x, y, "hitboxes", obj_trailer);
 						attack.owner = self;
@@ -260,12 +231,6 @@ if (global.hitstop <= 0) {
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						break;
 					case shot.grenade:
-						spark = instance_create_layer(x, y, "parryfx", obj_parry);
-						spark.owner = id;
-						spark.direction = direction + 180;
-						spark.x += lengthdir_x(32, direction);
-						spark.y += lengthdir_y(32, direction);
-						spark.image_angle = spark.direction;
 						audio_play_sound(snd_shoot, 0, false);
 						attack = instance_create_layer(x, y, "hitboxes", obj_grenade);
 						attack.owner = self;
