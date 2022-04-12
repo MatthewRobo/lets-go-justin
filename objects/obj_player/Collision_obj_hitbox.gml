@@ -11,21 +11,27 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		spark.direction = other.direction + 180;
 		spark.image_angle = spark.direction;
 		audio_play_sound(snd_parry, 1, false);
-		if (other.object_index == obj_slash) {
+		if (other.object_index == obj_bullet || object_is_ancestor(other.object_index, obj_bullet)) {
+			reflected = other.owner;
+			counterspeed = other.spd < 32 ? 32 : other.spd;
+			global.hitstop = 9 * counterspeed / 32;
+		}
+		else {
 			other.owner.state = status.parried;
 			other.owner.sprite_index = spr_recovery;
 			other.owner.recovery = parrystop;
-			instance_destroy(other);
 			global.hitstop = 16;
 		}
-		else {
-
-			reflected = other.owner;
-			counterspeed = other.spd < 32 ? 32 : other.spd;
-			instance_destroy(other);
-			global.hitstop = 9 * counterspeed / 32;
-
+		var _list = ds_list_create();
+		var _num = instance_place_list(x, y, obj_hitbox, _list, false);
+		if _num > 0
+		{
+		    for (var i = 0; i < _num; ++i;)
+		    {
+		        instance_destroy(_list[| i]);
+		    }
 		}
+		ds_list_destroy(_list);
 	} else if (invul <= 0) {
 		deaths += 1;
 		instance_create_layer(x, y, "hitboxes", obj_boom);
