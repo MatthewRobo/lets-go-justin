@@ -17,6 +17,7 @@
     {"id":{"name":"spr_spark","path":"sprites/spr_spark/spr_spark.yy",},"order":6,},
     {"id":{"name":"obj_timed","path":"objects/obj_timed/obj_timed.yy",},"order":4,},
     {"id":{"name":"obj_wallbang","path":"objects/obj_wallbang/obj_wallbang.yy",},"order":7,},
+    {"id":{"name":"spr_ControlsPreview","path":"sprites/spr_ControlsPreview/spr_ControlsPreview.yy",},"order":20,},
     {"id":{"name":"spr_Room3Prev","path":"sprites/spr_Room3Prev/spr_Room3Prev.yy",},"order":17,},
     {"id":{"name":"snd_shield","path":"sounds/snd_shield/snd_shield.yy",},"order":3,},
     {"id":{"name":"snd_spawn","path":"sounds/snd_spawn/snd_spawn.yy",},"order":6,},

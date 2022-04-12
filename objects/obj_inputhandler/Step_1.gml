@@ -29,7 +29,7 @@ for (var d = 0; d < GP+KB; d++) {
 					break;
 				case input.JU: global.down[d][input.JU] = gamepad_button_check(d, gp_face1) || gamepad_button_check(d, gp_shoulderl);
 					break;
-				case input.SL: global.down[d][input.SL] = gamepad_button_check(d, gp_face3);
+				case input.SL: global.down[d][input.SL] = gamepad_button_check(d, gp_face3) || gamepad_button_check(d, gp_shoulderlb);
 					break;
 				case input.SH: global.down[d][input.SH] = gamepad_button_check(d, gp_face4) || gamepad_button_check(d, gp_shoulderrb);
 					break;
