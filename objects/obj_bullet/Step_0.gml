@@ -15,6 +15,7 @@ if (collision_line(x,y,x+hsp,y+vsp,obj_wall,0,0)) {
 if (global.hitstop <= 0) {
 	if (timer <= 0) instance_destroy();
 	timer--;
-	vsp += grav;
+	vsp += lengthdir_y(grav, gravdir);
+	hsp += lengthdir_x(grav, gravdir);
 
 }
