@@ -21,7 +21,7 @@ switch shottype {
 		bulletspeed = 28;
 		gunrecovery = 28;
 		gunreload = 45;
-		shotactive = 8;
+		shotactive = 9;
 		recoil = 6;
 		break;
 	case shot.wallbang:
@@ -37,7 +37,7 @@ switch shottype {
 		ammomax = 2;
 		bulletspeed = 32;
 		gunrecovery = 6;
-		gunreload = 45;
+		gunreload = 50;
 		shotactive = 8;
 		break;
 	case shot.booster:
@@ -45,7 +45,7 @@ switch shottype {
 		ammomax = 5;
 		bulletspeed = 0;
 		gunrecovery = 0;
-		gunreload = 45;
+		gunreload = 50;
 		shotactive = 10;
 		recoil = -18;
 		break;
@@ -54,7 +54,7 @@ switch shottype {
 		ammomax = 1;
 		bulletspeed = 16;
 		gunrecovery = 35;
-		gunreload = 90;
+		gunreload = 85;
 		shotactive = 25;
 		break;
 	case shot.grenade:
