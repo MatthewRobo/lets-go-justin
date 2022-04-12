@@ -43,10 +43,10 @@ switch shottype {
 	case shot.booster:
 		ammo = 5;
 		ammomax = 5;
-		bulletspeed = 5;
+		bulletspeed = 0;
 		gunrecovery = 0;
 		gunreload = 45;
-		shotactive = 1;
+		shotactive = 10;
 		recoil = -18;
 		break;
 	case shot.trailer:

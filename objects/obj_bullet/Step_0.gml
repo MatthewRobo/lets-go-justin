@@ -8,8 +8,10 @@ if (collision_line(x,y,x+hsp,y+vsp,obj_wall,0,0)) {
 	event_inherited();
 
 	trail = instance_create_layer(x, y, "trails", obj_bullettrail);
-	trail.image_angle = direction;
+	trail.image_angle = image_angle;
 	trail.image_blend = owner.color;
+	trail.image_xscale = image_xscale;
+	trail.image_yscale = image_yscale;
 }
 
 if (global.hitstop <= 0) {

@@ -39,6 +39,7 @@
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},"order":4,},
     {"id":{"name":"snd_land","path":"sounds/snd_land/snd_land.yy",},"order":8,},
     {"id":{"name":"spr_p1idle","path":"sprites/spr_p1idle/spr_p1idle.yy",},"order":1,},
+    {"id":{"name":"obj_anchor","path":"objects/obj_anchor/obj_anchor.yy",},"order":8,},
     {"id":{"name":"spr_trail","path":"sprites/spr_trail/spr_trail.yy",},"order":3,},
     {"id":{"name":"obj_parrytrail","path":"objects/obj_parrytrail/obj_parrytrail.yy",},"order":3,},
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},"order":2,},

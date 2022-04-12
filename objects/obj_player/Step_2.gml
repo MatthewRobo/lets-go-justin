@@ -235,14 +235,12 @@ if (global.hitstop <= 0) {
 						spark.y += lengthdir_y(32, direction);
 						spark.image_angle = spark.direction;
 						audio_play_sound(snd_shoot, 0, false);
-						attack = instance_create_layer(x, y, "hitboxes", obj_bullet);
+						attack = instance_create_layer(x, y, "hitboxes", obj_anchor);
 						attack.owner = self;
 						attack.timer = shotactive;
 						attack.team = team;
 						attack.direction = direction + 180;
 						attack.spd = point_distance(0,0,hsp,vsp);
-						attack.hsp = lengthdir_x(attack.spd, attack.direction);
-						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						break;
 					case shot.trailer:
 						spark = instance_create_layer(x, y, "parryfx", obj_parry);
