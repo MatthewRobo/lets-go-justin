@@ -28,14 +28,14 @@ switch shottype {
 		ammo = 1;
 		bulletspeed = 24;
 		bulletmaxspeed = 40;
-		gunrecovery = 60;
-		gunreload = 80;
-		shotactive = 6;
+		gunrecovery = 50;
+		gunreload = 75;
+		shotactive = 10;
 		break;
 	case shot.whiffpunisher:
 		ammo = 3;
 		ammomax = 3;
-		bulletspeed = 40;
+		bulletspeed = 32;
 		gunrecovery = 6;
 		gunreload = 45;
 		shotactive = 8;
