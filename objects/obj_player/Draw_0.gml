@@ -19,3 +19,23 @@ if (state != status.idle) {
 }
 
 draw_text(x, y-32, "(P" + teamstr + ")");
+
+if (global.mode = gamemode.training) {
+	draw_text(x-20, y-56, dir);
+	
+	draw_set_colour(c_white);
+	if (global.down[gamepad][input.SL]) draw_set_colour($ff8000);
+	draw_text(x-10, y-56, "A");
+
+	draw_set_colour(c_white);
+	if (global.down[gamepad][input.SH]) draw_set_colour($0099ff);
+	draw_text(x-0, y-56, "B");
+
+	draw_set_colour(c_white);
+	if (global.down[gamepad][input.PA]) draw_set_colour(c_red);
+	draw_text(x+10, y-56, "C");
+
+	draw_set_colour(c_white);
+	if (global.down[gamepad][input.JU]) draw_set_colour(c_lime);
+	draw_text(x+20, y-56, "J");
+}
