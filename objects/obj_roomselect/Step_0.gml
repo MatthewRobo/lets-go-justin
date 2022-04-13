@@ -22,6 +22,11 @@ for (var p = 0; p < PLAYERS; p++;) {
 	{
 		room_goto(Room4);
 	}
+	if (global.pressed[i][input.SE])
+	{
+		room_goto(Shot_Select);
+		audio_play_sound(snd_parry,0,0);
+	}
 }
 
 

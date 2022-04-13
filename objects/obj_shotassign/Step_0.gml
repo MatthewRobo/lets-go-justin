@@ -5,7 +5,7 @@ pads = "";
 
 for (var p = 0; p < PLAYERS; p++;)
 {
-	i = global.lookup[p];
+	i = global.lookup[p]; // i = is INPUT port
 	if (global.mode == gamemode.versus) {
 		if (!ready[p]) {
 			if global.pressed[i][input.U] {
@@ -20,7 +20,14 @@ for (var p = 0; p < PLAYERS; p++;)
 				ready[p] = true;
 				audio_play_sound(snd_parry,0,0);
 			}
-		}
+			if global.pressed[i][input.SE] {
+				room_goto(Pad_Select);
+				audio_play_sound(snd_parry,0,0);
+			}
+		} else if global.pressed[i][input.SE] {
+				ready[p] = false;
+				audio_play_sound(snd_shield,0,0);
+			}
 	} else if (global.mode == gamemode.training) {
 		if (!ready[0]) {
 			if global.pressed[i][input.U] {
@@ -35,6 +42,10 @@ for (var p = 0; p < PLAYERS; p++;)
 				ready[0] = true;
 				audio_play_sound(snd_parry,0,0);
 			}
+			if global.pressed[i][input.SE] {
+				room_goto(Pad_Select);
+				audio_play_sound(snd_parry,0,0);
+			}
 		} else if (!ready[1]) {
 			if global.pressed[i][input.U] {
 				global.shots[1]--;
@@ -47,6 +58,10 @@ for (var p = 0; p < PLAYERS; p++;)
 			if global.pressed[i][input.ST] {
 				ready[1] = true;
 				audio_play_sound(snd_parry,0,0);
+			}
+			if global.pressed[i][input.SE] {
+				ready[0] = false;
+				audio_play_sound(snd_shield,0,0);
 			}
 		}
 	}
