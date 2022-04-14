@@ -74,7 +74,7 @@ switch shottype {
 		break;
 	case shot.geyser:
 		ammomax = 2;
-		bulletspeed = 2;
+		bulletspeed = 6;
 		gunrecovery = 20;
 		gunreload = 37;
 		shotactive = 8;

@@ -252,16 +252,18 @@ if (global.hitstop <= 0) {
 							trail.owner = self;
 							trail.image_blend = color;
 						}
-						gap = 12;
+						gap = 8;
 						for (i = 0; i < 3; i ++) {
 							for (j = -1; j <= 1; j += 2) {
+								
 								attack = instance_create_layer(x + lengthdir_x(dist - i * gap, direction), y + lengthdir_y(dist - i * gap, direction), "hitboxes", shotobj);
+								attack.image_xscale = 1.5;
 								attack.owner = self;
-								attack.timer = shotactive + 1 * i;
+								attack.timer = shotactive + 2 * i;
 								attack.team = team;
-								attack.direction = direction + 120 * j;
+								attack.direction = direction + 100 * j + (i * 20 ) * j;
 								attack.image_angle = attack.direction;
-								attack.spd = bulletspeed + i * 1;
+								attack.spd = i == 1 ? 1.5 * bulletspeed : bulletspeed;
 								attack.hsp = lengthdir_x(attack.spd, attack.direction);
 								attack.vsp = lengthdir_y(attack.spd, attack.direction);
 							}
