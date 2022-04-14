@@ -239,6 +239,7 @@ if (global.hitstop <= 0) {
 						break;
 					case shot.geyser:
 						dist = ammo == ammomax ? 40 * 8 : 40 * 4;
+
 						if (collision_line(x, y, x + lengthdir_x(dist, direction), y + lengthdir_y(dist, direction), obj_wall, 0, 0)) {
 							dist = 0;
 							while (!position_meeting(x + lengthdir_x(dist, direction), y + lengthdir_y(dist, direction), obj_wall)) { //whilst the next pixel isn't a wall
@@ -246,16 +247,21 @@ if (global.hitstop <= 0) {
 							}
 							dist --;
 						}
-						gap = 30;
+						for (i = 0; i < dist; i += dist / 10) {
+							trail = instance_create_layer(x + lengthdir_x(i, direction), y+lengthdir_y(i,direction), "trails", obj_bullettrail);
+							trail.owner = self;
+							trail.image_blend = color;
+						}
+						gap = 12;
 						for (i = 0; i < 3; i ++) {
 							for (j = -1; j <= 1; j += 2) {
 								attack = instance_create_layer(x + lengthdir_x(dist - i * gap, direction), y + lengthdir_y(dist - i * gap, direction), "hitboxes", shotobj);
 								attack.owner = self;
-								attack.timer = shotactive + 2 * i;
+								attack.timer = shotactive + 1 * i;
 								attack.team = team;
 								attack.direction = direction + 120 * j;
 								attack.image_angle = attack.direction;
-								attack.spd = bulletspeed + i * 2;
+								attack.spd = bulletspeed + i * 1;
 								attack.hsp = lengthdir_x(attack.spd, attack.direction);
 								attack.vsp = lengthdir_y(attack.spd, attack.direction);
 							}
