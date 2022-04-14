@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 draw_set_colour(color);
-draw_primitive_begin(pr_trianglelist);
+draw_primitive_begin(pr_linestrip);
 draw_vertex(x + lengthdir_x(8, direction + 90), y + lengthdir_y(8, direction + 90));
 draw_vertex(x + lengthdir_x(64, direction), y + lengthdir_y(48, direction));
 draw_vertex(x + lengthdir_x(8, direction - 90), y + lengthdir_y(8, direction - 90));

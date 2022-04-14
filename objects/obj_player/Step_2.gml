@@ -252,7 +252,7 @@ if (global.hitstop <= 0) {
 							trail.owner = self;
 							trail.image_blend = color;
 						}
-						gap = 8;
+						gap = 3;
 						for (i = 0; i < 3; i ++) {
 							for (j = -1; j <= 1; j += 2) {
 								
