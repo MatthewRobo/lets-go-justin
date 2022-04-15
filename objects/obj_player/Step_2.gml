@@ -12,9 +12,21 @@ if (global.hitstop <= 0) {
 		attack.direction = point_direction(x, y, reflected.x, reflected.y);
 		attack.spd = counterspeed * reflectmult;
 		attack.spd = attack.spd > 44 ? 44 : attack.spd;
+
+		if (superreflect) { 
+			attack.image_xscale = 4;
+			attack.image_yscale = 4;
+			attack.x = reflected.x+reflected.hsp;
+			attack.y = reflected.y+reflected.vsp;
+			attack.spd = 0;
+			attack.direction = point_direction(0,0,reflected.hsp,reflected.vsp);
+			attack.timer = 1;
+			
+		}
 		attack.hsp = lengthdir_x(attack.spd, attack.direction);
 		attack.vsp = lengthdir_y(attack.spd, attack.direction);
 		attack.image_angle = attack.direction;
+		superreflect = false;
 		reflected = noone;
 	}
 	// handles coyote time and ground detection
@@ -355,6 +367,7 @@ if (global.hitstop <= 0) {
 		}
 		vsp = vsp + grav < maxfall ? vsp + grav : maxfall;
 	}
+	spd = point_distance(0,0,hsp,vsp);
 	trail = instance_create_layer(x, y, "trails", obj_playertrail);
 	trail.image_index = image_index;
 	if (ammo <= 0) trail.image_alpha = 0.5;

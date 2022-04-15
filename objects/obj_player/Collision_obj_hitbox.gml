@@ -11,7 +11,13 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		spark.direction = other.direction + 180;
 		spark.image_angle = spark.direction;
 		audio_play_sound(snd_parry, 1, false);
-		if (other.object_index == obj_bullet || object_is_ancestor(other.object_index, obj_bullet)) {
+		if (other.object_index == obj_anchor) {
+			reflected = other.owner;
+			superreflect = true;
+			counterspeed = other.spd < 32 ? 32 : other.spd;
+			global.hitstop = 9 * counterspeed / 32;
+		} else if (other.object_index == obj_bullet || object_is_ancestor(other.object_index, obj_bullet)) {
+			superreflect = false;
 			reflected = other.owner;
 			counterspeed = other.spd < 32 ? 32 : other.spd;
 			global.hitstop = 9 * counterspeed / 32;

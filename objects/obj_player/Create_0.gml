@@ -68,7 +68,7 @@ parrystop = 5;
 reflectmult = 1.1;
 counterspeed = bulletspeed;
 reflected = noone;
-
+superreflect = false;
 
 dir = 5;
 left = false;
