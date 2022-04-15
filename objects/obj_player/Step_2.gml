@@ -259,7 +259,7 @@ if (global.hitstop <= 0) {
 								attack = instance_create_layer(x + lengthdir_x(dist - i * gap, direction), y + lengthdir_y(dist - i * gap, direction), "hitboxes", shotobj);
 								attack.image_xscale = 1.5;
 								attack.owner = self;
-								attack.timer = shotactive + 2 * i;
+								attack.timer = i == 1 ? shotactive + 4 : shotactive + i;
 								attack.team = team;
 								attack.direction = direction + 100 * j + (i * 20 ) * j;
 								attack.image_angle = attack.direction;
