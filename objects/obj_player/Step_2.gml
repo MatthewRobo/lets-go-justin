@@ -259,11 +259,14 @@ if (global.hitstop <= 0) {
 							}
 							dist --;
 						}
-						for (i = 0; i < dist; i += dist / 10) {
-							trail = instance_create_layer(x + lengthdir_x(i, direction), y+lengthdir_y(i,direction), "trails", obj_bullettrail);
-							trail.owner = self;
-							trail.image_blend = color;
-						}
+						
+						trail = instance_create_layer(x + lengthdir_x(dist/2, direction), y+lengthdir_y(dist/2,direction), "trails", obj_squaretrail);
+						trail.image_xscale = dist / 40;
+						trail.image_yscale = 1/3;
+						trail.image_angle = direction;
+						trail.owner = self;
+						trail.image_blend = color;
+						
 						gap = 3;
 						for (i = 0; i < 3; i ++) {
 							for (j = -1; j <= 1; j += 2) {
