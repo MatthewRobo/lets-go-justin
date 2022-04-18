@@ -28,10 +28,10 @@ switch shottype {
 		gunreload = 38;
 		break;
 	case shot.shotgun:
-		bulletspeed = 28;
+		bulletspeed = 14;
 		gunrecovery = 28;
 		gunreload = 45;
-		shotactive = 8;
+		shotactive = 16;
 		recoil = 6;
 		break;
 	case shot.wallbang:
@@ -43,11 +43,11 @@ switch shottype {
 		shotactive = 240;
 		break;
 	case shot.whiffpunisher:
-		ammomax = 2;
+		ammomax = 3;
 		bulletspeed = 32;
 		gunrecovery = 6;
 		gunreload = 50;
-		shotactive = 8;
+		shotactive = 7;
 		break;
 	case shot.booster:
 		shotobj = obj_anchor;

@@ -71,7 +71,7 @@ for (p = -1; p < 2; p++) {
 					break;
 					case shot.wallbang: desc += "Big and slow.\nGoes through walls.";
 					break;
-					case shot.whiffpunisher: desc += "Long slashes.\nTwo ammo.";
+					case shot.whiffpunisher: desc += "Long slashes.\nThree ammo.";
 					break;
 					case shot.booster: desc += "Burst of speed.\nFive ammo.";
 					break;
