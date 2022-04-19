@@ -7,18 +7,26 @@ draw_set_alpha(1);
 
 draw_set_colour(global.color[0]);
 draw_set_halign(fa_right);
-draw_text(room_width / 2 - 32, 8, obj_player2.deaths);
+// draw_text(room_width / 2 - 32, 8, obj_player2.deaths);
+for (i = 0; i < (global.firstto - obj_player1.deaths); i++) {
+	drawpos = room_width / 2 - 8 - 48 * i;
+	draw_rectangle(drawpos-44, 8, drawpos, 56,0);
+}
 
 draw_set_colour(global.color[1]);
 draw_set_halign(fa_left);
-draw_text(room_width / 2 + 32, 8, obj_player1.deaths);
+//draw_text(room_width / 2 + 32, 8, obj_player1.deaths);
+for (i = 0; i < (global.firstto - obj_player2.deaths); i++) {
+	drawpos = room_width / 2 + 8 + 48 * i;
+	draw_rectangle(drawpos, 8, drawpos+44, 56,0);
+}
 
 draw_set_valign(fa_bottom);
 
 draw_set_colour(c_white);
 draw_set_halign(fa_center);
 
-draw_rectangle(room_width/2, 4, room_width/2+2, 59,0);
+draw_rectangle(room_width/2-1, 4, room_width/2+1, 59,0);
 
 if (roundstart > 0) {
 	draw_text(room_width/2, room_height/2, "Ready?");
