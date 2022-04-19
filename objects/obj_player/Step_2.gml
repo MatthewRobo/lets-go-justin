@@ -383,9 +383,9 @@ if (global.hitstop <= 0) {
 	trail.image_xscale = image_xscale;
 	trail.image_yscale = image_yscale;
 	*/
-	if (invul >= 0) {
+	if (invul > 0) {
 		invul--;
-		image_alpha = abs(dsin(20 * invul));
+		//image_alpha = abs(dsin(20 * invul));
 	} else {
 		image_alpha = 1;
 	}

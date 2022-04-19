@@ -53,9 +53,10 @@ for (i = 0; i < tlen; i+= 1) {
 //draw_vertex_colour(x12-24,y12,color,0);
 draw_primitive_end();
 
-draw_sprite_ext(spr_ptrail,image_index,x,y,image_xscale,image_yscale,0,color,1);
+_s = spawning == spawntime ? (global.hitstop * global.hitstop) / 60 : 1;
+draw_sprite_ext(spr_ptrail,image_index,x,y,_s*image_xscale,_s*image_yscale,0,color,1);
 draw_self();
-
+draw_sprite_ext(spr_ptrail,image_index,x,y,image_xscale,image_yscale,0,c_white,abs(dsin(20 * invul)));
 
 
 draw_primitive_begin(pr_trianglelist);
