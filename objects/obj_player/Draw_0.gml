@@ -17,25 +17,25 @@ draw_primitive_begin(pr_trianglestrip);
 //draw_vertex_colour(x11,y11,color,1);
 for (i = 0; i < tlen; i+= 1) {
 	tcnow = (i + tcounter + tlen) mod tlen;
-	//tclast = (tcnow - 1 + tlen) mod tlen;
-	//tdir = point_direction(tx[tclast],ty[tclast],tx[tcnow],ty[tcnow]);
-	//twid = 12;
+	tclast = (tcnow - 1 + tlen) mod tlen;
+	tdir = point_direction(tx[tclast],ty[tclast],tx[tcnow],ty[tcnow]);
+	twid = 24;
 	talpha = clamp(i * 2 / tlen,0,1);
 	if (ammo <= 0) talpha *= 0.5;
 
 	x1 = tx[tcnow];
 	y1 = ty[tcnow];
+	
+	x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-12,x1+12);
+	y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-24,y1+24);
+	x12 = clamp(x1+lengthdir_x(twid,tdir-90),x1-12,x1+12);
+	y12 = clamp(y1+lengthdir_y(twid,tdir-90),y1-24,y1+24);
 	/*
-	x11 = x1+lengthdir_x(twid,tdir+90);
-	y11 = y1+lengthdir_y(twid,tdir+90);
-	x12 = x1+lengthdir_x(twid,tdir-90);
-	y12 = y1+lengthdir_y(twid,tdir-90);
-	*/
 	x11 = x1 - 2;
 	y11 = y1 - 22;
 	x12 = x1 + 2;
 	y12 = y1 + 22;
-	
+	*/
 	
 	if (global.hitstop > 0) talpha = 1;
 
