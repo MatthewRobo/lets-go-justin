@@ -184,7 +184,7 @@ if (global.hitstop <= 0) {
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						break;
 					case shot.shotgun:
-						for (i = -60; i <= 60; i += 15) {
+						for (i = -60; i <= 60; i += 20) {
 							attack = instance_create_layer(x, y, "hitboxes", shotobj);
 							attack.owner = self;
 							attack.timer = shotactive;
@@ -217,6 +217,10 @@ if (global.hitstop <= 0) {
 						attack.spd = bulletspeed;
 						attack.hsp = lengthdir_x(attack.spd, attack.direction);
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
+						attack.vsp += vsp / 2;
+						attack.vsp -= grav;
+						attack.hsp += hsp / 2;
+						attack.image_xscale = 2;
 						break;
 					case shot.booster:
 						attack = instance_create_layer(x, y, "hitboxes", shotobj);

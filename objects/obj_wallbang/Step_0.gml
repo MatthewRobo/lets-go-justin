@@ -9,7 +9,7 @@ if (global.hitstop <= 0) {
 		hsp *= maxspd / spd;
 		vsp *= maxspd / spd;
 	}
-	if (image_xscale < maxsize) image_xscale += 0.025;
+	if (image_xscale < maxsize) image_xscale += 0.04;
 	image_yscale = image_xscale;
 	x += hsp;
 	y += vsp;

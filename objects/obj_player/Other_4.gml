@@ -28,23 +28,23 @@ switch shottype {
 		gunreload = 38;
 		break;
 	case shot.shotgun:
-		bulletspeed = 14;
+		bulletspeed = 8;
 		gunrecovery = 28;
 		gunreload = 45;
-		shotactive = 16;
+		shotactive = 28;
 		recoil = 6;
 		break;
 	case shot.wallbang:
 		shotobj = obj_wallbang;
 		bulletspeed = -5;
 		bulletmaxspeed = 40;
-		gunrecovery = 50;
+		gunrecovery = 44;
 		gunreload = 75;
 		shotactive = 240;
 		break;
 	case shot.whiffpunisher:
 		ammomax = 3;
-		bulletspeed = 32;
+		bulletspeed = 40;
 		gunrecovery = 6;
 		gunreload = 50;
 		shotactive = 7;
