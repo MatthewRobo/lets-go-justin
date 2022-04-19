@@ -21,7 +21,7 @@ for (i = 0; i < tlen; i+= 1) {
 	tcnext = (tcnow + 1) mod tlen;
 	tdir = tcnext == tcounter ? point_direction(0,0,hsp,vsp-grav) : point_direction(tx[tcnow],ty[tcnow],tx[tcnext],ty[tcnext]);
 	twid = 24;
-	talpha = clamp(i * 2 / tlen,0,1);
+	talpha = clamp(2 * i / tlen,0,1);
 	if (ammo <= 0) talpha *= 0.5;
 
 	x1 = tx[tcnow];
@@ -52,6 +52,9 @@ for (i = 0; i < tlen; i+= 1) {
 }
 //draw_vertex_colour(x12-24,y12,color,0);
 draw_primitive_end();
+
+//tlast = (tcounter + 1 + tlen) mod tlen;
+//draw_sprite_ext(spr_ptrail,image_index,tx[tlast],ty[tlast],image_xscale,image_yscale,0,color,1);
 
 _s = spawning == spawntime ? (global.hitstop * global.hitstop) / 60 : 1;
 draw_sprite_ext(spr_ptrail,image_index,x,y,_s*image_xscale,_s*image_yscale,0,color,1);
