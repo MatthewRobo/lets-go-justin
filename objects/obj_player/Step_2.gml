@@ -147,7 +147,7 @@ if (global.hitstop <= 0) {
 			vsp /= 2; // cut player's jump short if player releases early
 		}
 		if (slash) {
-			invul = 1;
+			invul /= 2;
 			audio_play_sound(snd_slash, 0, false);
 			attack = instance_create_layer(x, y, "hitboxes", obj_slash);
 			attack.owner = self;
@@ -162,7 +162,7 @@ if (global.hitstop <= 0) {
 			sprite_index = spr_recovery;
 		}
 		if (shoot) {
-			invul = 1;
+			invul /= 2;
 			if (ammo > 0) {
 				hsp += lengthdir_x(-recoil, direction);
 				vsp += lengthdir_y(-recoil, direction);
@@ -314,7 +314,7 @@ if (global.hitstop <= 0) {
 		}
 		if (parry) {
 			audio_play_sound(snd_shield, 0, false);
-			invul = 1;
+			invul /= 2;
 			recovery = parryactive;
 			state = status.parry;
 			sprite_index = spr_parry;
@@ -385,6 +385,7 @@ if (global.hitstop <= 0) {
 	*/
 	if (invul > 0) {
 		invul--;
+		invul = floor(invul);
 		//image_alpha = abs(dsin(20 * invul));
 	} else {
 		image_alpha = 1;
