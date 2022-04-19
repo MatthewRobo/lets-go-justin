@@ -28,10 +28,10 @@ for (i = 0; i < tlen; i+= 1) {
 	y1 = ty[tcnow];
 	
 	if (global.hitstop > 0) {
-		talpha = 1;
+		talpha = i;
 		
 	}
-	if (i == 0) twid = 0;
+
 	x11 = x1+lengthdir_x(twid,tcdir+90);
 	y11 = y1+lengthdir_y(twid,tcdir+90);
 	x12 = x1+lengthdir_x(twid,tcdir-90);

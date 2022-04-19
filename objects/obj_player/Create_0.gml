@@ -108,7 +108,9 @@ scale = 1.5;
 image_xscale = scale;
 image_yscale = scale;
 
-tlen = 10;
+tlen = 60;
 tcounter = 0;
 tx = array_create(tlen, x);
 ty = array_create(tlen, y);
+
+layerdepth = layer_get_depth(layer);

@@ -81,6 +81,7 @@ if (global.hitstop <= 0) {
 	}
 
 	if (spawning == spawntime) {
+		depth = layerdepth + 1;
 
 		ammo = ammomax;
 		audio_play_sound(snd_spawn, 0, false);

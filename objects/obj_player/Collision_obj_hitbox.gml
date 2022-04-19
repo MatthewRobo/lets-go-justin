@@ -29,6 +29,8 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			global.hitstop = 16;
 		}
 		global.outline = color;
+		depth = layerdepth;
+		other.owner.depth = layerdepth + 1;
 		
 		var _list = ds_list_create();
 		var _num = instance_place_list(x, y, obj_hitbox, _list, false);
@@ -56,6 +58,8 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		instance_create_layer(x, y, "hitboxes", obj_boom);
 		audio_play_sound(snd_dies, 1, false);
 		spawning = spawntime;
+		depth = layer_get_depth("trails") + 1;
+		other.owner.depth = layerdepth - 1;
 		global.hitstop = 20;
 		global.outline = color;
 		if (deaths == global.firstto) {
