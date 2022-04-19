@@ -63,7 +63,8 @@ draw_primitive_end();
 
 draw_set_alpha(timer / tlen);
 draw_primitive_begin(pr_trianglefan);
-angle = point_distance(0,0,hsp,vsp) == 0 ? 360 : 180;
+//angle = point_distance(0,0,hsp,vsp) == 0 ? 360 : 180;
+angle = 360;
 
 for (i = -angle/2; i <= angle/2; i += 360 / steps) {
 	_x = lengthdir_x(hrad+outrad, i);

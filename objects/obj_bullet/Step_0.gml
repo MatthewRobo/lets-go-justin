@@ -7,7 +7,7 @@
 
 if (global.hitstop <= 0) {
 	if (timer <= 0) instance_destroy();
-	event_inherited();
+	else event_inherited();
 	timer--;
 	vsp += lengthdir_y(grav, gravdir);
 	hsp += lengthdir_x(grav, gravdir);
