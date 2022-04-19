@@ -3,8 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-color = $5100ff;
-//color = $d000ff
+
 image_xscale = scale * 1;
 team = 0;
 

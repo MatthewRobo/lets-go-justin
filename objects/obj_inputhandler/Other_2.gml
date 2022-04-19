@@ -40,3 +40,12 @@ global.released = array_create(GP+KB+1,array_create(INPUTS,0));
 global.mode = gamemode.versus;
 
 room_goto_next();
+
+global.color = array_create(4,c_white);
+global.color[0] = $5100ff;
+global.color[1] = $ff8000;
+global.color[2] = c_orange;
+global.color[3] = c_teal;
+//color = $0dff00;
+//color = $ff0033;
+//color = $d000ff

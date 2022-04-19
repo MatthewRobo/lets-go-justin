@@ -17,6 +17,7 @@ enum shot {
 gamepad = 0;
 gamepad = global.lookup[team];
 shottype = global.shots[team];
+color = global.color[team];
 
 recovery = obj_controller.roundstart;
 state = status.recovery;
