@@ -19,7 +19,7 @@ gamepad = global.lookup[team];
 shottype = global.shots[team];
 color = global.color[team];
 
-recovery = obj_controller.roundstart;
+recovery = instance_number(obj_controller) > 0 ? obj_controller.roundstart : recovery;
 state = status.recovery;
 
 switch shottype {

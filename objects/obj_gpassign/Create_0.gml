@@ -10,3 +10,19 @@ for (i = 0; i < PLAYERS; i++) {
 }
 
 readypos = array_create(GP+KB, false);
+
+switch irandom(3) {
+	case 0:
+		global.color[0] = $5100ff;
+		global.color[1] = $ff8000;
+		break;
+	case 1:
+		global.color[0] = $0dff00;
+		global.color[1] = $ff0066;
+		break;
+	case 2:
+		global.color[0] = $6ecdff;
+		global.color[1] = $b5599b;
+		break;
+}
+
