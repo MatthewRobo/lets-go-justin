@@ -21,6 +21,7 @@
     {"id":{"name":"obj_glitter2","path":"objects/obj_glitter2/obj_glitter2.yy",},"order":11,},
     {"id":{"name":"spr_ControlsPreview","path":"sprites/spr_ControlsPreview/spr_ControlsPreview.yy",},"order":20,},
     {"id":{"name":"spr_Room3Prev","path":"sprites/spr_Room3Prev/spr_Room3Prev.yy",},"order":17,},
+    {"id":{"name":"obj_shottrail","path":"objects/obj_shottrail/obj_shottrail.yy",},"order":13,},
     {"id":{"name":"snd_shield","path":"sounds/snd_shield/snd_shield.yy",},"order":3,},
     {"id":{"name":"snd_spawn","path":"sounds/snd_spawn/snd_spawn.yy",},"order":6,},
     {"id":{"name":"spr_p3recovery","path":"sprites/spr_p3recovery/spr_p3recovery.yy",},"order":12,},
