@@ -9,7 +9,7 @@ draw_set_colour(global.color[0]);
 draw_set_halign(fa_right);
 // draw_text(room_width / 2 - 32, 8, obj_player2.deaths);
 for (i = 0; i < (global.firstto - obj_player1.deaths); i++) {
-	drawpos = room_width / 2 - 8 - 48 * i;
+	drawpos = room_width / 2 - 10 - 48 * i;
 	draw_rectangle(drawpos-44, 8, drawpos, 56,0);
 }
 
@@ -17,7 +17,7 @@ draw_set_colour(global.color[1]);
 draw_set_halign(fa_left);
 //draw_text(room_width / 2 + 32, 8, obj_player1.deaths);
 for (i = 0; i < (global.firstto - obj_player2.deaths); i++) {
-	drawpos = room_width / 2 + 8 + 48 * i;
+	drawpos = room_width / 2 + 10 + 48 * i;
 	draw_rectangle(drawpos, 8, drawpos+44, 56,0);
 }
 
