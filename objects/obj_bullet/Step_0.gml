@@ -11,6 +11,7 @@ if (global.hitstop <= 0) {
 	vsp += lengthdir_y(grav, gravdir);
 	hsp += lengthdir_x(grav, gravdir);
 	
+	image_angle = point_direction(0,0,hsp,vsp);
 	/*
 	trail = instance_create_layer(x, y, "trails", obj_bullettrail);
 	trail.image_angle = image_angle;
@@ -18,18 +19,15 @@ if (global.hitstop <= 0) {
 	trail.image_xscale = image_xscale;
 	trail.image_yscale = image_yscale;
 	*/
+	
+	
 	trail.image_xscale = image_xscale;
 	trail.image_yscale = image_yscale;
-	trail.tx[tcounter] = x;
-	trail.ty[tcounter] = y;
-	trail.tdir[tcounter] = point_direction(0,0,hsp,vsp);
-	trail.tcounter++;
-	tcounter++;
-	tcounter = tcounter mod tlen;
-	trail.tcounter = trail.tcounter mod trail.tlen;
 	trail.x = x;
 	trail.y = y;
 	trail.color = owner.color;
 	trail.rotation = image_angle;
+	trail.hsp = hsp;
+	trail.vsp = vsp;
 
 }

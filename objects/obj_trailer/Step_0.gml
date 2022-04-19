@@ -6,8 +6,8 @@ event_inherited();
 
 
 if (global.hitstop <= 0) {
-	trail = instance_create_layer(x,y,"hitboxes",obj_activetrail);
-	trail.timer = 120;
-	trail.owner = owner;
-	trail.team = team;
+	activetrail = instance_create_layer(x,y,"hitboxes",obj_activetrail);
+	activetrail.timer = 120;
+	activetrail.owner = owner;
+	activetrail.team = team;
 }

@@ -18,8 +18,8 @@ draw_primitive_begin(pr_trianglestrip);
 //draw_vertex_colour(x11,y11,color,1);
 for (i = 0; i < tlen; i+= 1) {
 	tcnow = (i + tcounter + tlen) mod tlen;
-	tclast = (tcnow - 1 + tlen) mod tlen;
-	tdir = point_direction(tx[tclast],ty[tclast],tx[tcnow],ty[tcnow]);
+	tcnext = (tcnow + 1) mod tlen;
+	tdir = tcnext == tcounter ? point_direction(0,0,hsp,vsp-grav) : point_direction(tx[tcnow],ty[tcnow],tx[tcnext],ty[tcnext]);
 	twid = 24;
 	talpha = clamp(i * 2 / tlen,0,1);
 	if (ammo <= 0) talpha *= 0.5;
@@ -43,7 +43,9 @@ for (i = 0; i < tlen; i+= 1) {
 	draw_vertex_colour(x11, y11,color,talpha);
 	draw_vertex_colour(x12, y12,color,talpha);
 	
-		
+	
+	//draw_vertex(x11, y11);
+	//draw_vertex(x12, y12);
 	//draw_circle(x11,y11,2,1);
 	//draw_circle(x12,y12,2,1);
 

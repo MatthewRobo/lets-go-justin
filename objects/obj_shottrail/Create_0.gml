@@ -5,8 +5,10 @@ tlen = 10;
 tcounter = 0;
 tx = array_create(tlen, x);
 ty = array_create(tlen, y);
-tdir = array_create(tlen, direction);
-
-color = c_white;
+color = c_black;
 
 decay = false;
+timer = tlen;
+
+hsp = 0;
+vsp = 0;
