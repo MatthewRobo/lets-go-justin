@@ -9,3 +9,9 @@ grav = 0;
 gravdir = 270;
 maxspd = spd;
 
+
+tlen = 10;
+tcounter = 0;
+tx = array_create(tlen, x);
+ty = array_create(tlen, y);
+tdir = array_create(tlen, direction);
