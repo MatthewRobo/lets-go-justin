@@ -16,4 +16,4 @@ audio_play_sound(snd_dies,0,0);
 
 instance_destroy(obj_glitter2);
 
-
+global.outline = c_green;

@@ -28,6 +28,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			other.owner.recovery = parrystop;
 			global.hitstop = 16;
 		}
+		global.outline = color;
 		
 		var _list = ds_list_create();
 		var _num = instance_place_list(x, y, obj_hitbox, _list, false);
@@ -56,6 +57,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		audio_play_sound(snd_dies, 1, false);
 		spawning = spawntime;
 		global.hitstop = 20;
+		global.outline = other.owner.color;
 		if (deaths == global.firstto) {
 			global.hitstop += 120;
 			ultradies = audio_play_sound(snd_dies, 1, false);

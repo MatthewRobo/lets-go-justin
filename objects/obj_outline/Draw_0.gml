@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-draw_set_colour(c_aqua);
+draw_set_colour(global.outline);
 draw_primitive_begin(pr_trianglestrip);
 draw_vertex(x11-w0,y11-w0);
 draw_vertex(x21+w0,y12-w0);
