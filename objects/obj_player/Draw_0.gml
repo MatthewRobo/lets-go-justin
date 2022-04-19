@@ -7,6 +7,50 @@ draw_vertex(x + lengthdir_x(8, direction + 90), y + lengthdir_y(8, direction + 9
 draw_vertex(x + lengthdir_x(64, direction), y + lengthdir_y(48, direction));
 draw_vertex(x + lengthdir_x(8, direction - 90), y + lengthdir_y(8, direction - 90));
 draw_primitive_end();
+
+
+draw_primitive_begin(pr_trianglestrip);
+//x11 = x+12;
+//y11 =y-24;
+//x12=x-12;
+//y12=y+24;
+//draw_vertex_colour(x11,y11,color,1);
+for (i = 0; i < tlen; i+= 1) {
+	tcnow = (i + tcounter + tlen) mod tlen;
+	//tclast = (tcnow - 1 + tlen) mod tlen;
+	//tdir = point_direction(tx[tclast],ty[tclast],tx[tcnow],ty[tcnow]);
+	//twid = 12;
+	talpha = clamp(i * 2 / tlen,0,1);
+	if (ammo <= 0) talpha *= 0.5;
+
+	x1 = tx[tcnow];
+	y1 = ty[tcnow];
+	/*
+	x11 = x1+lengthdir_x(twid,tdir+90);
+	y11 = y1+lengthdir_y(twid,tdir+90);
+	x12 = x1+lengthdir_x(twid,tdir-90);
+	y12 = y1+lengthdir_y(twid,tdir-90);
+	*/
+	x11 = x1 - 2;
+	y11 = y1 - 22;
+	x12 = x1 + 2;
+	y12 = y1 + 22;
+	
+	
+	if (global.hitstop > 0) talpha = 1;
+
+	draw_vertex_colour(x11, y11,color,talpha);
+	draw_vertex_colour(x12, y12,color,talpha);
+	
+		
+	//draw_circle(x11,y11,2,1);
+	//draw_circle(x12,y12,2,1);
+
+}
+//draw_vertex_colour(x12-24,y12,color,0);
+draw_primitive_end();
+
+draw_sprite_ext(spr_ptrail,image_index,x,y,image_xscale,image_yscale,0,color,1);
 draw_self();
 
 

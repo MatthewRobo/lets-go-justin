@@ -107,3 +107,8 @@ boom.image_yscale = 2.6;
 scale = 1.5;
 image_xscale = scale;
 image_yscale = scale;
+
+tlen = 10;
+tcounter = 0;
+tx = array_create(tlen, x);
+ty = array_create(tlen, y);

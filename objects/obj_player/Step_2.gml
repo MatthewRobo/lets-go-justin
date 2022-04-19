@@ -371,12 +371,14 @@ if (global.hitstop <= 0) {
 		vsp = vsp + grav < maxfall ? vsp + grav : maxfall;
 	}
 	spd = point_distance(0,0,hsp,vsp);
+	/*
 	trail = instance_create_layer(x, y, "trails", obj_playertrail);
 	trail.image_index = image_index;
 	if (ammo <= 0) trail.image_alpha = 0.5;
 	trail.image_blend = color;
 	trail.image_xscale = image_xscale;
 	trail.image_yscale = image_yscale;
+	*/
 	if (invul >= 0) {
 		invul--;
 		image_alpha = abs(dsin(20 * invul));
@@ -388,6 +390,12 @@ if (global.hitstop <= 0) {
 	shoot = false;
 	parry = false;
 	jump = false;
+	
+	tx[tcounter] = x;
+	ty[tcounter] = y;
+	tcounter++;
+	tcounter = tcounter mod tlen;
 } else {
-		image_speed = 0;
+	image_speed = 0;
+	talpha = 1;
 }
