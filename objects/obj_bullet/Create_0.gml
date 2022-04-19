@@ -18,3 +18,5 @@ trail.tx = array_create(tlen, x);
 trail.ty = array_create(tlen, y);
 trail.rotation = image_angle;
 
+image_alpha = 0;
+alarm[0] = 1;

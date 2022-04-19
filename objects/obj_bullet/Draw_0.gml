@@ -6,7 +6,7 @@ hrad = sprite_width / 2;
 vrad = sprite_height / 2;
 outrad = 4;
 rotation = point_direction(0,0,hsp,vsp);
-draw_set_alpha(1);
+draw_set_alpha(image_alpha);
 draw_primitive_begin(pr_trianglefan);
 /*
 for (i = 0; i <= 360; i += 360 / steps) {
