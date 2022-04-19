@@ -65,7 +65,8 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		invul = invultime;
 		
 		for (i = 0; i < 250; i++) {
-			trail = instance_create_layer(x, y, "trails", obj_glitter);
+			trail = instance_create_layer(x, y, "hitboxes", obj_glitter);
+			trail.depth -= 2;
 			trail.image_blend = color;
 			if (irandom(1)) trail.image_blend = c_white;
 			trail.speed = random(5);
@@ -79,6 +80,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			trail.scale = random_range(1,2);
 		}
 		trail = instance_create_layer(x,y,"trails",obj_burst);
+		trail.depth -= 1;
 		trail.image_blend = color;
 		trail.image_angle = other.direction;
 
