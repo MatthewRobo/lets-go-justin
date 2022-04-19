@@ -2,11 +2,8 @@
 // You can write your code in this editor
 
 // Inherit the parent event
-if (collision_line(x,y,x+hsp,y+vsp,obj_wall,0,0)) {
-	instance_destroy();
-} else {
-	event_inherited();
-}
+event_inherited();
+
 
 if (global.hitstop <= 0) {
 	if (timer <= 0) instance_destroy();
