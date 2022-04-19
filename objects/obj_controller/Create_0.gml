@@ -9,7 +9,7 @@ global.firstto = 12;
 
 if (global.mode == gamemode.training) {
 	roundstart = 0;
-	global.firstto = 1;
+	global.firstto = 999;
 }
 
 audio_play_sound(snd_dies,0,0);
