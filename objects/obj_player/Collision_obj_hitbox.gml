@@ -76,6 +76,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			trail.gravity_direction = other.direction;
 			trail.x = random_range(bbox_left, bbox_right);
 			trail.y = random_range(bbox_bottom, bbox_top);
+			trail.scale = random_range(1,2);
 		}
 		trail = instance_create_layer(x,y,"trails",obj_burst);
 		trail.image_blend = color;
