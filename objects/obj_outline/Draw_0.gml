@@ -10,7 +10,8 @@ draw_vertex(x22+w0,y22+w0);
 draw_primitive_end();
 
 
-draw_set_colour(c_white);
+
+if (global.hitstop <= 0) draw_set_colour(c_white);
 draw_set_alpha(1);
 draw_rectangle(x1-w0, y1-w0, x2+w0, y2+w0, 0);
 

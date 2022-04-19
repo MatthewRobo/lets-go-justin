@@ -11,6 +11,13 @@ draw_set_halign(fa_right);
 for (i = 0; i < (global.firstto - obj_player1.deaths); i++) {
 	drawpos = room_width / 2 - 10 - 48 * i;
 	draw_rectangle(drawpos-44, 8, drawpos, 56,0);
+	if (obj_player1.spawntime == obj_player1.spawning && i == (global.firstto - obj_player1.deaths - 1)) {
+		draw_primitive_begin(pr_trianglelist);
+		draw_vertex(drawpos-44-48,56);
+		draw_vertex(drawpos-48,56);
+		draw_vertex(obj_player1.x,obj_player1.y);
+		draw_primitive_end();
+	}
 }
 
 draw_set_colour(global.color[1]);
@@ -19,6 +26,13 @@ draw_set_halign(fa_left);
 for (i = 0; i < (global.firstto - obj_player2.deaths); i++) {
 	drawpos = room_width / 2 + 10 + 48 * i;
 	draw_rectangle(drawpos, 8, drawpos+44, 56,0);
+	if (obj_player2.spawntime == obj_player2.spawning && i == (global.firstto - obj_player2.deaths - 1)) {
+		draw_primitive_begin(pr_trianglelist);
+		draw_vertex(drawpos+44+48,56);
+		draw_vertex(drawpos+48,56);
+		draw_vertex(obj_player2.x,obj_player2.y);
+		draw_primitive_end();
+	}
 }
 
 draw_set_valign(fa_bottom);
@@ -49,3 +63,5 @@ if (obj_player2.deaths == global.firstto) {
 	draw_set_halign(fa_center);
 	draw_text(room_width/2, room_height/2, "PLAYER 1\nWIN");
 }
+
+

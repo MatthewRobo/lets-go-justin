@@ -57,7 +57,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		audio_play_sound(snd_dies, 1, false);
 		spawning = spawntime;
 		global.hitstop = 20;
-		global.outline = other.owner.color;
+		global.outline = color;
 		if (deaths == global.firstto) {
 			global.hitstop += 120;
 			ultradies = audio_play_sound(snd_dies, 1, false);
