@@ -332,6 +332,10 @@ if (global.hitstop <= 0) {
 		}
 		break;
 	case status.recovery:
+		if (walkspeed) {
+			if (left && !right) image_xscale = -scale;
+			else if (right && !left) image_xscale = scale;
+		}
 		recovery--;
 		if (recovery <= 0) {
 			state = status.idle;
@@ -366,7 +370,7 @@ if (global.hitstop <= 0) {
 		if ((grounded >= 3 && (dir == 1 || dir == 3) ) || dir == 2 || dir == 5 || dir == 8 || state != status.idle) {
 			hsp = abs(hsp) <= deccel ? 0 : hsp - sign(hsp) * deccel;
 		}
-		if (state != status.parry) {
+		if (state != status.parry && (state == status.idle || walkspeed)) {
 			jumpforce = state == status.idle ? jumpsp : hopsp;
 			if (jump) {
 				if (grounded > 0) {
@@ -377,6 +381,7 @@ if (global.hitstop <= 0) {
 				} else canhover = true;
 			}
 			movespd = state == status.idle ? maxspeed : walkspeed;
+
 			if (dir == 4 || dir == 7 || (dir == 1 && grounded < 3)) {
 				hsp = hsp > -movespd ? hsp - accel : hsp + 1;
 			} else if (dir == 6 || dir == 9 || (dir == 3 && grounded < 3)) {
