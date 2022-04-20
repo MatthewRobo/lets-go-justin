@@ -171,7 +171,7 @@ if (global.hitstop <= 0) {
 			invul /= 2;
 			if (ammo > 0) {
 				hsp += lengthdir_x(-recoil, direction);
-				vsp += lengthdir_y(-recoil, direction);
+				vsp += lengthdir_y(-recoil, direction) * 0.85;
 				spark = instance_create_layer(x, y, "parryfx", obj_parry);
 				spark.owner = id;
 				spark.direction = direction + 180;

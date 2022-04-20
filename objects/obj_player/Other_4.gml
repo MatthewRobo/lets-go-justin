@@ -33,7 +33,7 @@ switch shottype {
 		gunrecovery = 28;
 		gunreload = 45;
 		shotactive = 28;
-		recoil = 6;
+		recoil = 16;
 		break;
 	case shot.wallbang:
 		shotobj = obj_wallbang;
