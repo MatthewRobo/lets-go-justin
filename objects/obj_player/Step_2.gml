@@ -110,14 +110,7 @@ if (global.hitstop <= 0) {
 	case status.idle:
 		if (left && !right) image_xscale = -scale;
 		else if (right && !left) image_xscale = scale;
-		if (jump) {
-			if (grounded > 0) {
-				vsp = -jumpsp;
-				grounded = 0;
-				audio_play_sound(snd_jump, 0, false);
-				canhover = false;
-			} else canhover = true;
-		}
+
 		if (!grounded && airjumps > 0 && hover && canhover) {
 			sfx = audio_play_sound(snd_hover, 0, false);
 			audio_sound_pitch(sfx, lerp(2, 1, airjumps / jumpmax));
@@ -139,11 +132,7 @@ if (global.hitstop <= 0) {
 			vsp -= thrust;
 			airjumps--;
 		}
-		if (dir == 4 || dir == 7 || (dir == 1 && grounded < 3) ) {
-			hsp = hsp > -maxspeed ? hsp - accel : hsp + 1;
-		} else if (dir == 6 || dir == 9 || (dir == 3 && grounded < 3)  ) {
-			hsp = hsp <  maxspeed ? hsp + accel :  hsp - 1;
-		}
+
 		if (vsp < 0 && uprelease) {
 			vsp /= 2; // cut player's jump short if player releases early
 		}
@@ -372,6 +361,25 @@ if (global.hitstop <= 0) {
 		if ((grounded >= 3 && (dir == 1 || dir == 3) ) || dir == 2 || dir == 5 || dir == 8 || state != status.idle) {
 			hsp = abs(hsp) <= deccel ? 0 : hsp - sign(hsp) * deccel;
 		}
+		if (state != status.parry) {
+			jumpforce = state == status.idle ? jumpsp : hopsp;
+			if (jump) {
+				if (grounded > 0) {
+					vsp = -jumpforce;
+					grounded = 0;
+					audio_play_sound(snd_jump, 0, false);
+					canhover = false;
+				} else canhover = true;
+			}
+			movespd = state == status.idle ? maxspeed : walkspeed;
+			if (dir == 4 || dir == 7 || (dir == 1 && grounded < 3)) {
+				hsp = hsp > -movespd ? hsp - accel : hsp + 1;
+			} else if (dir == 6 || dir == 9 || (dir == 3 && grounded < 3)) {
+				hsp = hsp <  movespd ? hsp + accel :  hsp - 1;
+			}
+		}
+		
+		
 		if place_meeting(x + hsp, y, obj_wall) {
 			while (!place_meeting(x + sign(hsp), y, obj_wall)) { //whilst the next pixel isn't a wall
 				x += sign(hsp);
