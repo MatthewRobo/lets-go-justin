@@ -172,6 +172,8 @@ if (global.hitstop <= 0) {
 			if (ammo > 0) {
 				hsp += lengthdir_x(-recoil, direction);
 				vsp += lengthdir_y(-recoil, direction) * 0.85;
+				if (vsp < 0) grounded = 0;
+				canhover = true;
 				spark = instance_create_layer(x, y, "parryfx", obj_parry);
 				spark.owner = id;
 				spark.direction = direction + 180;
@@ -315,6 +317,11 @@ if (global.hitstop <= 0) {
 				ammo--;
 				state = status.recovery;
 				sprite_index = spr_recovery;
+				if (recovery <= 0) {
+					state = status.idle;
+					sprite_index = ammo > 0 ? spr_idle : spr_empty;
+				}
+				
 			} else {
 				audio_play_sound(snd_reload, 0, false);
 				recovery = gunreload;
