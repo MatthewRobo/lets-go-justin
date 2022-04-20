@@ -20,7 +20,7 @@ shottype = global.shots[team];
 color = global.color[team];
 
 recovery = instance_number(obj_controller) > 0 ? obj_controller.roundstart : recovery;
-state = status.recovery;
+state = status.parried;
 
 switch shottype {
 	case shot.bullet:
@@ -77,7 +77,7 @@ switch shottype {
 		shotobj = obj_timed;
 		ammomax = 2;
 		bulletspeed = 6;
-		gunrecovery = 20;
+		gunrecovery = 20;	
 		gunreload = 37;
 		shotactive = 8;
 		break;
