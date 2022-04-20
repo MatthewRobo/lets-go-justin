@@ -6,7 +6,7 @@ if (global.hitstop <= 0) {
 	y += vsp;
 	ray = collision_line(x,y,x-hsp,y-vsp,obj_player,0,0);
 	if (ray != noone) {
-		if (ray.team != team) {
+		if (ray.team != team && ray.invul <= 0) {
 			x = ray.x;
 			y = ray.y;
 		}

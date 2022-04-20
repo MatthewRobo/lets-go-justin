@@ -5,3 +5,4 @@
 event_inherited();
 
 maxspd = 10;
+image_yscale *= 0.5;
