@@ -2,7 +2,7 @@
 // You can write your code in this editor
 _w2 = w0;
 w2 = _w2+ global.hitstop / 2;
-lerpfactor = _lerpfactor + global.hitstop / 10;
+lerpfactor = clamp(_lerpfactor + global.hitstop / 10,0,1);
 
 x11 = lerp(x11, _x1 - random_range(w1,w2), lerpfactor);
 x12 = lerp(x12, _x1 - random_range(w1,w2), lerpfactor);
