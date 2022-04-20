@@ -20,7 +20,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			superreflect = false;
 			reflected = other.owner;
 			counterspeed = other.spd < 32 ? 32 : other.spd;
-			global.hitstop = 9 * counterspeed / 32;
+			global.hitstop = clamp(9 * counterspeed / 32,0,60);
 		}
 		else {
 			other.owner.state = status.parried;
