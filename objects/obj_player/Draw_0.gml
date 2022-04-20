@@ -12,8 +12,30 @@ draw_primitive_end();
 
 */
 
-/// @description Insert description here
-// You can write your code in this editor
+if (dir != 5) {
+	var _c = dcos(direction);
+	var _s = dsin(direction);
+
+	_x = 32;
+	_y = 8;
+	var _x1 = x + _c * _x + _s * _y;
+	var _y1 = y + _c * _y - _s * _x;
+
+	_y = -8;
+	var _x2 = x + _c * _x + _s * _y;
+	var _y2 = y + _c * _y - _s * _x;
+
+	_x = 40;
+	_y = 0;
+	var _x3 = x + _c * _x + _s * _y;
+	var _y3 = y + _c * _y - _s * _x;
+
+	draw_primitive_begin(pr_trianglelist);
+	draw_vertex(_x1,_y1);
+	draw_vertex(_x2,_y2);
+	draw_vertex(_x3,_y3);
+	draw_primitive_end();
+}
 
 hrad = sprite_width / 2;
 vrad = sprite_height / 2;
@@ -21,27 +43,27 @@ vrad = sprite_height / 2;
 steps = 24;
 draw_set_color(color);
 draw_set_alpha(1);
-draw_primitive_begin(pr_trianglestrip);
-angle = 90;
-if (dir == 5)  angle = 0;
-for (i = -angle; i <= angle; i += 360 / steps) {
-	irad = 44;
-	orad = 48;
-	_xi = lengthdir_x(irad, i + direction);
-	_yi = lengthdir_y(irad, i + direction);
+//draw_primitive_begin(pr_trianglestrip);
+//angle = 90;
+//if (dir == 5)  angle = 0;
+//for (i = -angle; i <= angle; i += 360 / steps) {
+//	irad = 44;
+//	orad = 48;
+//	_xi = lengthdir_x(irad, i + direction);
+//	_yi = lengthdir_y(irad, i + direction);
 	
-	_xo = lengthdir_x(orad, i + direction);
-	_yo = lengthdir_y(orad, i + direction);
+//	_xo = lengthdir_x(orad, i + direction);
+//	_yo = lengthdir_y(orad, i + direction);
 
-	var _x1 = x + _xi;
-	var _y1 = y + _yi;
-	var _x2 = x + _xo;
-	var _y2 = y + _yo;
+//	var _x1 = x + _xi;
+//	var _y1 = y + _yi;
+//	var _x2 = x + _xo;
+//	var _y2 = y + _yo;
 
-	draw_vertex(_x1, _y1);
-	draw_vertex(_x2, _y2);
-}
-draw_primitive_end();
+//	draw_vertex(_x1, _y1);
+//	draw_vertex(_x2, _y2);
+//}
+//draw_primitive_end();
 
 draw_primitive_begin(pr_trianglestrip);
 //x11 = x+12;
@@ -109,11 +131,11 @@ draw_self();
 draw_sprite_ext(spr_ptrail,image_index,x,y,image_xscale,image_yscale,0,c_white,abs(dsin(360/30 * invul) * clamp(invul/60,0,1)));
 
 
-draw_primitive_begin(pr_trianglelist);
-draw_vertex(x, y-24);
-draw_vertex(x-8, y-32);
-draw_vertex(x+8, y-32);
-draw_primitive_end();
+//draw_primitive_begin(pr_trianglelist);
+//draw_vertex(x, y-24);
+//draw_vertex(x-8, y-32);
+//draw_vertex(x+8, y-32);
+//draw_primitive_end();
 
 if (state != status.idle) {
 	draw_rectangle(x,y-33,x+recovery,y-38,0);
