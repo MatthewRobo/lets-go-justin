@@ -295,6 +295,12 @@ if (global.hitstop <= 0) {
 						}
 						break;
 					case shot.sin:
+						switch ammo {
+							case 4: shotobj = obj_sin; break;
+							case 3: shotobj = obj_saw; break;
+							case 2: shotobj = obj_triangle; break;
+							case 1: shotobj = obj_square; break;
+						}
 						attack = instance_create_layer(x, y, "hitboxes", shotobj);
 						attack.owner = self;
 						attack.team = team;
@@ -302,7 +308,7 @@ if (global.hitstop <= 0) {
 						attack.spd = bulletspeed;
 						attack.hsp = lengthdir_x(attack.spd, attack.direction);
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
-						break;
+
 					
 				}
 

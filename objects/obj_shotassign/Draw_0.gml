@@ -49,7 +49,7 @@ for (p = -1; p < 2; p++) {
 				break;
 				case shot.geyser: text += "Geyser"; 
 				break;
-				case shot.sin: text += "Sin";
+				case shot.sin: text += "Wave";
 				break;
 				default: text += "UNNAMED";
 				break;
@@ -81,7 +81,7 @@ for (p = -1; p < 2; p++) {
 					break;
 					case shot.geyser: desc += "Hits far, then near.\nTwo ammo.";
 					break;
-					case shot.sin: desc += "A garbage shot.\nHopefully it'll hit?";
+					case shot.sin: desc += "Sine, saw, triangle, square.\nFour ammo.";
 					break;
 					default: desc += "NO DESCRIPTION EXISTS";
 					break;
