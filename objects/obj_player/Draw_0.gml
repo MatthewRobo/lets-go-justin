@@ -23,7 +23,7 @@ for (i = 0; i < tlen; i+= 1) {
 	twid = 24;
 	//talpha = clamp(2 * (i - tlen / 2) / (tlen / 2),0,1);
 	talpha = clamp(2 * (i - 50) / 10,0,1);
-	if (ammo <= 0) talpha *= 0.5;
+	if (ammo <= 0) talpha *= 0.4;
 
 	x1 = tx[tcnow];
 	y1 = ty[tcnow];
@@ -38,12 +38,12 @@ for (i = 0; i < tlen; i+= 1) {
 	x12 = x1 + 2;
 	y12 = y1 + 22;
 	*/
-	
+	tcolor = color;
+
 	if (global.hitstop > 0) talpha = i * 2 / tlen;
 
-	draw_vertex_colour(x11, y11,color,talpha);
-	draw_vertex_colour(x12, y12,color,talpha);
-	
+	draw_vertex_colour(x11, y11,tcolor,talpha);
+	draw_vertex_colour(x12, y12,tcolor,talpha);
 	
 	//draw_vertex(x11, y11);
 	//draw_vertex(x12, y12);
@@ -56,6 +56,17 @@ draw_primitive_end();
 
 //tlast = (tcounter + 1 + tlen) mod tlen;
 //draw_sprite_ext(spr_ptrail,image_index,tx[tlast],ty[tlast],image_xscale,image_yscale,0,color,1);
+
+for (i = 1; i <= ammo; i++) {
+	tcnow = (tlen - (i*2) + tcounter) mod tlen;
+
+	x1 = tx[tcnow];
+	y1 = ty[tcnow];
+	
+	draw_circle_color(x1,y1,7,color,color,0);
+	draw_circle_color(x1,y1,6,c_white,c_white,0);
+	// draw_text(x1,y1,i);
+}
 
 _s = spawning == spawntime ? (global.hitstop * global.hitstop) / 60 : 1;
 _color = deaths == global.firstto ? c_black : color;
