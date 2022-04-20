@@ -282,7 +282,6 @@ if (global.hitstop <= 0) {
 						gap = 3;
 						for (i = 0; i < 4; i ++) {
 							for (j = -1; j <= 1; j += 2) {
-								
 								attack = instance_create_layer(x + lengthdir_x(dist - i * gap, direction), y + lengthdir_y(dist - i * gap, direction), "hitboxes", shotobj);
 								attack.image_xscale = 2;
 								attack.image_yscale = 0.75;
@@ -310,7 +309,22 @@ if (global.hitstop <= 0) {
 						attack.spd = bulletspeed;
 						attack.hsp = lengthdir_x(attack.spd, attack.direction);
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
-
+						break;
+					case shot.whip:
+						flip = ammo mod 2 ? 1 : -1;
+						len = shotactive * bulletspeed;
+						for (i = 0; i < 360; i += 360 / 10) {
+							attack = instance_create_layer(x, y, "hitboxes", shotobj);
+							attack.owner = self;
+							attack.team = team;
+							attack.direction = direction + dcos(i) * 15 * flip;
+							j = 10 + i / 20;
+							attack.timer = j;
+							attack.spd =  len/j;
+							attack.hsp = lengthdir_x(attack.spd, attack.direction);
+							attack.vsp = lengthdir_y(attack.spd, attack.direction);
+						}
+						break;
 					
 				}
 

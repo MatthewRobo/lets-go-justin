@@ -8,29 +8,31 @@ xdraw = room_width / 2;
 
 draw_set_font(Font1);
 draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
+draw_set_valign(fa_top);
 
-ydraw = room_height / 8;
+ydraw = 24;
+mode = "";
 
 switch global.mode {
 	case gamemode.versus:
-		text = "Local VS";
+		mode = "Local VS";
 		break;
 	case gamemode.training:
-		text = "Training Mode";
+		mode = "Training Mode";
 		break;
 }
-draw_text(xdraw, ydraw, text);
+//draw_text(xdraw, ydraw, mode);
 
-
+draw_set_valign(fa_middle);
 ydraw = room_height / 2;
 
 //for (p = -1; p < PLAYERS; p++) {
 for (p = -1; p < 2; p++) {
 	draw_set_colour(c_white);
-	text = "";
-	desc = "";
+	text = "\n";
+	desc = "\n";
 	if (p < 0) {
+		text = mode + "\n";
 		for (i = 0; i < shot.length; i++) {
 			switch i {
 				case shot.bullet: text += "Marksman"; 
@@ -49,7 +51,9 @@ for (p = -1; p < 2; p++) {
 				break;
 				case shot.geyser: text += "Geyser"; 
 				break;
-				case shot.sin: text += "Trigonometry";
+				case shot.sin: text += "Trig";
+				break;
+				case shot.whip: text += "Whip";
 				break;
 				default: text += "UNNAMED";
 				break;
@@ -81,7 +85,9 @@ for (p = -1; p < 2; p++) {
 					break;
 					case shot.geyser: desc += "Hits far, then near.\nTwo ammo.";
 					break;
-					case shot.sin: desc += "SOHCAHTOA.\nThree ammo.";
+					case shot.sin: desc += "Sine, cosine, tangent.\nThree ammo.";
+					break;
+					case shot.whip: desc += "Some spread.\nTwo ammo.";
 					break;
 					default: desc += "NO DESCRIPTION EXISTS";
 					break;

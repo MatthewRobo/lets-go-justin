@@ -11,6 +11,7 @@ enum shot {
 	grenade,
 	geyser,
 	sin,
+	whip,
 	length
 }
 
@@ -87,6 +88,14 @@ switch shottype {
 		bulletspeed = 0;
 		gunrecovery = 30;
 		gunreload = 40;
+		break;
+	case shot.whip:
+		shotobj = obj_timed;
+		ammomax = 2;
+		bulletspeed = 1;
+		shotactive = 256;
+		gunrecovery = 28;
+		gunreload = 45;
 		break;
 }
 
