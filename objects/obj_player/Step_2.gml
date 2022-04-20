@@ -332,7 +332,7 @@ if (global.hitstop <= 0) {
 		}
 		break;
 	case status.recovery:
-		if (walkspeed) {
+		if (walksp) {
 			if (left && !right) image_xscale = -scale;
 			else if (right && !left) image_xscale = scale;
 		}
@@ -364,13 +364,15 @@ if (global.hitstop <= 0) {
 		}
 		break;
 	}
+	
 	if (state != status.parried) {
-
 		// *** PHYSICS AND COLLISION ***
+		
+		// deccelerate when not moving
 		if ((grounded >= 3 && (dir == 1 || dir == 3) ) || dir == 2 || dir == 5 || dir == 8 || state != status.idle) {
 			hsp = abs(hsp) <= deccel ? 0 : hsp - sign(hsp) * deccel;
 		}
-		if (state != status.parry && (state == status.idle || walkspeed)) {
+		if (state != status.parry && (state == status.idle || walksp)) {
 			jumpforce = state == status.idle ? jumpsp : hopsp;
 			if (jump) {
 				if (grounded > 0) {
@@ -380,8 +382,8 @@ if (global.hitstop <= 0) {
 					canhover = false;
 				} else canhover = true;
 			}
-			movespd = state == status.idle ? maxspeed : walkspeed;
-
+			
+			movespd = state == status.idle ? runsp : walksp;
 			if (dir == 4 || dir == 7 || (dir == 1 && grounded < 3)) {
 				hsp = hsp > -movespd ? hsp - accel : hsp + 1;
 			} else if (dir == 6 || dir == 9 || (dir == 3 && grounded < 3)) {
@@ -389,8 +391,13 @@ if (global.hitstop <= 0) {
 			}
 		}
 		
+		sp = point_distance(0,0,hsp,vsp);
+		if (sp > maxsp) {
+			hsp *= maxsp / sp;
+			vsp *= maxsp / sp;
+		}
 		
-		if place_meeting(x + hsp, y, obj_wall) {
+		if place_meeting(x + hsp, y, obj_wall) || collision_line(x,y,x+hsp,y,obj_wall,0,0) {
 			while (!place_meeting(x + sign(hsp), y, obj_wall)) { //whilst the next pixel isn't a wall
 				x += sign(hsp);
 			}
@@ -398,7 +405,7 @@ if (global.hitstop <= 0) {
 		} else {
 			x += hsp;
 		}
-		if place_meeting(x, y + vsp, obj_wall) {
+		if place_meeting(x, y + vsp, obj_wall) || collision_line(x,y,x,y+vsp,obj_wall,0,0) {
 			while (!place_meeting(x, y + sign(vsp), obj_wall)) { //whilst the next pixel isn't a wall
 				y += sign(vsp);
 			}
@@ -408,7 +415,7 @@ if (global.hitstop <= 0) {
 		}
 		vsp = vsp + grav < maxfall ? vsp + grav : maxfall;
 	}
-	spd = point_distance(0,0,hsp,vsp);
+
 	/*
 	trail = instance_create_layer(x, y, "trails", obj_playertrail);
 	trail.image_index = image_index;

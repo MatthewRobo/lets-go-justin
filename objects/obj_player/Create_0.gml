@@ -21,14 +21,16 @@ spawnpoint = obj_respawn;
 
 deaths = 0;
 
-maxspeed = 12;
+maxsp = 100;
+runsp = 12;
 accel = 1.5;
 deccel = 1.5;
-walkspeed = 2;
-movespd = maxspeed;
+walksp = 2;
+movespd = runsp;
 
 vsp = 0;
 hsp = 0;
+sp = 0;
 
 invul = 0;
 invultime = 150;
