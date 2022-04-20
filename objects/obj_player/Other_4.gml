@@ -12,6 +12,7 @@ enum shot {
 	geyser,
 	sin,
 	whip,
+	wall2,
 	length
 }
 
@@ -96,6 +97,13 @@ switch shottype {
 		shotactive = 256;
 		gunrecovery = 28;
 		gunreload = 45;
+		break;
+	case shot.wall2:
+		shotobj = obj_timed;
+		bulletspeed = 1;
+		gunrecovery = 30;
+		gunreload = 60;
+		shotactive = 400;
 		break;
 }
 
