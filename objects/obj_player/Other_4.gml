@@ -77,7 +77,7 @@ switch shottype {
 		shotobj = obj_timed;
 		ammomax = 2;
 		bulletspeed = 6;
-		gunrecovery = 20;	
+		gunrecovery = 17;	
 		gunreload = 37;
 		shotactive = 8;
 		break;
