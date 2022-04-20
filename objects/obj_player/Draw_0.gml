@@ -3,12 +3,45 @@
 
 draw_set_colour(color);
 draw_set_alpha(1);
+/*
 draw_primitive_begin(pr_trianglestrip);
 draw_vertex(x + lengthdir_x(8, direction + 90), y + lengthdir_y(8, direction + 90));
 draw_vertex(x + lengthdir_x(64, direction), y + lengthdir_y(48, direction));
 draw_vertex(x + lengthdir_x(8, direction - 90), y + lengthdir_y(8, direction - 90));
 draw_primitive_end();
 
+*/
+
+/// @description Insert description here
+// You can write your code in this editor
+
+hrad = sprite_width / 2;
+vrad = sprite_height / 2;
+
+steps = 24;
+draw_set_color(color);
+draw_set_alpha(1);
+draw_primitive_begin(pr_trianglestrip);
+angle = 90;
+if (dir == 5)  angle = 0;
+for (i = -angle; i <= angle; i += 360 / steps) {
+	irad = 44;
+	orad = 48;
+	_xi = lengthdir_x(irad, i + direction);
+	_yi = lengthdir_y(irad, i + direction);
+	
+	_xo = lengthdir_x(orad, i + direction);
+	_yo = lengthdir_y(orad, i + direction);
+
+	var _x1 = x + _xi;
+	var _y1 = y + _yi;
+	var _x2 = x + _xo;
+	var _y2 = y + _yo;
+
+	draw_vertex(_x1, _y1);
+	draw_vertex(_x2, _y2);
+}
+draw_primitive_end();
 
 draw_primitive_begin(pr_trianglestrip);
 //x11 = x+12;
