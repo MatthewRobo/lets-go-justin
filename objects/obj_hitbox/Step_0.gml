@@ -4,4 +4,12 @@
 if (global.hitstop <= 0) {
 	x += hsp;
 	y += vsp;
+	ray = collision_line(x,y,x-hsp,y-vsp,obj_player,0,0);
+	if (ray != noone) {
+		if (ray.team != team) {
+			x = ray.x;
+			y = ray.y;
+		}
+	}
+	
 }

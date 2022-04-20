@@ -83,7 +83,7 @@ switch shottype {
 		break;
 	case shot.sin:
 		shotobj = obj_sin;
-		ammomax = 4;
+		ammomax = 3;
 		bulletspeed = 0;
 		gunrecovery = 30;
 		gunreload = 40;
