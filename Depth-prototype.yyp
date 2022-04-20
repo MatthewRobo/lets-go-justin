@@ -59,6 +59,7 @@
     {"id":{"name":"obj_squaretrail","path":"objects/obj_squaretrail/obj_squaretrail.yy",},"order":12,},
     {"id":{"name":"spr_p2empty","path":"sprites/spr_p2empty/spr_p2empty.yy",},"order":4,},
     {"id":{"name":"obj_instructions","path":"objects/obj_instructions/obj_instructions.yy",},"order":4,},
+    {"id":{"name":"obj_saw","path":"objects/obj_saw/obj_saw.yy",},"order":10,},
     {"id":{"name":"obj_outline","path":"objects/obj_outline/obj_outline.yy",},"order":16,},
     {"id":{"name":"spr_slash","path":"sprites/spr_slash/spr_slash.yy",},"order":1,},
     {"id":{"name":"snd_shoot","path":"sounds/snd_shoot/snd_shoot.yy",},"order":4,},

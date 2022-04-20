@@ -24,7 +24,7 @@ deaths = 0;
 maxspeed = 12;
 accel = 1.5;
 deccel = 1.5;
-walkspeed = 4;
+walkspeed = 2;
 movespd = maxspeed;
 
 vsp = 0;
@@ -46,7 +46,7 @@ jumpmax = 30
 airjumps = jumpmax;
 maxfall = 16;
 jumpsp = 13;
-hopsp = 4;
+hopsp = 6;
 jumpforce = jumpsp;
 thrust = 0.9;
 
