@@ -150,17 +150,33 @@ if (global.hitstop <= 0) {
 		if (slash) {
 			invul /= 2;
 			audio_play_sound(snd_slash, 0, false);
-			attack = instance_create_layer(x, y, "hitboxes", obj_slash);
-			attack.owner = self;
-			attack.team = team;
-			attack.direction = direction;
-			attack.spd = slashspeed;
-			attack.hsp = lengthdir_x(attack.spd, attack.direction);
-			attack.vsp = lengthdir_y(attack.spd, attack.direction);
-			attack.image_angle = attack.direction;
-			recovery = slashactive + slashrecovery;
-			state = status.recovery;
-			sprite_index = spr_recovery;
+			if (dir == 5) {
+				for (i = 0; i < 360; i += 45) {
+					attack = instance_create_layer(x, y, "hitboxes", obj_slash);
+					attack.owner = self;
+					attack.team = team;
+					attack.direction = i;
+					attack.spd = slashspeed;
+					attack.hsp = lengthdir_x(attack.spd, attack.direction);
+					attack.vsp = lengthdir_y(attack.spd, attack.direction);
+					attack.image_angle = attack.direction;
+					recovery = slashactive + slashrecovery;
+					state = status.recovery;
+					sprite_index = spr_recovery;
+				}
+			} else {
+				attack = instance_create_layer(x, y, "hitboxes", obj_slash);
+				attack.owner = self;
+				attack.team = team;
+				attack.direction = direction;
+				attack.spd = 16;
+				attack.hsp = lengthdir_x(attack.spd, attack.direction);
+				attack.vsp = lengthdir_y(attack.spd, attack.direction);
+				attack.image_angle = attack.direction;
+				recovery = slashactive + slashrecovery;
+				state = status.recovery;
+				sprite_index = spr_recovery;
+			}
 		}
 		if (shoot) {
 			invul /= 2;
@@ -185,7 +201,7 @@ if (global.hitstop <= 0) {
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						break;
 					case shot.shotgun:
-						for (i = -60; i <= 60; i += 20) {
+						for (i = -45; i <= 45; i += 15) {
 							attack = instance_create_layer(x, y, "hitboxes", shotobj);
 							attack.owner = self;
 							attack.timer = shotactive;
@@ -218,9 +234,9 @@ if (global.hitstop <= 0) {
 						attack.spd = bulletspeed;
 						attack.hsp = lengthdir_x(attack.spd, attack.direction);
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
-						attack.vsp += vsp / 2;
-						attack.vsp -= grav;
-						attack.hsp += hsp / 2;
+						attack.vsp += vsp * 1.2;
+						attack.vsp -= grav * 1.2;
+						attack.hsp += hsp  * 1.2;
 						attack.image_xscale = 2;
 						break;
 					case shot.booster:
@@ -281,7 +297,7 @@ if (global.hitstop <= 0) {
 								attack.owner = self;
 								attack.timer = i == 1 ? shotactive + 4 : shotactive + i;
 								attack.team = team;
-								attack.direction = direction + 100 * j + (i * 20 ) * j;
+								attack.direction = direction + 100 * j + (i * 30 ) * j;
 								attack.image_angle = attack.direction;
 								attack.spd = i == 1 ? 1.5 * bulletspeed : bulletspeed;
 								attack.hsp = lengthdir_x(attack.spd, attack.direction);
