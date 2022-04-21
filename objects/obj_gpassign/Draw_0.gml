@@ -22,7 +22,7 @@ for (var i = 0; i < GP+KB; i++;)
 	draw_set_colour(c_white);
 	if (position[i] != -99) {
 		for (p = 0; p < PLAYERS; p++) {
-			if (ready[p] == i) draw_set_colour(c_red);
+			if (ready[p] == i) draw_set_colour(global.color[p]);
 		}
 		label = "";
 		if (i < GP) {
