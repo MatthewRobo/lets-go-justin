@@ -15,13 +15,13 @@ for (var d = 0; d < GP+KB; d++) {
 		global.last[d][i] = global.down[d][i];
 		if (d < GP) {
 			switch i {
-				case input.L: global.down[d][input.L] = gamepad_button_check(d, gp_padl);
+				case input.L: global.down[d][input.L] = gamepad_button_check(d, gp_padl) || gamepad_axis_value(d, gp_axislh) < 0;
 					break;
-				case input.D: global.down[d][input.D] = gamepad_button_check(d, gp_padd);
+				case input.D: global.down[d][input.D] = gamepad_button_check(d, gp_padd) || gamepad_axis_value(d, gp_axislv) > 0;
 					break;
-				case input.U: global.down[d][input.U] = gamepad_button_check(d, gp_padu);
+				case input.U: global.down[d][input.U] = gamepad_button_check(d, gp_padu) || gamepad_axis_value(d, gp_axislv) < 0;
 					break;
-				case input.R: global.down[d][input.R] = gamepad_button_check(d, gp_padr);
+				case input.R: global.down[d][input.R] = gamepad_button_check(d, gp_padr) || gamepad_axis_value(d, gp_axislh) > 0;
 					break;
 				case input.ST: global.down[d][input.ST] = gamepad_button_check(d, gp_start);
 					break;
