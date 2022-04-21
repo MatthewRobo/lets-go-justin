@@ -14,3 +14,15 @@ if (autoparry) {
 	}
 	state = status.parry;
 }
+
+if (global.mode = gamemode.training) {
+	
+	for (var i = 0; i < GP+KB; i++;)
+	{
+		if global.pressed[i][input.ST] && global.lookup[0] != i {
+			global.lookup[team] = i;
+			if (i != gamepad) audio_play_sound(snd_parry,0,0);
+			gamepad = global.lookup[team];
+		}
+	}
+}
