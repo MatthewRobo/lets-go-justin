@@ -73,24 +73,26 @@ for (p = -1; p < 2; p++) {
 		for (i = 0; i < shot.length; i++) {
 			xpos = i mod cols;
 			text = "";
-			text += "[";
+			if (p == 1) text += "]";
 			if (i == global.shots[p]) {
-
+				if (p == 1) text += "";
 				text += "P" + string(p+1);
-
+				if (p == 0) text += "";
 			}
-			text += "]";
+			if (p == 0) text += "[";
 			text += "\n";
 			playertext[p][xpos] += text;
 		}
 	}
 }
 
-
+ydraw = room_height/3;
 gap = string_width("[P1] WALLBANGER [P2]");
 pgap = 150;
-draw_set_valign(fa_top);
-vgap = string_height("[]") / cols;
+//draw_set_valign(fa_top);
+draw_set_valign(fa_middle);
+//vgap = string_height("[]") / cols;
+vgap = 0;
 for (i = 0; i < cols; i++) {
 	j = i - (cols - 1) / 2;
 	draw_set_colour(c_white);

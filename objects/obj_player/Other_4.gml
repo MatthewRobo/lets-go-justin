@@ -14,6 +14,7 @@ enum shot {
 	whip,
 	wall2,
 	random,
+
 	length
 }
 

@@ -8,20 +8,29 @@ for (var p = 0; p < PLAYERS; p++;)
 	i = global.lookup[p]; // i = is INPUT port
 	if (global.mode == gamemode.versus) {
 		if (!ready[p]) {
+			shotlast = global.shots[p];
+			collast = shotlast mod cols;
+			rowlast = shotlast div cols;
+			
+			show_debug_message(string(collast) + "|" +string(rowlast));
 			if global.pressed[i][input.U] {
 				global.shots[p]-=cols;
+				//if (global.shots[p] mod cols != collast) global.shots[p] ++;
 				audio_play_sound(snd_shield,0,0);
 			}
 			if global.pressed[i][input.D] {
 				global.shots[p]+=cols;
+				//if (global.shots[p] mod cols != collast) global.shots[p] --;
 				audio_play_sound(snd_shield,0,0);
 			}
 			if global.pressed[i][input.L] {
 				global.shots[p]--;
+				if (global.shots[p] div cols != rowlast) global.shots[p] += cols;
 				audio_play_sound(snd_shield,0,0);
 			}
 			if global.pressed[i][input.R] {
 				global.shots[p]++;
+				if (global.shots[p] div cols != rowlast) global.shots[p] -= cols;
 				audio_play_sound(snd_shield,0,0);
 			}
 			if global.pressed[i][input.ST] {
