@@ -44,7 +44,7 @@ switch irandom(7) {
 		global.color[0] = $0080ff;
 		global.color[1] = $cd9300;
 		global.bgcolor = $461d00;
-		global.fgcolor = $0344b5;
+		global.fgcolor = $023455;
 		global.fgcolor2 = $3eb6ff;
 		break;
 	case 5: // RED BLUE
@@ -61,7 +61,7 @@ switch irandom(7) {
 		global.fgcolor = $2b0047;
 		global.fgcolor2 = $a851ff;
 		break;
-	case 7:
+	case 7: // PAC MAN
 		global.color[0] = c_red;
 		global.color[1] = c_aqua;
 		global.bgcolor = $030303;
