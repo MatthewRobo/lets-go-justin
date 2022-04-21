@@ -9,10 +9,18 @@ for (var p = 0; p < PLAYERS; p++;)
 	if (global.mode == gamemode.versus) {
 		if (!ready[p]) {
 			if global.pressed[i][input.U] {
-				global.shots[p]--;
+				global.shots[p]-=cols;
 				audio_play_sound(snd_shield,0,0);
 			}
 			if global.pressed[i][input.D] {
+				global.shots[p]+=cols;
+				audio_play_sound(snd_shield,0,0);
+			}
+			if global.pressed[i][input.L] {
+				global.shots[p]--;
+				audio_play_sound(snd_shield,0,0);
+			}
+			if global.pressed[i][input.R] {
 				global.shots[p]++;
 				audio_play_sound(snd_shield,0,0);
 			}
@@ -30,16 +38,25 @@ for (var p = 0; p < PLAYERS; p++;)
 			}
 	} else if (global.mode == gamemode.training) {
 		if (!ready[0]) {
+			var _p = 0;
 			if global.pressed[i][input.U] {
-				global.shots[0]--;
+				global.shots[_p]-=cols;
 				audio_play_sound(snd_shield,0,0);
 			}
 			if global.pressed[i][input.D] {
-				global.shots[0]++;
+				global.shots[_p]+=cols;
+				audio_play_sound(snd_shield,0,0);
+			}
+			if global.pressed[i][input.L] {
+				global.shots[_p]--;
+				audio_play_sound(snd_shield,0,0);
+			}
+			if global.pressed[i][input.R] {
+				global.shots[_p]++;
 				audio_play_sound(snd_shield,0,0);
 			}
 			if global.pressed[i][input.ST] {
-				ready[0] = true;
+				ready[_p] = true;
 				audio_play_sound(snd_parry,0,0);
 			}
 			if global.pressed[i][input.SE] {
@@ -47,16 +64,25 @@ for (var p = 0; p < PLAYERS; p++;)
 				audio_play_sound(snd_parry,0,0);
 			}
 		} else if (!ready[1]) {
+			_p = 1;
 			if global.pressed[i][input.U] {
-				global.shots[1]--;
+				global.shots[_p]-=cols;
 				audio_play_sound(snd_shield,0,0);
 			}
 			if global.pressed[i][input.D] {
-				global.shots[1]++;
+				global.shots[_p]+=cols;
+				audio_play_sound(snd_shield,0,0);
+			}
+			if global.pressed[i][input.L] {
+				global.shots[_p]--;
+				audio_play_sound(snd_shield,0,0);
+			}
+			if global.pressed[i][input.R] {
+				global.shots[_p]++;
 				audio_play_sound(snd_shield,0,0);
 			}
 			if global.pressed[i][input.ST] {
-				ready[1] = true;
+				ready[_p] = true;
 				audio_play_sound(snd_parry,0,0);
 			}
 			if global.pressed[i][input.SE] {
