@@ -1,4 +1,5 @@
-audio_play_sound(snd_land, 0, 0);
+sound = audio_play_sound(snd_land, 0, 0);
+audio_sound_pitch(sound, random_range(0.8,1.2));
 
 boom = instance_create_layer(x, y, "Trails", obj_boom);
 boom.image_xscale = image_xscale;
