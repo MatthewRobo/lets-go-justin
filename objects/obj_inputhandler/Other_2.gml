@@ -51,5 +51,5 @@ global.color[3] = c_teal;
 //color = $d000ff
 
 for (var d = 0; d < GP; d++) {
-	gamepad_set_axis_deadzone(d,0.15);
+	gamepad_set_axis_deadzone(d,0.30);
 }
