@@ -37,7 +37,7 @@ for (i = 0; i < (global.firstto - obj_player2.deaths); i++) {
 
 draw_set_valign(fa_bottom);
 
-draw_set_colour(c_white);
+draw_set_colour(global.fgcolor2);
 draw_set_halign(fa_center);
 
 draw_rectangle(room_width/2-1, 4, room_width/2+1, 59,0);

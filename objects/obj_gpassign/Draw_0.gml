@@ -19,7 +19,7 @@ ydraw += 120;
 
 for (var i = 0; i < GP+KB; i++;)
 {
-	draw_set_colour(c_white);
+	draw_set_colour(global.fgcolor2);
 	if (position[i] != -99) {
 		for (p = 0; p < PLAYERS; p++) {
 			if (ready[p] == i) draw_set_colour(global.color[p]);
@@ -45,7 +45,7 @@ for (var i = 0; i < GP+KB; i++;)
 	}
 }
 
-draw_set_colour(c_white);
+draw_set_colour(global.fgcolor2);
 
 draw_set_font(Font1);
 draw_set_halign(fa_center);

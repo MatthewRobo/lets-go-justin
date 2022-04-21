@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-draw_set_colour(c_white);
+draw_set_colour(global.fgcolor2);
 
 xdraw = room_width / 2;
 
@@ -32,7 +32,7 @@ shottext = array_create(cols,"");
 playertext = array_create(PLAYERS,array_create(cols,""));
 
 for (p = -1; p < 2; p++) {
-	draw_set_colour(c_white);
+	draw_set_colour(global.fgcolor2);
 	if (p < 0) {
 		for (i = 0; i < shot.length; i++) {
 			xpos = i mod cols;
@@ -95,13 +95,13 @@ draw_set_valign(fa_middle);
 vgap = 0;
 for (i = 0; i < cols; i++) {
 	j = i - (cols - 1) / 2;
-	draw_set_colour(c_white);
+	draw_set_colour(global.fgcolor2);
 	draw_text(xdraw + gap * j, ydraw, shottext[i]);
 	for (p = 0; p < PLAYERS; p++) {
 		k = p == 0 ? -pgap : pgap;
 
 		l = p == 0 ? -vgap/3 : vgap/3;
-		draw_set_colour(c_white);
+		draw_set_colour(global.fgcolor2);
 		if (ready[p]) draw_set_colour(global.color[p]);
 		draw_text(xdraw + gap * j + k, ydraw + l, playertext[p][i]);
 	}
@@ -141,7 +141,7 @@ for (p = 0; p < PLAYERS; p++) {
 			break;
 		}
 		k = p == 0 ? room_width * 0.25 : room_width * 0.75;
-		draw_set_colour(c_white);
+		draw_set_colour(global.fgcolor2);
 		//draw_set_colour(global.color[p]);
 		draw_text(k,ydraw,desc);
 	}
