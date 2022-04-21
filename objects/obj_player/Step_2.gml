@@ -428,11 +428,13 @@ if (global.hitstop <= 0) {
 				} else canhover = true;
 			}
 			
-			movespd = state == status.idle ? runsp : walksp;
-			if (dir == 4 || dir == 7 || (dir == 1 && grounded < 3)) {
-				hsp = hsp > -movespd ? hsp - accel : hsp + 1;
-			} else if (dir == 6 || dir == 9 || (dir == 3 && grounded < 3)) {
-				hsp = hsp <  movespd ? hsp + accel :  hsp - 1;
+			movesp = state == status.idle ? runsp : walksp;
+			if (dir == 4 || dir == 7 || dir == 1) {
+				if (dir == 1 && grounded >= 3) movesp = walksp;
+				hsp = hsp > -movesp ? hsp - accel : hsp + 1;
+			} else if (dir == 6 || dir == 9 || dir == 3) {
+				if (dir == 3 && grounded >= 3) movesp = walksp;
+				hsp = hsp <  movesp ? hsp + accel :  hsp - 1;
 			}
 		}
 		

@@ -26,7 +26,7 @@ runsp = 12;
 accel = 1.5;
 deccel = 1.5;
 walksp = 2;
-movespd = runsp;
+movesp = runsp;
 
 vsp = 0;
 hsp = 0;

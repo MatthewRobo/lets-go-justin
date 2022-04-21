@@ -107,11 +107,11 @@ switch shottype {
 		shotactive = 240;
 		break;
 	case shot.random:
-		bulletspeed = irandom_range(1,40);
-		shotactive = irandom_range(1,60);
+		bulletspeed = irandom_range(8,40);
+		shotactive = irandom_range(6,60);
 		ammomax = irandom_range(1,6);
-		gunrecovery = irandom_range(10,100);
-		gunreload = irandom_range(10,100);
+		gunrecovery = irandom_range(10,40) - ammomax;
+		gunreload = irandom_range(10,30) * ammomax;
 		recoil = irandom_range(-20,20);
 		break;
 }
