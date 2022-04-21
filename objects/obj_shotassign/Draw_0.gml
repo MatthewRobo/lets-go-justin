@@ -22,7 +22,10 @@ switch global.mode {
 		mode = "Training Mode";
 		break;
 }
-
+draw_set_color(global.fgcolor2);
+draw_set_valign(fa_top);
+ydraw = 20;
+draw_text(xdraw,ydraw,mode);
 
 draw_set_valign(fa_middle);
 xdraw = room_width / 2;
@@ -65,32 +68,37 @@ for (p = -1; p < 2; p++) {
 				default: text += "UNNAMED";
 				break;
 			}
-			text += "\n";
+			text += "\n\n";
 			shottext[xpos] += text;
 		}
 	} else if (p < 2) {
 
 		for (i = 0; i < shot.length; i++) {
 			xpos = i mod cols;
-			text = "";
-			if (p == 1) text += "]";
+			text = "\n";
+			//if (p == 1) text += "]";
+
 			if (i == global.shots[p]) {
+							text += "[";
 				if (p == 1) text += "";
 				text += "P" + string(p+1);
 				if (p == 0) text += "";
+							text += "]";
 			}
-			if (p == 0) text += "[";
+			//if (p == 0) text += "[";
+
 			text += "\n";
 			playertext[p][xpos] += text;
 		}
 	}
 }
 
-ydraw = room_height/3;
-gap = string_width("[P1] WALLBANGER [P2]");
-pgap = 150;
-//draw_set_valign(fa_top);
-draw_set_valign(fa_middle);
+ydraw = room_height/9;
+gap = string_width("WALLBANGER");
+//pgap = 150;
+pgap = string_width("[P2]") / 2;
+draw_set_valign(fa_top);
+//draw_set_valign(fa_middle);
 //vgap = string_height("[]") / cols;
 vgap = 0;
 for (i = 0; i < cols; i++) {
@@ -101,6 +109,7 @@ for (i = 0; i < cols; i++) {
 		k = p == 0 ? -pgap : pgap;
 
 		l = p == 0 ? -vgap/3 : vgap/3;
+		l -= 8;
 		draw_set_colour(global.fgcolor2);
 		if (ready[p]) draw_set_colour(global.color[p]);
 		draw_text(xdraw + gap * j + k, ydraw + l, playertext[p][i]);
@@ -108,8 +117,9 @@ for (i = 0; i < cols; i++) {
 	ydraw += vgap;
 }
 
-ydraw = room_height * 0.75;
+
 for (p = 0; p < PLAYERS; p++) {
+	ydraw = room_height * 0.75;
 	if (p < 2) {
 		desc = "";
 		switch global.shots[p] {
@@ -140,6 +150,7 @@ for (p = 0; p < PLAYERS; p++) {
 			default: desc += "NO DESCRIPTION EXISTS";
 			break;
 		}
+
 		k = p == 0 ? room_width * 0.25 : room_width * 0.75;
 		draw_set_colour(global.fgcolor2);
 		//draw_set_colour(global.color[p]);
