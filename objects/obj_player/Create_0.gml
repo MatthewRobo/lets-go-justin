@@ -120,3 +120,8 @@ tx = array_create(tlen, x);
 ty = array_create(tlen, y);
 
 layerdepth = layer_get_depth(layer);
+
+qlen = 60;
+dirqueue = array_create(qlen,5);
+qt = 0;
+candash = false;

@@ -1,6 +1,49 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+// input handling
+dir = 5;
+if (left && !right) dir = 4;
+else if (right && !left) dir = 6;
+if (up) dir += 3;
+else if (down) {
+	dir -= 3;
+	if (global.hitstop <= 0) image_index = 0;
+}
+dirqueue[qt] = dir;
+// for aiming, does not affect own movement
+switch (dir) {
+case 1:
+	direction = 225;
+	break;
+case 2:
+	direction = 270;
+	break;
+case 3:
+	direction = 315;
+	break;
+case 4:
+	direction = 180;
+	break;
+case 5:
+	if (image_xscale <= 0) direction = 180;
+	else direction = 0;
+	break;
+case 6:
+	direction = 0;
+	break;
+case 7:
+	direction = 135;
+	break;
+case 8:
+	direction = 90;
+	break;
+case 9:
+	direction = 45;
+	break;
+}
+
 if (global.hitstop <= 0) {
 	// handles spawning reflected bullet
 	// code block is here so that the bullet only spawns
@@ -39,46 +82,6 @@ if (global.hitstop <= 0) {
 		grounded = coyote;
 	} else grounded--;
 
-	// input handling
-	dir = 5;
-	if (left && !right) dir = 4;
-	else if (right && !left) dir = 6;
-	if (up) dir += 3;
-	else if (down) {
-		dir -= 3;
-		image_index = 0;
-	}
-	// for aiming, does not affect own movement
-	switch (dir) {
-	case 1:
-		direction = 225;
-		break;
-	case 2:
-		direction = 270;
-		break;
-	case 3:
-		direction = 315;
-		break;
-	case 4:
-		direction = 180;
-		break;
-	case 5:
-		if (image_xscale <= 0) direction = 180;
-		else direction = 0;
-		break;
-	case 6:
-		direction = 0;
-		break;
-	case 7:
-		direction = 135;
-		break;
-	case 8:
-		direction = 90;
-		break;
-	case 9:
-		direction = 45;
-		break;
-	}
 
 	if (spawning == spawntime) {
 		depth = layerdepth + 1;
@@ -432,9 +435,15 @@ if (global.hitstop <= 0) {
 			if (dir == 4 || dir == 7 || dir == 1) {
 				if (dir == 1 && grounded >= 3) movesp = walksp;
 				hsp = hsp > -movesp ? hsp - accel : hsp + 1;
+				if candash && (dir == 4 && dirqueue[(qt-1+qlen)mod qlen] == 5 && dirqueue[(qt-10+qlen)mod qlen] == 4) {
+					hsp = -20;
+				}
 			} else if (dir == 6 || dir == 9 || dir == 3) {
 				if (dir == 3 && grounded >= 3) movesp = walksp;
 				hsp = hsp <  movesp ? hsp + accel :  hsp - 1;
+				if candash && (dir == 6 && dirqueue[(qt-1+qlen)mod qlen] == 5 && dirqueue[(qt-10+qlen)mod qlen] == 6) {
+					hsp = 20;
+				}
 			}
 		}
 		
@@ -492,3 +501,5 @@ if (global.hitstop <= 0) {
 	image_speed = 0;
 	talpha = 1;
 }
+qt ++;
+qt = qt mod qlen;
