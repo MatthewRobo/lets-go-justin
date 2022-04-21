@@ -320,7 +320,7 @@ if (global.hitstop <= 0) {
 							attack.direction = direction + dcos(i) * 15 * flip;
 							j = 10 + i / 20;
 							attack.timer = j;
-							attack.spd =  len/j;
+							attack.spd =  len/j + 1;
 							attack.hsp = lengthdir_x(attack.spd, attack.direction);
 							attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						}
