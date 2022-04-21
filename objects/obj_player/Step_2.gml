@@ -115,7 +115,7 @@ if (global.hitstop <= 0) {
 		else if (right && !left) image_xscale = scale;
 
 		if (!grounded && airjumps > 0 && hover && canhover) {
-			sfx = audio_play_sound(snd_hover, 0, false);
+			sfx = audio_play_sound_at(snd_hover, -x + room_width/2,y,400,100,500,1,false, false);
 			audio_sound_pitch(sfx, lerp(2, 1, airjumps / jumpmax));
 			for (i = 0; i < 3; i++) {
 				trail = instance_create_layer(x, y, "trails", obj_glitter);
@@ -141,7 +141,7 @@ if (global.hitstop <= 0) {
 		}
 		if (slash) {
 			invul /= 2;
-			audio_play_sound(snd_slash, 0, false);
+			audio_play_sound_at(snd_slash, -x + room_width/2,y,400,100,500,1,false, false);
 			if (dir == 5) {
 				for (i = 0; i < 360; i += 45) {
 					attack = instance_create_layer(x, y, "hitboxes", obj_slash);
@@ -183,7 +183,8 @@ if (global.hitstop <= 0) {
 				spark.x += lengthdir_x(32, direction);
 				spark.y += lengthdir_y(32, direction);
 				spark.image_angle = spark.direction;
-				audio_play_sound(snd_shoot, 0, false);
+				audio_play_sound_at(snd_shoot, -x + room_width/2,y,400,100,500,1,false, false);
+
 				switch shottype {
 					case shot.bullet:
 						attack = instance_create_layer(x, y, "hitboxes", shotobj);
