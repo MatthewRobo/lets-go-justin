@@ -332,9 +332,9 @@ if (global.hitstop <= 0) {
 							attack.owner = self;
 							attack.team = team;
 							attack.direction = direction;
-							j = i * 7 + 7;
+							j = i * 5.4 + 45;
 							attack.timer = j;
-							attack.spd =  len/j;
+							attack.spd =  len/j + 1;
 							attack.hsp = lengthdir_x(attack.spd, attack.direction);
 							attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						}
