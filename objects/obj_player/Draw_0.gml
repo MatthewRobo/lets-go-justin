@@ -129,7 +129,11 @@ _color = deaths == global.firstto ? c_black : color;
 draw_sprite_ext(spr_ptrail,image_index,x,y,_s*image_xscale,_s*image_yscale,0,_color,1);
 draw_self();
 draw_sprite_ext(spr_ptrail,image_index,x,y,image_xscale,image_yscale,0,c_white,abs(dsin(360/30 * invul) * clamp(invul/60,0,1)));
-
+if (state = status.parry) {
+	_s = (abs(dsin(recovery * 20)) + 1) / 2;
+	draw_sprite_ext(spr_pparry,image_index,x,y,image_xscale,image_yscale,0,c_white,_s);
+}
+//draw_sprite_ext(spr_ptrim,image_index,x,y,image_xscale,image_yscale,0,color,1);
 
 //draw_primitive_begin(pr_trianglelist);
 //draw_vertex(x, y-24);
