@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+randomize();
+
 #macro PLAYERS 4
 #macro GP 12
 #macro KB 2

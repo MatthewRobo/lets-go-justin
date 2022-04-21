@@ -15,16 +15,17 @@ switch irandom(6) {
 	case 0:
 		global.color[0] = $5100ff;
 		global.color[1] = $ff8000;
+		global.bgcolor = $09121f;
+		global.fgcolor = $445566;
+		global.fgcolor2 = $99ccff;
+
+		break;
+	case 1:
+		global.color[0] = $ff0099;
+		global.color[1] = $0dff00;
 		global.bgcolor = $05080f;
 		global.fgcolor = $332244;
 		global.fgcolor2 = $ffaaff;
-		break;
-	case 1:
-		global.color[0] = $0dff00;
-		global.color[1] = $ff0080;
-		global.bgcolor = $112233;
-		global.fgcolor = $445566;
-		global.fgcolor2 = $99ccff;
 		break;
 	case 2:
 		global.color[0] = $6ecdff;

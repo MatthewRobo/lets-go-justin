@@ -18,3 +18,5 @@ w1 = -10;
 _w2 = 0;
 
 _lerpfactor = 0.1;
+
+lerpmod = 0;

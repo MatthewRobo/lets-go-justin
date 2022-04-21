@@ -19,7 +19,3 @@ if (global.hitstop <= 0) {
 	}
 	timer--;
 }
-
-if (position_meeting(x, y, obj_wall)) {
-	instance_destroy();
-}

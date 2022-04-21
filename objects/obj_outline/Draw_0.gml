@@ -13,7 +13,7 @@ draw_primitive_end();
 
 if (global.hitstop <= 0) draw_set_colour(global.fgcolor2);
 draw_set_alpha(1);
-draw_rectangle(x1-w0, y1-w0, x2+w0, y2+w0, 0);
+draw_rectangle(x1-_w0, y1-_w0, x2+_w0, y2+_w0, 0);
 
 
 
