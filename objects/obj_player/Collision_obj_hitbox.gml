@@ -15,18 +15,18 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			reflected = other.owner;
 			superreflect = true;
 			counterspeed = other.spd < 32 ? 32 : other.spd;
-			global.hitstop = 9 * counterspeed / 32;
+			if (global.hitstop <  9 * counterspeed / 32) global.hitstop = 9 * counterspeed / 32;
 		} else if (other.object_index == obj_bullet || object_is_ancestor(other.object_index, obj_bullet)) {
 			superreflect = false;
 			reflected = other.owner;
 			counterspeed = other.spd < 32 ? 32 : other.spd;
-			global.hitstop = clamp(9 * counterspeed / 32,0,60);
+			if (global.hitstop < clamp(9 * counterspeed / 32,0,60)) global.hitstop = clamp(9 * counterspeed / 32,0,60);
 		}
 		else {
 			other.owner.state = status.parried;
 			other.owner.sprite_index = spr_recovery;
 			other.owner.recovery = parrystop;
-			global.hitstop = 16;
+			if (global.hitstop < 16) global.hitstop = 16;
 		}
 		global.outline = color;
 		depth = layerdepth;
@@ -60,10 +60,10 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		spawning = spawntime;
 		depth = layer_get_depth("trails") + 1;
 		other.owner.depth = layerdepth - 1;
-		global.hitstop = 20;
+		if (global.hitstop < 20) global.hitstop = 20;
 		global.outline = color;
 		if (deaths == global.firstto) {
-			global.hitstop += 120;
+			if (global.hitstop < 120) global.hitstop = 120;
 			ultradies = audio_play_sound(snd_dies, 1, false);
 			audio_sound_pitch(ultradies, 20/120);
 		}
