@@ -140,7 +140,7 @@ if (global.hitstop <= 0) {
 			vsp /= 2; // cut player's jump short if player releases early
 		}
 		if (slash) {
-			invul /= 2;
+			invul /= 3;
 			audio_play_sound_at(snd_slash, -x + room_width/2,y,400,100,500,1,false, false);
 			if (dir == 5) {
 				for (i = 0; i < 360; i += 45) {
@@ -171,7 +171,7 @@ if (global.hitstop <= 0) {
 			}
 		}
 		if (shoot) {
-			invul /= 2;
+			invul /= 3;
 			if (ammo > 0) {
 				hsp += lengthdir_x(-recoil, direction);
 				vsp += lengthdir_y(-recoil, direction) * 0.85;
@@ -374,7 +374,7 @@ if (global.hitstop <= 0) {
 		}
 		if (parry) {
 			audio_play_sound(snd_shield, 0, false);
-			invul /= 2;
+			invul /= 3;
 			recovery = parryactive;
 			state = status.parry;
 			sprite_index = spr_parry;
