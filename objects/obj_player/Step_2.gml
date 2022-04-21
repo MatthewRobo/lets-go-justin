@@ -339,7 +339,16 @@ if (global.hitstop <= 0) {
 							attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						}
 						break;
-					
+					case shot.random:
+						attack = instance_create_layer(x, y, "hitboxes", shotobj);
+						attack.owner = self;
+						attack.team = team;
+						attack.direction = direction;
+						attack.timer = shotactive;
+						attack.spd = bulletspeed;
+						attack.hsp = lengthdir_x(attack.spd, attack.direction);
+						attack.vsp = lengthdir_y(attack.spd, attack.direction);
+						break;
 				}
 
 				recovery = gunrecovery;

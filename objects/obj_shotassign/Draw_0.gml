@@ -60,6 +60,8 @@ for (p = -1; p < 2; p++) {
 				break;
 				case shot.wall2: text += "Beam";
 				break;
+				case shot.random: text += "Random";
+				break;
 				default: text += "UNNAMED";
 				break;
 			}
@@ -85,7 +87,7 @@ for (p = -1; p < 2; p++) {
 }
 
 
-gap = 400;
+gap = string_width("[P1] WALLBANGER [P2]");
 pgap = 150;
 draw_set_valign(fa_top);
 vgap = string_height("[]") / cols;
@@ -130,6 +132,8 @@ for (p = 0; p < PLAYERS; p++) {
 			case shot.whip: desc += "Some spread.\nTwo ammo.";
 			break;
 			case shot.wall2: desc += "Lethal beam.\nRather sluggish.";
+			break;
+			case shot.random: desc += "Random bullshit.";
 			break;
 			default: desc += "NO DESCRIPTION EXISTS";
 			break;
