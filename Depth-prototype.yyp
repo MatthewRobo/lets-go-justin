@@ -82,6 +82,7 @@
     {"id":{"name":"obj_tan","path":"objects/obj_tan/obj_tan.yy",},"order":14,},
     {"id":{"name":"obj_player2","path":"objects/obj_player2/obj_player2.yy",},"order":2,},
     {"id":{"name":"obj_boom","path":"objects/obj_boom/obj_boom.yy",},"order":4,},
+    {"id":{"name":"spr_ControlsPreview44","path":"sprites/spr_ControlsPreview44/spr_ControlsPreview44.yy",},"order":22,},
     {"id":{"name":"Room3","path":"rooms/Room3/Room3.yy",},"order":3,},
     {"id":{"name":"spr_boom","path":"sprites/spr_boom/spr_boom.yy",},"order":8,},
     {"id":{"name":"obj_parry","path":"objects/obj_parry/obj_parry.yy",},"order":7,},
