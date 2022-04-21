@@ -6,8 +6,8 @@ if (global.hitstop <= 0) {
 	if (ray != noone && ray.team != team && ray.invul <= 0) {
 			while (!place_meeting(x,y,ray)) {
 				dir = point_direction(0,0,hsp,vsp);
-				x += lengthdir_x(1,dir);
-				y += lengthdir_y(1,dir);
+				x -= lengthdir_x(1,dir);
+				y -= lengthdir_y(1,dir);
 			}
 	} else {
 		x += hsp;
