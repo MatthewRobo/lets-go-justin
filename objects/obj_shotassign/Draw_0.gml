@@ -55,7 +55,7 @@ for (p = -1; p < 2; p++) {
 				break;
 				case shot.whip: text += "Whip";
 				break;
-				case shot.wall2: text += "Barrier";
+				case shot.wall2: text += "Beam";
 				break;
 				default: text += "UNNAMED";
 				break;
@@ -91,7 +91,7 @@ for (p = -1; p < 2; p++) {
 					break;
 					case shot.whip: desc += "Some spread.\nTwo ammo.";
 					break;
-					case shot.wall2: desc += "Lethal barrier.\nRather sluggish.";
+					case shot.wall2: desc += "Lethal beam.\nRather sluggish.";
 					break;
 					default: desc += "NO DESCRIPTION EXISTS";
 					break;
