@@ -3,16 +3,25 @@
 
 pads = "";
 
-for (var i = 0; i < GP+KB; i++;)
+for (var i = 0; i < GP+KB; i++)
 {
+	for (var j = 0; j < input.length; j++) {
+		if global.down[i][j] {
+			if (position[i] == -99) {
+				position[i] = -1;
+				audio_play_sound(snd_parry,0,0);
+			}
+		}
+	}
+	
 	if global.pressed[i][input.L] {
-		if (position[i] == -99) position[i] = -1;
-		else position[i]++;
+		//if (position[i] == -99) position[i] = -1;
+		position[i]++;
 		if (!readypos[i]) audio_play_sound(snd_shield,0,0);
 	}
 	if global.pressed[i][input.R] {
-		if (position[i] == -99) position[i] = -1;
-		else position[i]--;
+		//if (position[i] == -99) position[i] = -1;
+		 position[i]--;
 		if (!readypos[i]) audio_play_sound(snd_shield,0,0);
 	}
 	
