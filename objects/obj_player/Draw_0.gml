@@ -112,7 +112,7 @@ draw_primitive_end();
 //tlast = (tcounter + 1 + tlen) mod tlen;
 //draw_sprite_ext(spr_ptrail,image_index,tx[tlast],ty[tlast],image_xscale,image_yscale,0,color,1);
 
-for (i = 1; i <= ammo; i++) {
+for (i = ammo; i > 0; i--) {
 	tcnow = (tlen - (i*2) + tcounter) mod tlen;
 
 	x1 = tx[tcnow];
