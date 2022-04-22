@@ -37,13 +37,20 @@ for (var i = 0; i < GP+KB; i++;)
 	}
 	
 	if global.pressed[i][input.SE] {
+		if (readypos[i]){
+			ready[position[i]] = -99;
+			readypos[i] = false;
+			audio_play_sound(snd_shield,0,0);
+		}
+		else {
 		global.mode = gamemode.training;
 		global.lookup[0] = i;
-		if (global.lookup[1] < 0) {
+		if (global.lookup[1] < 0 || global.lookup[1] == i) {
 			global.lookup[1] = GP+KB;
 		}
 		audio_play_sound(snd_parry,0,0)
 		room_goto_next();
+		}
 	}
 	
 	for (p = 0; p < PLAYERS; p++) {
