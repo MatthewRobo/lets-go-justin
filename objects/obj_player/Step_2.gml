@@ -76,7 +76,11 @@ if (global.hitstop <= 0) {
 	if place_meeting(x, y + vsp, obj_wall) {
 		if (vsp >= 0) {
 			airjumps = jumpmax;
-			if (grounded < 0) audio_play_sound(snd_land, 0, false);
+			if (grounded < 0) {
+				audio_play_sound(snd_land, 0, false);
+				instance_place(x,y+vsp,obj_outline).lerpmod += vsp / 2;
+				lifetime = 270;
+			}
 			canhover = false;
 		}
 		grounded = coyote;
