@@ -57,3 +57,12 @@ global.bgcolor = $1d1616;
 for (var d = 0; d < GP; d++) {
 	gamepad_set_axis_deadzone(d,0.40);
 }
+
+if (os_browser == browser_not_a_browser)
+{
+    global.browser = 0;
+}
+else
+{
+    global.browser = 1;
+}
