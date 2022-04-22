@@ -26,7 +26,7 @@ for (var i = 0; i < GP+KB; i++;)
 		}
 		label = "";
 		if (i < GP) {
-			label = "Gamepad " + string(i + 1);
+			label = gamepad_get_description(i);
 			if (gamepad_axis_value(i, gp_axislh) != 0) label = "THIS GAME WAS MADE FOR DIGITAL INPUT\nANALOGUE WILL BE A WORSE EXPERIENCE";
 		} else {
 			label = "Keyboard " + string(i mod KB + 1);
