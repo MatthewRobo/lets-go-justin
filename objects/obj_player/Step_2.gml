@@ -11,7 +11,7 @@ else if (down) {
 	dir -= 3;
 	if (global.hitstop <= 0) image_index = 0;
 }
-dirqueue[qt] = dir;
+//dirqueue[qt] = dir;
 // for aiming, does not affect own movement
 switch (dir) {
 case 1:
@@ -436,15 +436,15 @@ if (global.hitstop <= 0) {
 			if (dir == 4 || dir == 7 || dir == 1) {
 				if (dir == 1 && grounded >= 3) movesp = walksp;
 				hsp = hsp > -movesp ? hsp - accel : hsp + 1;
-				if candash && (dir == 4 && dirqueue[(qt-1+qlen)mod qlen] == 5 && dirqueue[(qt-10+qlen)mod qlen] == 4) {
-					hsp = -20;
-				}
+				//if candash && (dir == 4 && dirqueue[(qt-1+qlen)mod qlen] == 5 && dirqueue[(qt-10+qlen)mod qlen] == 4) {
+				//	hsp = -20;
+				//}
 			} else if (dir == 6 || dir == 9 || dir == 3) {
 				if (dir == 3 && grounded >= 3) movesp = walksp;
 				hsp = hsp <  movesp ? hsp + accel :  hsp - 1;
-				if candash && (dir == 6 && dirqueue[(qt-1+qlen)mod qlen] == 5 && dirqueue[(qt-10+qlen)mod qlen] == 6) {
-					hsp = 20;
-				}
+				//if candash && (dir == 6 && dirqueue[(qt-1+qlen)mod qlen] == 5 && dirqueue[(qt-10+qlen)mod qlen] == 6) {
+				//	hsp = 20;
+				//}
 			}
 		}
 		
@@ -502,5 +502,5 @@ if (global.hitstop <= 0) {
 	image_speed = 0;
 	talpha = 1;
 }
-qt ++;
-qt = qt mod qlen;
+//qt ++;
+//qt = qt mod qlen;
