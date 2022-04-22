@@ -14,27 +14,53 @@ for (var d = 0; d < GP+KB; d++) {
 	for (var i = 0; i < input.length; i++) {
 		global.last[d][i] = global.down[d][i];
 		if (d < GP) {
-			switch i {
-				case input.L: global.down[d][input.L] = gamepad_button_check(d, gp_padl) || gamepad_axis_value(d, gp_axislh) < 0;
-					break;
-				case input.D: global.down[d][input.D] = gamepad_button_check(d, gp_padd) || gamepad_axis_value(d, gp_axislv) > 0;
-					break;
-				case input.U: global.down[d][input.U] = gamepad_button_check(d, gp_padu) || gamepad_axis_value(d, gp_axislv) < 0;
-					break;
-				case input.R: global.down[d][input.R] = gamepad_button_check(d, gp_padr) || gamepad_axis_value(d, gp_axislh) > 0;
-					break;
-				case input.ST: global.down[d][input.ST] = gamepad_button_check(d, gp_start);
-					break;
-				case input.SE: global.down[d][input.SE] = gamepad_button_check(d, gp_select) || gamepad_button_check(d, gp_stickr);
-					break;
-				case input.JU: global.down[d][input.JU] = gamepad_button_check(d, gp_face1) || gamepad_button_check(d, gp_shoulderl);
-					break;
-				case input.SL: global.down[d][input.SL] = gamepad_button_check(d, gp_face3) || gamepad_button_check(d, gp_shoulderlb);
-					break;
-				case input.SH: global.down[d][input.SH] = gamepad_button_check(d, gp_face4) || gamepad_button_check(d, gp_shoulderrb);
-					break;
-				case input.PA: global.down[d][input.PA] = gamepad_button_check(d, gp_face2) || gamepad_button_check(d, gp_shoulderr);
-					break;
+			if (string_pos("REAL ARCADE PRO.3",gamepad_get_description(d)) != 0) {
+				switch i {
+					case input.L: global.down[d][input.L] = gamepad_button_check(d, gp_padl) || gamepad_axis_value(d, gp_axislh) < 0;
+						break;
+					case input.D: global.down[d][input.D] = gamepad_button_check(d, gp_padd) || gamepad_axis_value(d, gp_axislv) > 0;
+						break;
+					case input.U: global.down[d][input.U] = gamepad_button_check(d, gp_padu) || gamepad_axis_value(d, gp_axislv) < 0;
+						break;
+					case input.R: global.down[d][input.R] = gamepad_button_check(d, gp_padr) || gamepad_axis_value(d, gp_axislh) > 0;
+						break;
+					case input.ST: global.down[d][input.ST] = gamepad_button_check(d, 10-1);
+						break;
+					case input.SE: global.down[d][input.SE] = gamepad_button_check(d, 9-1);
+						break;
+					case input.JU: global.down[d][input.JU] = gamepad_button_check(d, 2-1) || gamepad_button_check(d, 5-1);
+						break;
+					case input.SL: global.down[d][input.SL] = gamepad_button_check(d, 1-1) || gamepad_button_check(d, 3-1);
+						break;
+					case input.SH: global.down[d][input.SH] = gamepad_button_check(d, 4-1) || gamepad_button_check(d, 8-1);
+						break;
+					case input.PA: global.down[d][input.PA] = gamepad_button_check(d, 6-1) || gamepad_button_check(d, 7-1);
+						break;
+				}
+			}
+			else {
+				switch i {
+					case input.L: global.down[d][input.L] = gamepad_button_check(d, gp_padl) || gamepad_axis_value(d, gp_axislh) < 0;
+						break;
+					case input.D: global.down[d][input.D] = gamepad_button_check(d, gp_padd) || gamepad_axis_value(d, gp_axislv) > 0;
+						break;
+					case input.U: global.down[d][input.U] = gamepad_button_check(d, gp_padu) || gamepad_axis_value(d, gp_axislv) < 0;
+						break;
+					case input.R: global.down[d][input.R] = gamepad_button_check(d, gp_padr) || gamepad_axis_value(d, gp_axislh) > 0;
+						break;
+					case input.ST: global.down[d][input.ST] = gamepad_button_check(d, gp_start);
+						break;
+					case input.SE: global.down[d][input.SE] = gamepad_button_check(d, gp_select) || gamepad_button_check(d, gp_stickr);
+						break;
+					case input.JU: global.down[d][input.JU] = gamepad_button_check(d, gp_face1) || gamepad_button_check(d, gp_shoulderl);
+						break;
+					case input.SL: global.down[d][input.SL] = gamepad_button_check(d, gp_face3) || gamepad_button_check(d, gp_shoulderlb);
+						break;
+					case input.SH: global.down[d][input.SH] = gamepad_button_check(d, gp_face4) || gamepad_button_check(d, gp_shoulderrb);
+						break;
+					case input.PA: global.down[d][input.PA] = gamepad_button_check(d, gp_face2) || gamepad_button_check(d, gp_shoulderr);
+						break;
+				}
 			}
 		}
 		else if (global.browser) {
