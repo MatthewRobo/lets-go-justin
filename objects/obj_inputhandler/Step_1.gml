@@ -11,7 +11,7 @@ for (var i = 0; i < global.gpnum; i++;)
 
 
 for (var d = 0; d < GP+KB; d++) {
-	for (var i = 0; i < INPUTS; i++) {
+	for (var i = 0; i < input.length; i++) {
 		global.last[d][i] = global.down[d][i];
 		if (d < GP) {
 			switch i {

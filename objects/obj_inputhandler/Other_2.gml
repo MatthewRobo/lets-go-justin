@@ -6,7 +6,6 @@ randomize();
 #macro PLAYERS 4
 #macro GP 12
 #macro KB 2
-#macro INPUTS 10
 
 enum input {
 	L = 0,
@@ -18,7 +17,8 @@ enum input {
 	JU,
 	SL,
 	SH,
-	PA
+	PA,
+	length
 }
 
 enum gamemode {
@@ -33,11 +33,11 @@ global.shots = array_create(PLAYERS, 0);
 global.shots[1] = shot.wallbang;
 global.lookup = array_create(PLAYERS, GP+KB);
 
-// global.INPUTS[player][input]
-global.down     = array_create(GP+KB+1,array_create(INPUTS,0));
-global.last     = array_create(GP+KB+1,array_create(INPUTS,0));
-global.pressed  = array_create(GP+KB+1,array_create(INPUTS,0));
-global.released = array_create(GP+KB+1,array_create(INPUTS,0));
+// input.length[player][input]
+global.down     = array_create(GP+KB+1,array_create(input.length,0));
+global.last     = array_create(GP+KB+1,array_create(input.length,0));
+global.pressed  = array_create(GP+KB+1,array_create(input.length,0));
+global.released = array_create(GP+KB+1,array_create(input.length,0));
 
 global.mode = gamemode.versus;
 
