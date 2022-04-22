@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 9,
-  "bbox_right": 524,
-  "bbox_top": 9,
-  "bbox_bottom": 452,
+  "bbox_left": 27,
+  "bbox_right": 1076,
+  "bbox_top": 0,
+  "bbox_bottom": 518,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 528,
-  "height": 456,
+  "width": 1080,
+  "height": 552,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"1a524aee-9e0e-4582-90d1-8be26848a315","path":"sprites/spr_ControlsPreviewXbox/spr_ControlsPreviewXbox.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"1a524aee-9e0e-4582-90d1-8be26848a315","path":"sprites/spr_ControlsPreviewXbox/spr_ControlsPreviewXbox.yy",},"LayerId":{"name":"11ba65b4-5815-4302-9d27-8833f212e1d4","path":"sprites/spr_ControlsPreviewXbox/spr_ControlsPreviewXbox.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_ControlsPreviewXbox","path":"sprites/spr_ControlsPreviewXbox/spr_ControlsPreviewXbox.yy",},"resourceVersion":"1.0","name":"1a524aee-9e0e-4582-90d1-8be26848a315","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"6763a788-5b65-441f-b018-040c54765b04","path":"sprites/spr_ControlsPreviewXbox/spr_ControlsPreviewXbox.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"6763a788-5b65-441f-b018-040c54765b04","path":"sprites/spr_ControlsPreviewXbox/spr_ControlsPreviewXbox.yy",},"LayerId":{"name":"91a60acd-0782-4c2a-a366-81df089426f0","path":"sprites/spr_ControlsPreviewXbox/spr_ControlsPreviewXbox.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_ControlsPreviewXbox","path":"sprites/spr_ControlsPreviewXbox/spr_ControlsPreviewXbox.yy",},"resourceVersion":"1.0","name":"6763a788-5b65-441f-b018-040c54765b04","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_ControlsPreviewXbox","path":"sprites/spr_ControlsPreviewXbox/spr_ControlsPreviewXbox.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"8b8b79d1-94ee-4a68-952c-f1c35a91c47f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1a524aee-9e0e-4582-90d1-8be26848a315","path":"sprites/spr_ControlsPreviewXbox/spr_ControlsPreviewXbox.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"0a213415-9de6-4fef-a193-bdc96939b3b2","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6763a788-5b65-441f-b018-040c54765b04","path":"sprites/spr_ControlsPreviewXbox/spr_ControlsPreviewXbox.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -54,8 +54,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 264,
-    "yorigin": 228,
+    "xorigin": 540,
+    "yorigin": 276,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_ControlsPreviewXbox","path":"sprites/spr_ControlsPreviewXbox/spr_ControlsPreviewXbox.yy",},
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"11ba65b4-5815-4302-9d27-8833f212e1d4","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"91a60acd-0782-4c2a-a366-81df089426f0","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

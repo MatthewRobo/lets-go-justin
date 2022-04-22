@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-start = false;
+start = 0;
 select = false;
 
 
@@ -12,17 +12,18 @@ for (var i = 0; i < GP+KB; i++;)
 	|| keyboard_check(vk_enter) 
 	|| keyboard_check(vk_escape) 
 	|| global.down[i][input.ST] {
-		start = true;
+		start += 1;
 	}
 	if gamepad_button_check(i, gp_select) 
 	|| keyboard_check(vk_backspace) 
-	|| global.down[i][input.SE] {
+	|| global.pressed[i][input.SE] {
 		room_goto(Pad_Select);
 	} 
 }
 
-if (start) timer += 1 / 40;
-else timer = 0;
+if (start) timer += power(start,2) / 160;
+else timer -= 0.02;
+timer = clamp(timer,0,1);
 
 if (timer >= 1) {
 	room_goto_next();

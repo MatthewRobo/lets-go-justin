@@ -38,7 +38,7 @@ for (var p = 0; p < PLAYERS; p++;)
 				audio_play_sound(snd_parry,0,0);
 			}
 			if global.pressed[i][input.SE] {
-				room_goto(Pad_Select);
+				room_goto(Instructions);
 				audio_play_sound(snd_parry,0,0);
 			}
 		} else if global.pressed[i][input.SE] {
