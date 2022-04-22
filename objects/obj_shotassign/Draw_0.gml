@@ -35,7 +35,7 @@ shottext = array_create(cols,"");
 playertext = array_create(PLAYERS,array_create(cols,""));
 
 for (p = -1; p < 2; p++) {
-	draw_set_colour(global.fgcolor2);
+
 	if (p < 0) {
 		for (i = 0; i < shot.length; i++) {
 			xpos = i mod cols;
@@ -63,7 +63,7 @@ for (p = -1; p < 2; p++) {
 				break;
 				case shot.wall2: text += "Beam";
 				break;
-				case shot.random: text += "Random";
+				case shot.random: text += "Anarchy";
 				break;
 				default: text += "UNNAMED";
 				break;
@@ -72,7 +72,7 @@ for (p = -1; p < 2; p++) {
 			shottext[xpos] += text;
 		}
 	} else if (p < 2) {
-
+		draw_set_color(global.fgcolor2);
 		for (i = 0; i < shot.length; i++) {
 			xpos = i mod cols;
 			text = "\n";
@@ -103,7 +103,7 @@ draw_set_valign(fa_top);
 vgap = 0;
 for (i = 0; i < cols; i++) {
 	j = i - (cols - 1) / 2;
-	draw_set_colour(global.fgcolor2);
+	draw_set_colour(c_white);
 	draw_text(xdraw + gap * j, ydraw, shottext[i]);
 	for (p = 0; p < PLAYERS; p++) {
 		k = p == 0 ? -pgap : pgap;
@@ -145,7 +145,7 @@ for (p = 0; p < PLAYERS; p++) {
 			break;
 			case shot.wall2: desc += "Lethal beam.\nRather sluggish.";
 			break;
-			case shot.random: desc += "Random bullshit.";
+			case shot.random: desc += "Get lucky?";
 			break;
 			default: desc += "NO DESCRIPTION EXISTS";
 			break;
@@ -153,6 +153,7 @@ for (p = 0; p < PLAYERS; p++) {
 
 		k = p == 0 ? room_width * 0.25 : room_width * 0.75;
 		draw_set_colour(global.fgcolor2);
+		if (ready[p]) draw_set_colour(global.color[p]);
 		//draw_set_colour(global.color[p]);
 		draw_text(k,ydraw,desc);
 	}
