@@ -125,7 +125,8 @@ for (i = 1; i <= ammo; i++) {
 
 _s = spawning == spawntime ? (global.hitstop * global.hitstop) / 60 : 1;
 _color = deaths == global.firstto ? c_black : color;
-
+_i = abs(dsin(invul*4))*0.2 + 1;
+draw_sprite_ext(spr_ptrail,image_index,x,y,_i*image_xscale,_i*image_yscale,0,c_white,1);
 draw_sprite_ext(spr_ptrail,image_index,x,y,_s*image_xscale,_s*image_yscale,0,_color,1);
 draw_self();
 draw_sprite_ext(spr_ptrail,image_index,x,y,image_xscale,image_yscale,0,c_white,abs(dsin(360/30 * invul) * clamp(invul/60,0,1)));
