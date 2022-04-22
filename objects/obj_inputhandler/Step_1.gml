@@ -138,7 +138,3 @@ for (var d = 0; d < GP+KB; d++) {
 		global.released[d][i] = !global.down[d][i] && global.last[d][i];
 	}
 }
-
-var count = 0;
-
-
