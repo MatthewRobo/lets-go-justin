@@ -10,9 +10,13 @@ xdraw = room_width / 2;
 ydraw = 60;
 
 bottomtext = "";
+draw_set_color(c_white);
+draw_text(xdraw + 000, ydraw, "Controller");
+draw_set_color(global.color[0]);
+
 
 draw_text(xdraw - 256, ydraw, "Player 1");
-draw_text(xdraw + 000, ydraw, "Controller");
+draw_set_color(global.color[1]);
 draw_text(xdraw + 256, ydraw, "Player 2");
 
 ydraw += 120;
@@ -46,7 +50,7 @@ for (var i = 0; i < GP+KB; i++;)
 	}
 }
 
-draw_set_colour(global.fgcolor2);
+draw_set_colour(c_white);
 
 draw_set_font(Font1);
 draw_set_halign(fa_center);
