@@ -68,6 +68,13 @@ switch irandom(7) {
 		global.fgcolor = $aa0000;
 		global.fgcolor2 = c_yellow;
 		break;
+	case 8: // PAPER
+		global.color[0] = c_green;
+		global.color[1] = c_blue;
+		global.bgcolor = c_white;
+		global.fgcolor = c_grey;
+		global.fgcolor2 = c_black;
+		break;
 }
 
 gbid = layer_background_get_id("background");
