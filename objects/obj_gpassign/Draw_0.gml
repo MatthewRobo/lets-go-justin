@@ -9,6 +9,7 @@ draw_set_valign(fa_top);
 xdraw = room_width / 2;
 ydraw = 60;
 
+bottomtext = "";
 
 draw_text(xdraw - 256, ydraw, "Player 1");
 draw_text(xdraw + 000, ydraw, "Controller");
@@ -27,7 +28,7 @@ for (var i = 0; i < GP+KB; i++;)
 		label = "";
 		if (i < GP) {
 			label = gamepad_get_description(i);
-			if (gamepad_axis_value(i, gp_axislh) != 0) label = "THIS GAME WAS MADE FOR DIGITAL INPUT\nANALOGUE WILL BE A WORSE EXPERIENCE";
+			if (gamepad_axis_value(i, gp_axislh) != 0 && abs(gamepad_axis_value(i, gp_axislh)) != 1 ) bottomtext = "THIS GAME WAS MADE FOR DIGITAL INPUT\nANALOGUE WILL BE A WORSE EXPERIENCE\n";
 		} else {
 			label = "Keyboard " + string(i mod KB + 1);
 		}
@@ -51,4 +52,5 @@ draw_set_font(Font1);
 draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
 //draw_text(xdraw, room_height - 20, "YOU CAN ONLY USE THE DPAD, THIS IS ON PURPOSE\nPress left/right to select\nPress start when ready\nPress select for training mode");
-draw_text(xdraw, room_height - 20, "Press left/right to select\nPress start when ready\nPress select for training mode");
+bottomtext += "Press left/right to select\nPress start when ready\nPress select for training mode";
+draw_text(xdraw, room_height - 20, bottomtext);
