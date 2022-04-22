@@ -64,7 +64,7 @@ switch irandom(7) {
 	case 7: // PAC MAN
 		global.color[0] = c_red;
 		global.color[1] = c_aqua;
-		global.bgcolor = $030303;
+		global.bgcolor = $090909;
 		global.fgcolor = $aa0000;
 		global.fgcolor2 = c_yellow;
 		break;
