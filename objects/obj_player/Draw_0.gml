@@ -81,7 +81,7 @@ for (i = 0; i < tlen; i+= 1) {
 	if (ammo <= 0) talpha *= 0.4;
 
 	x1 = tx[tcnow];
-	y1 = ty[tcnow] - 2*dsin(lifetime - 360 / 60 * (tlen - i ));
+	y1 = ty[tcnow] - 2*dsin(lifetime - 6 * (tlen - i ));
 	
 	x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-8,x1+8);
 	y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-18,y1+18);

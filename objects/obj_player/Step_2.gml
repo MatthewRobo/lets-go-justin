@@ -503,6 +503,8 @@ if (global.hitstop <= 0) {
 	ty[tcounter] = y;
 	tcounter++;
 	tcounter = tcounter mod tlen;
+	
+	lifetime+= 360/(60 - abs(hsp));
 } else {
 	image_speed = 0;
 	talpha = 1;
@@ -510,4 +512,4 @@ if (global.hitstop <= 0) {
 //qt ++;
 //qt = qt mod qlen;
 
-lifetime+= 360/(60 - abs(hsp));
+
