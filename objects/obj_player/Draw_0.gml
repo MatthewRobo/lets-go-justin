@@ -131,7 +131,7 @@ image_index = 0;
 draw_sprite_ext(spr_ptrail,image_index,x,_ysin,_i*image_xscale,_i*image_yscale,0,c_white,1);
 draw_sprite_ext(spr_ptrail,image_index,x,_ysin,_s*image_xscale,_s*image_yscale,0,_color,1);
 draw_sprite_ext(sprite_index,image_index,x,_ysin,image_xscale,image_yscale,0,image_blend,1);
-draw_sprite_ext(spr_pinvuln,image_index,x,_ysin,image_xscale,image_yscale,0,c_white,abs(dsin(360/30 * invul) * clamp(invul/60,0,1)));
+draw_sprite_ext(spr_pinvuln,image_index,x,_ysin,image_xscale,image_yscale,0,c_white,abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
 if (state = status.parry) {
 	_s = (abs(dsin(recovery * 20)) + 1) / 2;
 	draw_sprite_ext(spr_pparry,image_index,x,_ysin,image_xscale,image_yscale,0,c_white,_s);
