@@ -21,7 +21,7 @@ spawnpoint = obj_respawn;
 
 deaths = 0;
 
-maxsp = 100;
+maxsp = 128;
 runsp = 12;
 accel = 1.5;
 deccel = 1.5;
