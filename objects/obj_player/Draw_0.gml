@@ -81,12 +81,12 @@ for (i = 0; i < tlen; i+= 1) {
 	if (ammo <= 0) talpha *= 0.4;
 
 	x1 = tx[tcnow];
-	y1 = ty[tcnow];
+	y1 = ty[tcnow] - 2*dsin(lifetime - 360 / 60 * (tlen - i ));
 	
-	x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-12,x1+12);
-	y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-24,y1+24);
-	x12 = clamp(x1+lengthdir_x(twid,tdir-90),x1-12,x1+12);
-	y12 = clamp(y1+lengthdir_y(twid,tdir-90),y1-24,y1+24);
+	x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-8,x1+8);
+	y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-18,y1+18);
+	x12 = clamp(x1+lengthdir_x(twid,tdir-90),x1-8,x1+8);
+	y12 = clamp(y1+lengthdir_y(twid,tdir-90),y1-18,y1+18);
 	/*
 	x11 = x1 - 2;
 	y11 = y1 - 22;
@@ -125,14 +125,16 @@ for (i = 1; i <= ammo; i++) {
 
 _s = spawning == spawntime ? (global.hitstop * global.hitstop) / 60 : 1;
 _color = deaths == global.firstto ? c_black : color;
-_i = abs(dsin(invul*4))*0.2 + 1;
-draw_sprite_ext(spr_ptrail,image_index,x,y,_i*image_xscale,_i*image_yscale,0,c_white,1);
-draw_sprite_ext(spr_ptrail,image_index,x,y,_s*image_xscale,_s*image_yscale,0,_color,1);
-draw_self();
-draw_sprite_ext(spr_ptrail,image_index,x,y,image_xscale,image_yscale,0,c_white,abs(dsin(360/30 * invul) * clamp(invul/60,0,1)));
+_i = abs(dsin(360/30 * invul))*0.2 + 1;
+var _ysin = y + 2 * -dsin(lifetime);
+image_index = 0;
+draw_sprite_ext(spr_ptrail,image_index,x,_ysin,_i*image_xscale,_i*image_yscale,0,c_white,1);
+draw_sprite_ext(spr_ptrail,image_index,x,_ysin,_s*image_xscale,_s*image_yscale,0,_color,1);
+draw_sprite_ext(sprite_index,image_index,x,_ysin,image_xscale,image_yscale,0,image_blend,1);
+draw_sprite_ext(spr_pinvuln,image_index,x,_ysin,image_xscale,image_yscale,0,c_white,abs(dsin(360/30 * invul) * clamp(invul/60,0,1)));
 if (state = status.parry) {
 	_s = (abs(dsin(recovery * 20)) + 1) / 2;
-	draw_sprite_ext(spr_pparry,image_index,x,y,image_xscale,image_yscale,0,c_white,_s);
+	draw_sprite_ext(spr_pparry,image_index,x,_ysin,image_xscale,image_yscale,0,c_white,_s);
 }
 //draw_sprite_ext(spr_ptrim,image_index,x,y,image_xscale,image_yscale,0,color,1);
 

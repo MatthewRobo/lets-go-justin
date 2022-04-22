@@ -22,6 +22,7 @@
     {"id":{"name":"obj_timed","path":"objects/obj_timed/obj_timed.yy",},"order":4,},
     {"id":{"name":"obj_wallbang","path":"objects/obj_wallbang/obj_wallbang.yy",},"order":7,},
     {"id":{"name":"obj_glitter2","path":"objects/obj_glitter2/obj_glitter2.yy",},"order":11,},
+    {"id":{"name":"spr_pinvuln","path":"sprites/spr_pinvuln/spr_pinvuln.yy",},"order":17,},
     {"id":{"name":"spr_ControlsPreview","path":"sprites/spr_ControlsPreview/spr_ControlsPreview.yy",},"order":20,},
     {"id":{"name":"spr_Room3Prev","path":"sprites/spr_Room3Prev/spr_Room3Prev.yy",},"order":17,},
     {"id":{"name":"obj_shottrail","path":"objects/obj_shottrail/obj_shottrail.yy",},"order":13,},

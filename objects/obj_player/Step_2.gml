@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+if (vvec > 0) lifetime = 270;
 
 // input handling
 dir = 5;
@@ -80,10 +80,14 @@ if (global.hitstop <= 0) {
 			canhover = false;
 		}
 		grounded = coyote;
-	} else grounded--;
+	} else {
+		grounded--;
+		lifetime = 90;
+	}
 
 
 	if (spawning == spawntime) {
+		lifetime = 270;
 		depth = layerdepth + 1;
 
 		ammo = ammomax;
@@ -392,6 +396,7 @@ if (global.hitstop <= 0) {
 		}
 		break;
 	case status.parry:
+		lifetime = 270;
 		recovery--;
 		audio_play_sound(snd_heldparry, 0,0);
 		if ((!heldparry && recovery <= 0) || (recovery <= -parrymax)) {
@@ -406,6 +411,7 @@ if (global.hitstop <= 0) {
 		trail.image_yscale = lerp(1, 1.5, (recovery + 1) / parryrecovery) * scale;
 		break;
 	case status.parried:
+		lifetime = 270;
 		recovery--;
 		if (recovery <= 0) {
 			state = status.idle;
@@ -493,7 +499,6 @@ if (global.hitstop <= 0) {
 	shoot = false;
 	parry = false;
 	jump = false;
-	
 	tx[tcounter] = x;
 	ty[tcounter] = y;
 	tcounter++;
@@ -504,3 +509,5 @@ if (global.hitstop <= 0) {
 }
 //qt ++;
 //qt = qt mod qlen;
+
+lifetime+= 360/(60 - abs(hsp));

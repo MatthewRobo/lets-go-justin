@@ -121,6 +121,8 @@ ty = array_create(tlen, y);
 
 layerdepth = layer_get_depth(layer);
 
+lifetime = 0;
+
 //qlen = 60;
 //dirqueue = array_create(qlen,5);
 //qt = 0;
