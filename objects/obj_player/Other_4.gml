@@ -85,6 +85,7 @@ switch shottype {
 		gunrecovery = 17;	
 		gunreload = 37;
 		shotactive = 8;
+		recoil = 8;
 		break;
 	case shot.sin:
 		shotobj = obj_sin;

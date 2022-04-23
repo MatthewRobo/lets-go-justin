@@ -284,10 +284,10 @@ if (global.hitstop <= 0) {
 							dist --;
 						}
 						
-						boom = instance_create_layer(x,y,"trails",obj_boom);
-						boom.image_blend = color;
-						boom.image_xscale = 1.5;
-						boom.image_yscale = 1.5;
+						//boom = instance_create_layer(x,y,"trails",obj_boom);
+						//boom.image_blend = color;
+						//boom.image_xscale = 1.5;
+						//boom.image_yscale = 1.5;
 						
 						boom = instance_create_layer(x+lengthdir_x(dist,direction),y+lengthdir_y(dist,direction),"trails",obj_boom);
 						boom.image_blend = color;
@@ -296,11 +296,11 @@ if (global.hitstop <= 0) {
 						boom.image_angle = direction;
 						
 						
-						trail = instance_create_layer(x,y,"trails",obj_gradientspike);
-						trail.owner = self;
-						trail.length = dist;
-						trail.direction = direction;
-						trail.thickness = 8;
+						//trail = instance_create_layer(x,y,"trails",obj_gradientspike);
+						//trail.owner = self;
+						//trail.length = dist;
+						//trail.direction = direction;
+						//trail.thickness = 8;
 						
 						//trail = instance_create_layer(x + lengthdir_x(dist/2, direction), y+lengthdir_y(dist/2,direction), "trails", obj_squaretrail);
 						//trail.image_xscale = dist / 40;
