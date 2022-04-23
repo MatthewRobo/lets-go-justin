@@ -110,7 +110,7 @@ boom = instance_create_layer(x, y, "hitboxes", obj_boom);
 boom.image_xscale = 2.6;
 boom.image_yscale = 2.6;
 
-scale = 1.5;
+scale = 1;
 image_xscale = scale;
 image_yscale = scale;
 
