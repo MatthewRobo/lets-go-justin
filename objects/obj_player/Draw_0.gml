@@ -134,8 +134,8 @@ draw_sprite_ext(spr_ptrail,image_index,floor(x),_ysin,_i*image_xscale,_i*image_y
 draw_sprite_ext(spr_ptrail,image_index,floor(x),_ysin,_s*image_xscale,_s*image_yscale,0,_color,1);
 eyecolor = ammo <= 0 ? $3326A2 : $EDF7FD;
 if (state == status.parry) eyecolor = $DB9900;
-draw_sprite_ext(spr_peyes,image_index,floor(x),_ysin,image_xscale,image_yscale,0,eyecolor,1);
 draw_sprite_ext(spr_idle,image_index,floor(x),_ysin,image_xscale,image_yscale,0,image_blend,1);
+draw_sprite_ext(spr_peyes,image_index,floor(x),_ysin,image_xscale,image_yscale,0,eyecolor,1);
 if (state == status.recovery) {
 	draw_sprite_ext(spr_poverlay,0,floor(x),_ysin,image_xscale,image_yscale,0,c_red,0.35);
 }
