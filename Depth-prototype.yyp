@@ -19,6 +19,7 @@
     {"id":{"name":"obj_gradientspike","path":"objects/obj_gradientspike/obj_gradientspike.yy",},"order":15,},
     {"id":{"name":"spr_p2idle","path":"sprites/spr_p2idle/spr_p2idle.yy",},"order":5,},
     {"id":{"name":"spr_pparry","path":"sprites/spr_pparry/spr_pparry.yy",},"order":13,},
+    {"id":{"name":"spr_pborder","path":"sprites/spr_pborder/spr_pborder.yy",},"order":23,},
     {"id":{"name":"spr_bg0","path":"sprites/spr_bg0/spr_bg0.yy",},"order":18,},
     {"id":{"name":"spr_spark","path":"sprites/spr_spark/spr_spark.yy",},"order":6,},
     {"id":{"name":"obj_timed","path":"objects/obj_timed/obj_timed.yy",},"order":4,},
