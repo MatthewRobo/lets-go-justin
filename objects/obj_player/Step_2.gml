@@ -296,6 +296,11 @@ if (global.hitstop <= 0) {
 						boom.image_angle = direction;
 						
 						
+						trail = instance_create_layer(x,y,"trails",obj_gradientspike);
+						trail.owner = self;
+						trail.length = dist;
+						trail.direction = direction;
+						trail.thickness = 8;
 						
 						//trail = instance_create_layer(x + lengthdir_x(dist/2, direction), y+lengthdir_y(dist/2,direction), "trails", obj_squaretrail);
 						//trail.image_xscale = dist / 40;

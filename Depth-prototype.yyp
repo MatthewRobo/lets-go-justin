@@ -16,6 +16,7 @@
     {"id":{"name":"spr_burst","path":"sprites/spr_burst/spr_burst.yy",},"order":15,},
     {"id":{"name":"Init","path":"rooms/Init/Init.yy",},"order":7,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":1,},
+    {"id":{"name":"obj_gradientspike","path":"objects/obj_gradientspike/obj_gradientspike.yy",},"order":15,},
     {"id":{"name":"spr_p2idle","path":"sprites/spr_p2idle/spr_p2idle.yy",},"order":5,},
     {"id":{"name":"spr_pparry","path":"sprites/spr_pparry/spr_pparry.yy",},"order":13,},
     {"id":{"name":"spr_bg0","path":"sprites/spr_bg0/spr_bg0.yy",},"order":18,},
