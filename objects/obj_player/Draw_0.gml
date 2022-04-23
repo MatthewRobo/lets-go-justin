@@ -118,7 +118,7 @@ for (i = ammo; i > 0; i--) {
 	x1 = tx[tcnow];
 	y1 = ty[tcnow];
 	
-	draw_circle_color(x1,y1,7,c_black,c_black,0);
+	draw_circle_color(x1,y1,8,c_black,c_black,0);
 	draw_circle_color(x1,y1,6,c_white,c_white,0);
 	// draw_text(x1,y1,i);
 }
@@ -128,17 +128,23 @@ _color = deaths == global.firstto ? c_black : color;
 _i = abs(dsin(360/30 * invul))*0.2 + 1;
 var _ysin = y + 2 * -dsin(lifetime);
 image_index = 0;
-draw_sprite_ext(spr_ptrailnew,image_index,x,_ysin,_i*image_xscale,_i*image_yscale,0,c_white,1);
-draw_sprite_ext(spr_ptrailnew,image_index,x,_ysin,_s*image_xscale,_s*image_yscale,0,_color,1);
-draw_sprite_ext(sprite_index,image_index,x,_ysin,image_xscale,image_yscale,0,image_blend,1);
-draw_sprite_ext(spr_pinvuln,image_index,x,_ysin,image_xscale,image_yscale,0,c_white,abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
+draw_sprite_ext(spr_ptrail,image_index,floor(x),_ysin,_i*image_xscale,_i*image_yscale,0,c_white,1);
+draw_sprite_ext(spr_ptrail,image_index,floor(x),_ysin,_s*image_xscale,_s*image_yscale,0,_color,1);
+eyecolor = ammo <= 0 ? $3326A2 : $EDF7FD;
+if (state == status.parry) eyecolor = $DB9900;
+draw_sprite_ext(spr_peyes,image_index,floor(x),_ysin,image_xscale,image_yscale,0,eyecolor,1);
+draw_sprite_ext(spr_idle,image_index,floor(x),_ysin,image_xscale,image_yscale,0,image_blend,1);
+if (state == status.recovery) {
+	draw_sprite_ext(spr_poverlay,0,floor(x),_ysin,image_xscale,image_yscale,0,c_red,0.35);
+}
+draw_sprite_ext(spr_pparry,image_index,floor(x),_ysin,image_xscale,image_yscale,0,c_white,abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
 if (state == status.parry) {
 	_s = (abs(dsin(recovery * 20)) + 1) / 2;
-	draw_sprite_ext(spr_pparry,image_index,x,_ysin,image_xscale,image_yscale,0,c_white,_s);
+	draw_sprite_ext(spr_pparry,image_index,floor(x),_ysin,image_xscale,image_yscale,0,c_white,_s);
 }
 
 if (state == status.recovery && shoot) {
-	draw_sprite_ext(spr_ptrail,image_index,x,_ysin,image_xscale,image_yscale,0,c_white,1);
+	draw_sprite_ext(spr_poverlay,image_index,floor(x),_ysin,image_xscale,image_yscale,0,c_white,1);
 }
 
  
