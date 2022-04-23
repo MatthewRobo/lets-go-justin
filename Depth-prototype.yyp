@@ -8,6 +8,7 @@
     {"id":{"name":"Instructions","path":"rooms/Instructions/Instructions.yy",},"order":8,},
     {"id":{"name":"Room_Select","path":"rooms/Room_Select/Room_Select.yy",},"order":4,},
     {"id":{"name":"obj_hitbox","path":"objects/obj_hitbox/obj_hitbox.yy",},"order":3,},
+    {"id":{"name":"obj_shrink","path":"objects/obj_shrink/obj_shrink.yy",},"order":15,},
     {"id":{"name":"spr_x","path":"sprites/spr_x/spr_x.yy",},"order":12,},
     {"id":{"name":"spr_glitter","path":"sprites/spr_glitter/spr_glitter.yy",},"order":14,},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"order":3,},

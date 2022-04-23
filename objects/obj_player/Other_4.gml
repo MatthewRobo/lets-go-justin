@@ -79,7 +79,7 @@ switch shottype {
 		shotactive = 40;
 		break;
 	case shot.geyser:
-		shotobj = obj_timed;
+		shotobj = obj_shrink;
 		ammomax = 2;
 		bulletspeed = 6;
 		gunrecovery = 17;	

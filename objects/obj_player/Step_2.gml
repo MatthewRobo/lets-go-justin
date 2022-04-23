@@ -291,8 +291,9 @@ if (global.hitstop <= 0) {
 						
 						boom = instance_create_layer(x+lengthdir_x(dist,direction),y+lengthdir_y(dist,direction),"trails",obj_boom);
 						boom.image_blend = color;
-						boom.image_xscale = 2;
-						boom.image_yscale = 2;
+						boom.image_xscale = 1;
+						boom.image_yscale = 3;
+						boom.image_angle = direction;
 						
 						
 						
@@ -308,7 +309,7 @@ if (global.hitstop <= 0) {
 							for (j = -1; j <= 1; j += 2) {
 								attack = instance_create_layer(x + lengthdir_x(dist - i * gap, direction), y + lengthdir_y(dist - i * gap, direction), "hitboxes", shotobj);
 								attack.image_xscale = 2;
-								attack.image_yscale = 0.75;
+								attack.image_yscale = 1;
 								attack.owner = self;
 								attack.timer = i == 1 || i == 2 ? shotactive + 2 * i : shotactive + i;
 								attack.team = team;
