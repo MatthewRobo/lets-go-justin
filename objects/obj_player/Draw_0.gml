@@ -151,8 +151,9 @@ if (state == status.parry) {
 	_s = (abs(dsin(recovery * 20)) + 1) / 2;
 	draw_sprite_ext(spr_pparry,image_index,_x,_ysin,image_xscale,image_yscale,0,c_white,_s);
 }
-if (state == status.recovery && shoot) {
-	draw_sprite_ext(spr_poverlay,image_index,_x,_ysin,image_xscale,image_yscale,0,c_white,1);
+if (flash) {
+	draw_sprite_ext(spr_poverlay,image_index,_x,_ysin,image_xscale,image_yscale,0,color,1);
+	flash = false;
 }
 
 //draw_sprite_ext(spr_ptrim,image_index,x,y,image_xscale,image_yscale,0,color,1);

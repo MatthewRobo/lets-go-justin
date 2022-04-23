@@ -96,11 +96,7 @@ canhover = false;
 color = c_white;
 image_blend = color;
 
-spr_idle = spr_player;
-spr_empty = spr_idle;
-spr_parry = spr_idle;
-spr_recovery = spr_idle;
-
+spr_idle = sprite_index;
 
 boom = instance_create_layer(x, y, "hitboxes", obj_boom);
 boom.image_xscale = 2;
@@ -127,3 +123,4 @@ lifetime = 0;
 //dirqueue = array_create(qlen,5);
 //qt = 0;
 //candash = false;
+flash = false;
