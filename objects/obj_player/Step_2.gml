@@ -284,12 +284,24 @@ if (global.hitstop <= 0) {
 							dist --;
 						}
 						
-						trail = instance_create_layer(x + lengthdir_x(dist/2, direction), y+lengthdir_y(dist/2,direction), "trails", obj_squaretrail);
-						trail.image_xscale = dist / 40;
-						trail.image_yscale = 1/5;
-						trail.image_angle = direction;
-						trail.owner = self;
-						trail.image_blend = color;
+						boom = instance_create_layer(x,y,"trails",obj_boom);
+						boom.image_blend = color;
+						boom.image_xscale = 1.5;
+						boom.image_yscale = 1.5;
+						
+						boom = instance_create_layer(x+lengthdir_x(dist,direction),y+lengthdir_y(dist,direction),"trails",obj_boom);
+						boom.image_blend = color;
+						boom.image_xscale = 2;
+						boom.image_yscale = 2;
+						
+						
+						
+						//trail = instance_create_layer(x + lengthdir_x(dist/2, direction), y+lengthdir_y(dist/2,direction), "trails", obj_squaretrail);
+						//trail.image_xscale = dist / 40;
+						//trail.image_yscale = 1/5;
+						//trail.image_angle = direction;
+						//trail.owner = self;
+						//trail.image_blend = color;
 						
 						gap = 3;
 						for (i = 0; i < 4; i ++) {

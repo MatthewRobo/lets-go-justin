@@ -5,7 +5,7 @@ hrad = sprite_width / 2;
 vrad = sprite_height / 2;
 
 steps = 24;
-draw_set_color(c_white);
+draw_set_color(image_blend);
 draw_set_alpha(1);
 draw_primitive_begin(pr_trianglestrip);
 for (i = 0; i <= 360; i += 360 / steps) {

@@ -110,5 +110,8 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			trail.y += lengthdir_y(rlen,rdir);
 		}
 
+	} else {
+		instance_destroy(other);
+		if (global.hitstop < 1) global.hitstop = 1;
 	}
 }

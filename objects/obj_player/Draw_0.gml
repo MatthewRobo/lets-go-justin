@@ -118,7 +118,7 @@ for (i = ammo; i > 0; i--) {
 	x1 = tx[tcnow];
 	y1 = ty[tcnow];
 	
-	draw_circle_color(x1,y1,7,color,color,0);
+	draw_circle_color(x1,y1,7,c_black,c_black,0);
 	draw_circle_color(x1,y1,6,c_white,c_white,0);
 	// draw_text(x1,y1,i);
 }

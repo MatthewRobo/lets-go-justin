@@ -33,10 +33,10 @@ switch shottype {
 		gunreload = 38;
 		break;
 	case shot.shotgun:
-		bulletspeed = 8;
+		bulletspeed = 8*2;
 		gunrecovery = 28;
 		gunreload = 45;
-		shotactive = 28;
+		shotactive = 28/2;
 		recoil = 16;
 		break;
 	case shot.wallbang:
@@ -44,7 +44,7 @@ switch shottype {
 		bulletspeed = -10;
 		bulletmaxspeed = 10;
 		gunrecovery = 44;
-		gunreload = 75;
+		gunreload = 70;
 		shotactive = 240;
 		break;
 	case shot.whiffpunisher:
@@ -67,14 +67,15 @@ switch shottype {
 		shotobj = obj_trailer;
 		bulletspeed = 16;
 		gunrecovery = 35;
-		gunreload = 85;
+		gunreload = 70;
 		shotactive = 25;
 		break;
 	case shot.grenade:
 		shotobj = obj_grenade;
+		ammomax = 2;
 		bulletspeed = 10;
 		gunrecovery = 40;
-		gunreload = 40;
+		gunreload = 50;
 		shotactive = 40;
 		break;
 	case shot.geyser:
@@ -97,8 +98,8 @@ switch shottype {
 		ammomax = 2;
 		bulletspeed = 1;
 		shotactive = 256;
-		gunrecovery = 28;
-		gunreload = 45;
+		gunrecovery = 35;
+		gunreload = 70;
 		break;
 	case shot.wall2:
 		shotobj = obj_timed;
