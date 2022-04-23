@@ -393,6 +393,14 @@ if (global.hitstop <= 0) {
 			} else {
 				audio_play_sound(snd_reload, 0, false);
 				recovery = gunreload;
+				if (shottype = shot.random) {
+					bulletspeed = irandom_range(8,40);
+					shotactive = irandom_range(6,60);
+					ammomax = irandom_range(1,6);
+					gunrecovery = irandom_range(10,40) - ammomax;
+					gunreload = irandom_range(10,30) * ammomax;
+					recoil = irandom_range(-20,20);
+				}
 				ammo = ammomax;
 				state = status.recovery;
 				sprite_index = spr_recovery;
