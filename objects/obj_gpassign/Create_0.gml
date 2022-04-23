@@ -11,7 +11,7 @@ for (i = 0; i < PLAYERS; i++) {
 
 readypos = array_create(GP+KB, false);
 
-switch irandom(7) {
+switch irandom(8) {
 	case 0:
 		global.color[0] = $5100ff;
 		global.color[1] = $ff8000;
@@ -68,13 +68,20 @@ switch irandom(7) {
 		global.fgcolor = $aa0000;
 		global.fgcolor2 = c_yellow;
 		break;
-	case 8: // PAPER
-		global.color[0] = c_green;
-		global.color[1] = c_blue;
-		global.bgcolor = c_white;
-		global.fgcolor = c_grey;
-		global.fgcolor2 = c_black;
+	case 8: // JET GRIND RADIO
+		global.color[0] = $42e4e2;
+		global.color[1] = $42c183;
+		global.bgcolor  = $82363f;
+		global.fgcolor  = $121B80;
+		global.fgcolor2 = $504fc4;
 		break;
+	//case 9: // PAPER
+	//	global.color[0] = c_green;
+	//	global.color[1] = c_blue;
+	//	global.bgcolor = c_white;
+	//	global.fgcolor = c_grey;
+	//	global.fgcolor2 = c_black;
+	//	break;
 }
 
 gbid = layer_background_get_id("background");
