@@ -3,7 +3,13 @@
 
 // Inherit the parent event
 
-
+if (global.hitstop <= 0) {
+	uprelease = false;
+	slash = false;
+	shoot = false;
+	parry = false;
+	jump = false;
+}
 
 left = false;
 right = false;

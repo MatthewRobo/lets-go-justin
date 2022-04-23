@@ -405,6 +405,10 @@ if (global.hitstop <= 0) {
 			if (left && !right) image_xscale = -scale;
 			else if (right && !left) image_xscale = scale;
 		}
+		if (shoot) {
+			audio_play_sound(snd_jam,0,0);
+		}
+		
 		recovery--;
 		if (recovery <= 0) {
 			state = status.idle;
@@ -510,11 +514,7 @@ if (global.hitstop <= 0) {
 	} else {
 		image_alpha = 1;
 	}
-	uprelease = false;
-	slash = false;
-	shoot = false;
-	parry = false;
-	jump = false;
+
 	tx[tcounter] = x;
 	ty[tcounter] = y;
 	tcounter++;
