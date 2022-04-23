@@ -379,7 +379,38 @@ if (global.hitstop <= 0) {
 						attack.hsp = lengthdir_x(attack.spd, attack.direction);
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						break;
-				}
+					case shot.surface:
+						spread = 15;
+						
+
+						maxdist = 0;
+						for (i = -spread/2; i <= spread/2; i += spread/10) {
+
+							dist = 0;
+
+							angle = direction + i;
+							while (!position_meeting(x+lengthdir_x(dist, angle), y+lengthdir_y(dist, angle), obj_wall)) { //whilst the next pixel isn't a wall
+								dist ++;
+							}
+
+							dist--;
+							if (dist > maxdist) maxdist = dist;
+							attack = instance_create_layer(x+lengthdir_x(dist,angle), y+lengthdir_y(dist,angle), "hitboxes", shotobj);
+							attack.owner = self;
+							attack.team = team;
+							attack.direction = angle;
+							attack.timer = shotactive + abs(i);
+
+						}
+						
+						trail = instance_create_layer(x,y,"trails",obj_gradientspike);
+						trail.owner = self;
+						trail.length = maxdist;
+						trail.direction = direction;
+						trail.thickness = maxdist * dsin(spread/2);
+						break;
+					}
+				
 
 				recovery = gunrecovery;
 				ammo--;

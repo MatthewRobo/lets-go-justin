@@ -14,7 +14,7 @@ enum shot {
 	whip,
 	wall2,
 	random,
-
+	surface,
 	length
 }
 
@@ -116,6 +116,13 @@ switch shottype {
 		gunrecovery = irandom_range(10,40) - ammomax;
 		gunreload = irandom_range(10,30) * ammomax;
 		recoil = irandom_range(-20,20);
+		break;
+	case shot.surface:
+		shotobj = obj_timed;
+		bulletspeed = 0;
+		shotactive = 240;
+		gunrecovery = 30;
+		gunreload = 40;
 		break;
 }
 

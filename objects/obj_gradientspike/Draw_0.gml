@@ -18,11 +18,12 @@ var _y2 = y + _c * _y - _s * _x;
 
 
 draw_primitive_begin(pr_trianglelist);
-draw_vertex(_x1,_y1);
-draw_vertex(_x2,_y2);
-draw_vertex_color(x,y,owner.color,0);
-//draw_vertex_color(_x1,_y1,owner.color,0);
-//draw_vertex_color(_x2,_y2,owner.color,0);
-//draw_vertex_color(x,y,owner.color,image_alpha);
+//draw_vertex(_x1,_y1);
+//draw_vertex(_x2,_y2);
+//draw_vertex_color(x,y,owner.color,0);
+
+draw_vertex_color(_x1,_y1,owner.color,0);
+draw_vertex_color(_x2,_y2,owner.color,0);
+draw_vertex_color(x,y,owner.color,image_alpha);
 draw_primitive_end();
 
