@@ -9,7 +9,7 @@ for (var i = 0; i < GP+KB; i++)
 		if global.down[i][j] {
 			if (position[i] == -99) {
 				position[i] = -1;
-				audio_play_sound(snd_parry,0,0);
+				audio_play_sound(snd_jump,0,0);
 			}
 		}
 	}

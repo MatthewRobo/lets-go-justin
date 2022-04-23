@@ -108,6 +108,8 @@ for (i = 0; i < tlen; i+= 1) {
 }
 //draw_vertex_colour(x12-24,y12,color,0);
 draw_primitive_end();
+//draw_vertex_colour(x12-24,y12,color,0);
+
 
 //tlast = (tcounter + 1 + tlen) mod tlen;
 //draw_sprite_ext(spr_ptrail,image_index,tx[tlast],ty[tlast],image_xscale,image_yscale,0,color,1);
@@ -146,8 +148,6 @@ if (state == status.parry) {
 if (state == status.recovery && shoot) {
 	draw_sprite_ext(spr_poverlay,image_index,floor(x),_ysin,image_xscale,image_yscale,0,c_white,1);
 }
-
- 
 
 //draw_sprite_ext(spr_ptrim,image_index,x,y,image_xscale,image_yscale,0,color,1);
 
