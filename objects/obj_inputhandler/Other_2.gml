@@ -66,3 +66,7 @@ else
 {
     global.browser = 1;
 }
+
+global.mainbind = array_create(GP + KB, array_create(input.length, 0));
+global.subbind = array_create(GP + KB, array_create(input.length, 0));
+

@@ -43,34 +43,8 @@ vrad = sprite_height / 2;
 steps = 24;
 draw_set_color(color);
 draw_set_alpha(1);
-//draw_primitive_begin(pr_trianglestrip);
-//angle = 90;
-//if (dir == 5)  angle = 0;
-//for (i = -angle; i <= angle; i += 360 / steps) {
-//	irad = 44;
-//	orad = 48;
-//	_xi = lengthdir_x(irad, i + direction);
-//	_yi = lengthdir_y(irad, i + direction);
-	
-//	_xo = lengthdir_x(orad, i + direction);
-//	_yo = lengthdir_y(orad, i + direction);
-
-//	var _x1 = x + _xi;
-//	var _y1 = y + _yi;
-//	var _x2 = x + _xo;
-//	var _y2 = y + _yo;
-
-//	draw_vertex(_x1, _y1);
-//	draw_vertex(_x2, _y2);
-//}
-//draw_primitive_end();
 
 draw_primitive_begin(pr_trianglestrip);
-//x11 = x+12;
-//y11 =y-24;
-//x12=x-12;
-//y12=y+24;
-//draw_vertex_colour(x11,y11,color,1);
 for (i = 0; i < tlen; i+= 1) {
 	tcnow = (i + tcounter + tlen) mod tlen;
 	tcnext = (tcnow + 1) mod tlen;
@@ -87,32 +61,15 @@ for (i = 0; i < tlen; i+= 1) {
 	y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-18,y1+18);
 	x12 = clamp(x1+lengthdir_x(twid,tdir-90),x1-8,x1+8);
 	y12 = clamp(y1+lengthdir_y(twid,tdir-90),y1-18,y1+18);
-	/*
-	x11 = x1 - 2;
-	y11 = y1 - 22;
-	x12 = x1 + 2;
-	y12 = y1 + 22;
-	*/
+
 	tcolor = color;
 
 	if (global.hitstop > 0) talpha = i * 2 / tlen;
 
 	draw_vertex_colour(x11, y11,tcolor,talpha);
 	draw_vertex_colour(x12, y12,tcolor,talpha);
-	
-	//draw_vertex(x11, y11);
-	//draw_vertex(x12, y12);
-	//draw_circle(x11,y11,2,1);
-	//draw_circle(x12,y12,2,1);
-
 }
-//draw_vertex_colour(x12-24,y12,color,0);
 draw_primitive_end();
-//draw_vertex_colour(x12-24,y12,color,0);
-
-
-//tlast = (tcounter + 1 + tlen) mod tlen;
-//draw_sprite_ext(spr_ptrail,image_index,tx[tlast],ty[tlast],image_xscale,image_yscale,0,color,1);
 
 for (i = ammo; i > 0; i--) {
 	tcnow = (tlen - (i*2) + tcounter) mod tlen;
@@ -122,7 +79,6 @@ for (i = ammo; i > 0; i--) {
 	
 	draw_circle_color(x1,y1,8,c_black,c_black,0);
 	draw_circle_color(x1,y1,6,c_white,c_white,0);
-	// draw_text(x1,y1,i);
 }
 
 _s = spawning == spawntime ? (global.hitstop * global.hitstop) / 60 : 1;
@@ -158,14 +114,6 @@ if (flash) {
 	flash = false;
 }
 
-//draw_sprite_ext(spr_ptrim,image_index,x,y,image_xscale,image_yscale,0,color,1);
-
-//draw_primitive_begin(pr_trianglelist);
-//draw_vertex(x, y-24);
-//draw_vertex(x-8, y-32);
-//draw_vertex(x+8, y-32);
-//draw_primitive_end();
-
 if (state != status.idle) {
 	draw_rectangle(x,y-33,x+recovery,y-38,0);
 	draw_rectangle(x,y-33,x-recovery,y-38,0);
@@ -176,8 +124,6 @@ draw_set_valign(fa_bottom);
 draw_set_font(Font2);
 
 draw_text(x, y-32, "(P" + teamstr + ")");
-
-
 
 if (global.mode = gamemode.training) {
 	draw_text(x-20, y-56, dir);
