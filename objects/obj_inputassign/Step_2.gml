@@ -29,7 +29,6 @@ if (lockout) {
 					global.mainbind[device][pos[p]] = keyboard_key;
 					global.subbind[device][pos[p]] = keyboard_key;
 					pos[p]++;
-					
 				}
 				if (keyboard_check_pressed(vk_anykey)
 				&& keyboard_key != global.mainbind[device][input.U] && keyboard_key != global.mainbind[device][input.D]

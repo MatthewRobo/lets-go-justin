@@ -52,7 +52,14 @@ if (!global.inassign && instance_number(obj_controller) <= 0 && instance_number(
 	}
 }
 
+
+
+
 if (keyboard_check_pressed(vk_f1)) {
+	if (!global.inassign) {
+		reassign = instance_create_depth(0,0,-999,obj_inputassign);
+		reassign.alarm[1] = 1;
+	}
 	var d = GP;
 	for (var e = 0; e < 2; e++) {
 		for (var i = 0; i < input.length; i++) {
@@ -147,6 +154,10 @@ if (keyboard_check_pressed(vk_f1)) {
 }
 
 if (keyboard_check_pressed(vk_f2)) {
+	if (!global.inassign) {
+		reassign = instance_create_depth(0,0,-999,obj_inputassign);
+		reassign.alarm[1] = 1;
+	}
 	var d = GP+1;
 	for (var e = 0; e < 2; e++) {
 		for (var i = 0; i < input.length; i++) {

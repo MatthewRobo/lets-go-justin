@@ -1,4 +1,4 @@
-pos = array_create(PLAYERS,0);
+pos = array_create(PLAYERS,input.length);
 ready = array_create(PLAYERS,false);
 extra_options = 2;
 total_options = input.length + extra_options;
