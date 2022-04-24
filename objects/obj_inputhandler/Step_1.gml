@@ -30,3 +30,25 @@ for (var d = 0; d < GP+KB; d++) {
 		global.released[d][i] = !global.down[d][i] && global.last[d][i];
 	}
 }
+
+global.inassign = instance_number(obj_inputassign) > 0;
+
+if (!global.inassign && (instance_number(obj_controller) <= 0)) {
+	if (keyboard_check_pressed(vk_f4)) instance_create_depth(0,0,-10000,obj_inputassign);
+	else {
+		for (var d = 0; d < GP; d++) {
+			buttonsheld = 0;
+			for (i = gp_face1; i < gp_padr + 1; i++) {
+				if (i != gp_padu) && (i != gp_padd)
+				&& (i != gp_padl) && (i != gp_padr) {
+					if (gamepad_button_check(d,i)) buttonsheld++;
+				}
+			}
+			if ((gamepad_button_check(d,gp_padd) || gamepad_axis_value(d, gp_axislv) > 0) && (buttonsheld >=3))
+			|| (keyboard_check_pressed(vk_f4)) {
+				instance_create_depth(0,0,-999999,obj_inputassign);
+			}
+		}
+	}
+}
+

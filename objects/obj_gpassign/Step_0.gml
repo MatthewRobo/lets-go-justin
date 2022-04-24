@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 pads = "";
-
+if (!global.inassign) {
 for (var i = 0; i < GP+KB; i++)
 {
 	for (var j = 0; j < input.length; j++) {
@@ -65,6 +65,7 @@ for (var i = 0; i < GP+KB; i++)
 	for (p = 0; p < PLAYERS; p++) {
 		if (ready[p] == i) position[i] = p;
 	}
+}
 }
 
 if (ready[0] > -99 && ready[1] > -99) {

@@ -99,7 +99,6 @@ for (d = 0; d < GP + KB; d++) {
 	for (e = 0; e < 2; e++) {
 		for (i = 0; i < input.length; i++) {
 			var k = e == 0 ? "main" : "alt";
-			var v = -1;
 			switch i {
 				case input.L: k += "Left"; break;
 				case input.D: k += "Down"; break;

@@ -8,16 +8,16 @@ randomize();
 #macro KB 2
 
 enum input {
-	L = 0,
+	U = 0,
 	D,
-	U,
+	L,
 	R,
-	ST,
-	SE,
-	JU,
 	SL,
 	SH,
 	PA,
+	JU,
+	ST,
+	SE,
 	length
 }
 
@@ -67,6 +67,8 @@ else
     global.browser = 1;
 }
 
-global.mainbind = array_create(GP + KB, array_create(input.length, 0));
-global.subbind = array_create(GP + KB, array_create(input.length, 0));
+global.mainbind = array_create(GP + KB+1, array_create(input.length, -1));
+global.subbind = array_create(GP + KB+1, array_create(input.length, -1));
+
+global.inassign = 0;
 
