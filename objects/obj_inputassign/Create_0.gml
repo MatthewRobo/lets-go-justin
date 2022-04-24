@@ -3,6 +3,7 @@ ready = array_create(PLAYERS,false);
 extra_options = 2;
 total_options = input.length + extra_options;
 lockout = true;
+binding = array_create(2,false);
 ini_open("bindings.ini");
 
 for (var d = 0; d < GP + KB; d++) {
