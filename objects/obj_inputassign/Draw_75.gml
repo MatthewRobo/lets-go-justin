@@ -28,7 +28,7 @@ for (var p = 0; p < 2; p++) {
 			case input.SH: k = "B"; break;
 			case input.PA: k = "C"; break;
 			case 11: k = "Reset to default"; break;
-			case 10: k = "Done"; break;
+			case 10: k = "Done " + string(global.lookup[p]); break;
 		}
 		if (a < input.length) {
 			k += " : " + string(global.mainbind[global.lookup[p]][a]);

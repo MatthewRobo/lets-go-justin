@@ -12,7 +12,7 @@ for (var d = 0; d < GP+KB; d++) {
 	for (var i = 0; i < input.length; i++) {
 		global.last[d][i] = global.down[d][i];
 		if (d < GP) {
-			global.down[d][i] = gamepad_button_check(d, global.mainbind[d][i]) || gamepad_button_check(d,global.subbind[d][i]);
+			global.down[d][i] = gamepad_button_check(d, global.mainbind[d][i]);
 			switch i {
 				case input.L: global.down[d][input.L] = global.down[d][i] || gamepad_axis_value(d, gp_axislh) < 0;
 					break;
@@ -33,7 +33,7 @@ for (var d = 0; d < GP+KB; d++) {
 
 global.inassign = instance_number(obj_inputassign) > 0;
 
-if (!global.inassign && (instance_number(obj_controller) <= 0)) {
+if (!global.inassign && instance_number(obj_controller) <= 0 && instance_number(obj_gpassign) <= 0) {
 	if (keyboard_check_pressed(vk_f4)) instance_create_depth(0,0,-10000,obj_inputassign);
 	else {
 		for (var d = 0; d < GP; d++) {

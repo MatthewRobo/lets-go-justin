@@ -4,16 +4,19 @@
 start = 0;
 select = false;
 
+if (!global.inassign) {
 
-for (var i = 0; i < GP+KB; i++;)
-{
+	for (var i = 0; i < GP+KB; i++;)
+	{
 
-	if global.down[i][input.ST] {
-		start += 1;
+		if global.down[i][input.ST] {
+			start += 1;
+		}
+		if global.pressed[i][input.SE] {
+			room_goto(Pad_Select);
+		} 
 	}
-	if global.pressed[i][input.SE] {
-		room_goto(Pad_Select);
-	} 
+
 }
 
 if (start) timer += power(start,2) / 160;
