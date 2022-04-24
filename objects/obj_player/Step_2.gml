@@ -49,10 +49,10 @@ if (global.hitstop <= 0) {
 	// code block is here so that the bullet only spawns
 	image_speed = 1;
 	if (reflected != noone) {
-		attack = instance_create_layer(x, y, "hitboxes", obj_bullet);
+		attack = instance_create_layer(reflectx, reflecty, "hitboxes", obj_bullet);
 		attack.owner = self;
 		attack.team = team;
-		attack.direction = point_direction(x, y, reflected.x, reflected.y);
+		attack.direction = point_direction(reflectx, reflecty, reflected.x, reflected.y);
 		attack.spd = counterspeed * reflectmult;
 		attack.spd = attack.spd > 44 ? 44 : attack.spd;
 
@@ -162,7 +162,6 @@ if (global.hitstop <= 0) {
 					attack.image_angle = attack.direction;
 					recovery = slashactive + slashrecovery;
 					state = status.recovery;
-					//sprite_index = spr_recovery;
 				}
 			} else {
 				attack = instance_create_layer(x, y, "hitboxes", obj_slash);
@@ -175,7 +174,6 @@ if (global.hitstop <= 0) {
 				attack.image_angle = attack.direction;
 				recovery = slashactive + slashrecovery;
 				state = status.recovery;
-				//sprite_index = spr_recovery;
 			}
 		}
 		if (shoot) {
@@ -415,10 +413,8 @@ if (global.hitstop <= 0) {
 				recovery = gunrecovery;
 				ammo--;
 				state = status.recovery;
-				//sprite_index = spr_recovery;
 				if (recovery <= 0) {
 					state = status.idle;
-					//sprite_index = ammo > 0 ? spr_idle : spr_empty;
 				}
 				
 			} else {
@@ -434,7 +430,6 @@ if (global.hitstop <= 0) {
 				}
 				ammo = ammomax;
 				state = status.recovery;
-				//sprite_index = spr_recovery;
 			}
 		}
 		if (parry) {
@@ -442,7 +437,6 @@ if (global.hitstop <= 0) {
 			invul /= 3;
 			recovery = parryactive;
 			state = status.parry;
-			//sprite_index = spr_parry;
 		}
 		break;
 	case status.recovery:
@@ -457,7 +451,6 @@ if (global.hitstop <= 0) {
 		recovery--;
 		if (recovery <= 0) {
 			state = status.idle;
-			//sprite_index = ammo > 0 ? spr_idle : spr_empty;
 		}
 		break;
 	case status.parry:
@@ -467,7 +460,6 @@ if (global.hitstop <= 0) {
 		if ((!heldparry && recovery <= 0) || (recovery <= -parrymax)) {
 			recovery = parryrecovery - recovery;
 			state = status.recovery;
-			//sprite_index = ammo > 0 ? spr_idle : spr_empty;
 		}
 		trail = instance_create_layer(x, y, "trails", obj_playertrail);
 		trail.image_index = image_index;
@@ -480,7 +472,6 @@ if (global.hitstop <= 0) {
 		recovery--;
 		if (recovery <= 0) {
 			state = status.idle;
-			//sprite_index = ammo > 0 ? spr_idle : spr_empty;
 		}
 		break;
 	}

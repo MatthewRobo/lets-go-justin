@@ -4,13 +4,13 @@
 if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, false, false) == noone || other.object_index == obj_wallbang))  {
 	if (state == status.parry) {
 		invul += 5;
-		
-		sprite_index = ammo > 0 ? spr_idle : spr_empty;
 		spark = instance_create_layer(x, y, "parryfx", obj_parry);
 		spark.owner = id;
-		spark.direction = other.direction + 180;
+		spark.direction = point_direction(x,y,other.x,other.y);
 		spark.image_angle = spark.direction;
 		audio_play_sound(snd_parry, 1, false);
+		reflectx = x;
+		reflecty = y;
 		if (other.object_index == obj_anchor) {
 			reflected = other.owner;
 			superreflect = true;
@@ -21,10 +21,11 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			reflected = other.owner;
 			counterspeed = other.spd < 32 ? 32 : other.spd;
 			if (global.hitstop < clamp(9 * counterspeed / 32,0,60)) global.hitstop = clamp(9 * counterspeed / 32,0,60);
+			reflectx = other.x;
+			reflecty = other.y;
 		}
 		else {
 			other.owner.state = status.parried;
-			other.owner.sprite_index = spr_recovery;
 			other.owner.recovery = parrystop;
 			if (global.hitstop < 16) global.hitstop = 16;
 		}

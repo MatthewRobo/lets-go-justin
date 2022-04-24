@@ -145,6 +145,8 @@ draw_sprite_ext(spr_idle,image_index,_x,_ysin,image_xscale,image_yscale,0,image_
 // ---
 if (state == status.recovery) {
 	draw_sprite_ext(spr_poverlay,0,_x,_ysin,image_xscale,image_yscale,0,c_red,0.35);
+} else if (state == status.parried) {
+	draw_sprite_ext(spr_poverlay,0,_x,_ysin,image_xscale,image_yscale,0,c_aqua,0.35);
 }
 draw_sprite_ext(spr_pparry,image_index,_x,_ysin,image_xscale,image_yscale,0,c_white,abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
 if (state == status.parry) {

@@ -124,3 +124,6 @@ lifetime = 0;
 //qt = 0;
 //candash = false;
 flash = false;
+
+		reflectx = x;
+		reflecty = y;
