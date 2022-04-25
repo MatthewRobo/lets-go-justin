@@ -72,16 +72,3 @@ for (var p = 0; p < 2; p++) {
 		ydraw += lineheight;
 	}
 }
-
-//Up : 
-//Down : 
-//Left : 
-//Right : 
-//A (confirm/slash) : 
-//B (cancel/shoot) : 
-//C (parry) : 
-//J (jump) : 
-//Start : 
-//Back : 
-//Reset to defaults
-//Done
