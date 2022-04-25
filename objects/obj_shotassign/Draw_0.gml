@@ -34,7 +34,7 @@ ydraw = room_height / 8;
 shottext = array_create(cols,"");
 playertext = array_create(PLAYERS,array_create(cols,""));
 
-for (p = -1; p < pmax; p++) {
+for (p = -1; p < global.pmax; p++) {
 
 	if (p < 0) {
 		for (i = 0; i < shot.length; i++) {
@@ -95,7 +95,7 @@ for (p = -1; p < pmax; p++) {
 
 ydraw = room_height/9;
 gap = string_width("WALLBANGER");
-gap *= clamp(pmax / 2,1,1.5);
+gap *= clamp(global.pmax / 2,1,1.5);
 //pgap = 150;
 pgap = string_width("[P2]") / 2;
 draw_set_valign(fa_top);
@@ -106,7 +106,7 @@ for (i = 0; i < cols; i++) {
 	j = i - (cols - 1) / 2;
 	draw_set_colour(c_white);
 	draw_text(xdraw + gap * j, ydraw, shottext[i]);
-	for (p = 0; p < pmax; p++) {
+	for (p = 0; p < global.pmax; p++) {
 		//k = p == 0 ? -pgap : pgap;
 		switch p {
 			case 0: k = -pgap; break;
@@ -125,7 +125,7 @@ for (i = 0; i < cols; i++) {
 }
 
 
-for (p = 0; p < pmax; p++) {
+for (p = 0; p < global.pmax; p++) {
 	ydraw = room_height * 0.75;
 	if (p < 2) {
 		desc = "";

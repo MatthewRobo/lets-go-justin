@@ -12,10 +12,18 @@ draw_set_color(c_black);
 draw_set_alpha(0.5);
 draw_rectangle(0,0,room_width,ydraw_final,0);
 
-for (var p = 0; p < 2; p++) {
+if (global.pmax = 4) {
+	ydraw = room_height/2 + 10;
+	ydraw_final = ydraw + 14 * lineheight;
+draw_set_color(c_black);
+draw_set_alpha(0.5);
+draw_rectangle(0,room_height/2,room_width,ydraw_final,0);
+}
+
+for (var p = 0; p < global.pmax; p++) {
 	draw_set_alpha(1);
-	var ydraw = 10;
-	if (p == 0) {
+	var ydraw = p >= 2 ? room_height/2 + 10 : 10;
+	if (p mod 2 == 0) {
 		draw_set_halign(fa_left);
 		var xdraw = 10;
 	} else {

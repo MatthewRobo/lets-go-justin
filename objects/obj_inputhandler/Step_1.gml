@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+global.pmax = global.lookup[3] == GP+KB ? 2 : 4;
+
 pads = "";
 
 for (var i = 0; i < global.gpnum; i++;)
