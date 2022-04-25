@@ -4,18 +4,18 @@
 enum shot {
 	bullet = 0,
 	shotgun,
-	wallbang,
 	whiffpunisher,
-	booster,
-	trailer,
-	grenade,
-	geyser,
-	sin,
+	wallbang,
 	whip,
+	grenade,
+	trailer,
+	geyser,
 	wall2,
+	booster,
+	sin,
 	random,
-	surface,
-	length
+	length,
+	surface
 }
 
 gamepad = 0;
