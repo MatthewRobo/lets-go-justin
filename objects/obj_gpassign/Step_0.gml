@@ -18,7 +18,7 @@ if (!global.inassign) {
 			audio_play_sound(snd_parry,0,0);
 			if (teams == false) {
 				for (var device = 0; device < GP+KB; device++) {
-					if (position[device] >= 2) {
+					if (position[device] >= 0) {
 						ready[position[device]] = -99;
 						readypos[device] = false;
 						switch position[device] {
