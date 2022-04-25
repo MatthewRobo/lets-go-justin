@@ -75,3 +75,4 @@ global.mainbind = array_create(GP + KB+1, array_create(input.length, -1));
 global.subbind = array_create(GP + KB+1, array_create(input.length, -1));
 
 global.inassign = 0;
+global.pmax = 2;

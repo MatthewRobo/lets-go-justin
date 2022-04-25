@@ -112,5 +112,7 @@ if (GREYBOX) {
 
 gbid = layer_background_get_id("background");
 layer_background_blend(gbid, global.bgcolor);
+teams = false;
+if (global.pmax == 4) teams = true;
 
 

@@ -12,13 +12,30 @@ ydraw = 60;
 
 bottomtext = "";
 draw_set_color(c_white);
-draw_text(xdraw + 000, ydraw, "Controller");
+if (teams) {
+	hgap = 180;
+	header = "Team VS";
+} else {
+	hgap = 256;
+	header = "Single VS";
+}
+
+draw_text(xdraw + 000, ydraw, header);
 draw_set_color(global.color[0]);
-
-
-draw_text(xdraw - 256, ydraw, "Player 1");
+draw_text(xdraw - hgap, ydraw, "Player 1");
 draw_set_color(global.color[1]);
-draw_text(xdraw + 256, ydraw, "Player 2");
+draw_text(xdraw + hgap, ydraw, "Player 2");
+if (teams) {
+	draw_set_color(global.color[2]);
+	draw_text(xdraw - 2 * hgap, ydraw, "Player 3");
+	draw_set_color(global.color[3]);
+	draw_text(xdraw + 2 * hgap, ydraw, "Player 4");
+	vgap = string_height("Team 12");
+	draw_set_color(global.color[0]);
+	draw_text(xdraw - hgap * 1.5, ydraw-vgap, "Team 1");
+	draw_set_color(global.color[1]);
+	draw_text(xdraw + hgap * 1.5, ydraw-vgap, "Team 2");
+}
 
 ydraw += 120;
 
@@ -45,7 +62,7 @@ for (var i = 0; i < GP+KB; i++;)
 		case 2:  posdraw = -2; break;
 		case 3:  posdraw =  2; break;
 		}
-		draw_text(xdraw + 256 * posdraw, ydraw, label);
+		draw_text(xdraw + hgap * posdraw, ydraw, label);
 		ydraw += 60;
 	}
 }
