@@ -141,8 +141,10 @@ if (lockout || !candestroy) {
 					}
 				}
 			}
-			if (pos[p] == input.length && global.pressed[device][input.ST]) {
-				ready[p] = true;
+			for (var button = 4; button < input.length; button++) {
+				if (pos[p] == input.length && global.pressed[device][button]) {
+					ready[p] = true;
+				}
 			}
 
 			
