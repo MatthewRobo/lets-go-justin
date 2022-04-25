@@ -8,7 +8,7 @@ draw_set_alpha(1);
 
 draw_set_halign(fa_right);
 // draw_text(room_width / 2 - 32, 8, obj_player2.deaths);
-pipwidth = 44;
+pipwidth = 44 * pipratio;
 pipgap = 4 + pipwidth;
 if (instance_exists(obj_player4)) {
 	draw_set_colour(global.color[0]);
