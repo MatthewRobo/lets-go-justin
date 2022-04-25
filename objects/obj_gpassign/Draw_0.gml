@@ -9,7 +9,7 @@ draw_set_valign(fa_top);
 
 xdraw = room_width / 2;
 ydraw = 60;
-
+vgap = string_height("(Team 12g)");
 bottomtext = "";
 draw_set_color(c_white);
 if (teams) {
@@ -30,14 +30,14 @@ if (teams) {
 	draw_text(xdraw - 2 * hgap, ydraw, "Player 3");
 	draw_set_color(global.color[3]);
 	draw_text(xdraw + 2 * hgap, ydraw, "Player 4");
-	vgap = string_height("Team 12");
+
 	draw_set_color(global.color[0]);
 	draw_text(xdraw - hgap * 1.5, ydraw-vgap, "Team 1");
 	draw_set_color(global.color[1]);
 	draw_text(xdraw + hgap * 1.5, ydraw-vgap, "Team 2");
 }
 
-ydraw += 120;
+ydraw += vgap * 2;
 
 
 for (var i = 0; i < GP+KB; i++;)
@@ -63,7 +63,7 @@ for (var i = 0; i < GP+KB; i++;)
 		case 3:  posdraw =  2; break;
 		}
 		draw_text(xdraw + hgap * posdraw, ydraw, label);
-		ydraw += 60;
+		ydraw += vgap;
 	}
 }
 
@@ -73,5 +73,6 @@ draw_set_font(Font1);
 draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
 //draw_text(xdraw, room_height - 20, "YOU CAN ONLY USE THE DPAD, THIS IS ON PURPOSE\nPress left/right to select\nPress start when ready\nPress select for training mode");
+bottomtext += teams ? "Press up/down to switch to single VS\n" : "Press up/down to switch to team VS\n";
 bottomtext += "Press left/right to select\nPress start when ready\nPress select for training mode";
 draw_text(xdraw, room_height - 20, bottomtext);
