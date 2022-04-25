@@ -24,7 +24,7 @@ if (lockout || !candestroy) {
 				pos[p]++;
 			}
 			pos[p] = (pos[p] + total_options) mod total_options;
-			if (device >= GP && device < GP+KB && keyboard_check_pressed(vk_anykey)) {
+			if (device >= GP && device < GP+KB && keyboard_check_pressed(vk_anykey) && keyboard_key != vk_f1 && keyboard_key != vk_f2) {
 				if (binding[p] && pos[p] <= 3) {
 					global.mainbind[device][pos[p]] = keyboard_key;
 					global.subbind[device][pos[p]] = keyboard_key;
@@ -267,8 +267,11 @@ if (lockout || !candestroy) {
 				}
 			}
 		}
-		if (global.lookup[p] == GP+KB) ready[p]=true;
+	
 	}
+	
 }
-
+for (var p = 0; p < PLAYERS; p++) {
+	if (global.lookup[p] == GP+KB) ready[p]=true;
+}
 if (ready[0] && ready[1]) instance_destroy();
