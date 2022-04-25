@@ -71,6 +71,22 @@ function key_to_string(arg) {
 	    case 220: return "["; break;
 	    case 221: return "]"; break;
 	    case 222: return "'"; break;
+		case gp_face1: return "A/cross"; break;
+		case gp_face2: return "B/circle"; break;
+		case gp_face3: return "X/square"; break;
+		case gp_face4: return "Y/triangle"; break;
+		case gp_shoulderl: return "LB/L1"; break;
+		case gp_shoulderlb: return "LT/L2"; break;
+		case gp_shoulderr: return "RB/R1"; break;
+		case gp_shoulderrb: return "RT/R2"; break;
+		case gp_select: return "Select"; break;
+		case gp_start: return "Start"; break;
+		case gp_stickl: return "Left stick/L3"; break;
+		case gp_stickr: return "Right stick/R3"; break;
+		case gp_padu: return "D-pad up"; break;
+		case gp_padd: return "D-pad down"; break;
+		case gp_padl: return "D-pad left"; break;
+		case gp_padr: return "D-pad right"; break;
 		default: return string(arg); break;
 	}
 }
