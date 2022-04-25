@@ -39,12 +39,11 @@ for (var i = 0; i < GP+KB; i++;)
 		}
 		posdraw = position[i];
 		switch position[i] {
-		case 0: posdraw = -1;
-		break;
-		case 1: posdraw = 1;
-		break;
-		case -1: posdraw = 0;
-		break;
+		case 0:  posdraw = -1; break;
+		case 1:  posdraw =  1; break;
+		case -1: posdraw =  0; break;
+		case 2:  posdraw = -2; break;
+		case 3:  posdraw =  2; break;
 		}
 		draw_text(xdraw + 256 * posdraw, ydraw, label);
 		ydraw += 60;

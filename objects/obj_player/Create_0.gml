@@ -98,14 +98,6 @@ image_blend = color;
 
 spr_idle = sprite_index;
 
-boom = instance_create_layer(x, y, "hitboxes", obj_boom);
-boom.image_xscale = 2;
-boom.image_yscale = 2;
-boom.image_blend = color;
-boom = instance_create_layer(x, y, "hitboxes", obj_boom);
-boom.image_xscale = 2.6;
-boom.image_yscale = 2.6;
-
 scale = 1;
 image_xscale = scale;
 image_yscale = scale;
@@ -129,3 +121,5 @@ reflectx = x;
 reflecty = y;
 
 if (x > room_width / 2) image_xscale = -1 * scale;
+
+

@@ -13,22 +13,33 @@ for (var i = 0; i < GP+KB; i++)
 			}
 		}
 	}
-	
+	// 2 0 -1 1 3
 	if global.pressed[i][input.L] {
-		//if (position[i] == -99) position[i] = -1;
-		position[i]++;
+		nextpos = 0;
+		switch position[i] {
+			case -1: nextpos = 0; break;
+			case  0: nextpos = 2; break;
+			case  1: nextpos = -1; break;
+			case  2: nextpos = 3; break;
+			case  3: nextpos = 1; break;
+		}
+		position[i] = nextpos;
+		
 		if (!readypos[i]) audio_play_sound(snd_shield,0,0);
 	}
 	if global.pressed[i][input.R] {
-		//if (position[i] == -99) position[i] = -1;
-		 position[i]--;
+		nextpos = 0;
+		switch position[i] {
+			case -1: nextpos = 1; break;
+			case  0: nextpos = -1; break;
+			case  1: nextpos = 3; break;
+			case  2: nextpos = 0; break;
+			case  3: nextpos = 2; break;
+		}
+		position[i] = nextpos;
 		if (!readypos[i]) audio_play_sound(snd_shield,0,0);
 	}
 	
-	if (position[i] != -99) {
-		if (position[i] < -1) position[i] += 3;
-		position[i] = ((position[i] + 1) mod 3) - 1;
-	}
 	if global.pressed[i][input.ST] {
 		if (position[i] >= 0 && position[i] < PLAYERS) {
 			for (p = 0; p < GP+KB; p++) {

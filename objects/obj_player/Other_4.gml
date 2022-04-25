@@ -127,3 +127,13 @@ switch shottype {
 }
 
 ammo = ammomax;
+if (global.lookup[team] == GP+KB && team >= 2) instance_deactivate_object(self);
+else {
+	boom = instance_create_layer(x, y, "hitboxes", obj_boom);
+	boom.image_xscale = 2;
+	boom.image_yscale = 2;
+	boom.image_blend = color;
+	boom = instance_create_layer(x, y, "hitboxes", obj_boom);
+	boom.image_xscale = 2.6;
+	boom.image_yscale = 2.6;
+}
