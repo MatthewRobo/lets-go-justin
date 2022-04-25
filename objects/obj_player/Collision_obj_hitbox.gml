@@ -129,13 +129,11 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			trail.y += lengthdir_y(rlen,rdir);
 		}
 
-	} else {
+	} else if (state != status.parry) {
 		instance_destroy(other);
-		
-			freeze = other.object_index == obj_slash ? 4 : 2;
-			if (global.hitstop < freeze) global.hitstop = freeze;
-			global.outline = global.fgcolor2;
-			flash = true;
-		
+		freeze = other.object_index == obj_slash ? 4 : 2;
+		if (global.hitstop < freeze) global.hitstop = freeze;
+		global.outline = global.fgcolor2;
+		flash = true;
 	}
 }
