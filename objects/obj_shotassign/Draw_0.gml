@@ -34,7 +34,7 @@ ydraw = room_height / 8;
 shottext = array_create(cols,"");
 playertext = array_create(PLAYERS,array_create(cols,""));
 
-for (p = -1; p < 2; p++) {
+for (p = -1; p < pmax; p++) {
 
 	if (p < 0) {
 		for (i = 0; i < shot.length; i++) {
@@ -71,7 +71,7 @@ for (p = -1; p < 2; p++) {
 			text += "\n\n";
 			shottext[xpos] += text;
 		}
-	} else if (p < 2) {
+	} else if (p < PLAYERS) {
 		draw_set_color(global.fgcolor2);
 		for (i = 0; i < shot.length; i++) {
 			xpos = i mod cols;
@@ -95,18 +95,25 @@ for (p = -1; p < 2; p++) {
 
 ydraw = room_height/9;
 gap = string_width("WALLBANGER");
+gap *= clamp(pmax / 2,1,1.5);
 //pgap = 150;
 pgap = string_width("[P2]") / 2;
 draw_set_valign(fa_top);
-//draw_set_valign(fa_middle);
-//vgap = string_height("[]") / cols;
+
+
 vgap = 0;
 for (i = 0; i < cols; i++) {
 	j = i - (cols - 1) / 2;
 	draw_set_colour(c_white);
 	draw_text(xdraw + gap * j, ydraw, shottext[i]);
-	for (p = 0; p < PLAYERS; p++) {
-		k = p == 0 ? -pgap : pgap;
+	for (p = 0; p < pmax; p++) {
+		//k = p == 0 ? -pgap : pgap;
+		switch p {
+			case 0: k = -pgap; break;
+			case 1: k = pgap; break;
+			case 2: k = -3 * pgap; break;
+			case 3: k = 3 * pgap; break;
+		}
 
 		l = p == 0 ? -vgap/3 : vgap/3;
 		l -= 8;
@@ -118,7 +125,7 @@ for (i = 0; i < cols; i++) {
 }
 
 
-for (p = 0; p < PLAYERS; p++) {
+for (p = 0; p < pmax; p++) {
 	ydraw = room_height * 0.75;
 	if (p < 2) {
 		desc = "";

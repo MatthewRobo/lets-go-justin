@@ -104,7 +104,10 @@ if (!global.inassign) {
 		global.shots[p] = global.shots[p] mod shot.length;
 	}
 }
-if (ready[0] && ready[1]) room_goto_next();
 
-
-
+pmax = global.lookup[3] == GP+KB ? 2 : 4;
+totalready = 0;
+for (i = 0; i < pmax; i++) {
+	totalready += ready[i];
+}
+if (totalready >= pmax) room_goto_next();
