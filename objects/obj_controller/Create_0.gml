@@ -22,3 +22,4 @@ global.outline = c_green;
 bgid = layer_background_get_id("Background"); 
 layer_background_blend(bgid, global.bgcolor);
 
+takess = GREYBOX;

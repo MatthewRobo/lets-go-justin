@@ -40,7 +40,7 @@ if (lockout || !candestroy) {
 						binding[p] = true;
 						global.mainbind[device][pos[p]] = keyboard_key;
 						global.subbind[device][pos[p]] = keyboard_key;
-						pos[p]++;
+						if (pos[p] < input.SE) pos[p]++;
 					} else {
 						if (pos[p] >=input.length) binding[p] = false;
 						if (pos[p] == input.length + 1) {
@@ -165,7 +165,7 @@ if (lockout || !candestroy) {
 					if (pos[p] > 3 && pos[p] < input.length) {
 						global.mainbind[device][pos[p]] = button;
 						global.subbind[device][pos[p]] = button;
-						pos[p]++;
+						if (pos[p] < input.SE) pos[p]++;
 						exit;
 					}
 					if (pos[p] == input.length) {

@@ -7,6 +7,8 @@ randomize();
 #macro GP 12
 #macro KB 2
 
+#macro GREYBOX true
+
 enum input {
 	U = 0,
 	D,
@@ -71,5 +73,3 @@ global.mainbind = array_create(GP + KB+1, array_create(input.length, -1));
 global.subbind = array_create(GP + KB+1, array_create(input.length, -1));
 
 global.inassign = 0;
-
-global.greyblock = 0;

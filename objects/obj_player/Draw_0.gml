@@ -11,7 +11,7 @@ draw_vertex(x + lengthdir_x(8, direction - 90), y + lengthdir_y(8, direction - 9
 draw_primitive_end();
 
 */
-
+if !GREYBOX {
 if (dir != 5) {
 	var _c = dcos(direction);
 	var _s = dsin(direction);
@@ -143,4 +143,8 @@ if (global.mode = gamemode.training) {
 	draw_set_colour(c_white);
 	if (global.down[gamepad][input.JU]) draw_set_colour(c_lime);
 	draw_text(x+20, y-56, "J");
+}
+} else {
+	draw_set_color(color);
+	draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,0);
 }

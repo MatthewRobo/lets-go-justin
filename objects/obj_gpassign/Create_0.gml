@@ -102,6 +102,14 @@ switch irandom(10) {
 	//	break;
 }
 
+if (GREYBOX) {
+	global.color[0] = c_yellow;
+	global.color[1] = c_aqua;
+	global.bgcolor = c_black;
+	global.fgcolor = c_white;
+	global.fgcolor2 = c_grey;
+}
+
 gbid = layer_background_get_id("background");
 layer_background_blend(gbid, global.bgcolor);
 

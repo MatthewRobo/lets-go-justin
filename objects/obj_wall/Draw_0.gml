@@ -8,4 +8,6 @@ y2 = bbox_bottom;
 
 draw_set_alpha(1);
 draw_set_colour(global.fgcolor);
+if (GREYBOX) draw_set_color(c_white);
+
 draw_rectangle(x1,y1,x2,y2,0);

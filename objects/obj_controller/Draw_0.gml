@@ -4,7 +4,7 @@ draw_set_font(Font1);
 draw_set_valign(fa_top);
 
 draw_set_alpha(1);
-
+if (GREYBOX) draw_set_alpha(0);
 draw_set_colour(global.color[0]);
 draw_set_halign(fa_right);
 // draw_text(room_width / 2 - 32, 8, obj_player2.deaths);

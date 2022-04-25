@@ -14,8 +14,8 @@
   "soundFile": "snd_jam.wav",
   "duration": 0.037664,
   "parent": {
-    "name": "Depth-prototype",
-    "path": "Depth-prototype.yyp",
+    "name": "Sounds",
+    "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_jam",
