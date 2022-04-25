@@ -16,7 +16,6 @@ if (autoparry) {
 }
 
 if (global.mode = gamemode.training) {
-	
 	for (var i = 0; i < GP+KB; i++;)
 	{
 		if global.pressed[i][input.ST] && global.lookup[0] != i {
