@@ -127,7 +127,7 @@ for (i = 0; i < cols; i++) {
 
 for (p = 0; p < global.pmax; p++) {
 	ydraw = room_height * 0.75;
-	if (p < 2) {
+	if (p < global.pmax) {
 		desc = "";
 		switch global.shots[p] {
 			case shot.bullet: desc += "Basic shot.\nFast recovery/reload.";
@@ -159,10 +159,23 @@ for (p = 0; p < global.pmax; p++) {
 		}
 
 		k = p == 0 ? room_width * 0.25 : room_width * 0.75;
+		draw_set_font(Font1);
+		if (global.pmax == 4) {
+			switch p {
+				case 0: k = room_width * 3 / 8; break;
+				case 1: k = room_width * 5 / 8; break;
+				case 2: k = room_width * 1 / 8; break;
+				case 3: k = room_width * 7 / 8; break;
+			}
+			draw_set_font(fnt_smalldesc);
+			
+		}
+		
 		draw_set_colour(global.fgcolor2);
 		if (ready[p]) draw_set_colour(global.color[p]);
 		//draw_set_colour(global.color[p]);
 		draw_text(k,ydraw,desc);
+		draw_set_font(Font1);
 	}
 }
 

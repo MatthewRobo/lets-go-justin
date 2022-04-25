@@ -44,6 +44,7 @@
     {"id":{"name":"obj_activetrail","path":"objects/obj_activetrail/obj_activetrail.yy",},"order":5,},
     {"id":{"name":"obj_inputhandler","path":"objects/obj_inputhandler/obj_inputhandler.yy",},"order":3,},
     {"id":{"name":"spr_dpad","path":"sprites/spr_dpad/spr_dpad.yy",},"order":13,},
+    {"id":{"name":"fnt_smalldesc","path":"fonts/fnt_smalldesc/fnt_smalldesc.yy",},"order":3,},
     {"id":{"name":"spr_bg1","path":"sprites/spr_bg1/spr_bg1.yy",},"order":19,},
     {"id":{"name":"obj_triangle","path":"objects/obj_triangle/obj_triangle.yy",},"order":11,},
     {"id":{"name":"spr_dust","path":"sprites/spr_dust/spr_dust.yy",},"order":11,},
