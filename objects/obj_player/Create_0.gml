@@ -125,5 +125,7 @@ lifetime = 0;
 //candash = false;
 flash = false;
 
-		reflectx = x;
-		reflecty = y;
+reflectx = x;
+reflecty = y;
+
+if (x > room_width / 2) image_xscale = -1 * scale;

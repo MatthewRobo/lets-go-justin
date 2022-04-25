@@ -4,12 +4,11 @@
 // Inherit the parent event
 event_inherited();
 
-image_xscale = -1 * scale;
 team = 1;
 teamstr = "2";
 
 if (global.mode = gamemode.training) {
-	spr_idle = spr_p3idle;
+	spr_idle = spr_p0idle;
 }
 autoparry = false;
 aprad = 60;
