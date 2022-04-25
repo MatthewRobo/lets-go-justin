@@ -17,6 +17,11 @@ down = false;
 up = false;
 hover = false;
 heldparry = false;
+teabag = false;
+
+if (global.released[gamepad][input.D]) {
+	teabag = true;
+}
 
 if (global.down[gamepad][input.L]) {
 	left = true;

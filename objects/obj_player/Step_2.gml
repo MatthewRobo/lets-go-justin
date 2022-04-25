@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (vvec > 0) lifetime = 270;
+
 
 // input handling
 dir = 5;
@@ -484,6 +484,8 @@ if (global.hitstop <= 0) {
 			hsp = abs(hsp) <= deccel ? 0 : hsp - sign(hsp) * deccel;
 		}
 		if (state != status.parry && (state == status.idle || walksp)) {
+			if (vvec > 0) lifetime = 270;
+			if (teabag) lifetime = 0;
 			jumpforce = state == status.idle ? jumpsp : hopsp;
 			if (jump) {
 				if (grounded > 0) {
