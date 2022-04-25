@@ -82,7 +82,12 @@ for (i = ammo; i > 0; i--) {
 }
 
 _s = spawning == spawntime ? (global.hitstop * global.hitstop) / 60 : 1;
-_color = deaths == global.firstto ? c_black : color;
+if (teammate != noone) {
+	_color = deaths + teammate.deaths == global.firstto ? c_black : color;
+} else {
+	_color = deaths == global.firstto ? c_black : color;
+}
+
 _i = abs(dsin(360/30 * invul))*0.2 + 1;
 var _x = floor(x+0.5);
 var _ysin = floor(y + 2 * -dsin(lifetime)+0.5);

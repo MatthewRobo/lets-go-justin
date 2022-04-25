@@ -122,4 +122,4 @@ reflecty = y;
 
 if (x > room_width / 2) image_xscale = -1 * scale;
 
-
+teammate = noone;

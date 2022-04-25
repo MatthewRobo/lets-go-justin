@@ -137,3 +137,5 @@ else {
 	boom.image_xscale = 2.6;
 	boom.image_yscale = 2.6;
 }
+
+if (teammate != noone) teammate.teammate = self;

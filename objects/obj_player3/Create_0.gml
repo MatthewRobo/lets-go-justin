@@ -8,4 +8,5 @@ color = $00ccff;
 team = 2;
 teamstr = "3";
 
+teammate = obj_player1;
 

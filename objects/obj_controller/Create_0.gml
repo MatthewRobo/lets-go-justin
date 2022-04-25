@@ -7,7 +7,7 @@ roundstart = 80;
 global.hitstop = 0;
 restart = 0;
 quit = 0;
-global.firstto = 12;
+global.firstto = 3;
 
 if (global.mode == gamemode.training) {
 	roundstart = 0;

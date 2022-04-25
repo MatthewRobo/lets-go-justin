@@ -63,7 +63,13 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		other.owner.depth = layerdepth - 1;
 		if (global.hitstop < 20) global.hitstop = 20;
 		global.outline = color;
-		if (deaths == global.firstto) {
+		if (teammate != noone) {
+			if (deaths + teammate.deaths == global.firstto) {
+				if (global.hitstop < 120) global.hitstop = 120;
+				ultradies = audio_play_sound(snd_dies, 1, false);
+				audio_sound_pitch(ultradies, 20/120);
+			}
+		} else if (deaths == global.firstto) {
 			if (global.hitstop < 120) global.hitstop = 120;
 			ultradies = audio_play_sound(snd_dies, 1, false);
 			audio_sound_pitch(ultradies, 20/120);

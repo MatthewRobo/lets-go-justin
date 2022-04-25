@@ -7,3 +7,5 @@ color = $ffcc00;
 //color = $d000ff
 team = 3;
 teamstr = "4";
+
+teammate = obj_player2;
