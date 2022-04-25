@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 // lockout until no one is pressing a button
-if (lockout) {
+if (lockout || !candestroy) {
 	for (var d = 0; d < GP; d++) {
 		buttonsheld = 0;
 		show_debug_message(buttonsheld);
@@ -169,7 +169,8 @@ if (lockout) {
 					if (pos[p] == input.length) {
 						ready[p] = true;
 					}
-					if (pos[p] == input.length + 1) {
+					if (pos[p] == input.length + 1 && button == global.mainbind[device][input.ST]) {
+						
 						show_debug_message("reset to default");
 						var d = device;
 						for (var e = 0; e < 2; e++) {
