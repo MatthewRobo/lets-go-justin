@@ -48,6 +48,7 @@
     {"id":{"name":"spr_dust","path":"sprites/spr_dust/spr_dust.yy",},"order":11,},
     {"id":{"name":"snd_dies","path":"sounds/snd_dies/snd_dies.yy",},"order":0,},
     {"id":{"name":"spr_bg3","path":"sprites/spr_bg3/spr_bg3.yy",},"order":21,},
+    {"id":{"name":"key_to_string","path":"scripts/key_to_string/key_to_string.yy",},"order":0,},
     {"id":{"name":"spr_slashwhiff","path":"sprites/spr_slashwhiff/spr_slashwhiff.yy",},"order":9,},
     {"id":{"name":"Room110","path":"rooms/Room110/Room110.yy",},"order":9,},
     {"id":{"name":"obj_burst","path":"objects/obj_burst/obj_burst.yy",},"order":8,},

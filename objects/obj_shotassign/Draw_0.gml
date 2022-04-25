@@ -3,7 +3,7 @@
 
 
 draw_set_colour(global.fgcolor2);
-
+draw_set_alpha(1);
 xdraw = room_width / 2;
 
 

@@ -47,7 +47,9 @@ for (var p = 0; p < 2; p++) {
 				if (device == GP+KB) k += "1/F2)";
 		}
 		if (a < input.length) {
-			k += " : " + string(global.mainbind[global.lookup[p]][a]);
+			bind = global.mainbind[global.lookup[p]][a];
+			bindstr = key_to_string(bind);
+			k += " : " + bindstr;
 		}
 
 		draw_set_color(c_white);
@@ -65,6 +67,7 @@ for (var p = 0; p < 2; p++) {
 		}
 
 		if (ready[p]) draw_set_color(c_aqua);
+		if (device == GP+KB) draw_set_alpha(0);
 		draw_text(xdraw,ydraw,k);
 		ydraw += lineheight;
 	}
