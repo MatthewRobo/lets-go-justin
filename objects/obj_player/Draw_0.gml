@@ -77,7 +77,7 @@ for (i = ammo; i > 0; i--) {
 	x1 = tx[tcnow];
 	y1 = ty[tcnow];
 	
-	draw_circle_color(x1,y1,8,c_black,c_black,0);
+	draw_circle_color(x1,y1,8,c_black,global.bgcolor,0);
 	draw_circle_color(x1,y1,6,c_white,c_white,0);
 }
 

@@ -267,9 +267,7 @@ if (lockout || !candestroy) {
 				}
 			}
 		}
-	
 	}
-	
 }
 for (var p = 0; p < PLAYERS; p++) {
 	if (global.lookup[p] == GP+KB) ready[p]=true;

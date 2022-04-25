@@ -113,9 +113,11 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 
 	} else {
 		instance_destroy(other);
-		freeze = 2;
-		if (global.hitstop < freeze) global.hitstop = freeze;
-		global.outline = global.fgcolor2;
-		flash = true;
+		
+			freeze = other.object_index == obj_slash ? 4 : 2;
+			if (global.hitstop < freeze) global.hitstop = freeze;
+			global.outline = global.fgcolor2;
+			flash = true;
+		
 	}
 }

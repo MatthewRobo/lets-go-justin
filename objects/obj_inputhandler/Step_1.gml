@@ -48,7 +48,6 @@ if (!global.inassign && instance_number(obj_controller) <= 0 && instance_number(
 			if (buttonsheld > 0) {
 				show_debug_message(buttonsheld);
 				show_debug_message("test2");
-				
 			}
 		}
 	}
