@@ -3,9 +3,9 @@
 
 // Inherit the parent event
 event_inherited();
-color = $00ccff;
+color = $ffcc00;
 //color = $d000ff
-team = 2;
-teamstr = "3";
+team = 3;
+teamstr = "4";
 
 
