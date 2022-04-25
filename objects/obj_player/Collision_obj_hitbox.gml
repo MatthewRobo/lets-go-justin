@@ -19,6 +19,18 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		} else if (other.object_index == obj_bullet || object_is_ancestor(other.object_index, obj_bullet)) {
 			superreflect = false;
 			reflected = other.owner;
+			if (reflected == teammate) {
+				pdist = 99999;
+				for (var i = 0; i < instance_number(obj_player); ++i;)
+				{
+				    enemy = instance_find(obj_player,i);
+					if (enemy.team != team && enemy.team != teammate.team) {
+						if (point_distance(x,y,enemy.x,enemy) < pdist) {
+							reflected = enemy;
+						}
+					}
+				}
+			}
 			counterspeed = other.spd < 32 ? 32 : other.spd;
 			if (global.hitstop < clamp(9 * counterspeed / 32,0,60)) global.hitstop = clamp(9 * counterspeed / 32,0,60);
 			reflectx = other.x;
