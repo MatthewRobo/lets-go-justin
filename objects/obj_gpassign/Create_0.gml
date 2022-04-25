@@ -11,7 +11,7 @@ for (i = 0; i < PLAYERS; i++) {
 
 readypos = array_create(GP+KB, false);
 
-switch irandom(9) {
+switch irandom(10) {
 	case 0:
 		global.color[0] = $5100ff;
 		global.color[1] = $ff8000;
@@ -81,7 +81,18 @@ switch irandom(9) {
 		global.bgcolor = $829388;
 		global.fgcolor = $4d564f;
 		global.fgcolor2 = c_black;
-		
+	case 10: // WORDLE
+		global.color[0] = $3b9fb5;
+		global.color[1] = $4e8d53;
+		global.bgcolor = $131212;
+		global.fgcolor = $3c3a3a;
+		global.fgcolor2 = $848381;
+	case 11: // PICO-8
+		global.color[0] = $a877ff;
+		global.color[1] = $36e400;
+		global.bgcolor = $532b1d;
+		global.fgcolor = $4f575f;
+		global.fgcolor2 = $aaccff;
 	//case 9: // PAPER
 	//	global.color[0] = c_green;
 	//	global.color[1] = c_blue;

@@ -30,7 +30,7 @@ global.gpnum = 12;
 global.gp = array_create(global.gpnum, -99);
 
 global.shots = array_create(PLAYERS, 0);
-global.shots[1] = shot.wallbang;
+global.shots[1] = 2;
 global.lookup = array_create(PLAYERS, GP+KB);
 
 // input.length[player][input]
@@ -72,3 +72,4 @@ global.subbind = array_create(GP + KB+1, array_create(input.length, -1));
 
 global.inassign = 0;
 
+global.greyblock = 0;
