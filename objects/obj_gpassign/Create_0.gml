@@ -11,7 +11,7 @@ for (i = 0; i < PLAYERS; i++) {
 
 readypos = array_create(GP+KB, false);
 
-switch irandom(8) {
+switch irandom(9) {
 	case 0:
 		global.color[0] = $5100ff;
 		global.color[1] = $ff8000;
@@ -75,6 +75,13 @@ switch irandom(8) {
 		global.fgcolor  = $121B80;
 		global.fgcolor2 = $504fc4;
 		break;
+	case 9: // VASQUEZ
+		global.color[0] = $04ccfe;
+		global.color[1] = $491490;
+		global.bgcolor = $829388;
+		global.fgcolor = $4d564f;
+		global.fgcolor2 = c_black;
+		
 	//case 9: // PAPER
 	//	global.color[0] = c_green;
 	//	global.color[1] = c_blue;

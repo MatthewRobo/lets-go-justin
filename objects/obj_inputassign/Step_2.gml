@@ -171,8 +171,19 @@ if (lockout || !candestroy) {
 					if (pos[p] == input.length) {
 						ready[p] = true;
 					}
-					if (pos[p] == input.length + 1 && button == global.mainbind[device][input.ST]) {
-						
+					if (pos[p] == input.length + 1
+						&& (button == gp_face1 ||
+						button == gp_face2 ||
+						button == gp_face3 ||
+						button == gp_face4 ||
+						button == gp_shoulderl ||
+						button == gp_shoulderlb ||
+						button == gp_shoulderr ||
+						button == gp_shoulderrb ||
+						button == gp_select ||
+						button == gp_start ||
+						button == gp_stickl ||
+						button == gp_stickr )) {
 						show_debug_message("reset to default");
 						var d = device;
 						for (var e = 0; e < 2; e++) {
