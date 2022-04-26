@@ -74,13 +74,15 @@ draw_rectangle(room_width/2, 768-4, room_width/2 + 2 * restart, 768-8,0);
 
 draw_set_valign(fa_middle);
 if (instance_exists(obj_player4)) {
-	if (obj_player1.deaths + obj_player3.deaths == global.firstto) {
+	if (obj_player1.deaths + obj_player3.deaths == global.firstto) 
+	|| (obj_player1.deaths + obj_player3.deaths == global.firstto + 1) {
 		draw_set_colour(global.color[1]);
 		draw_set_halign(fa_center);
 		draw_text(room_width/2, room_height/2, "TEAM 2\nWIN");
 	}
 
-	if (obj_player2.deaths + obj_player4.deaths == global.firstto) {
+	if (obj_player2.deaths + obj_player4.deaths == global.firstto) 
+	|| (obj_player2.deaths + obj_player4.deaths == global.firstto + 1) {
 		draw_set_colour(global.color[0]);
 		draw_set_halign(fa_center);
 		draw_text(room_width/2, room_height/2, "TEAM 1\nWIN");
