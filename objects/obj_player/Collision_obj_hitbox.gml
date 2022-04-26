@@ -76,6 +76,8 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			flash = true;
 			hsp = abs(other.hsp) < abs(hsp) ? abs(hsp) * sign(other.hsp) : other.hsp;
 			vsp = abs(other.vsp) < abs(vsp) ? abs(vsp) * sign(other.vsp) : other.vsp;
+			stun = teamstun;
+			state = status.stun;
 		} else {
 			deaths += 1;
 			instance_create_layer(x, y, "hitboxes", obj_boom);

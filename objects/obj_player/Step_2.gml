@@ -474,7 +474,7 @@ if (global.hitstop <= 0) {
 			audio_play_sound(snd_jam,0,0);
 		}
 		stun--;
-		recovery--;
+		recovery=clamp(recovery-1,0,99999);
 		if (stun <= 0) {
 			state = recovery > 0 ? status.recovery : status.idle;
 		}
@@ -492,7 +492,7 @@ if (global.hitstop <= 0) {
 		// *** PHYSICS AND COLLISION ***
 		
 		// deccelerate when not moving
-		var _deccel = state == status.stun ? grav : deccel;
+		var _deccel = state == status.stun ? stundeccel : deccel;
 		if ((grounded >= 3 && (dir == 1 || dir == 3) ) || dir == 2 || dir == 5 || dir == 8 || state != status.idle) {
 			hsp = abs(hsp) <= _deccel ? 0 : hsp - sign(hsp) * _deccel;
 		}
@@ -515,16 +515,18 @@ if (global.hitstop <= 0) {
 				case status.recovery: movesp = walksp; _accel = accel; break;
 				case status.stun: movesp = stunsp; _accel = stunaccel; break;
 			}
-
+			
+			_deccel = _deccel < 1 ? _deccel : 1;
+			
 			if (dir == 4 || dir == 7 || dir == 1) {
 				if (dir == 1 && grounded >= 3) movesp = walksp;
-				hsp = hsp > -movesp ? hsp - _accel : hsp + 1;
+				hsp = hsp > -movesp ? hsp - _accel : hsp + _deccel;
 				//if candash && (dir == 4 && dirqueue[(qt-1+qlen)mod qlen] == 5 && dirqueue[(qt-10+qlen)mod qlen] == 4) {
 				//	hsp = -20;
 				//}
 			} else if (dir == 6 || dir == 9 || dir == 3) {
 				if (dir == 3 && grounded >= 3) movesp = walksp;
-				hsp = hsp <  movesp ? hsp + _accel :  hsp - 1;
+				hsp = hsp <  movesp ? hsp + _accel :  hsp - _deccel;
 				//if candash && (dir == 6 && dirqueue[(qt-1+qlen)mod qlen] == 5 && dirqueue[(qt-10+qlen)mod qlen] == 6) {
 				//	hsp = 20;
 				//}

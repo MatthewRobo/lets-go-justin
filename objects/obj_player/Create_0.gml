@@ -30,6 +30,7 @@ walksp = 2;
 movesp = runsp;
 stunsp = 1;
 stunaccel = 0.25;
+stundeccel = 0.3;
 
 vsp = 0;
 hsp = 0;
@@ -40,6 +41,8 @@ invultime = 150;
 
 stun = 0;
 recovery = 0;
+
+teamstun = 20;
 
 shoot = false;
 parry = false;
