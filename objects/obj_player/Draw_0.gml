@@ -106,11 +106,12 @@ if (state == status.parry) eyecolor = $DB9900;
 draw_sprite_ext(spr_peyes,image_index,_x,_ysin+vvec,image_xscale,yscale,0,eyecolor,1);
 draw_sprite_ext(spr_idle,image_index,_x,_ysin,image_xscale,yscale,0,image_blend,1);
 // ---
-if (state == status.recovery) {
-	draw_sprite_ext(spr_poverlay,0,_x,_ysin,image_xscale,yscale,0,c_red,0.35);
-} else if (state == status.parried) {
-	draw_sprite_ext(spr_poverlay,0,_x,_ysin,image_xscale,yscale,0,c_aqua,0.35);
+switch state {
+	case status.recovery: draw_sprite_ext(spr_poverlay,0,_x,_ysin,image_xscale,yscale,0,c_red,0.35); break;
+	case status.parried: draw_sprite_ext(spr_poverlay,0,_x,_ysin,image_xscale,yscale,0,c_aqua,0.35); break;
+	case status.stun: draw_sprite_ext(spr_poverlay,0,_x,_ysin,image_xscale,yscale,0,c_white,0.35); break;
 }
+
 draw_sprite_ext(spr_pparry,image_index,_x,_ysin,image_xscale,yscale,0,c_white,abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
 if (state == status.parry) {
 	_s = (abs(dsin(recovery * 20)) + 1) / 2;
@@ -125,6 +126,12 @@ if (state != status.idle) {
 	draw_rectangle(x,y-33,x+recovery,y-38,0);
 	draw_rectangle(x,y-33,x-recovery,y-38,0);
 }
+draw_set_color(c_white);
+if (state == status.stun) {
+	draw_rectangle(x,y-39,x+stun,y-44,0);
+	draw_rectangle(x,y-39,x-stun,y-44,0);
+}
+draw_set_color(color);
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);

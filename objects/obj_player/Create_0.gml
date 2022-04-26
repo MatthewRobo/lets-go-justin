@@ -5,6 +5,7 @@ enum status {
 	idle,
 	parry,
 	recovery,
+	stun,
 	parried
 }
 
@@ -35,6 +36,7 @@ sp = 0;
 invul = 0;
 invultime = 150;
 
+stun = 0;
 recovery = 0;
 
 shoot = false;
@@ -54,6 +56,7 @@ thrust = 0.9;
 
 grav = 0.5;
 recoil = 0;
+recoilstun = 0;
 
 ammo = 1;
 ammomax = 1;

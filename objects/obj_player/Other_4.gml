@@ -34,6 +34,7 @@ switch shottype {
 		break;
 	case shot.shotgun:
 		bulletspeed = 8*2;
+		recoilstun = 16;
 		gunrecovery = 28;
 		gunreload = 45;
 		shotactive = 28/2;
@@ -113,7 +114,8 @@ switch shottype {
 		bulletspeed = irandom_range(8,40);
 		shotactive = irandom_range(6,60);
 		ammomax = irandom_range(1,6);
-		gunrecovery = irandom_range(10,40) - ammomax;
+		recoilstun = irandom_range(0,10);
+		gunrecovery = irandom_range(10,40) - ammomax - recoilstun;
 		gunreload = irandom_range(10,30) * ammomax;
 		recoil = irandom_range(-20,20);
 		break;

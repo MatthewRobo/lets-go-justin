@@ -413,11 +413,11 @@ if (global.hitstop <= 0) {
 
 				recovery = gunrecovery;
 				ammo--;
-				state = status.recovery;
-				if (recovery <= 0) {
-					state = status.idle;
-				}
-				
+				stun = recoilstun;
+				state = status.stun;
+				if (stun <= 0) {
+					state = recovery > 0 ? status.recovery : status.idle;
+				}				
 			} else {
 				audio_play_sound(snd_reload, 0, false);
 				recovery = gunreload;
@@ -468,6 +468,17 @@ if (global.hitstop <= 0) {
 		trail.image_xscale = lerp(1, 1.5, (recovery + 1) / parryrecovery) * sign(image_xscale) * scale;
 		trail.image_yscale = lerp(1, 1.5, (recovery + 1) / parryrecovery) * scale;
 		break;
+	case status.stun:
+		lifetime = 0;
+		if (shoot) {
+			audio_play_sound(snd_jam,0,0);
+		}
+		stun--;
+		recovery--;
+		if (stun <= 0) {
+			state = recovery > 0 ? status.recovery : status.idle;
+		}
+		break;
 	case status.parried:
 		lifetime = 270;
 		recovery--;
@@ -481,10 +492,12 @@ if (global.hitstop <= 0) {
 		// *** PHYSICS AND COLLISION ***
 		
 		// deccelerate when not moving
+		var _deccel = state == status.stun ? grav : deccel;
 		if ((grounded >= 3 && (dir == 1 || dir == 3) ) || dir == 2 || dir == 5 || dir == 8 || state != status.idle) {
-			hsp = abs(hsp) <= deccel ? 0 : hsp - sign(hsp) * deccel;
+			hsp = abs(hsp) <= _deccel ? 0 : hsp - sign(hsp) * _deccel;
 		}
-		if (state != status.parry && (state == status.idle || walksp)) {
+		if (state != status.parry) && (state == status.idle || walksp) && (state != status.stun){
+			show_debug_message(state);
 			if (vvec > 0) lifetime = 270;
 			if (teabag) lifetime = 0;
 			jumpforce = state == status.idle ? jumpsp : hopsp;
