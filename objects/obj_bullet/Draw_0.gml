@@ -51,6 +51,7 @@ for (i = 0; i < tlen; i+= 1) {
 draw_primitive_end();
 */
 draw_set_colour(c_white);
+if GREYBOX draw_set_color(c_black);
 draw_primitive_begin(pr_trianglefan);
 draw_vertex(x,y);
 for (i = 0; i <= 360; i += 360 / steps) {

@@ -6,3 +6,4 @@ event_inherited();
 
 image_xscale = 1.5;
 image_yscale = image_xscale;
+lerpfactor = 0.5;

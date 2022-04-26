@@ -12,13 +12,7 @@ for (i = 0; i < PLAYERS; i++) {
 readypos = array_create(GP+KB, false);
 palette = irandom(11);
 
-if (GREYBOX) {
-	global.color[0] = c_yellow;
-	global.color[1] = c_aqua;
-	global.bgcolor = c_black;
-	global.fgcolor = c_white;
-	global.fgcolor2 = c_grey;
-}
+
 
 teams = false;
 if (global.pmax == 4) teams = true;

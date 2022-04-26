@@ -5,10 +5,9 @@ steps = 24;
 hrad = sprite_width / 2;
 vrad = sprite_height / 2;
 outrad = 4;
-draw_set_alpha(1);
+draw_set_alpha(1*!GREYBOX);
 draw_set_color(color);
 
-draw_set_alpha(1);
 draw_primitive_begin(pr_trianglestrip);
 twid = sprite_height / 2 + outrad;
 for (i = 0; i < tlen; i+= 1) {
@@ -38,7 +37,7 @@ for (i = 0; i < tlen; i+= 1) {
 	y12 = y1+lengthdir_y(twid,tcdir-90);
 
 
-
+	talpha*=!GREYBOX;
 	draw_vertex_colour(x11, y11,color,talpha);
 	draw_vertex_colour(x12, y12,color,talpha);
 	//draw_circle(x11, y11,2,1);

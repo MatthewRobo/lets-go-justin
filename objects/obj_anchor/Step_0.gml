@@ -4,8 +4,8 @@
 // Inherit the parent event
 
 if (owner != noone) {
-	hsp = owner.x - x;
-	vsp = owner.y - y;
+	hsp = lerp(hsp,owner.x-x-owner.hsp,lerpfactor);
+	vsp = lerp(vsp,owner.y-y-owner.vsp,lerpfactor);
 }
 
 event_inherited();
