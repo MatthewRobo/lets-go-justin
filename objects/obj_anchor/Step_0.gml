@@ -2,9 +2,11 @@
 // You can write your code in this editor
 
 // Inherit the parent event
-event_inherited();
 
 if (owner != noone) {
-	x = owner.x;
-	y = owner.y;
+	hsp = owner.x - x;
+	vsp = owner.y - y;
 }
+
+event_inherited();
+
