@@ -496,12 +496,12 @@ if (global.hitstop <= 0) {
 		if ((grounded >= 3 && (dir == 1 || dir == 3) ) || dir == 2 || dir == 5 || dir == 8 || state != status.idle) {
 			hsp = abs(hsp) <= _deccel ? 0 : hsp - sign(hsp) * _deccel;
 		}
-		if (state != status.parry) && (state == status.idle || walksp) && (state != status.stun){
+		if (state != status.parry) && (state == status.idle || walksp) {
 			show_debug_message(state);
 			if (vvec > 0) lifetime = 270;
 			if (teabag) lifetime = 0;
 			jumpforce = state == status.idle ? jumpsp : hopsp;
-			if (jump) {
+			if (jump && state != status.stun) {
 				if (grounded > 0) {
 					vsp = -jumpforce;
 					grounded = 0;
@@ -509,17 +509,22 @@ if (global.hitstop <= 0) {
 					canhover = false;
 				} else canhover = true;
 			}
-			
-			movesp = state == status.idle ? runsp : walksp;
+			var _accel;
+			switch state {
+				case status.idle: movesp = runsp; _accel = accel; break;
+				case status.recovery: movesp = walksp; _accel = accel; break;
+				case status.stun: movesp = stunsp; _accel = stunaccel; break;
+			}
+
 			if (dir == 4 || dir == 7 || dir == 1) {
 				if (dir == 1 && grounded >= 3) movesp = walksp;
-				hsp = hsp > -movesp ? hsp - accel : hsp + 1;
+				hsp = hsp > -movesp ? hsp - _accel : hsp + 1;
 				//if candash && (dir == 4 && dirqueue[(qt-1+qlen)mod qlen] == 5 && dirqueue[(qt-10+qlen)mod qlen] == 4) {
 				//	hsp = -20;
 				//}
 			} else if (dir == 6 || dir == 9 || dir == 3) {
 				if (dir == 3 && grounded >= 3) movesp = walksp;
-				hsp = hsp <  movesp ? hsp + accel :  hsp - 1;
+				hsp = hsp <  movesp ? hsp + _accel :  hsp - 1;
 				//if candash && (dir == 6 && dirqueue[(qt-1+qlen)mod qlen] == 5 && dirqueue[(qt-10+qlen)mod qlen] == 6) {
 				//	hsp = 20;
 				//}
