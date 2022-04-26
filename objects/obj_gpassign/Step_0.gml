@@ -95,6 +95,8 @@ if (!global.inassign) {
 				if (global.lookup[1] < 0 || global.lookup[1] == i) {
 					global.lookup[1] = GP+KB;
 				}
+				global.lookup[2] = GP+KB;
+				global.lookup[3] = GP+KB;
 				audio_play_sound(snd_parry,0,0)
 				room_goto_next();
 			}
@@ -134,8 +136,8 @@ switch palette {
 	case 1:
 		global.color[0] = $ff0099;
 		global.color[1] = $0dff00;
-		global.color[2] = $5100ff;
-		global.color[3] = $ff8000;
+		global.color[2] = $ff66aa;
+		global.color[3] = $90ff90;
 		global.bgcolor = $05080f;
 		global.fgcolor = $332244;
 		global.fgcolor2 = $ffaaff;
@@ -171,7 +173,7 @@ switch palette {
 		global.color[0] = $3741e6;
 		global.color[1] = $ff8c00;
 		global.color[2] = $0080ff;
-		global.color[3] = $8cff00;
+		global.color[3] = $ffcc33;
 		global.bgcolor = $2b0a30;
 		global.fgcolor = $801e00;
 		global.fgcolor2 = $e1ff3f;
@@ -180,7 +182,7 @@ switch palette {
 		global.color[0] = $8000ff;
 		global.color[1] = $ffff80;
 		global.color[2] = $ff00ff;
-		global.color[3] = $ff8060;
+		global.color[3] = $ffcc00;
 		global.bgcolor = $925502;
 		global.fgcolor = $2b0047;
 		global.fgcolor2 = $a851ff;
@@ -207,7 +209,7 @@ switch palette {
 		global.color[0] = $04ccfe;
 		global.color[1] = $491490;
 		global.color[2] = $04fecc;
-		global.color[3] = $904914;
+		global.color[3] = $901449;
 		global.bgcolor = $829388;
 		global.fgcolor = $4d564f;
 		global.fgcolor2 = c_black;
