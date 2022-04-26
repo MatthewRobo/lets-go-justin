@@ -62,7 +62,7 @@ for (var i = 0; i < GP+KB; i++;)
 		case 2:  posdraw = -2; break;
 		case 3:  posdraw =  2; break;
 		}
-		draw_text(xdraw + hgap * posdraw, ydraw, label);
+		draw_text_transformed(xdraw+hgap*posdraw,ydraw,label,clamp((512+64)/string_width(label),0,1),1,0);
 		ydraw += vgap;
 	}
 }
