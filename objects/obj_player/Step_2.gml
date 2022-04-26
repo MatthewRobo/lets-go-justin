@@ -82,8 +82,9 @@ if (global.hitstop <= 0) {
 				lifetime = 270;
 			}
 			canhover = false;
+			grounded = coyote;
 		}
-		grounded = coyote;
+
 	} else {
 		grounded--;
 		lifetime = 90;

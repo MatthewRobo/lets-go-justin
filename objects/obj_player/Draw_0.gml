@@ -93,29 +93,31 @@ var _x = floor(x+0.5);
 var _ysin = floor(y + 2 * -dsin(lifetime)+0.5);
 image_index = 0;
 
+var yscale = grounded ? image_yscale : image_yscale * lerp(0.9,1.2,abs(vsp / 13));
 
-draw_sprite_ext(spr_ptrail,image_index,_x,_ysin,_i*image_xscale,_i*image_yscale,0,c_white,1);
-draw_sprite_ext(spr_ptrail,image_index,_x,_ysin,_s*image_xscale,_s*image_yscale,0,_color,1);
+draw_sprite_ext(spr_ptrail,image_index,_x,_ysin,_i*image_xscale,_i*yscale,0,c_white,1);
+draw_sprite_ext(spr_ptrail,image_index,_x,_ysin,_s*image_xscale,_s*yscale,0,_color,1);
 
 // SPRITE ASSEMBLY
-draw_sprite_ext(spr_pborder,image_index,_x,_ysin,image_xscale,image_yscale,0,c_white,1);
+
+draw_sprite_ext(spr_pborder,image_index,_x,_ysin,image_xscale,yscale,0,c_white,1);
 eyecolor = ammo <= 0 ? $3326A2 : $EDF7FD;
 if (state == status.parry) eyecolor = $DB9900;
-draw_sprite_ext(spr_peyes,image_index,_x,_ysin+vvec,image_xscale,image_yscale,0,eyecolor,1);
-draw_sprite_ext(spr_idle,image_index,_x,_ysin,image_xscale,image_yscale,0,image_blend,1);
+draw_sprite_ext(spr_peyes,image_index,_x,_ysin+vvec,image_xscale,yscale,0,eyecolor,1);
+draw_sprite_ext(spr_idle,image_index,_x,_ysin,image_xscale,yscale,0,image_blend,1);
 // ---
 if (state == status.recovery) {
-	draw_sprite_ext(spr_poverlay,0,_x,_ysin,image_xscale,image_yscale,0,c_red,0.35);
+	draw_sprite_ext(spr_poverlay,0,_x,_ysin,image_xscale,yscale,0,c_red,0.35);
 } else if (state == status.parried) {
-	draw_sprite_ext(spr_poverlay,0,_x,_ysin,image_xscale,image_yscale,0,c_aqua,0.35);
+	draw_sprite_ext(spr_poverlay,0,_x,_ysin,image_xscale,yscale,0,c_aqua,0.35);
 }
-draw_sprite_ext(spr_pparry,image_index,_x,_ysin,image_xscale,image_yscale,0,c_white,abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
+draw_sprite_ext(spr_pparry,image_index,_x,_ysin,image_xscale,yscale,0,c_white,abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
 if (state == status.parry) {
 	_s = (abs(dsin(recovery * 20)) + 1) / 2;
-	draw_sprite_ext(spr_pparry,image_index,_x,_ysin,image_xscale,image_yscale,0,c_white,_s);
+	draw_sprite_ext(spr_pparry,image_index,_x,_ysin,image_xscale,yscale,0,c_white,_s);
 }
 if (flash) {
-	draw_sprite_ext(spr_poverlay,image_index,_x,_ysin,image_xscale,image_yscale,0,color,1);
+	draw_sprite_ext(spr_poverlay,image_index,_x,_ysin,image_xscale,yscale,0,color,1);
 	flash = false;
 }
 
