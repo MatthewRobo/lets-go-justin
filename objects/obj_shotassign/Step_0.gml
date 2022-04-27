@@ -65,18 +65,30 @@ if (!global.inassign) {
 				if global.pressed[i][input.U] {
 					global.shots[_p]-=cols;
 					audio_play_sound(snd_shield,0,0);
+					with(preview[_p]) {
+						event_user(0);
+					}
 				}
 				if global.pressed[i][input.D] {
 					global.shots[_p]+=cols;
 					audio_play_sound(snd_shield,0,0);
+					with(preview[_p]) {
+						event_user(0);
+					}
 				}
 				if global.pressed[i][input.L] {
 					global.shots[_p]--;
 					audio_play_sound(snd_shield,0,0);
+					with(preview[_p]) {
+						event_user(0);
+					}
 				}
 				if global.pressed[i][input.R] {
 					global.shots[_p]++;
 					audio_play_sound(snd_shield,0,0);
+					with(preview[_p]) {
+						event_user(0);
+					}
 				}
 				if global.pressed[i][input.ST] {
 					ready[_p] = true;
