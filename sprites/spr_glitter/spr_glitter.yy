@@ -97,8 +97,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "fx",
+    "path": "folders/Sprites/fx.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_glitter",

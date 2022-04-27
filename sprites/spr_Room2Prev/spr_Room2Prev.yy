@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Depth-prototype",
-    "path": "Depth-prototype.yyp",
+    "name": "menu",
+    "path": "folders/Sprites/menu.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_Room2Prev",
