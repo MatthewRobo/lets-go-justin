@@ -1,9 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+global.hitstop = 0;
+global.outline = c_white;
+global.firstto = -1;
 pads = "";
 if (!global.inassign) {
-	for (var p = 0; p < PLAYERS; p++;)
+	for (var p = 0; p < global.pmax; p++;)
 	{
 		i = global.lookup[p]; // i = is INPUT port
 		if (global.mode == gamemode.versus) {
@@ -12,26 +14,38 @@ if (!global.inassign) {
 				collast = shotlast mod cols;
 				rowlast = shotlast div cols;
 			
-				show_debug_message(string(collast) + "|" +string(rowlast));
+				//show_debug_message(string(collast) + "|" +string(rowlast));
 				if global.pressed[i][input.U] {
 					global.shots[p]-=cols;
 					//if (global.shots[p] mod cols != collast) global.shots[p] ++;
 					audio_play_sound(snd_shield,0,0);
+					with(preview[p]) {
+						event_user(0);
+					}
 				}
 				if global.pressed[i][input.D] {
 					global.shots[p]+=cols;
 					//if (global.shots[p] mod cols != collast) global.shots[p] --;
 					audio_play_sound(snd_shield,0,0);
+					with(preview[p]) {
+						event_user(0);
+					}
 				}
 				if global.pressed[i][input.L] {
 					global.shots[p]--;
 					if (global.shots[p] div cols != rowlast) global.shots[p] += cols;
 					audio_play_sound(snd_shield,0,0);
+					with(preview[p]) {
+						event_user(0);
+					}
 				}
 				if global.pressed[i][input.R] {
 					global.shots[p]++;
 					if (global.shots[p] div cols != rowlast) global.shots[p] -= cols;
 					audio_play_sound(snd_shield,0,0);
+					with(preview[p]) {
+						event_user(0);
+					}
 				}
 				if global.pressed[i][input.ST] {
 					ready[p] = true;

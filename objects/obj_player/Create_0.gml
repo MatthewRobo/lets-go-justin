@@ -9,6 +9,8 @@ enum status {
 	parried
 }
 
+show_debug_message("X");
+
 state = status.idle;
 shottype = shot.bullet;
 shotobj = obj_bullet;
@@ -131,3 +133,5 @@ reflecty = y;
 if (x > room_width / 2) image_xscale = -1 * scale;
 
 teammate = noone;
+
+silent = false;

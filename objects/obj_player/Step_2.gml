@@ -190,7 +190,7 @@ if (global.hitstop <= 0) {
 				spark.x += lengthdir_x(32, direction);
 				spark.y += lengthdir_y(32, direction);
 				spark.image_angle = spark.direction;
-				audio_play_sound_at(snd_shoot, -x + room_width/2,y,400,100,500,1,false, false);
+				if (!silent) audio_play_sound_at(snd_shoot, -x + room_width/2,y,400,100,500,1,false, false);
 
 				switch shottype {
 					case shot.bullet:
@@ -497,7 +497,7 @@ if (global.hitstop <= 0) {
 			hsp = abs(hsp) <= _deccel ? 0 : hsp - sign(hsp) * _deccel;
 		}
 		if (state != status.parry) && (state == status.idle || walksp) {
-			show_debug_message(state);
+			//show_debug_message(state);
 			if (vvec > 0) lifetime = 270;
 			if (teabag) lifetime = 0;
 			jumpforce = state == status.idle ? jumpsp : hopsp;

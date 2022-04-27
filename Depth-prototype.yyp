@@ -77,6 +77,7 @@
     {"id":{"name":"obj_cos","path":"objects/obj_cos/obj_cos.yy",},"order":13,},
     {"id":{"name":"spr_slash","path":"sprites/spr_slash/spr_slash.yy",},"order":1,},
     {"id":{"name":"snd_shoot","path":"sounds/snd_shoot/snd_shoot.yy",},"order":4,},
+    {"id":{"name":"obj_playerpreview","path":"objects/obj_playerpreview/obj_playerpreview.yy",},"order":5,},
     {"id":{"name":"snd_parry","path":"sounds/snd_parry/snd_parry.yy",},"order":2,},
     {"id":{"name":"Room4","path":"rooms/Room4/Room4.yy",},"order":5,},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},"order":2,},
