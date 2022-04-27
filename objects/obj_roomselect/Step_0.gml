@@ -5,11 +5,11 @@ if (!global.inassign) {
 			if (selected == 0) room_goto(rooms[irandom_range(1,roomlen-1)]);
 			else room_goto(rooms[selected]);
 		} else {
-			if (global.pressed[device][input.U]) {
+			if (global.pressed[device][input.L]) {
 				selected--;
 				audio_play_sound(snd_shield,0,0);
 			}
-			if (global.pressed[device][input.D]) {
+			if (global.pressed[device][input.R]) {
 				selected++;
 				audio_play_sound(snd_shield,0,0);
 			}

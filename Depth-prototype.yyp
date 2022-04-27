@@ -86,6 +86,7 @@
     {"id":{"name":"spr_p3idle","path":"sprites/spr_p3idle/spr_p3idle.yy",},"order":10,},
     {"id":{"name":"Pad_Select","path":"rooms/Pad_Select/Pad_Select.yy",},"order":1,},
     {"id":{"name":"obj_splatter","path":"objects/obj_splatter/obj_splatter.yy",},"order":14,},
+    {"id":{"name":"fnt_large","path":"fonts/fnt_large/fnt_large.yy",},"order":4,},
     {"id":{"name":"snd_heldparry","path":"sounds/snd_heldparry/snd_heldparry.yy",},"order":10,},
     {"id":{"name":"obj_tan","path":"objects/obj_tan/obj_tan.yy",},"order":14,},
     {"id":{"name":"obj_player2","path":"objects/obj_player2/obj_player2.yy",},"order":2,},
