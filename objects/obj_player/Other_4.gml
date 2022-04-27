@@ -1,22 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-enum shot {
-	bullet = 0,
-	shotgun,
-	whiffpunisher,
-	wallbang,
-	whip,
-	grenade,
-	trailer,
-	geyser,
-	wall2,
-	booster,
-	sin,
-	random,
-	length,
-	surface
-}
+
 
 gamepad = 0;
 gamepad = global.lookup[team];

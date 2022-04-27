@@ -1,6 +1,25 @@
 /// @description Assign shottypes
 // You can write your code in this editor
 
+enum shot {
+	bullet = 0,
+	shotgun,
+	whip,
+	whiffpunisher,
+	
+	wallbang,
+	trailer,
+	wall2,
+	grenade,
+
+	booster,
+	geyser,
+	sin,
+	random,
+	
+	length,
+	surface
+}
 shottype = global.shots[team];
 
 ammo = 1;

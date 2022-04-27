@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-clock++;
+//clock++;
 
 uprelease = false;
 slash = false;
@@ -30,5 +30,7 @@ teabag = false;
 if (recovery <= 0 && canshoot) {
 	shoot = true;
 	canshoot = false;
-	alarm[0] = 2;
+	alarm[0] = 1;
+	clock = floor(clock/45)*45;
+	if (ammo > 0) clock+= 45;
 }
