@@ -27,104 +27,59 @@ draw_set_valign(fa_top);
 ydraw = 20;
 draw_text(xdraw,ydraw,mode);
 
-draw_set_valign(fa_middle);
-xdraw = room_width / 2;
-ydraw = room_height / 8;
+xdraw = (room_width - rows*icon_htotal)/2;
+ydraw = 128;
+var shotcounter = 0;
+for (var row = 0; row < rows; row++) {
+	for (var col = 0; col < cols; col++) {
+		var _xdraw = xdraw+icon_htotal*col;
+		var _ydraw = ydraw+icon_vtotal*row;
+		draw_sprite_ext(shotspr[shotcounter],0,_xdraw,_ydraw,iconscale,iconscale,0,c_white,1);
+		draw_set_color(c_white);
+		draw_set_valign(fa_top);
+		draw_set_font(fnt_smallsemi);
+		draw_text(_xdraw,_ydraw+iconsize/2+16,shotstr[shotcounter]);
+		for (var p = 0; p < global.pmax; p++) {
+			if (global.shots[p] == shotcounter) {
+				hvec = 1;
+				vvec = 1;
+				rot = 0;
+				switch p {
+					case 0: hvec = -1; vvec = -1; rot = 180; break;
+					case 1: hvec = 1; vvec = -1; rot = 90; break;
+					case 2: hvec = -1; vvec = 1; rot = 270; break;
+					//case 3: hvec = 1; vvec = 1; break;
+				}
+				//rot += 180;
+				iconcolor = ready[p] ? c_white : global.color[p];
+				
+				draw_set_font(fnt_smalldesc);
+				draw_set_color(iconcolor);
+				draw_set_valign(fa_middle);
+				draw_text(_xdraw + hvec * (iconsize / 2 + 32),_ydraw + vvec * (iconsize / 4),"P" + string(p+1));
+				
+				hvec = 1;
+				vvec = 1;
 
-shottext = array_create(cols,"");
-playertext = array_create(PLAYERS,array_create(cols,""));
-
-for (p = -1; p < global.pmax; p++) {
-
-	if (p < 0) {
-		for (i = 0; i < shot.length; i++) {
-			xpos = i mod cols;
-			text = "";
-			switch i {
-				case shot.bullet: text += "Marksman"; 
-				break;
-				case shot.shotgun: text += "Shotgun"; 
-				break;
-				case shot.wallbang: text += "Wallbanger"; 
-				break;
-				case shot.whiffpunisher: text += "Flicker"; 
-				break;
-				case shot.booster: text += "Booster"; 
-				break;
-				case shot.trailer: text += "Wall"; 
-				break;
-				case shot.grenade: text += "Grenade"; 
-				break;
-				case shot.geyser: text += "Geyser"; 
-				break;
-				case shot.sin: text += "Trig";
-				break;
-				case shot.whip: text += "Whip";
-				break;
-				case shot.wall2: text += "Beam";
-				break;
-				case shot.random: text += "Anarchy";
-				break;
-				default: text += "UNNAMED";
-				break;
+				frame = ready[p] ? 0 : iconframes;
+				frame += 2 * p;
+				
+				draw_sprite_ext(spr_playericon,frame,xdraw+icon_htotal*col,ydraw+icon_vtotal*row,iconscale*hvec,iconscale*vvec,rot,iconcolor,1);
+				if (global.pmax == 2) {
+					frame = (frame + 2) mod sprite_get_number(spr_playericon);
+					switch p {
+						case 0: rot = 270; break;
+						case 1: rot = 0; break;
+					}
+					draw_sprite_ext(spr_playericon,frame,xdraw+icon_htotal*col,ydraw+icon_vtotal*row,iconscale*hvec,iconscale*vvec,rot,iconcolor,1);
+				}
 			}
-			text += "\n\n";
-			shottext[xpos] += text;
 		}
-	} else if (p < PLAYERS) {
-		draw_set_color(global.fgcolor2);
-		for (i = 0; i < shot.length; i++) {
-			xpos = i mod cols;
-			text = "\n";
-			//if (p == 1) text += "]";
+		shotcounter++;
 
-			if (i == global.shots[p]) {
-							text += "[";
-				if (p == 1) text += "";
-				text += "P" + string(p+1);
-				if (p == 0) text += "";
-							text += "]";
-			}
-			//if (p == 0) text += "[";
-
-			text += "\n";
-			playertext[p][xpos] += text;
-		}
 	}
 }
-
-ydraw = room_height/9;
-gap = string_width("WALLBANGER");
-gap *= clamp(global.pmax / 2,1,1.5);
-//pgap = 150;
-pgap = string_width("[P2]") / 2;
-draw_set_valign(fa_top);
-
-
-vgap = 0;
-for (i = 0; i < cols; i++) {
-	j = i - (cols - 1) / 2;
-	draw_set_colour(c_white);
-	draw_text(xdraw + gap * j, ydraw, shottext[i]);
-	for (p = 0; p < global.pmax; p++) {
-		//k = p == 0 ? -pgap : pgap;
-		switch p {
-			case 0: k = -pgap; break;
-			case 1: k = pgap; break;
-			case 2: k = -3 * pgap; break;
-			case 3: k = 3 * pgap; break;
-		}
-
-		l = p == 0 ? -vgap/3 : vgap/3;
-		l -= 8;
-		draw_set_colour(global.fgcolor2);
-		if (ready[p]) draw_set_colour(global.color[p]);
-		draw_text(xdraw + gap * j + k, ydraw + l, playertext[p][i]);
-	}
-	ydraw += vgap;
-}
-
-
+draw_set_font(Font1);
 for (p = 0; p < global.pmax; p++) {
 	ydraw = room_height * 0.75;
 	if (p < global.pmax) {
@@ -171,7 +126,7 @@ for (p = 0; p < global.pmax; p++) {
 			
 		}
 		
-		draw_set_colour(global.fgcolor2);
+		draw_set_colour(c_white);
 		if (ready[p]) draw_set_colour(global.color[p]);
 		//draw_set_colour(global.color[p]);
 		draw_text(k,ydraw,desc);

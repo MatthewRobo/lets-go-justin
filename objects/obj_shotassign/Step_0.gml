@@ -137,3 +137,6 @@ for (i = 0; i < global.pmax; i++) {
 	totalready += ready[i];
 }
 if (totalready >= global.pmax) room_goto_next();
+
+iconframes += 1/5;
+iconframes = iconframes mod sprite_get_number(spr_playericon);
