@@ -44,7 +44,7 @@ invultime = 150;
 stun = 0;
 recovery = 0;
 
-teamstun = 20;
+teamstun = 40;
 
 shoot = false;
 parry = false;

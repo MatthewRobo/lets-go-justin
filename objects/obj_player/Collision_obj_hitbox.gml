@@ -69,14 +69,21 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 
 	} else if (invul <= 0) {
 		if (teammate != noone && other.team == teammate.team) {
+		//if true{
 			instance_destroy(other);
-			freeze = other.object_index == obj_slash ? 4 : 2;
+			audio_play_sound(snd_bonk,0,0);
+			freeze = clamp(other.spd,10,60);
+			if (freeze > 30) {
+				woosh = audio_play_sound(snd_spawn,0,0);
+				timescale = (audio_sound_length(snd_spawn) * 60) / freeze;
+				audio_sound_pitch(woosh,timescale);
+			}
 			if (global.hitstop < freeze) global.hitstop = freeze;
 			global.outline = global.fgcolor2;
 			flash = true;
 			hsp = abs(other.hsp) < abs(hsp) ? abs(hsp) * sign(other.hsp) : other.hsp;
 			vsp = abs(other.vsp) < abs(vsp) ? abs(vsp) * sign(other.vsp) : other.vsp;
-			stun = teamstun;
+			stun = freeze;
 			state = status.stun;
 		} else {
 			deaths += 1;

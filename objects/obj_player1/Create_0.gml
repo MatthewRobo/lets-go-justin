@@ -6,3 +6,5 @@ event_inherited();
 
 team = 0;
 teamstr = "1";
+
+

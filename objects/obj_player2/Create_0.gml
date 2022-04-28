@@ -12,3 +12,5 @@ if (global.mode = gamemode.training) {
 }
 autoparry = false;
 aprad = 60;
+
+
