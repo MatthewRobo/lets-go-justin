@@ -10,7 +10,7 @@ teamstr = "2";
 if (global.mode = gamemode.training) {
 	spr_idle = spr_p0idle;
 }
-autoparry = false;
+dummyparry = false;
 aprad = 60;
 
 

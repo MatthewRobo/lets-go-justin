@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-if (autoparry) {
+if (dummyparry) {
 	nearby = instance_nearest(x, y, obj_hitbox);
 	if (nearby != noone) {
 		dist = point_distance(x, y, nearby.x, nearby.y);
