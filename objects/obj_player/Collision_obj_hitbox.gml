@@ -3,7 +3,7 @@
 
 if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, false, false) == noone || other.object_index == obj_wallbang))  {
 	if (state == status.parry || (autoparry > 0 && state = status.idle)) {
-		if (invul < 2) invul = 2;
+		if (invul < autoparryactive+2) invul = autoparryactive+2;
 		spark = instance_create_layer(x, y, "parryfx", obj_parry);
 		spark.owner = id;
 		spark.direction = point_direction(x,y,other.x,other.y);
