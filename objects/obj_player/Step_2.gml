@@ -79,6 +79,7 @@ if (global.hitstop <= 0) {
 			if (grounded < 0) {
 				audio_play_sound(snd_land, 0, false);
 				jiggle = 1;
+				jiggledir = 1;
 				instance_place(x,y+vsp,obj_outline).lerpmod += vsp / 2;
 				lifetime = 270;
 			}
@@ -86,6 +87,7 @@ if (global.hitstop <= 0) {
 			grounded = coyote;
 		} else {
 			jiggle = 0.6;
+			jiggledir = -1;
 			audio_play_sound(snd_land, 0, false);
 		}
 
@@ -512,6 +514,7 @@ if (global.hitstop <= 0) {
 			if (jump && state != status.stun) {
 				if (grounded > 0) {
 					jiggle = 0.3;
+					jiggledir = 1;
 					vsp = -jumpforce;
 					grounded = 0;
 					audio_play_sound(snd_jump, 0, false);

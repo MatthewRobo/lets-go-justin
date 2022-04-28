@@ -129,10 +129,9 @@ lifetime = 0;
 //candash = false;
 flash = false;
 jiggle = 0;
-
-		wjiggle = lerp(1,2,jiggle);
-		hjiggle = lerp(2,1,jiggle);
-		
+wjiggle = lerp(1,2,jiggle);
+hjiggle = lerp(2,1,jiggle);
+jiggledir = 1;
 
 reflectx = x;
 reflecty = y;

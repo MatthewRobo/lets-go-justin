@@ -96,7 +96,7 @@ image_index = 0;
 var yscale = grounded ? image_yscale : image_yscale * lerp(0.9,1.2,abs(vsp / 13));
 yscale *= hjiggle;
 
-_ysin += ((1 - hjiggle) * 48)/2;
+_ysin += ((1 - hjiggle) * 48 * jiggledir)/2;
 
 var xscale = sign(image_xscale);
 xscale *= wjiggle;
