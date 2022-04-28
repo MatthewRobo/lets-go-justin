@@ -23,6 +23,10 @@ if (global.hitstop <= 0) {
 	trail.image_yscale = image_yscale;
 	trail.x = x;
 	trail.y = y;
+	if (timer <= 0) {
+		trail.x = xprev;
+		trail.y = yprev;
+	}
 	trail.color = owner.color;
 	trail.rotation = image_angle;
 	trail.hsp = hsp;
