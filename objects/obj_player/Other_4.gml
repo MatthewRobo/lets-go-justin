@@ -13,7 +13,7 @@ state = status.parried;
 
 event_user(0);
 
-if (global.lookup[team] == GP+KB && team >= 2) instance_deactivate_object(self);
+if (global.pmax != 4 && team > 1) instance_destroy(self);
 else {
 	boom = instance_create_layer(x, y, "hitboxes", obj_boom);
 	boom.image_xscale = 2;

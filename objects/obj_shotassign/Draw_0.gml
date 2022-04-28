@@ -34,7 +34,7 @@ for (var row = 0; row < rows; row++) {
 	for (var col = 0; col < cols; col++) {
 		var _xdraw = xdraw+icon_htotal*col;
 		var _ydraw = ydraw+icon_vtotal*row;
-		draw_sprite_ext(shotspr[shotcounter],0,_xdraw,_ydraw,iconscale,iconscale,0,c_white,1);
+		draw_sprite_ext(shotspr[shotcounter],0,_xdraw,_ydraw,iconscale,iconscale,0,global.fgcolor2,1);
 		draw_set_color(c_white);
 		draw_set_valign(fa_top);
 		draw_set_font(fnt_smallsemi);
@@ -51,10 +51,10 @@ for (var row = 0; row < rows; row++) {
 					//case 3: hvec = 1; vvec = 1; break;
 				}
 				//rot += 180;
-				iconcolor = ready[p] ? c_white : global.color[p];
+				_color = ready[p] ? c_white : global.color[p];
 				
 				draw_set_font(fnt_smalldesc);
-				draw_set_color(iconcolor);
+				draw_set_color(_color);
 				draw_set_valign(fa_middle);
 				draw_text(_xdraw + hvec * (iconsize / 2 + 32),_ydraw + vvec * (iconsize / 4),"P" + string(p+1));
 				
@@ -64,14 +64,14 @@ for (var row = 0; row < rows; row++) {
 				frame = ready[p] ? 0 : iconframes;
 				frame += 2 * p;
 				
-				draw_sprite_ext(spr_playericon,frame,xdraw+icon_htotal*col,ydraw+icon_vtotal*row,iconscale*hvec,iconscale*vvec,rot,iconcolor,1);
+				draw_sprite_ext(spr_playericon,frame,xdraw+icon_htotal*col,ydraw+icon_vtotal*row,iconscale*hvec,iconscale*vvec,rot,_color,1);
 				if (global.pmax == 2) {
 					frame = (frame + 2) mod sprite_get_number(spr_playericon);
 					switch p {
 						case 0: rot = 270; break;
 						case 1: rot = 0; break;
 					}
-					draw_sprite_ext(spr_playericon,frame,xdraw+icon_htotal*col,ydraw+icon_vtotal*row,iconscale*hvec,iconscale*vvec,rot,iconcolor,1);
+					draw_sprite_ext(spr_playericon,frame,xdraw+icon_htotal*col,ydraw+icon_vtotal*row,iconscale*hvec,iconscale*vvec,rot,_color,1);
 				}
 			}
 		}

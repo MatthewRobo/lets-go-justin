@@ -10,7 +10,7 @@ draw_set_halign(fa_right);
 // draw_text(room_width / 2 - 32, 8, obj_player2.deaths);
 pipwidth = 44 * pipratio;
 pipgap = 4 + pipwidth;
-if (instance_exists(obj_player4)) {
+if (global.pmax==4) {
 	draw_set_colour(global.color[0]);
 	for (i = 0; i < (global.firstto - obj_player1.deaths - obj_player3.deaths); i++) {
 		drawpos = room_width / 2 - 10 - pipgap * i;
@@ -73,7 +73,7 @@ draw_rectangle(room_width/2, 768-4, room_width/2 - 2 * quit, 768-8,0);
 draw_rectangle(room_width/2, 768-4, room_width/2 + 2 * restart, 768-8,0);
 
 draw_set_valign(fa_middle);
-if (instance_exists(obj_player4)) {
+if (global.pmax == 4) {
 	if (obj_player1.deaths + obj_player3.deaths == global.firstto) 
 	|| (obj_player1.deaths + obj_player3.deaths == global.firstto + 1) {
 		draw_set_colour(global.color[1]);
