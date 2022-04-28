@@ -35,7 +35,7 @@ for (var d = 0; d < GP+KB; d++) {
 
 global.inassign = instance_number(obj_inputassign) > 0;
 
-if (!global.inassign && instance_number(obj_controller) <= 0 && instance_number(obj_gpassign) <= 0) {
+if (!global.inassign && instance_number(obj_controller) <= 0) {
 	if (keyboard_check_pressed(vk_f4)) instance_create_depth(0,0,-10000,obj_inputassign);
 	else {
 		for (var d = 0; d < GP; d++) {

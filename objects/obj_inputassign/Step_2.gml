@@ -12,6 +12,94 @@ if (lockout || !candestroy) {
 		if (buttonsheld <= 0) lockout = false;	
 	}
 } else {
+	for (var device = 0; device < GP+KB; device++) {
+		for (var p = 0; p < PLAYERS; p++) {
+			if (device == global.lookup[p]) {
+				slot[device] = p;
+			}
+		}
+		for (var j = 0; j < input.length; j++) {
+			if global.pressed[device][j] {
+				if (slot[device] == -99) {
+					slot[device] = -1;
+					audio_play_sound(snd_jump,0,0);
+				}
+			}
+		}
+		if global.pressed[device][input.L] {
+			switch slot[device]{
+				case -1: 
+					oldside = slot[device];
+					newside = 0;
+					slot[device] = newside;
+					swapdevice = global.lookup[newside];
+					global.lookup[newside] = device;
+					slot[swapdevice] = oldside;
+					ready[newside]=false;
+					break;
+				case -2: 
+					oldside = slot[device];
+					newside = 2;
+					slot[device] = newside;
+					swapdevice = global.lookup[newside];
+					global.lookup[newside] = device;
+					slot[swapdevice] = oldside;
+					ready[newside]=false;
+					break;
+				case 1:
+					slot[device] = -1;
+					global.lookup[1] = GP+KB;
+					break;
+				case 3:
+					slot[device] = -2;
+					global.lookup[3] = GP+KB;
+					break;
+			}
+		}
+		if global.pressed[device][input.R] {
+			switch slot[device]{
+				case -1: 
+					oldside = slot[device];
+					newside = 1;
+					slot[device] = newside;
+					swapdevice = global.lookup[newside];
+					global.lookup[newside] = device;
+					slot[swapdevice] = oldside;
+					ready[newside]=false;
+					break;
+				case -2: 
+					oldside = slot[device];
+					newside = 3;
+					slot[device] = newside;
+					swapdevice = global.lookup[newside];
+					global.lookup[newside] = device;
+					slot[swapdevice] = oldside;
+					ready[newside]=false;
+					break;
+				case 0:
+					slot[device] = -1;
+					global.lookup[0] = GP+KB;
+					break;
+				case 2:
+					slot[device] = -2;
+					global.lookup[2] = GP+KB;
+					break;
+			}
+		}
+		if global.pressed[device][input.D] && slot[device] == -1 {
+			slot[device] = -2;
+		}
+		if global.pressed[device][input.U] && slot[device] == -2 {
+			slot[device] = -1;
+		}
+		if global.pmax != 4 {
+			if (slot[device] >= 2 || slot[device] == -2) {
+				slot[device] = -1;
+			}
+		}
+		
+
+	}
 	for (var p = 0; p < PLAYERS; p++;)
 	{
 		var device = global.lookup[p]; // d for DEVICE
@@ -282,7 +370,9 @@ if (lockout || !candestroy) {
 		}
 	}
 }
-for (var p = 0; p < PLAYERS; p++) {
-	if (global.lookup[p] == GP+KB) ready[p]=true;
+
+for (var i = 1; i < PLAYERS; i++) {
+if (global.lookup[i] == GP+KB) ready[i]=true;
 }
+
 if (ready[0] && ready[1] && ready[2] && ready[3]) instance_destroy();

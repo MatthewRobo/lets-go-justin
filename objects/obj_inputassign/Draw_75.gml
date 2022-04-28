@@ -6,21 +6,21 @@ draw_set_valign(fa_top);
 
 
 var lineheight = string_height("abcdefghijkABCDEFTHIJK");
-var ydraw = 10;
+var ydraw = lineheight;
 var ydraw_final = ydraw + 14 * lineheight;
 draw_set_color(c_black);
 draw_set_alpha(0.6);
 draw_rectangle(0,0,room_width,ydraw_final,0);
 
 if (global.pmax = 4) {
-	ydraw = room_height/2 + 10;
+	ydraw = room_height/2 + lineheight;
 	ydraw_final = ydraw + 14 * lineheight;
 	draw_rectangle(0,room_height/2,room_width,ydraw_final,0);
 }
 
 for (var p = 0; p < global.pmax; p++) {
 	draw_set_alpha(1);
-	var ydraw = p >= 2 ? room_height/2 + 10 : 10;
+	var ydraw = p >= 2 ? room_height/2 + lineheight : lineheight;
 	if (p mod 2 == 0) {
 		draw_set_halign(fa_left);
 		var xdraw = 10;
@@ -30,7 +30,7 @@ for (var p = 0; p < global.pmax; p++) {
 	}
 	draw_set_color(c_white);
 	var device = global.lookup[p];
-	draw_text(xdraw,ydraw,device);
+	draw_text(xdraw,ydraw,device_to_string(device));
 	ydraw += lineheight;
 	for (var a = 0; a < total_options; a++) {
 		switch a {
@@ -83,5 +83,18 @@ for (var p = 0; p < global.pmax; p++) {
 		if (device == GP+KB) draw_set_alpha(0);
 		draw_text(xdraw,ydraw,k);
 		ydraw += lineheight;
+	}
+}
+
+ydraw=lineheight;
+draw_set_alpha(1);
+for (var device = 0; device < GP+KB; device++) {
+	draw_set_color(c_white);
+	if (slot[device] == -1) {
+		draw_text(room_width/2,ydraw,device_to_string(device));
+		ydraw+=lineheight;
+	} else if slot[device] == -2 {
+		_ydraw = ydraw + room_height/2;
+		draw_text(room_width/2,_ydraw,device_to_string(device));
 	}
 }

@@ -47,12 +47,9 @@ for (var i = 0; i < GP+KB; i++;)
 		for (p = 0; p < PLAYERS; p++) {
 			if (ready[p] == i) draw_set_colour(global.color[p]);
 		}
-		label = "";
+		label = device_to_string(i);
 		if (i < GP) {
-			label = gamepad_get_description(i);
 			if (gamepad_axis_value(i, gp_axislh) != 0 && abs(gamepad_axis_value(i, gp_axislh)) != 1 ) bottomtext = "THIS GAME WAS MADE FOR DIGITAL INPUT\nANALOGUE WILL BE A WORSE EXPERIENCE\n";
-		} else {
-			label = "Keyboard " + string(i mod KB + 1);
 		}
 		posdraw = position[i];
 		switch position[i] {
