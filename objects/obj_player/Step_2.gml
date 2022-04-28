@@ -78,11 +78,15 @@ if (global.hitstop <= 0) {
 			airjumps = jumpmax;
 			if (grounded < 0) {
 				audio_play_sound(snd_land, 0, false);
+				jiggle = 1;
 				instance_place(x,y+vsp,obj_outline).lerpmod += vsp / 2;
 				lifetime = 270;
 			}
 			canhover = false;
 			grounded = coyote;
+		} else {
+			jiggle = 0.6;
+			audio_play_sound(snd_land, 0, false);
 		}
 
 	} else {
@@ -489,6 +493,10 @@ if (global.hitstop <= 0) {
 	}
 	
 	if (state != status.parried) {
+		if (jiggle > 0) jiggle *= 0.7;
+		wjiggle = lerp(1,2,jiggle);
+		hjiggle = lerp(1,0.5,jiggle);
+		
 		// *** PHYSICS AND COLLISION ***
 		
 		// deccelerate when not moving
@@ -503,6 +511,7 @@ if (global.hitstop <= 0) {
 			jumpforce = state == status.idle ? jumpsp : hopsp;
 			if (jump && state != status.stun) {
 				if (grounded > 0) {
+					jiggle = 0.3;
 					vsp = -jumpforce;
 					grounded = 0;
 					audio_play_sound(snd_jump, 0, false);
