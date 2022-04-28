@@ -1,9 +1,16 @@
 gbid = layer_background_get_id("background");
 layer_background_blend(gbid, global.bgcolor);
 
-rooms = [-1,Room1,Room2,Room3,Room4,Room5,Room6];
+rooms = [-1,Room1,Room2,Room3,Room4,Room5,Room6,Room7];
 roomlen = array_length(rooms);
-previews = [spr_RoomBorder,spr_Room1Prev,spr_Room2Prev,spr_Room3Prev,spr_Room4Prev,spr_Room5Prev,spr_Room6Prev];
+previews = [spr_RoomBorder,
+            spr_Room1Prev,
+			spr_Room2Prev,
+			spr_Room3Prev,
+			spr_Room4Prev,
+			spr_Room5Prev,
+			spr_Room6Prev,
+			spr_Room7Prev];
 selected = 0;
 lerpfactor = 0.05;
 selectedlerp = 0;
