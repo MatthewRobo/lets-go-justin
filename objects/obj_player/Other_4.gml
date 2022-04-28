@@ -24,4 +24,8 @@ else {
 	boom.image_yscale = 2.6;
 }
 
-if (teammate != noone) teammate.teammate = self;
+if (teammate != noone) {
+	teammate.teammate = self;
+	teammate.allyteam = team;
+	allyteam = teammate.team;
+}
