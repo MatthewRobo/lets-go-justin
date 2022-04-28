@@ -50,9 +50,9 @@ for (var p = 0; p < PLAYERS; p++) {
 			case input.ST: k = "Start"; break;
 			case input.SE: k = "Select"; break;
 			case input.JU: k = "Jump"; break;
-			case input.SL: k = "A"; break;
-			case input.SH: k = "B"; break;
-			case input.PA: k = "C"; break;
+			case input.SL: k = "A (Slash)"; break;
+			case input.SH: k = "B (Shoot)"; break;
+			case input.PA: k = "C (Parry)"; break;
 			case 10: k = "Done (press any ";
 				if (device < GP) k += "button)";
 				else k += "key)";
@@ -80,9 +80,9 @@ for (var p = 0; p < PLAYERS; p++) {
 			} else {
 				if (pos[p] < 4) k += " (Can't rebind movement on controllers)";
 			}
-			if (a == input.SH) k += " (shoot)";
-			if (a == input.SL) k += " (slash)";
-			if (a == input.PA) k += " (parry)";
+			//if (a == input.SH) k += " (shoot)";
+			//if (a == input.SL) k += " (slash)";
+			//if (a == input.PA) k += " (parry)";
 		}
 		if (global.lookup[p] < GP && a < 4) {
 			draw_set_alpha(0.75);
