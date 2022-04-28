@@ -92,11 +92,11 @@ if (lockout || !candestroy) {
 		if global.pressed[device][input.U] && slot[device] == -2 {
 			slot[device] = -1;
 		}
-		if global.pmax != 4 {
-			if (slot[device] >= 2 || slot[device] == -2) {
-				slot[device] = -1;
-			}
-		}
+		//if global.pmax != 4 {
+		//	if (slot[device] >= 2 || slot[device] == -2) {
+		//		slot[device] = -1;
+		//	}
+		//}
 		
 
 	}
