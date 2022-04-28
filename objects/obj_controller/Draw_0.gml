@@ -64,15 +64,19 @@ draw_set_halign(fa_center);
 draw_rectangle(room_width/2-1, 4, room_width/2+1, 59,0);
 
 if (roundstart > 0) {
+	draw_set_font(fnt_large);
 	draw_text(room_width/2, room_height/2, "Ready?");
 	draw_rectangle(room_width/2-roundstart, 388, room_width/2+roundstart, 392,0);
 }
+
+draw_set_font(Font1);
 draw_text(room_width / 2, 768-4, "Hold Start to quit / Hold Select to restart");
 
 draw_rectangle(room_width/2, 768-4, room_width/2 - 2 * quit, 768-8,0);
 draw_rectangle(room_width/2, 768-4, room_width/2 + 2 * restart, 768-8,0);
 
 draw_set_valign(fa_middle);
+draw_set_font(fnt_large);
 if (global.pmax == 4) {
 	if (obj_player1.deaths + obj_player3.deaths == global.firstto) 
 	|| (obj_player1.deaths + obj_player3.deaths == global.firstto + 1) {
