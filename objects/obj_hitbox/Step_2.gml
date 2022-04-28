@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (collision_line(x,y,x-hsp,y-vsp,obj_wall,0,0)) {
+if (collision_line(x,y,x-hsp,y-vsp,obj_wall,0,0) && lifetime > 1) {
 //if (collision_line(x,y,x+hsp,y+vsp,obj_wall,0,0)) {
 	x -= hsp;
 	y -= vsp;

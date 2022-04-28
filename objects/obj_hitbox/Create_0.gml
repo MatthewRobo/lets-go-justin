@@ -6,3 +6,7 @@ team = 0;
 spd = 0;
 hsp = 0;
 vsp = 0;
+timer = 999;
+lifetime = 0;
+xprev = x;
+yprev = y;

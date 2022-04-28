@@ -2,7 +2,12 @@
 // You can write your code in this editor
 
 if (global.hitstop <= 0) {
+	xprev = x;
+	yprev = y;
 	travel = noone;
+	timer--;
+	if (timer <= 0) instance_destroy();
+	lifetime++;
 	var nextdist;
 	var _list = ds_list_create();
 	var _num = collision_line_list(x,y,x+hsp,y+vsp, obj_player, false, true, _list, true);

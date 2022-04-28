@@ -3,14 +3,9 @@
 
 // Inherit the parent event
 
-
+event_inherited();
 
 if (global.hitstop <= 0) {
-	if (timer <= 0) instance_destroy();
-	else event_inherited();
-
-	timer--;
-	lifetime++;
 	vsp += lengthdir_y(grav, gravdir);
 	hsp += lengthdir_x(grav, gravdir);
 	
