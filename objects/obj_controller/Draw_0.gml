@@ -34,6 +34,7 @@ if (global.pmax==4) {
 		}
 	}
 } else {
+	draw_set_alpha(1);
 	draw_set_colour(global.color[0]);
 	for (i = 0; i < (global.firstto - obj_player1.deaths); i++) {
 		drawpos = room_width / 2 - 10 - pipgap * i;

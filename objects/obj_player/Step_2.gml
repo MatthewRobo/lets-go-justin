@@ -57,13 +57,13 @@ if (global.hitstop <= 0) {
 		attack.spd = attack.spd > 44 ? 44 : attack.spd;
 
 		if (superreflect) { 
-			attack.image_xscale = 4;
-			attack.image_yscale = 4;
+			attack.image_xscale = 6;
+			attack.image_yscale = 6;
 			attack.x = reflected.x+reflected.hsp;
 			attack.y = reflected.y+reflected.vsp;
 			attack.spd = 0;
 			attack.direction = point_direction(0,0,reflected.hsp,reflected.vsp);
-			attack.timer = 1;
+			attack.timer = 2;
 			
 		}
 		attack.hsp = lengthdir_x(attack.spd, attack.direction);
@@ -295,11 +295,11 @@ if (global.hitstop <= 0) {
 						boom.image_angle = direction;
 						
 						
-						//trail = instance_create_layer(x,y,"trails",obj_gradientspike);
-						//trail.owner = self;
-						//trail.length = dist;
-						//trail.direction = direction;
-						//trail.thickness = 8;
+						trail = instance_create_layer(x,y,"trails",obj_gradientspike);
+						trail.owner = self;
+						trail.length = dist;
+						trail.direction = direction;
+						trail.thickness = 8;
 						
 						//trail = instance_create_layer(x + lengthdir_x(dist/2, direction), y+lengthdir_y(dist/2,direction), "trails", obj_squaretrail);
 						//trail.image_xscale = dist / 40;
@@ -580,6 +580,8 @@ if (global.hitstop <= 0) {
 	tcounter = tcounter mod tlen;
 	
 	lifetime+= 360/(60 - abs(hsp));
+	
+	autoparry--;
 } else {
 	image_speed = 0;
 	talpha = 1;

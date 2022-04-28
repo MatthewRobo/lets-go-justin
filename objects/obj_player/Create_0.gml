@@ -85,6 +85,8 @@ reflectmult = 1.1;
 counterspeed = bulletspeed;
 reflected = noone;
 superreflect = false;
+autoparry = 0;
+autoparryactive = 2;
 
 dir = 5;
 left = false;
