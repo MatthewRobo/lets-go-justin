@@ -103,18 +103,30 @@ if (!global.inassign) {
 				if global.pressed[i][input.U] {
 					global.shots[_p]-=cols;
 					audio_play_sound(snd_shield,0,0);
+					with(preview[_p]) {
+						event_user(0);
+					}
 				}
 				if global.pressed[i][input.D] {
 					global.shots[_p]+=cols;
 					audio_play_sound(snd_shield,0,0);
+					with(preview[_p]) {
+						event_user(0);
+					}
 				}
 				if global.pressed[i][input.L] {
 					global.shots[_p]--;
 					audio_play_sound(snd_shield,0,0);
+					with(preview[_p]) {
+						event_user(0);
+					}
 				}
 				if global.pressed[i][input.R] {
 					global.shots[_p]++;
 					audio_play_sound(snd_shield,0,0);
+					with(preview[_p]) {
+						event_user(0);
+					}
 				}
 				if global.pressed[i][input.ST] {
 					ready[_p] = true;
@@ -140,3 +152,23 @@ if (totalready >= global.pmax) room_goto_next();
 
 iconframes += 1/5;
 iconframes = iconframes mod sprite_get_number(spr_playericon);
+
+xdraw = (room_width - rows*icon_htotal)/2;
+
+shotcounter = 0;
+for (var row = 0; row < rows; row++) {
+	for (var col = 0; col < cols; col++) {
+		var _xdraw = xdraw+icon_htotal*col;
+		var _ydraw = ydraw_icon+icon_vtotal*row;
+		for (var p = 0; p < global.pmax; p++) {
+			if (global.shots[p] == shotcounter) {
+
+				px[p] = _xdraw;
+				py[p] = _ydraw;
+			}
+			_px[p] = lerp(_px[p],px[p],lerpfactor);
+			_py[p] = lerp(_py[p],py[p],lerpfactor);
+		}
+		shotcounter++;
+	}
+}

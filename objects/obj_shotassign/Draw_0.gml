@@ -28,57 +28,59 @@ ydraw = 20;
 draw_text(xdraw,ydraw,mode);
 
 xdraw = (room_width - rows*icon_htotal)/2;
-ydraw = 128;
+
 var shotcounter = 0;
 for (var row = 0; row < rows; row++) {
 	for (var col = 0; col < cols; col++) {
 		var _xdraw = xdraw+icon_htotal*col;
-		var _ydraw = ydraw+icon_vtotal*row;
+		var _ydraw = ydraw_icon+icon_vtotal*row;
 		draw_sprite_ext(shotspr[shotcounter],0,_xdraw,_ydraw,iconscale,iconscale,0,global.fgcolor2,1);
 		draw_set_color(c_white);
 		draw_set_valign(fa_top);
 		draw_set_font(fnt_smallsemi);
 		draw_text(_xdraw,_ydraw+iconsize/2+16,shotstr[shotcounter]);
-		for (var p = 0; p < global.pmax; p++) {
-			if (global.shots[p] == shotcounter) {
-				hvec = 1;
-				vvec = 1;
-				rot = 0;
-				switch p {
-					case 0: hvec = -1; vvec = -1; rot = 180; break;
-					case 1: hvec = 1; vvec = -1; rot = 90; break;
-					case 2: hvec = -1; vvec = 1; rot = 270; break;
-					//case 3: hvec = 1; vvec = 1; break;
-				}
-				//rot += 180;
-				_color = ready[p] ? c_white : global.color[p];
-				
-				draw_set_font(fnt_smalldesc);
-				draw_set_color(_color);
-				draw_set_valign(fa_middle);
-				draw_text(_xdraw + hvec * (iconsize / 2 + 32),_ydraw + vvec * (iconsize / 4),"P" + string(p+1));
-				
-				hvec = 1;
-				vvec = 1;
-
-				frame = ready[p] ? 0 : iconframes;
-				frame += 2 * p;
-				
-				draw_sprite_ext(spr_playericon,frame,xdraw+icon_htotal*col,ydraw+icon_vtotal*row,iconscale*hvec,iconscale*vvec,rot,_color,1);
-				if (global.pmax == 2) {
-					frame = (frame + 2) mod sprite_get_number(spr_playericon);
-					switch p {
-						case 0: rot = 270; break;
-						case 1: rot = 0; break;
-					}
-					draw_sprite_ext(spr_playericon,frame,xdraw+icon_htotal*col,ydraw+icon_vtotal*row,iconscale*hvec,iconscale*vvec,rot,_color,1);
-				}
-			}
-		}
 		shotcounter++;
-
 	}
 }
+
+for (var p = 0; p < global.pmax; p++) {
+	hvec = 1;
+	vvec = 1;
+	rot = 0;
+	switch p {
+		case 0: hvec = -1; vvec = -1; rot = 180; break;
+		case 1: hvec = 1; vvec = -1; rot = 90; break;
+		case 2: hvec = -1; vvec = 1; rot = 270; break;
+		//case 3: hvec = 1; vvec = 1; break;
+	}
+	//rot += 180;
+	_color = ready[p] ? c_white : global.color[p];
+				
+	draw_set_font(fnt_smalldesc);
+	draw_set_color(_color);
+	draw_set_valign(fa_middle);
+	draw_text(_px[p] + hvec * (iconsize / 2 + 32),_py[p] + vvec * (iconsize / 2),"P" + string(p+1));
+				
+	hvec = 1;
+	vvec = 1;
+
+	frame = ready[p] ? 0 : iconframes;
+	switch p {
+		case 1: frame += 4;
+		case 2: frame += 2;
+	}
+	frame = frame mod sprite_get_number(spr_playericon);
+	draw_sprite_ext(spr_playericon,frame,_px[p],_py[p],iconscale*hvec,iconscale*vvec,rot,_color,1);
+	if (global.pmax == 2) {
+		frame = (frame + 2) mod sprite_get_number(spr_playericon);
+		switch p {
+			case 0: rot = 270; break;
+			case 1: rot = 0; break;
+		}
+		draw_sprite_ext(spr_playericon,frame,_px[p],_py[p],iconscale*hvec,iconscale*vvec,rot,_color,1);
+	}
+}
+
 draw_set_font(Font1);
 for (p = 0; p < global.pmax; p++) {
 	ydraw = room_height * 0.75;

@@ -64,4 +64,10 @@ for (var i = 0; i < global.pmax; i++) {
 	}
 }
 
+px = array_create(4,room_width/2);
+py = array_create(4,room_height/2);
+_px = array_create(4,room_width/2);
+_py = array_create(4,room_height/2);
+lerpfactor = 0.05;
 
+ydraw_icon = 128;
