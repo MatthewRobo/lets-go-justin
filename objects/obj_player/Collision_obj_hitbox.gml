@@ -102,6 +102,17 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 				ultradies = audio_play_sound(snd_dies, 1, false);
 				audio_sound_pitch(ultradies, 20/120);
 			}
+			//spawnpoint = noone;
+			//maxdist = 0;
+			//for (var i = 0; i < instance_number(obj_respawn); ++i)
+			//{
+			//    _spawn = instance_find(obj_respawn,i);
+			//	_dist = point_distance(other.owner.x,other.owner.y,_spawn.x,_spawn.y) + point_distance(other.x,other.y,_spawn.x,_spawn.y);
+			//	if (_dist > maxdist) {
+			//		spawnpoint = _spawn;
+			//		maxdist = _dist;
+			//	}
+			//}
 			spawnpoint = instance_furthest(other.owner.x, other.owner.y, obj_respawn);
 			invul = invultime;
 		
