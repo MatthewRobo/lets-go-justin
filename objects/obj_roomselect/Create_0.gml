@@ -19,7 +19,7 @@ previews = [spr_RoomBorder,
 selected = 0;
 lerpfactor = 0.05;
 selectedlerp = 0;
-prevsize = room_width/12;
+prevsize = room_width/roomlen;
 prevscale = prevsize/room_width;
 prevgap = 10;
 
