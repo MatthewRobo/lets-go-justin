@@ -405,7 +405,6 @@ if (global.hitstop <= 0) {
 							attack.team = team;
 							attack.direction = angle;
 							attack.timer = shotactive + abs(i);
-
 						}
 						
 						trail = instance_create_layer(x,y,"trails",obj_gradientspike);

@@ -117,8 +117,8 @@ draw_sprite_ext(spr_idle,image_index,_x,_ysin,xscale,yscale,0,image_blend,1);
 // ---
 switch state {
 	case status.recovery: draw_sprite_ext(spr_poverlay,0,_x,_ysin,xscale,yscale,0,c_red,0.35); break;
-	case status.parried: draw_sprite_ext(spr_poverlay,0,_x,_ysin,xscale,yscale,0,c_aqua,0.35); break;
-	case status.stun: draw_sprite_ext(spr_poverlay,0,_x,_ysin,xscale,yscale,0,c_white,0.35); break;
+	case status.parried:  draw_sprite_ext(spr_poverlay,0,_x,_ysin,xscale,yscale,0,c_aqua,0.35); break;
+	case status.stun:     draw_sprite_ext(spr_poverlay,0,_x,_ysin,xscale,yscale,0,c_white,0.35); break;
 }
 
 draw_sprite_ext(spr_pparry,image_index,_x,_ysin,xscale,yscale,0,c_white,abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
