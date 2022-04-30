@@ -102,9 +102,11 @@ for (var device = 0; device < GP+KB; device++) {
 	draw_set_color(c_white);
 	if (slot[device] == -1) {
 		draw_text(room_width/2,ydraw,device_to_string(device));
+		ydraw+=lineheight;
 	} else if slot[device] == -2 {
 		_ydraw = ydraw + room_height/2;
 		draw_text(room_width/2,_ydraw,device_to_string(device));
+		ydraw+=lineheight;
 	}
-	ydraw+=lineheight;
+
 }
