@@ -21,8 +21,8 @@ if (!flip2) {
 	right = dcos(clock) < -threshold;
 	left = dcos(clock) > threshold;
 }
-down = dsin(clock) < -threshold;
-up = dsin(clock) > threshold;
+down = 0;
+up = abs(dsin(clock)) > threshold;
 hover = false;
 heldparry = false;
 teabag = false;
@@ -33,4 +33,8 @@ if (recovery <= 0 && canshoot) {
 	alarm[0] = 1;
 	clock = floor(clock/45)*45;
 	if (ammo > 0) clock+= 45;
+}
+
+if (place_meeting(x+(right - left),y,obj_wall)) {
+	clock += 45;
 }

@@ -48,7 +48,7 @@ layer_background_blend(gbid, global.bgcolor);
 
 preview = array_create(4,noone);
 for (var i = 0; i < global.pmax; i++) {
-	var yspawn = 720;
+	var yspawn = 700;
 	j = 0;
 	switch i {
 		case 0: j = 1; break;
