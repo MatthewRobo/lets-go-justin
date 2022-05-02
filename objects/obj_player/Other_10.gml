@@ -113,8 +113,9 @@ switch shottype {
 		break;
 	case shot.wall2:
 		shotobj = obj_timed;
+		ammomax = 2;
 		bulletspeed = 1;
-		gunrecovery = 30;
+		gunrecovery = 35;
 		gunreload = 60;
 		shotactive = 240;
 		break;
