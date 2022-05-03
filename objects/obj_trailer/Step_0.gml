@@ -10,4 +10,5 @@ if (global.hitstop <= 0) {
 	activetrail.timer = 120;
 	activetrail.owner = owner;
 	activetrail.team = team;
+	activetrail.direction = direction;
 }
