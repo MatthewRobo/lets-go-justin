@@ -82,21 +82,22 @@ draw_set_halign(fa_right);
 var _x1 = lerp(-pi,pi,restart);
 var _x2 = lerp(-pi,pi,quit);
 var _e = 2.718281828459;
+var mult = 1.001;
 var _ans1 = (power(_e, 2*_x1)-1)/(power(_e, 2*_x1)+1);
-_ans1 = (_ans1*1.005 + 1) / 2;
+_ans1 = (_ans1*mult + 1) / 2;
 var _ans2 = (power(_e, 2*_x2)-1)/(power(_e, 2*_x2)+1);
-_ans2 = (_ans2*1.005 + 1) / 2;
+_ans2 = (_ans2*mult + 1) / 2;
 //draw_rectangle(0, room_height - 16, 0.5*(dsin(timer * 180 + 270)+1) * room_width, room_height,0);
 draw_rectangle(room_width/2, room_height - 3,-_ans1*room_width/2+room_width/2, room_height,0);
 draw_rectangle(room_width/2, room_height - 3, _ans2*room_width/2+room_width/2, room_height,0);
 
 if (global.mode == gamemode.training) {
-	draw_text(room_width / 2-centergap, 768-4-6*_ans1, "Select to restart");
+	draw_text(-_ans1*room_width/2+room_width / 2-centergap, 768-4, "Select to restart");
 } else {
-	draw_text(room_width / 2-centergap, 768-4-6*_ans1, "Hold Select to restart");
+	draw_text(-_ans1*room_width/2+room_width / 2-centergap, 768-4, "Hold Select to restart");
 }
 draw_set_halign(fa_left);
-draw_text(room_width / 2+centergap, 768-4-6*_ans2, "Hold Start to quit");
+draw_text(_ans2*room_width/2+room_width/2+centergap, 768-4, "Hold Start to quit");
 
 //draw_rectangle(room_width/2, 768-3, room_width/2 - 2 * restart, 768,0);
 //draw_rectangle(room_width/2, 768-3, room_width/2 + 2 * quit, 768,0);
