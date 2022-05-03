@@ -155,7 +155,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 				trail.direction = rdir;
 				trail.friction = trail.speed / global.hitstop;
 				rlen = random_range(0,500);
-				trail.alphainc = (1/rlen)*500/dead;
+				trail.alphainc = (1/rlen)*500/(dead*2);
 				trail.x += lengthdir_x(rlen,rdir);
 				trail.y += lengthdir_y(rlen,rdir);
 			}
