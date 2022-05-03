@@ -98,6 +98,7 @@ if (global.hitstop <= 0) {
 
 
 	if (spawning == spawntime) {
+		dead = false;
 		lifetime = 270;
 		depth = layerdepth + 1;
 
@@ -594,9 +595,31 @@ if (global.hitstop <= 0) {
 	lifetime+= 360/(60 - abs(hsp));
 	
 	autoparry--;
+	deadx = x;
+	deady = y;
 } else {
 	image_speed = 0;
 	talpha = 1;
+	
+	if (dead) {
+		var ddir = point_direction(deadx,deady,spawnpoint.x,spawnpoint.y);
+		var factor = power(1-(global.hitstop/20),2);
+		var dangle = ddir - deadangle;
+		var dy = 64 * dsin(dangle) * dsin(180  * factor);
+		var dx = 0;
+		_c = dcos(ddir);
+		_s = dsin(ddir);
+
+
+		x = lerp(deadx,spawnpoint.x,factor);
+		y = lerp(deady,spawnpoint.y,factor);
+		x = x + _c * dx + _s * dy;
+		y = y + _c * dy - _s * dx;
+		tx[tcounter] = x;
+		ty[tcounter] = y;
+		tcounter++;
+		tcounter = tcounter mod tlen;
+	}
 }
 //qt ++;
 //qt = qt mod qlen;

@@ -142,3 +142,7 @@ teammate = noone;
 allyteam = -1;
 
 silent = false;
+dead = 0;
+deadx = x;
+deady = y;
+deadangle = 0;
