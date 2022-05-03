@@ -29,15 +29,18 @@ for (var i = 0; i < GP+KB; i++;)
 	}
 }
 
-if (start) quit++;
-else quit = 0;
-if (select) restart++;
-else restart = 0;
+if (start) quit+=1/45;
+else quit-=1/45;
+if (select) restart+=1/45;
+else restart -=1/45;
 
-if (restart > 45) {
+if (quit < 0) quit = 0;
+if (restart < 0) restart = 0;
+
+if (restart > 1) {
 	room_restart();
 }
-if (quit > 45) {
+if (quit > 1) {
 	room_goto(Pad_Select);
 }
 
