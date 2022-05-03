@@ -362,7 +362,7 @@ if (global.hitstop <= 0) {
 						}
 						break;
 					case shot.wall2:
-						len = shotactive * bulletspeed;
+						len = shotactive;
 						for (i = 0; i < 25; i ++) {
 							attack = instance_create_layer(x, y, "hitboxes", shotobj);
 							attack.owner = self;
@@ -370,7 +370,7 @@ if (global.hitstop <= 0) {
 							attack.direction = direction;
 							j = i * 5.4 + 45;
 							attack.timer = j;
-							attack.spd =  len/j + 1;
+							attack.spd =  len/j + bulletspeed;
 							attack.hsp = lengthdir_x(attack.spd, attack.direction);
 							attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						}
