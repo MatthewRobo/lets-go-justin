@@ -139,11 +139,13 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		
 			for (i = 0; i < 60; i++) {
 				trail = instance_create_layer(x,y,"platforms",obj_splatter);
-				trail.depth += 2;
+				trail.depth -= 2;
+				trail.owner = self;
 				trail.radius = random_range(1,30);
 				trail.timer = random(i);
+
 				trail.image_blend = irandom(3) ? color : global.fgcolor2;
-				trail.image_alpha = random_range(0.6,0.8);
+				trail.image_alpha = 0;
 				trail.x = random_range(bbox_left, bbox_right);
 				trail.y = random_range(bbox_bottom, bbox_top);
 				rdir = 0;
@@ -153,6 +155,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 				trail.direction = rdir;
 				trail.friction = trail.speed / global.hitstop;
 				rlen = random_range(0,500);
+				trail.alphainc = (1/rlen)*500/dead;
 				trail.x += lengthdir_x(rlen,rdir);
 				trail.y += lengthdir_y(rlen,rdir);
 			}
