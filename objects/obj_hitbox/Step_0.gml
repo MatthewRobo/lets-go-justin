@@ -41,3 +41,5 @@ if (global.hitstop <= 0) {
 		y += vsp;
 	}
 }
+
+direction=point_direction(0,0,hsp,vsp);

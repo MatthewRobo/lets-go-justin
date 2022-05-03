@@ -253,7 +253,7 @@ if (global.hitstop <= 0) {
 						attack.owner = self;
 						attack.timer = shotactive;
 						attack.team = team;
-						attack.direction = direction + 180;
+						attack.direction = direction;
 						attack.spd = point_distance(0,0,hsp,vsp);
 						break;
 					case shot.trailer:
