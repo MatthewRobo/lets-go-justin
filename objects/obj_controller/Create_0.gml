@@ -25,3 +25,5 @@ takess = GREYBOX;
 
 totalframes = 0;
 seconds = totalframes div 60;
+
+//instance_create_depth(0,0,-9999,obj_camera);

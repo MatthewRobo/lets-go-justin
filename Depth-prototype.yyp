@@ -27,6 +27,7 @@
     {"id":{"name":"spr_pborder","path":"sprites/spr_pborder/spr_pborder.yy",},"order":23,},
     {"id":{"name":"spr_bg0","path":"sprites/spr_bg0/spr_bg0.yy",},"order":0,},
     {"id":{"name":"spr_flicker","path":"sprites/spr_flicker/spr_flicker.yy",},"order":10,},
+    {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"order":5,},
     {"id":{"name":"spr_spark","path":"sprites/spr_spark/spr_spark.yy",},"order":7,},
     {"id":{"name":"obj_timed","path":"objects/obj_timed/obj_timed.yy",},"order":4,},
     {"id":{"name":"obj_wallbang","path":"objects/obj_wallbang/obj_wallbang.yy",},"order":7,},
