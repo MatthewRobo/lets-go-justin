@@ -51,16 +51,14 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		var _num = instance_place_list(x, y, obj_hitbox, _list, false);
 		if _num > 0
 		{
-		    for (var i = 0; i < _num; ++i;)
-		    {
-		        instance_destroy(_list[| i]);
-		    }
+			for (var i = 0; i < _num; ++i;)
+			{
+				instance_destroy(_list[| i]);
+			}
 		}
 		ds_list_destroy(_list);
+		state = status.idle;
 
-			state = status.idle;
-		
-		
 
 
 

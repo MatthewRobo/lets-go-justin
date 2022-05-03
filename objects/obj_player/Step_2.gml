@@ -555,7 +555,7 @@ if (global.hitstop <= 0) {
 			while (!place_meeting(x + sign(hsp), y, obj_wall)) { //whilst the next pixel isn't a wall
 				x += sign(hsp);
 			}
-			hsp = 0;
+			hsp = state == status.stun ? -hsp : 0;
 		} else {
 			x += hsp;
 		}
@@ -563,7 +563,7 @@ if (global.hitstop <= 0) {
 			while (!place_meeting(x, y + sign(vsp), obj_wall)) { //whilst the next pixel isn't a wall
 				y += sign(vsp);
 			}
-			vsp = 0;
+			vsp = state == status.stun ? -vsp : 0;
 		} else {
 			y += vsp;
 		}
