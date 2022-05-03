@@ -108,7 +108,7 @@ switch shottype {
 		ammomax = 2;
 		bulletspeed = 1;
 		shotactive = 256;
-		gunrecovery = 35;
+		gunrecovery = 40;
 		gunreload = 70;
 		break;
 	case shot.wall2:
