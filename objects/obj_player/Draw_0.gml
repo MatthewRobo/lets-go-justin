@@ -43,11 +43,35 @@ steps = 24;
 draw_set_color(color);
 draw_set_alpha(1);
 
+<<<<<<< Updated upstream
 draw_primitive_begin(pr_linestrip);
 for (i = tcounter - 1; i >= 0; i--) {
 	x1 = tx[i];
 	y1 = ty[i];
 	draw_vertex(x1,y1);
+=======
+var seam,next,x1,x2,y1,y2,angle,dx,dy,twidth,tflip;
+tflip = tcounter mod 2 ? 0 : 180;
+twidth = 24;
+draw_primitive_begin(pr_trianglestrip);
+for (i = 1; i <= tlen; i++) {
+	seam = (tcounter - i + tlen) mod tlen;
+	next = (seam - 1 + tlen) mod tlen;
+	x1 = tx[seam];
+	y1 = ty[seam];
+	x2 = tx[next];
+	y2 = ty[next];
+	angle = seam == tcounter ? angle : point_direction(x1,y1,x2,y2);
+	dx = lengthdir_x(twidth,angle+90+tflip);
+	dy = lengthdir_y(twidth,angle+90+tflip);
+	if (i == 1) {
+		draw_vertex_color(x1-dx,y1-dy,color,(tlen-i)/tlen);
+	}
+
+	draw_vertex_color(x1+dx,y1+dy,color,(tlen-i)/tlen);
+	tflip += 180;
+	//draw_vertex(x1-dx,y1-dy);
+>>>>>>> Stashed changes
 }
 for (i = tlen - 1; i >= tcounter; i--) {
 	x1 = tx[i];
