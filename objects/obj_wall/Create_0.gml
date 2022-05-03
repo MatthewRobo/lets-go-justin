@@ -4,7 +4,7 @@
 outline = instance_create_depth(x,y,depth+2,obj_outline);
 outline.image_xscale = image_xscale;
 outline.image_yscale = image_yscale;
-outline.w0 = 2;
+outline.w0 = 3;
 outline.x1 = bbox_left;
 outline.x2 = bbox_right;
 outline.y1 = bbox_top;
