@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+#macro AUTOCOLOR true
 
 draw_set_colour(color);
 draw_set_alpha(1);
@@ -113,7 +112,16 @@ if (state == status.parry) eyecolor = $DB9900;
 
 draw_sprite_ext(spr_pborder,image_index,_x,_ysin,xscale,yscale,0,c_white,1);
 draw_sprite_ext(spr_peyes,image_index,_x,_ysin+vvec,xscale,yscale,0,eyecolor,1);
-draw_sprite_ext(spr_idle,image_index,_x,_ysin,xscale,yscale,0,image_blend,1);
+
+
+if (AUTOCOLOR) {
+	draw_sprite_ext(spr_probes,image_index,_x,_ysin,xscale,yscale,0,color,1);
+	draw_sprite_ext(spr_probes,image_index,_x,_ysin,xscale,yscale,0,c_black,0.6);
+	draw_sprite_ext(spr_ptrim,image_index,_x,_ysin,xscale,yscale,0,color,1);
+} else {
+	draw_sprite_ext(spr_idle,image_index,_x,_ysin,xscale,yscale,0,image_blend,1);
+}
+
 // ---
 switch state {
 	case status.recovery: draw_sprite_ext(spr_poverlay,0,_x,_ysin,xscale,yscale,0,c_red,0.35); break;
@@ -127,7 +135,7 @@ if (state == status.parry) {
 	draw_sprite_ext(spr_pparry,image_index,_x,_ysin,xscale,yscale,0,c_white,_s);
 }
 if (flash) {
-	draw_sprite_ext(spr_poverlay,image_index,_x,_ysin,xscale,yscale,0,color,1);
+	draw_sprite_ext(spr_poverlay,image_index,_x,_ysin,xscale,yscale,0,c_white,1);
 	flash = false;
 }
 

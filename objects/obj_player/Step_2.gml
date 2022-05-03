@@ -452,6 +452,7 @@ if (global.hitstop <= 0) {
 		}
 		if (shoot) {
 			audio_play_sound(snd_jam,0,0);
+			flash = true;
 		}
 		
 		recovery--;
