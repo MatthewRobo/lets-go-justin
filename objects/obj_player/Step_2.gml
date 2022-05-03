@@ -528,8 +528,13 @@ if (global.hitstop <= 0) {
 		}
 		if (state != status.parry) && (state == status.idle || walksp) {
 			//show_debug_message(state);
-			if (vvec > 0) lifetime = 270;
-			if (teabag) lifetime = 0;
+			if (vvec > 0) {
+				lifetime = 270;
+				if (jiggle < 1) jiggle += 0.075;
+			}
+			//if (teabag) {
+			//	lifetime = 0;
+			//}
 			jumpforce = state == status.idle ? jumpsp : hopsp;
 			if (jump && state != status.stun) {
 				if (grounded > 0) {

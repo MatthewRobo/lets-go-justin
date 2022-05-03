@@ -141,7 +141,12 @@ draw_sprite_ext(spr_ptrail,image_index,_x,_ysin,_s*xscale,_s*yscale,0,_color,1);
 // SPRITE ASSEMBLY
 
 eyecolor = ammo <= 0 ? $3326A2 : $EDF7FD;
-if (state == status.parry) eyecolor = $DB9900;
+if (state == status.parry) {
+	eyecolor = $DB9900;
+	var _scale = 1.1;
+	draw_sprite_ext(spr_ptrail,image_index,_x,_ysin,xscale*_scale,yscale*_scale,0,c_aqua,1);
+	draw_sprite_ext(spr_pborder,image_index,_x,_ysin,xscale*_scale,yscale*_scale,0,c_white,1);
+}
 
 draw_sprite_ext(spr_pborder,image_index,_x,_ysin,xscale,yscale,0,c_white,1);
 draw_sprite_ext(spr_peyes,image_index,_x,_ysin+vvec,xscale,yscale,0,eyecolor,1);
@@ -164,7 +169,7 @@ switch state {
 draw_sprite_ext(spr_pparry,image_index,_x,_ysin,xscale,yscale,0,c_white,abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
 if (state == status.parry) {
 	_s = (abs(dsin(recovery * 20)) + 1) / 2;
-	draw_sprite_ext(spr_pparry,image_index,_x,_ysin,xscale,yscale,0,c_white,_s);
+	draw_sprite_ext(spr_probes,image_index,_x,_ysin,xscale,yscale,0,c_white,_s);
 }
 
 draw_sprite_ext(spr_poverlay,image_index,_x,_ysin,xscale,yscale,0,c_white,flash);
