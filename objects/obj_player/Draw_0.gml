@@ -43,31 +43,18 @@ steps = 24;
 draw_set_color(color);
 draw_set_alpha(1);
 
-draw_primitive_begin(pr_trianglestrip);
-for (i = 0; i < tlen; i+= 1) {
-	tcnow = (i + tcounter + tlen) mod tlen;
-	tcnext = (tcnow + 1) mod tlen;
-	tdir = tcnext == tcounter ? point_direction(0,0,hsp,vsp-grav) : point_direction(tx[tcnow],ty[tcnow],tx[tcnext],ty[tcnext]);
-	twid = 24;
-	//talpha = clamp(2 * (i - tlen / 2) / (tlen / 2),0,1);
-	talpha = clamp(2 * (i - 10) / 10,0,1);
-	if (ammo <= 0) talpha *= 0.4;
-
-	x1 = tx[tcnow];
-	y1 = ty[tcnow] - 2*dsin(lifetime - 6 * (tlen - i ));
-	
-	x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-8,x1+8);
-	y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-18,y1+18);
-	x12 = clamp(x1+lengthdir_x(twid,tdir-90),x1-8,x1+8);
-	y12 = clamp(y1+lengthdir_y(twid,tdir-90),y1-18,y1+18);
-
-	tcolor = color;
-
-	if (global.hitstop > 0) talpha = i * 2 / tlen;
-
-	draw_vertex_colour(x11, y11,tcolor,talpha);
-	draw_vertex_colour(x12, y12,tcolor,talpha);
+draw_primitive_begin(pr_linestrip);
+for (i = tcounter - 1; i >= 0; i--) {
+	x1 = tx[i];
+	y1 = ty[i];
+	draw_vertex(x1,y1);
 }
+for (i = tlen - 1; i >= tcounter; i--) {
+	x1 = tx[i];
+	y1 = ty[i];
+	draw_vertex(x1,y1);
+}
+
 draw_primitive_end();
 
 for (i = ammo; i > 0; i--) {
