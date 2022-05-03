@@ -146,3 +146,4 @@ dead = 0;
 deadx = x;
 deady = y;
 deadangle = 0;
+reloading = false;

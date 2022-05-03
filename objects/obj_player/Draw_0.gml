@@ -133,10 +133,9 @@ if (state == status.parry) {
 	_s = (abs(dsin(recovery * 20)) + 1) / 2;
 	draw_sprite_ext(spr_pparry,image_index,_x,_ysin,xscale,yscale,0,c_white,_s);
 }
-if (flash) {
-	draw_sprite_ext(spr_poverlay,image_index,_x,_ysin,xscale,yscale,0,c_white,1);
-	flash = false;
-}
+
+draw_sprite_ext(spr_poverlay,image_index,_x,_ysin,xscale,yscale,0,c_white,flash);
+
 
 if (state != status.idle) {
 	draw_rectangle(x,y-33,x+recovery,y-38,0);

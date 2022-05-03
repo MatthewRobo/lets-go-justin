@@ -427,6 +427,9 @@ if (global.hitstop <= 0) {
 			} else {
 				audio_play_sound(snd_reload, 0, false);
 				recovery = gunreload;
+				reloading = recovery;
+				flash = true;
+				jiggle += 0.3;
 				if (shottype = shot.random) {
 					bulletspeed = irandom_range(8,40);
 					shotactive = irandom_range(6,60);
@@ -435,7 +438,7 @@ if (global.hitstop <= 0) {
 					gunreload = irandom_range(10,30) * ammomax;
 					recoil = irandom_range(-20,20);
 				}
-				ammo = ammomax;
+
 				state = status.recovery;
 			}
 		}
@@ -455,9 +458,25 @@ if (global.hitstop <= 0) {
 			audio_play_sound(snd_jam,0,0);
 			flash = true;
 		}
-		
+		if (reloading) {
+			var ammoprev = ammo;
+			ammo = floor(lerp(ammomax,0,recovery/reloading));
+			if (ammoprev < ammo) {
+				flash = true;
+				audio_play_sound(snd_jam,0,0);
+				jiggle += 0.3;
+			}
+			
+		}
 		recovery--;
 		if (recovery <= 0) {
+			if (reloading) {
+				reloading = 0;
+				ammo = ammomax;
+				flash = true;
+				audio_play_sound(snd_jam,0,0);
+				jiggle += 0.3;
+			}
 			state = status.idle;
 		}
 		break;
@@ -624,4 +643,4 @@ if (global.hitstop <= 0) {
 //qt ++;
 //qt = qt mod qlen;
 
-
+flash *= 0.8;

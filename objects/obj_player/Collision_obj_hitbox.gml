@@ -82,6 +82,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			state = status.stun;
 		} else {
 			deaths += 1;
+			flash = true;
 			dead = true;
 			deadangle = other.direction;
 			instance_create_layer(x, y, "hitboxes", obj_boom);
