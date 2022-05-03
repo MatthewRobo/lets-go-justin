@@ -115,7 +115,7 @@ draw_sprite_ext(spr_peyes,image_index,_x,_ysin+vvec,xscale,yscale,0,eyecolor,1);
 
 
 if (AUTOCOLOR) {
-	draw_sprite_ext(spr_probes,image_index,_x,_ysin,xscale,yscale,0,color,0.4);
+	draw_sprite_ext(spr_probes,image_index,_x,_ysin,xscale,yscale,0,color,0.6);
 	draw_sprite_ext(spr_ptrim,image_index,_x,_ysin,xscale,yscale,0,color,1);
 } else {
 	draw_sprite_ext(spr_idle,image_index,_x,_ysin,xscale,yscale,0,image_blend,1);
