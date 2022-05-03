@@ -8,7 +8,6 @@ global.hitstop = 0;
 restart = 0;
 quit = 0;
 global.firstto = global.pmax == 4 ? 24 : 12;
-pipratio = 12 / global.firstto;
 if (global.mode == gamemode.training) {
 	roundstart = 0;
 	global.firstto = -1;
@@ -23,3 +22,6 @@ bgid = layer_background_get_id("Background");
 layer_background_blend(bgid, global.bgcolor);
 
 takess = GREYBOX;
+
+totalframes = 0;
+seconds = totalframes div 60;

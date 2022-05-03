@@ -5,63 +5,65 @@ draw_set_valign(fa_top);
 
 draw_set_alpha(1*!GREYBOX);
 
-draw_set_halign(fa_right);
+var pipgap = 4;
+var centergap = 32;
+var pipwidth = ((64 * 9.5 - centergap) - pipgap * global.firstto) / global.firstto;
 
-// draw_text(room_width / 2 - 32, 8, obj_player2.deaths);
-pipwidth = 44 * pipratio;
-pipgap = 4 + pipwidth;
+piptotal = pipgap + pipwidth;
 if (global.pmax==4) {
 	draw_set_colour(global.color[0]);
 	for (i = 0; i < (global.firstto - obj_player1.deaths - obj_player3.deaths); i++) {
-		drawpos = room_width / 2 - 10 - pipgap * i;
+		drawpos = room_width / 2 - centergap - piptotal * i;
 		draw_rectangle(drawpos-pipwidth, 8, drawpos, 56,0);
 		if (obj_player1.spawntime == obj_player1.spawning && i == (global.firstto - obj_player1.deaths - obj_player3.deaths - 1))
 		|| (obj_player3.spawntime == obj_player3.spawning && i == (global.firstto - obj_player3.deaths - obj_player1.deaths - 1)){
 			draw_set_color(global.fgcolor2);
-			drawpos = room_width / 2 - 10 - pipgap * (i + 1);
+			drawpos = room_width / 2 - centergap - piptotal * (i + 1);
 			draw_rectangle(drawpos-global.hitstop, 8, drawpos, 56,0);
 		}
 	}
 	draw_set_colour(global.color[1]);
 	for (i = 0; i < (global.firstto - obj_player2.deaths - obj_player4.deaths); i++) {
-		drawpos = room_width / 2 + 10 + pipgap * i;
+		drawpos = room_width / 2 + centergap + piptotal * i;
 		draw_rectangle(drawpos, 8, drawpos+pipwidth, 56,0);
 		if (obj_player2.spawntime == obj_player2.spawning && i == (global.firstto - obj_player2.deaths - obj_player4.deaths - 1))
 		|| (obj_player4.spawntime == obj_player4.spawning && i == (global.firstto - obj_player4.deaths - obj_player2.deaths -1)) {
 			draw_set_color(global.fgcolor2);
-			drawpos = room_width / 2 + 10 + pipgap * (i + 1);
+			drawpos = room_width / 2 + centergap + piptotal * (i + 1);
 			draw_rectangle(drawpos, 8, drawpos+global.hitstop, 56,0);
 		}
 	}
 } else {
 	draw_set_colour(global.color[0]);
 	for (i = 0; i < (global.firstto - obj_player1.deaths); i++) {
-		drawpos = room_width / 2 - 10 - pipgap * i;
+		drawpos = room_width / 2 - centergap - piptotal * i;
 		draw_rectangle(drawpos-pipwidth, 8, drawpos, 56,0);
 		if (obj_player1.spawntime == obj_player1.spawning && i == (global.firstto - obj_player1.deaths - 1)) {
 			draw_set_color(global.fgcolor2);
-			drawpos = room_width / 2 - 10 - pipgap * (i + 1);
+			drawpos = room_width / 2 - centergap - piptotal * (i + 1);
 			draw_rectangle(drawpos-global.hitstop, 8, drawpos, 56,0);
 		}
 	}
 	draw_set_colour(global.color[1]);
 	for (i = 0; i < (global.firstto - obj_player2.deaths); i++) {
-		drawpos = room_width / 2 + 10 + pipgap * i;
+		drawpos = room_width / 2 + centergap + piptotal * i;
 		draw_rectangle(drawpos, 8, drawpos+pipwidth, 56,0);
 		if (obj_player2.spawntime == obj_player2.spawning && i == (global.firstto - obj_player2.deaths - 1)) {
 			draw_set_color(global.fgcolor2);
-			drawpos = room_width / 2 + 10 + pipgap * (i + 1);
+			drawpos = room_width / 2 + centergap + piptotal * (i + 1);
 			draw_rectangle(drawpos, 8, drawpos+global.hitstop, 56,0);
 		}
 	}
 }
 
-draw_set_valign(fa_bottom);
 
 draw_set_colour(global.fgcolor2);
 draw_set_halign(fa_center);
-
-draw_rectangle(room_width/2-1, 4, room_width/2+1, 59,0);
+draw_set_valign(fa_top);
+var text = global.mode == gamemode.training ? string(fps) : string_replace_all(string_format(seconds, 2, 0), " ", "0")
+draw_text(room_width/2,8,text);
+draw_set_valign(fa_bottom);
+//draw_rectangle(room_width/2-1, 4, room_width/2+1, 59,0);
 
 if (roundstart > 0) {
 	draw_set_font(fnt_large);

@@ -46,4 +46,5 @@ if (quit > 45) {
 
 roundstart--;
 if (roundstart == 0) audio_play_sound(snd_spawn,0,0);
-
+if (global.hitstop <= 0 && roundstart <= 0) totalframes++;
+seconds = totalframes div 60;
