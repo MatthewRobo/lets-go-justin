@@ -249,7 +249,7 @@ if (global.hitstop <= 0) {
 						attack.image_xscale = 2;
 						break;
 					case shot.booster:
-						attack = instance_create_layer(x, y, "hitboxes", shotobj);
+						attack = instance_create_layer(x-hsp, y-vsp, "hitboxes", shotobj);
 						attack.owner = self;
 						attack.timer = shotactive;
 						attack.team = team;
