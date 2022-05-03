@@ -11,47 +11,49 @@ var pipwidth = ((64 * 9.5 - centergap) - pipgap * global.firstto) / global.first
 
 piptotal = pipgap + pipwidth;
 if (global.pmax==4) {
-	draw_set_colour(global.color[0]);
 	for (i = 0; i < (global.firstto - obj_player1.deaths - obj_player3.deaths); i++) {
+		draw_set_colour(global.color[0]);
 		drawpos = room_width / 2 - centergap - piptotal * i;
 		draw_rectangle(drawpos-pipwidth, 8, drawpos, 56,0);
-		if (obj_player1.spawntime == obj_player1.spawning && i == (global.firstto - obj_player1.deaths - obj_player3.deaths - 1))
-		|| (obj_player3.spawntime == obj_player3.spawning && i == (global.firstto - obj_player3.deaths - obj_player1.deaths - 1)){
+		if (obj_player1.dead || obj_player3.dead) {
 			draw_set_color(global.fgcolor2);
 			drawpos = room_width / 2 - centergap - piptotal * (i + 1);
-			draw_rectangle(drawpos-global.hitstop, 8, drawpos, 56,0);
+			var pipsum = sign(obj_player1.dead) + sign(obj_player3.dead);
+			var deadmax = max(obj_player1.dead,obj_player3.dead);
+			draw_rectangle(drawpos-(pipsum*global.hitstop*pipwidth/deadmax), 8, drawpos, 56,0);
 		}
 	}
-	draw_set_colour(global.color[1]);
 	for (i = 0; i < (global.firstto - obj_player2.deaths - obj_player4.deaths); i++) {
+		draw_set_colour(global.color[1]);
 		drawpos = room_width / 2 + centergap + piptotal * i;
 		draw_rectangle(drawpos, 8, drawpos+pipwidth, 56,0);
-		if (obj_player2.spawntime == obj_player2.spawning && i == (global.firstto - obj_player2.deaths - obj_player4.deaths - 1))
-		|| (obj_player4.spawntime == obj_player4.spawning && i == (global.firstto - obj_player4.deaths - obj_player2.deaths -1)) {
+		if (obj_player2.dead || obj_player4.dead) {
 			draw_set_color(global.fgcolor2);
 			drawpos = room_width / 2 + centergap + piptotal * (i + 1);
-			draw_rectangle(drawpos, 8, drawpos+global.hitstop, 56,0);
+			var pipsum = sign(obj_player2.dead) + sign(obj_player4.dead);
+			var deadmax = max(obj_player2.dead,obj_player4.dead);
+			draw_rectangle(drawpos, 8, drawpos+(pipsum*global.hitstop*pipwidth/deadmax), 56,0);
 		}
 	}
 } else {
-	draw_set_colour(global.color[0]);
 	for (i = 0; i < (global.firstto - obj_player1.deaths); i++) {
+		draw_set_colour(global.color[0]);
 		drawpos = room_width / 2 - centergap - piptotal * i;
 		draw_rectangle(drawpos-pipwidth, 8, drawpos, 56,0);
-		if (obj_player1.spawntime == obj_player1.spawning && i == (global.firstto - obj_player1.deaths - 1)) {
+		if (obj_player1.dead) {
 			draw_set_color(global.fgcolor2);
 			drawpos = room_width / 2 - centergap - piptotal * (i + 1);
-			draw_rectangle(drawpos-global.hitstop, 8, drawpos, 56,0);
+			draw_rectangle(drawpos-(global.hitstop*pipwidth/obj_player1.dead), 8, drawpos, 56,0);
 		}
 	}
-	draw_set_colour(global.color[1]);
 	for (i = 0; i < (global.firstto - obj_player2.deaths); i++) {
+		draw_set_colour(global.color[1]);
 		drawpos = room_width / 2 + centergap + piptotal * i;
 		draw_rectangle(drawpos, 8, drawpos+pipwidth, 56,0);
-		if (obj_player2.spawntime == obj_player2.spawning && i == (global.firstto - obj_player2.deaths - 1)) {
+		if (obj_player2.dead) {
 			draw_set_color(global.fgcolor2);
 			drawpos = room_width / 2 + centergap + piptotal * (i + 1);
-			draw_rectangle(drawpos, 8, drawpos+global.hitstop, 56,0);
+			draw_rectangle(drawpos, 8, drawpos+(global.hitstop*pipwidth/obj_player2.dead), 56,0);
 		}
 	}
 }

@@ -622,7 +622,7 @@ if (global.hitstop <= 0) {
 	
 	if (dead) {
 		var ddir = point_direction(deadx,deady,spawnpoint.x,spawnpoint.y);
-		var factor = power(1-(global.hitstop/20),2);
+		var factor = power(1-(global.hitstop/dead),2);
 		var dangle = ddir - deadangle;
 		var dy = 64 * dsin(dangle) * dsin(180  * factor);
 		var dx = 0;

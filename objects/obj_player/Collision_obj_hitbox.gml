@@ -83,7 +83,6 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		} else {
 			deaths += 1;
 			flash = true;
-			dead = true;
 			deadangle = other.direction;
 			instance_create_layer(x, y, "hitboxes", obj_boom);
 			audio_play_sound(snd_dies, 1, false);
@@ -103,6 +102,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 				ultradies = audio_play_sound(snd_dies, 1, false);
 				audio_sound_pitch(ultradies, 20/120);
 			}
+			dead = global.hitstop;
 			//spawnpoint = noone;
 			//maxdist = 0;
 			//for (var i = 0; i < instance_number(obj_respawn); ++i)
