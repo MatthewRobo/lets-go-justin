@@ -41,5 +41,5 @@ if (global.hitstop <= 0) {
 		y += vsp;
 	}
 }
-
+spd = point_distance(00,0,hsp,vsp);
 if (spd > 0) direction=point_direction(0,0,hsp,vsp);
