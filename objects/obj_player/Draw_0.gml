@@ -70,17 +70,48 @@ for (i = 0; i < tlen; i+= 1) {
 }
 draw_primitive_end();
 
-for (i = ammo; i > 0; i--) {
-	tcnow = (tlen - (i*2) + tcounter) mod tlen;
+for (i = 1; i <= ammo; i += 1) {
+	j = 2 * i;
+	draw_primitive_begin(pr_trianglestrip);
+	tcnow = (tlen + tcounter - j) mod tlen;
+	tcnext = (tcnow + tlen - 1) mod tlen;
+	tdir = tcnext == tcounter ? point_direction(0,0,hsp,vsp-grav) : point_direction(tx[tcnow],ty[tcnow],tx[tcnext],ty[tcnext]);
+	twid = 6;
 
 	x1 = tx[tcnow];
-	y1 = ty[tcnow];
+	y1 = ty[tcnow] - 2 * dsin(lifetime - 6 * j);
+	x2 = tx[tcnext];
+	y2 = ty[tcnext]- 2 * dsin(lifetime - 6 * (j + 1));
 	
-	draw_set_alpha(0.5);
-	draw_circle_color(x1,y1,8,global.bgcolor,global.bgcolor,0);
-	draw_set_alpha(1);
-	draw_circle_color(x1,y1,6,c_white,c_white,0);
+	x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-8,x1+8);
+	y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-18,y1+18);
+	x12 = clamp(x1+lengthdir_x(twid,tdir-90),x1-8,x1+8);
+	y12 = clamp(y1+lengthdir_y(twid,tdir-90),y1-18,y1+18);
+
+	x21 = clamp(x2+lengthdir_x(twid,tdir+90),x2-8,x2+8);
+	y21 = clamp(y2+lengthdir_y(twid,tdir+90),y2-18,y2+18);
+	x22 = clamp(x2+lengthdir_x(twid,tdir-90),x2-8,x2+8);
+	y22 = clamp(y2+lengthdir_y(twid,tdir-90),y2-18,y2+18);
+	tcolor = c_white;
+
+	draw_vertex_colour(x11, y11,tcolor,1);
+	draw_vertex_colour(x12, y12,tcolor,1);
+	draw_vertex_colour(x21, y21,tcolor,1);
+	draw_vertex_colour(x22, y22,tcolor,1);
+	draw_primitive_end();
 }
+
+//for (i = ammo; i > 0; i--) {
+//	tcnow = (tlen - (i*2) + tcounter) mod tlen;
+
+//	x1 = tx[tcnow];
+//	y1 = ty[tcnow];
+	
+//	draw_set_alpha(0.5);
+//	draw_circle_color(x1,y1,8,global.bgcolor,global.bgcolor,0);
+//	draw_set_alpha(1);
+//	draw_circle_color(x1,y1,6,c_white,c_white,0);
+//}
 
 _s = spawning == spawntime ? (global.hitstop * global.hitstop) / 60 : 1;
 if (teammate != noone) {
