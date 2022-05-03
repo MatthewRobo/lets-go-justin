@@ -43,13 +43,6 @@ steps = 24;
 draw_set_color(color);
 draw_set_alpha(1);
 
-<<<<<<< Updated upstream
-draw_primitive_begin(pr_linestrip);
-for (i = tcounter - 1; i >= 0; i--) {
-	x1 = tx[i];
-	y1 = ty[i];
-	draw_vertex(x1,y1);
-=======
 var seam,next,x1,x2,y1,y2,angle,dx,dy,twidth,tflip;
 tflip = tcounter mod 2 ? 0 : 180;
 twidth = 24;
@@ -70,14 +63,8 @@ for (i = 1; i <= tlen; i++) {
 
 	draw_vertex_color(x1+dx,y1+dy,color,(tlen-i)/tlen);
 	tflip += 180;
-	//draw_vertex(x1-dx,y1-dy);
->>>>>>> Stashed changes
-}
-for (i = tlen - 1; i >= tcounter; i--) {
-	x1 = tx[i];
-	y1 = ty[i];
-	draw_vertex(x1,y1);
-}
+}	//draw_vertex(x1-dx,y1-dy);
+
 
 draw_primitive_end();
 
