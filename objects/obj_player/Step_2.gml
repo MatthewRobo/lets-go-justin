@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-
+textscale = 16/72;
 // input handling
 dir = 5;
 if (left && !right) dir = 4;
@@ -625,27 +625,28 @@ if (global.hitstop <= 0) {
 	image_speed = 0;
 	talpha = 1;
 	
-	//if (dead) {
-	//	var ddir = point_direction(deadx,deady,spawnpoint.x,spawnpoint.y);
-	//	var factor = power(1-(global.hitstop/dead),2);
-	//	var dangle = ddir - deadangle;
-	//	var dy = 64 * dsin(dangle) * dsin(180  * factor);
-	//	var dx = 0;
-	//	_c = dcos(ddir);
-	//	_s = dsin(ddir);
+	if (dead) {
+
+		var ddir = point_direction(deadx,deady,spawnpoint.x,spawnpoint.y);
+		var factor = power(1-(global.hitstop/dead),2);
+		var dangle = ddir - deadangle;
+		var dy = 64 * dsin(dangle) * dsin(180  * factor);
+		var dx = 0;
+		_c = dcos(ddir);
+		_s = dsin(ddir);
 
 
-	//	x = lerp(deadx,spawnpoint.x,factor);
-	//	y = lerp(deady,spawnpoint.y,factor);
-	//	x = x + _c * dx + _s * dy;
-	//	y = y + _c * dy - _s * dx;
-	//	tx[tcounter] = x;
-	//	ty[tcounter] = y;
-	//	tcounter++;
-	//	tcounter = tcounter mod tlen;
-	//}
+		x = lerp(deadx,spawnpoint.x,factor);
+		y = lerp(deady,spawnpoint.y,factor);
+		x = x + _c * dx + _s * dy;
+		y = y + _c * dy - _s * dx;
+		tx[tcounter] = x;
+		ty[tcounter] = y;
+		tcounter++;
+		tcounter = tcounter mod tlen;
+	}
 }
 //qt ++;
 //qt = qt mod qlen;
-
+		textscale = textscale + (1-textscale) * spawning/spawntime;
 flash *= 0.8;
