@@ -76,10 +76,8 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			if (global.hitstop < freeze) global.hitstop = freeze;
 			global.outline = global.fgcolor2;
 			flash = true;
-			newspd = clamp(other.spd,20,999);
-			spdscale = newspd / other.spd;
-			hsp = abs(other.hsp*spdscale) < abs(hsp) ? abs(hsp) * sign(other.hsp) : other.hsp*spdscale;
-			vsp = abs(other.vsp*spdscale) < abs(vsp) ? abs(vsp) * sign(other.vsp) : other.vsp*spdscale;
+			hsp = abs(other.hsp) < abs(hsp) ? abs(hsp) * sign(other.hsp) : other.hsp;
+			vsp = abs(other.vsp) < abs(vsp) ? abs(vsp) * sign(other.vsp) : other.vsp;
 			stun = clamp(other.spd / 2,5,500);
 			state = status.stun;
 		} else {
