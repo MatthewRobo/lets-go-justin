@@ -46,6 +46,7 @@ recovery = 0;
 
 teamstun = 40;
 
+buffer = 6;
 shoot = false;
 parry = false;
 slash = false;

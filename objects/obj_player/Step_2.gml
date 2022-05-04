@@ -176,6 +176,7 @@ if (global.hitstop <= 0) {
 			vsp /= 2; // cut player's jump short if player releases early
 		}
 		if (slash) {
+			slash = false;
 			invul /= 3;
 			audio_play_sound_at(snd_slash, -x + room_width/2,y,400,100,500,1,false, false);
 			if (dir == 5) {
@@ -206,6 +207,7 @@ if (global.hitstop <= 0) {
 			}
 		}
 		if (shoot) {
+			shoot = false;
 			invul /= 3;
 			if (ammo > 0) {
 				hsp += lengthdir_x(-recoil, direction);
@@ -464,6 +466,7 @@ if (global.hitstop <= 0) {
 			}
 		}
 		if (parry) {
+			parry = false;
 			audio_play_sound(snd_shield, 0, false);
 			invul /= 3;
 			recovery = parryactive;
@@ -475,7 +478,8 @@ if (global.hitstop <= 0) {
 			if (left && !right) image_xscale = -scale;
 			else if (right && !left) image_xscale = scale;
 		}
-		if (shoot) {
+		if (shoot && recovery > buffer) {
+			shoot = false;
 			audio_play_sound(snd_jam,0,0);
 			flash = true;
 		}
@@ -517,7 +521,8 @@ if (global.hitstop <= 0) {
 		break;
 	case status.stun:
 		lifetime = 0;
-		if (shoot) {
+		if (shoot && recovery > buffer) {
+			shoot = false;
 			audio_play_sound(snd_jam,0,0);
 		}
 		stun--;

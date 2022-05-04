@@ -5,9 +5,9 @@
 
 if (global.hitstop <= 0) {
 	uprelease = false;
-	slash = false;
-	shoot = false;
-	parry = false;
+	slash--;
+	shoot--;
+	parry--;
 	jump = false;
 }
 
@@ -50,11 +50,11 @@ if (global.released[gamepad][input.JU]) {
 }
 
 if (global.pressed[gamepad][input.PA]){
-	parry = true;
+	parry = buffer;
 } else if (global.pressed[gamepad][input.SH]) {
-	shoot = true;
+	shoot = buffer;
 } else if (global.pressed[gamepad][input.SL]) {
-	slash = true;
+	slash = buffer;
 }
 
 if (global.down[gamepad][input.PA]) {
