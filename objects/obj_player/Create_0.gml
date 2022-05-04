@@ -73,9 +73,11 @@ gunrecovery = 22;
 gunreload = 38;
 shotactive = 1080;
 
-slashspeed = 4;
+slashspeed = 16 * 1.5;
 slashactive = 5;
 slashrecovery = 9;
+
+nslashspeed = 4;
 
 parryactive = 10;
 parrymax = 30 - parryactive;
