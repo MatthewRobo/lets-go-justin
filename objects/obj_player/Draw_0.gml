@@ -184,15 +184,19 @@ if (state == status.stun) {
 	draw_rectangle(x,y-39,x+stun,y-44,0);
 	draw_rectangle(x,y-39,x-stun,y-44,0);
 }
-if dead draw_set_color(c_white);
-else draw_set_color(color);
+draw_set_color(color);
+
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
 draw_set_font(fnt_large);
 
 draw_text_transformed(x, y-32, "[P" + teamstr + "]",textscale,textscale,0);
-
+draw_set_color(c_white);
+draw_set_alpha(spawning/spawntime);
+draw_text_transformed(x, y-32, "[P" + teamstr + "]",textscale,textscale,0);
+draw_set_alpha(1);
+draw_set_color(color);
 draw_set_font(Font2);
 
 if (global.mode = gamemode.training) {
