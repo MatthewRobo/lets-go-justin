@@ -112,6 +112,8 @@ if (ready[0] > -99 && ready[1] > -99) {
 	if !teams {
 		room_goto_next();
 		global.mode = gamemode.versus;
+		global.lookup[2] = GP+KB;
+		global.lookup[3] = GP+KB;
 	} else if (ready[2] > -99 && ready[3] > -99) {
 		room_goto_next();
 		global.mode = gamemode.versus;
