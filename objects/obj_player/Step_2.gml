@@ -104,8 +104,8 @@ if (global.hitstop <= 0) {
 
 		ammo = ammomax;
 		audio_play_sound(snd_spawn, 0, false);
-		x = spawnpoint.x;
-		y = spawnpoint.y;
+		//x = spawnpoint.x;
+		//y = spawnpoint.y;
 		state = status.recovery;
 		spawnpoint.occupied = false;
 		recovery = 1;
@@ -123,6 +123,25 @@ if (global.hitstop <= 0) {
 		shoot = false;
 		parry = false;
 		slash = false;
+		var _x1 = lerp(-pi,pi,spawning/spawntime);
+		var _e = 2.718281828459;
+		var mult = 1.01;
+		var factor = (power(_e, 2*_x1)-1)/(power(_e, 2*_x1)+1);
+		factor = clamp((factor*mult + 1) / 2,0,1);
+
+		var ddir = point_direction(deadx,deady,spawnpoint.x,spawnpoint.y);
+		//var factor = power(1-(global.hitstop/dead),2);
+		var dangle = ddir - deadangle;
+		var dy = 64 * dsin(dangle) * dsin(180  * factor);
+		var dx = 0;
+		_c = dcos(ddir);
+		_s = dsin(ddir);
+
+
+		x = lerp(spawnpoint.x,deadx,factor);
+		y = lerp(spawnpoint.y,deady,factor);
+		x = x + _c * dx + _s * dy;
+		y = y + _c * dy - _s * dx;
 		spawning--;
 	}
 
@@ -633,26 +652,32 @@ if (global.hitstop <= 0) {
 	image_speed = 0;
 	talpha = 1;
 	
-	if (dead) {
+	//if (dead) {
+		
+	//	var _x1 = lerp(-pi,pi,global.hitstop/dead);
+	//	var _e = 2.718281828459;
+	//	var mult = 1.01;
+	//	var factor = (power(_e, 2*_x1)-1)/(power(_e, 2*_x1)+1);
+	//	factor = clamp((factor*mult + 1) / 2,0,1);
 
-		var ddir = point_direction(deadx,deady,spawnpoint.x,spawnpoint.y);
-		var factor = power(1-(global.hitstop/dead),2);
-		var dangle = ddir - deadangle;
-		var dy = 64 * dsin(dangle) * dsin(180  * factor);
-		var dx = 0;
-		_c = dcos(ddir);
-		_s = dsin(ddir);
+	//	var ddir = point_direction(deadx,deady,spawnpoint.x,spawnpoint.y);
+	//	//var factor = power(1-(global.hitstop/dead),2);
+	//	var dangle = ddir - deadangle;
+	//	var dy = 64 * dsin(dangle) * dsin(180  * factor);
+	//	var dx = 0;
+	//	_c = dcos(ddir);
+	//	_s = dsin(ddir);
 
 
-		x = lerp(deadx,spawnpoint.x,factor);
-		y = lerp(deady,spawnpoint.y,factor);
-		x = x + _c * dx + _s * dy;
-		y = y + _c * dy - _s * dx;
-		tx[tcounter] = x;
-		ty[tcounter] = y;
-		tcounter++;
-		tcounter = tcounter mod tlen;
-	}
+	//	x = lerp(spawnpoint.x,deadx,factor);
+	//	y = lerp(spawnpoint.y,deady,factor);
+	//	x = x + _c * dx + _s * dy;
+	//	y = y + _c * dy - _s * dx;
+	//	tx[tcounter] = x;
+	//	ty[tcounter] = y;
+	//	tcounter++;
+	//	tcounter = tcounter mod tlen;
+	//}
 }
 //qt ++;
 //qt = qt mod qlen;
