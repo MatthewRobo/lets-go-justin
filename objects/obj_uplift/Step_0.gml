@@ -6,7 +6,6 @@ for (i = 0; i < 3; i++) {
 	
 	trail.x = random_range(bbox_left, bbox_right);
 	trail.y = random_range(bbox_bottom, bbox_top);
-	trail.vspeed -= ((trail.y - bbox_top) / sprite_height) * 2;
 	trail.image_xscale  = random_range(1,2);
 	trail.image_yscale = trail.image_xscale;
 }

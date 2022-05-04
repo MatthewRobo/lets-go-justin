@@ -581,6 +581,7 @@ if (global.hitstop <= 0) {
 		if (nograv != noone) {
 			vsp -= ((bbox_bottom - nograv.bbox_top) / nograv.sprite_height) * 2;
 			vsp *= 0.95;
+			if (vvec > 0 && state != status.stun) vsp += 0.25;
 		}
 		
 		if place_meeting(x + hsp, y, obj_wall) || collision_line(x,y,x+hsp,y,obj_wall,0,0) {

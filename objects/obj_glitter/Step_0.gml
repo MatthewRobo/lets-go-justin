@@ -10,3 +10,4 @@ if (global.hitstop <= 0) {
 } else {
 	image_speed = 2/30;
 }
+
