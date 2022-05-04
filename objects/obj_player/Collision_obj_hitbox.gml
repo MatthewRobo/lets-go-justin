@@ -67,7 +67,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		//if true {
 			instance_destroy(other);
 			audio_play_sound(snd_bonk,0,0);
-			freeze = clamp(other.spd/2,5,20);
+			freeze = clamp(other.spd/2,2,20);
 			if (freeze == 20) {
 				woosh = audio_play_sound(snd_spawn,0,0);
 				timescale = (audio_sound_length(snd_spawn) * 60) / freeze;
@@ -76,8 +76,10 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			if (global.hitstop < freeze) global.hitstop = freeze;
 			global.outline = global.fgcolor2;
 			flash = true;
-			hsp = abs(other.hsp) < abs(hsp) ? abs(hsp) * sign(other.hsp) : other.hsp;
-			vsp = abs(other.vsp) < abs(vsp) ? abs(vsp) * sign(other.vsp) : other.vsp;
+			newspd = clamp(other.spd,20,999);
+			spdscale = newspd / other.spd;
+			hsp = abs(other.hsp*spdscale) < abs(hsp) ? abs(hsp) * sign(other.hsp) : other.hsp*spdscale;
+			vsp = abs(other.vsp*spdscale) < abs(vsp) ? abs(vsp) * sign(other.vsp) : other.vsp*spdscale;
 			stun = clamp(other.spd / 2,5,500);
 			state = status.stun;
 		} else {
