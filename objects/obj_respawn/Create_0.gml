@@ -1,1 +1,3 @@
 visible = GREYBOX;
+
+occupied = false;

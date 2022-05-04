@@ -103,18 +103,26 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 				audio_sound_pitch(ultradies, 20/120);
 			}
 			dead = global.hitstop;
+			spawnpoint = instance_furthest(other.owner.x, other.owner.y, obj_respawn);
+			if (other.owner.dead) spawnpoint = instance_furthest(other.owner.spawnpoint.x, other.owner.y, obj_respawn);
 			//spawnpoint = noone;
-			//maxdist = 0;
+			//spawnpoint.occupied = true;
+			//var maxdist = 0;
 			//for (var i = 0; i < instance_number(obj_respawn); ++i)
 			//{
 			//    _spawn = instance_find(obj_respawn,i);
-			//	_dist = point_distance(other.owner.x,other.owner.y,_spawn.x,_spawn.y) + point_distance(other.x,other.y,_spawn.x,_spawn.y);
-			//	if (_dist > maxdist) {
+			//	_dist = point_distance(other.owner.x,other.owner.y,_spawn.x,_spawn.y);
+			//	show_debug_message(string(team) + "|" + string(_dist) + "|" + string(_spawn.occupied));
+			//	//_dist = point_distance(other.owner.x,other.owner.y,_spawn.x,_spawn.y) + point_distance(other.x,other.y,_spawn.x,_spawn.y);
+			//	if (_dist > maxdist && ! _spawn.occupied) {
+
+			//		spawnpoint.occupied = false;
 			//		spawnpoint = _spawn;
+			//		spawnpoint.occupied = true;
 			//		maxdist = _dist;
 			//	}
 			//}
-			spawnpoint = instance_furthest(other.owner.x, other.owner.y, obj_respawn);
+
 			invul = invultime;
 		
 			for (i = 0; i < 250; i++) {

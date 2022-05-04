@@ -107,6 +107,7 @@ if (global.hitstop <= 0) {
 		x = spawnpoint.x;
 		y = spawnpoint.y;
 		state = status.recovery;
+		spawnpoint.occupied = false;
 		recovery = 1;
 		boom = instance_create_layer(x, y, "hitboxes", obj_boom);
 		boom.image_xscale = 2;
