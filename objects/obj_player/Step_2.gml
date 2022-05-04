@@ -578,7 +578,7 @@ if (global.hitstop <= 0) {
 		}
 		var nograv = instance_position(x + hsp, y + vsp, obj_uplift);
 		if (nograv != noone) {
-			vsp -= ((y - nograv.bbox_top) / nograv.sprite_height) * 2;
+			vsp -= ((bbox_bottom - nograv.bbox_top) / nograv.sprite_height) * 2;
 			vsp *= 0.95;
 		}
 		
