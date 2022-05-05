@@ -29,6 +29,14 @@ for (var d = 0; d < GP+KB; d++) {
 			global.down[d][i] = keyboard_check(global.mainbind[d][i]) || keyboard_check(global.subbind[d][i]);
 		}
 		global.pressed[d][i] = global.down[d][i] && !global.last[d][i];
+		if (instance_number(obj_controller) <= 0 && !global.inassign) {
+			if (i == input.ST) {
+				global.pressed[d][i] |= global.down[d][input.SL] && !global.last[d][input.SL];
+			}
+			if (i == input.SE) {
+				global.pressed[d][i] |= global.down[d][input.SH] && !global.last[d][input.SH];
+			}
+		}
 		global.released[d][i] = !global.down[d][i] && global.last[d][i];
 	}
 }
