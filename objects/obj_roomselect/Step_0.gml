@@ -2,9 +2,11 @@ if (!global.inassign) {
 	for (var player = 0; player < PLAYERS; player++) {
 		var device = global.lookup[player];
 		if (global.pressed[device][input.ST]) {
-			if (selected == 0) global.stage = rooms[irandom_range(1,roomlen-1)];
-			else global.stage = rooms[selected];
-			room_goto_next();
+			if (selected == 0) selected = irandom_range(1,roomlen-1);
+			else {
+				global.stage = rooms[selected];
+				room_goto_next();
+			}
 		} else {
 			if (global.pressed[device][input.L]) {
 				selected--;
