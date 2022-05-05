@@ -52,7 +52,9 @@ if (!global.inassign) {
 				}
 				global.lookup[position[i]] = i;
 				ready[position[i]] = i;
+				if !readypos[i] audio_play_sound(snd_parry,0,0);
 				readypos[i] = true;
+				
 			}
 		}
 	
