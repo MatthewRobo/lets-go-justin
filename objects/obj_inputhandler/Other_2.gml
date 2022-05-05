@@ -25,6 +25,7 @@ enum input {
 
 enum gamemode {
 	versus,
+	teamvs,
 	training
 }
 

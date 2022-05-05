@@ -10,11 +10,10 @@ for (i = 0; i < PLAYERS; i++) {
 }
 
 readypos = array_create(GP+KB, false);
-palette = irandom(11);
 
 
 
-teams = false;
+teams = global.mode == gamemode.teamvs;
 if (global.pmax == 4) teams = true;
 
 

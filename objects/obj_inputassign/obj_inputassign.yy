@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "menus",
-    "path": "folders/Objects/controllers/menus.yy",
+    "path": "folders/Objects/menus.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_inputassign",

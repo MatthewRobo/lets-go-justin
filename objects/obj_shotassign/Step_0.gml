@@ -95,7 +95,7 @@ if (!global.inassign) {
 					audio_play_sound(snd_parry,0,0);
 				}
 				if global.pressed[i][input.SE] {
-					room_goto(Pad_Select);
+					room_goto(Main_Menu);
 					audio_play_sound(snd_parry,0,0);
 				}
 			} else if (!ready[1]) {
