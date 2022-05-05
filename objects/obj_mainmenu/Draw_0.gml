@@ -10,19 +10,19 @@ var ydrawlerp = 512 + 6 + selectedlerp*(lineheight+12);
 draw_rectangle(0,ydrawlerp-lineheight/2,room_width,ydrawlerp+lineheight/2,0);
 
 var distfromteam = 1-abs(1-selectedlerp);
-draw_set_alpha(distfromteam);
+//draw_set_alpha(distfromteam);
 
 draw_set_color(global.color[2]);
 draw_rectangle(xgap,ydrawlerp-lineheight/2+pgap,xgap+distfromteam*(xwid),ydrawlerp+lineheight/2-pgap,0);
 draw_set_color(global.color[3]);
-draw_rectangle(room_width-xgap,ydrawlerp-lineheight/2+pgap,room_width-distfromteam*(xgap+xwid),ydrawlerp+lineheight/2-pgap,0);
+draw_rectangle(room_width-(xgap+distfromteam*(xwid)),ydrawlerp-lineheight/2+pgap,room_width-xgap,ydrawlerp+lineheight/2-pgap,0);
 
 draw_set_alpha(1);
 
 draw_set_color(global.color[0]);
 draw_rectangle(xgap+distfromteam*(xwid+xgap),ydrawlerp-lineheight/2+pgap,xgap+xwid+distfromteam*(xgap+xwid),ydrawlerp+lineheight/2-pgap,0);
 draw_set_color(global.color[1]);
-draw_rectangle(room_width-(xgap+distfromteam*(xwid+xgap)),ydrawlerp-lineheight/2+pgap,room_width-(xgap+xwid+distfromteam*(xgap+xwid)),ydrawlerp+lineheight/2-pgap,0);
+draw_rectangle(room_width-(xgap+xwid+distfromteam*(xgap+xwid)),ydrawlerp-lineheight/2+pgap,room_width-(xgap+distfromteam*(xwid+xgap)),ydrawlerp+lineheight/2-pgap,0);
 
 
 for (var i = 0; i < modelen; i++) {

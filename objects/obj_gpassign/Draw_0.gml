@@ -69,7 +69,5 @@ draw_set_colour(c_white);
 draw_set_font(Font1);
 draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
-//draw_text(xdraw, room_height - 20, "YOU CAN ONLY USE THE DPAD, THIS IS ON PURPOSE\nPress left/right to select\nPress start when ready\nPress select for training mode");
-bottomtext += teams ? "Press up/down to switch to single VS\n" : "Press up/down to switch to team VS\n";
-bottomtext += "Press left/right to select\nPress start when ready\nPress select for training mode";
+bottomtext += "Press left/right to select\nPress start/[A]-SLASH when ready\nPress select/[B]-SHOOT to go back";
 draw_text(xdraw, room_height - 20, bottomtext);
