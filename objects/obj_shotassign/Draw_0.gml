@@ -16,7 +16,10 @@ mode = "";
 
 switch global.mode {
 	case gamemode.versus:
-		mode = "Local VS";
+		mode = "Single Versus";
+		break;
+	case gamemode.teamvs:
+		mode = "Team Versus";
 		break;
 	case gamemode.training:
 		mode = "Training Mode";

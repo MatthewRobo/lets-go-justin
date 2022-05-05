@@ -4,7 +4,7 @@
 timer = 0;
 
 if (global.mode == gamemode.training) {
-	room_goto_next()
+	room_goto(global.stage);
 }
 
 

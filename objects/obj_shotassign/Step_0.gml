@@ -8,7 +8,7 @@ if (!global.inassign) {
 	for (var p = 0; p < global.pmax; p++;)
 	{
 		i = global.lookup[p]; // i = is INPUT port
-		if (global.mode == gamemode.versus) {
+		if (global.mode != gamemode.training) {
 			if (!ready[p]) {
 				shotlast = global.shots[p];
 				collast = shotlast mod cols;
