@@ -53,7 +53,6 @@ if (!global.inassign) {
 				global.lookup[position[i]] = i;
 				ready[position[i]] = i;
 				readypos[i] = true;
-				audio_play_sound(snd_parry,0,0);
 			}
 		}
 	
@@ -88,4 +87,6 @@ if (ready[0] > -99 && ready[1] > -99) {
 //show_debug_message(position);
 //show_debug_message(global.lookup);
 
-
+if (global.mode == gamemode.training) {
+	room_goto_previous();
+}

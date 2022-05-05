@@ -29,3 +29,6 @@ zoomgap = (room_width-zoomsize)/2+10;
 
 ydraw = room_height-prevsize/2;
 ydraw_large = ydraw/2;
+
+
+audio_play_sound(snd_parry,0,0);

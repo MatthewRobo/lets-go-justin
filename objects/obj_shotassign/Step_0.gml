@@ -52,8 +52,7 @@ if (!global.inassign) {
 					audio_play_sound(snd_parry,0,0);
 				}
 				if global.pressed[i][input.SE] {
-					room_goto(Instructions);
-					audio_play_sound(snd_parry,0,0);
+					room_goto_previous();
 				}
 			} else if global.pressed[i][input.SE] {
 					ready[p] = false;
@@ -95,8 +94,7 @@ if (!global.inassign) {
 					audio_play_sound(snd_parry,0,0);
 				}
 				if global.pressed[i][input.SE] {
-					room_goto(Main_Menu);
-					audio_play_sound(snd_parry,0,0);
+					room_goto_previous();
 				}
 			} else if (!ready[1]) {
 				_p = 1;

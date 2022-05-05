@@ -13,7 +13,7 @@ if (!global.inassign) {
 			start += 1;
 		}
 		if global.pressed[i][input.SE] {
-			room_goto(Pad_Select);
+			room_goto_previous();
 		} 
 	}
 
@@ -24,6 +24,5 @@ else timer -= 0.01;
 timer = clamp(timer,0,1);
 
 if (timer >= 1) {
-	room_goto_next();
-	audio_play_sound(snd_parry,0,0);
+	room_goto(global.stage);
 }

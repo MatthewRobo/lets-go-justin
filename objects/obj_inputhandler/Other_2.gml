@@ -29,6 +29,8 @@ enum gamemode {
 	training
 }
 
+global.stage = Room0;
+
 global.gpnum = 12;
 global.gp = array_create(global.gpnum, -99);
 

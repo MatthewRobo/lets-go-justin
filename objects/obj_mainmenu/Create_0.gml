@@ -4,9 +4,12 @@ layer_background_blend(gbid, global.bgcolor);
 modes = [gamemode.versus, gamemode.teamvs, gamemode.training];
 modelen = array_length(modes);
 modestr = ["Versus", "Team VS", "Training"];
-selected = 0;
+selected = global.mode;
 lerpfactor = 0.2;
-selectedlerp = 0;
+selectedlerp = global.mode;
 prevgap = 20;
 
 palette = irandom(11);
+
+
+audio_play_sound(snd_parry,0,0);

@@ -6,10 +6,9 @@ if (!global.inassign) {
 				for (var i = 1; i < PLAYERS; i++) {
 					global.lookup[i] = GP+KB;
 				}
-				audio_play_sound(snd_parry,0,0)
-				room_goto(Shot_Select);
+				room_goto(Room_Select);
 			} else {
-				room_goto_next();
+			room_goto_next();
 			}
 		} else {
 			if (global.pressed[device][input.U]) {

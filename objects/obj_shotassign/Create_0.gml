@@ -71,3 +71,5 @@ _py = array_create(4,room_height/2);
 lerpfactor = 0.05;
 
 ydraw_icon = 128;
+
+audio_play_sound(snd_parry,0,0);
