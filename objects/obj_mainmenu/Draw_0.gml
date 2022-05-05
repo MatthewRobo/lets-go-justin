@@ -20,9 +20,9 @@ draw_rectangle(room_width-xgap,ydrawlerp-lineheight/2+pgap,room_width-xgap-xwid,
 draw_set_alpha(1);
 
 draw_set_color(global.color[0]);
-draw_rectangle(xgap+distfromteam*(xwid+xgap),ydrawlerp-lineheight/2+pgap,xgap+xwid+xgap+xwid,ydrawlerp+lineheight/2-pgap,0);
+draw_rectangle(xgap+distfromteam*(xwid+xgap),ydrawlerp-lineheight/2+pgap,xgap+xwid+distfromteam*(xgap+xwid),ydrawlerp+lineheight/2-pgap,0);
 draw_set_color(global.color[1]);
-draw_rectangle(room_width-(xgap+distfromteam*(xwid+xgap)),ydrawlerp-lineheight/2+pgap,room_width-(xgap+xwid+xgap+xwid),ydrawlerp+lineheight/2-pgap,0);
+draw_rectangle(room_width-(xgap+distfromteam*(xwid+xgap)),ydrawlerp-lineheight/2+pgap,room_width-(xgap+xwid+distfromteam*(+xgap+xwid)),ydrawlerp+lineheight/2-pgap,0);
 
 
 for (var i = 0; i < modelen; i++) {

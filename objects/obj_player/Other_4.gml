@@ -13,7 +13,7 @@ state = status.parried;
 
 event_user(0);
 
-if (global.pmax != 4 && team > 1) instance_destroy(self);
+if (global.mode != gamemode.teamvs && team > 1) instance_destroy(self);
 else {
 	boom = instance_create_layer(x, y, "hitboxes", obj_boom);
 	boom.image_xscale = 2;
