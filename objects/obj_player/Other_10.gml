@@ -90,11 +90,11 @@ switch shottype {
 	case shot.geyser:
 		shotobj = obj_shrink;
 		ammomax = 2;
-		bulletspeed = 6;
+		bulletspeed = 8;
 		gunrecovery = 17;	
-		gunreload = 37;
+		gunreload = 30;
 		shotactive = 8;
-		recoil = 8;
+		recoil = 0;
 		break;
 	case shot.sin:
 		shotobj = obj_sin;
