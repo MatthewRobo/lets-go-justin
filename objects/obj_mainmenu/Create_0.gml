@@ -7,9 +7,10 @@ modestr = ["Versus", "Team VS", "Training"];
 selected = global.mode;
 lerpfactor = 0.2;
 selectedlerp = global.mode;
-prevgap = 20;
 
 palette = irandom(11);
-
-
 audio_play_sound(snd_parry,0,0);
+
+xgap = 10;
+xwid = 40;
+pgap = xgap;
