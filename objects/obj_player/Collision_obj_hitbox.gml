@@ -77,8 +77,10 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			global.outline = global.fgcolor2;
 			flash = true;
 			hsp = abs(other.hsp) < abs(hsp) ? abs(hsp) * sign(other.hsp) : other.hsp;
+			hsp = clamp(hsp,-60,60);
 			vsp = abs(other.vsp) < abs(vsp) ? abs(vsp) * sign(other.vsp) : other.vsp;
-			stun = clamp(other.spd / 2,5,500);
+			vsp = clamp(vsp,-60,60);
+			stun = clamp(other.spd / 2,2,60);
 			state = status.stun;
 		} else {
 			deaths += 1;
