@@ -56,15 +56,8 @@ for (var i = 0; i < GP+KB; i++;)
 				}
 			}
 		}
-		posdraw = position[i];
-		switch position[i] {
-		case 0:  posdraw = -1; break;
-		case 1:  posdraw =  1; break;
-		case -1: posdraw =  0; break;
-		case 2:  posdraw = -2; break;
-		case 3:  posdraw =  2; break;
-		}
-		draw_text_transformed(xdraw+hgap*posdraw,ydraw,label,clamp((512+64)/string_width(label),0,1),1,0);
+
+		draw_text_transformed(xdraw+hgap*posdraw[i],ydraw,label,clamp((512+64)/string_width(label),0,1),1,0);
 		ydraw += vgap;
 	}
 }

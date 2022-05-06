@@ -87,6 +87,17 @@ if (ready[0] > -99 && ready[1] > -99) {
 //show_debug_message(position);
 //show_debug_message(global.lookup);
 
+for (var i = 0; i < GP+KB; i++;)
+{
+	switch position[i] {
+		case 0:  posdraw[i] = lerp(posdraw[i],-1,lerpfactor); break;
+		case 1:  posdraw[i] = lerp(posdraw[i], 1,lerpfactor); break;
+		case -1: posdraw[i] = lerp(posdraw[i], 0,lerpfactor); break;
+		case 2:  posdraw[i] = lerp(posdraw[i],-2,lerpfactor); break;
+		case 3:  posdraw[i] = lerp(posdraw[i], 2,lerpfactor); break;
+	}
+}
+
 if (global.mode == gamemode.training) {
 	room_goto_previous();
 }
