@@ -76,7 +76,7 @@ draw_set_font(fnt_prompt);
 draw_set_valign(fa_bottom);
 draw_set_halign(fa_right);
 if (usinganalogue) prompt = "This game was made for digital input! Using analogue will be a worse experience.\n";
-prompt += "Press left/right to pick a side | Press Start/[A] to confirm | Press Select/[B] to cancel";
+prompt += "Press F4 (keyboard) or down + any three buttons (controller) to rebind controls | Press Start/[A] to confirm | Press Select/[B] to cancel";
 draw_rectangle(room_width-string_width(prompt)-gap*2,room_height-string_height(prompt)-gap,room_width,room_height,0);
 draw_set_color(global.fgcolor);
 draw_text(room_width-gap,room_height,prompt);

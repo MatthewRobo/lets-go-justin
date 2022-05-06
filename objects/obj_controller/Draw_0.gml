@@ -75,7 +75,7 @@ if (roundstart > 0) {
 
 draw_set_font(fnt_smallsemi);
 draw_set_valign(fa_bottom);
-draw_rectangle(room_width/2-1, 768-64, room_width/2+1, 768,0);
+//draw_rectangle(room_width/2-1, 768-64, room_width/2+1, 768,0);
 draw_set_halign(fa_right);
 
 
@@ -88,16 +88,27 @@ _ans1 = clamp((_ans1*mult + 1) / 2,0,1);
 var _ans2 = (power(_e, 2*_x2)-1)/(power(_e, 2*_x2)+1);
 _ans2 = clamp((_ans2*mult + 1) / 2,0,1);
 //draw_rectangle(0, room_height - 16, 0.5*(dsin(timer * 180 + 270)+1) * room_width, room_height,0);
-draw_rectangle(room_width/2, room_height - 3,-_ans1*room_width/2+room_width/2, room_height,0);
-draw_rectangle(room_width/2, room_height - 3, _ans2*room_width/2+room_width/2, room_height,0);
 
-if (global.mode == gamemode.training) {
-	draw_text(-_ans1*room_width/2+room_width / 2-centergap, 768-4, "Select to restart");
-} else {
-	draw_text(-_ans1*room_width/2+room_width / 2-centergap, 768-4, "Hold Select to restart");
-}
+//draw_rectangle(room_width/2, room_height - 3,-_ans1*room_width/2+room_width/2, room_height,0);
+//draw_rectangle(room_width/2, room_height - 3, _ans2*room_width/2+room_width/2, room_height,0);
+
+draw_set_font(fnt_prompt);
+
+var prompt1 = global.mode == gamemode.training ? "Select to restart" : "Hold Select to restart";
+var prompt2 = "Hold Start to quit";
+
+var centergap = 3;
+var gap = 3;
+var hoffset1 = -_ans1*room_width/2;
+var hoffset2 = _ans2*room_width/2;
+draw_rectangle(-centergap + hoffset1 + room_width/2-string_width(prompt1)-gap*2,room_height-string_height(prompt1)-gap,-centergap + room_width/2,room_height,0);
+draw_rectangle(centergap + room_width/2,room_height-string_height(prompt2)-gap, centergap + hoffset2 + room_width/2+string_width(prompt2)+gap*2,room_height,0);
+
+draw_set_color(global.fgcolor);
+draw_text(-centergap + hoffset1 + room_width / 2-gap,room_height,prompt1);
+
 draw_set_halign(fa_left);
-draw_text(_ans2*room_width/2+room_width/2+centergap, 768-4, "Hold Start to quit");
+draw_text(centergap + hoffset2 + room_width / 2+gap,room_height,prompt2);
 
 //draw_rectangle(room_width/2, 768-3, room_width/2 - 2 * restart, 768,0);
 //draw_rectangle(room_width/2, 768-3, room_width/2 + 2 * quit, 768,0);

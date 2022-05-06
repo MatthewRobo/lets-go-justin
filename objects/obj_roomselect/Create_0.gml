@@ -40,7 +40,7 @@ zoomsize = room_width / 1.5;
 zoomscale = zoomsize / room_width;
 zoomgap = (room_width-zoomsize)/2+10;
 
-ydraw = room_height-prevsize/2;
+ydraw = room_height-prevsize*0.75;
 ydraw_large = ydraw/2;
 
 

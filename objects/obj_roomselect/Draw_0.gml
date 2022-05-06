@@ -41,3 +41,12 @@ for (var i = -roomlen; i < 2 * roomlen; i++) {
 	draw_sprite_ext(previews[imod],0,xdraw,_ydraw,prevscale,prevscale,0,global.fgcolor2,selected == i ? 1 : 0.6); 
 	draw_sprite_ext(previews[imod],0,xdraw_large,ydraw_large,zoomscale,zoomscale,0,c_white,1); 
 }
+
+var gap = 3;
+draw_set_font(fnt_prompt);
+draw_set_valign(fa_bottom);
+draw_set_halign(fa_right);
+var prompt = "Press down to ban | Press up to unban | F4/down + 3 buttons to rebind | Press Start/[A] to confirm | Press Select/[B] to cancel";
+draw_rectangle(room_width-string_width(prompt)-gap*2,room_height-string_height(prompt)-gap,room_width,room_height,0);
+draw_set_color(global.fgcolor);
+draw_text(room_width-gap,room_height,prompt);
