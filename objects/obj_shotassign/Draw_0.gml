@@ -52,8 +52,8 @@ for (var p = 0; p < global.pmax; p++) {
 	rot = 0;
 	switch p {
 		case 0: hvec = -1; vvec = -1; rot = 180; break;
-		case 1: hvec = 1; vvec = -1; rot = 90; break;
-		case 2: hvec = -1; vvec = 1; rot = 270; break;
+		case 1: hvec =  1; vvec = -1; rot =  90; break;
+		case 2: hvec = -1; vvec =  1; rot = 270; break;
 		//case 3: hvec = 1; vvec = 1; break;
 	}
 	//rot += 180;
@@ -110,7 +110,7 @@ for (p = 0; p < global.pmax; p++) {
 			break;
 			case shot.whip: desc += "Some spread.\nTwo ammo.";
 			break;
-			case shot.wall2: desc += "Lethal beam.\nRather sluggish.";
+			case shot.wall2: desc += "Lethal beam.\nTwo ammo.";
 			break;
 			case shot.random: desc += "Get lucky?";
 			break;
