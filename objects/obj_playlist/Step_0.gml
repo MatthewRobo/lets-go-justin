@@ -4,7 +4,7 @@ if (!someonewon) audio_sound_gain(nowplaying,global.musicgain/10*volscl,0);
 if (inbattle) {
 	if (!someonewon && obj_controller.someonewon) {
 		audio_sound_gain(nowplaying,0,0);
-		audio_sound_gain(nowplaying,global.musicgain/10*volscl,2000);
+		audio_sound_gain(nowplaying,global.musicgain/10*volscl,2500);
 		someonewon = true;
 	}
 } else {
