@@ -8,7 +8,7 @@
   "styleName": "Demi",
   "size": 36.0,
   "bold": false,
-  "italic": false,
+  "italic": true,
   "charset": 0,
   "AntiAlias": 1,
   "first": 0,
@@ -21,6 +21,7 @@
     "path": "texturegroups/Default",
   },
   "ascenderOffset": 0,
+  "ascender": 42,
   "glyphs": {
     "32": {"x":2,"y":2,"w":8,"h":58,"character":32,"shift":8,"offset":0,},
     "33": {"x":244,"y":122,"w":6,"h":58,"character":33,"shift":12,"offset":3,},
