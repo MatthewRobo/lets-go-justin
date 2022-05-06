@@ -35,6 +35,8 @@ for (var i = -roomlen; i < 2 * roomlen; i++) {
 
 	var xdraw_large = room_width / 2 + (i - selectedlerp) * (zoomsize + zoomgap);
 	if (imod >= array_length(previews)) imod = 0;
-	draw_sprite_ext(previews[imod],0,xdraw,ydraw,prevscale,prevscale,0,global.fgcolor2,selected == i ? 1 : 0.6); 
+	var _ydraw = ydraw;
+	if (global.banlist[imod]) _ydraw += 23;
+	draw_sprite_ext(previews[imod],0,xdraw,_ydraw,prevscale,prevscale,0,global.fgcolor2,selected == i ? 1 : 0.6); 
 	draw_sprite_ext(previews[imod],0,xdraw_large,ydraw_large,zoomscale,zoomscale,0,c_white,1); 
 }

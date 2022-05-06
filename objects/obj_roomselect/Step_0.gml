@@ -3,7 +3,7 @@ if (!global.inassign) {
 		var device = global.lookup[player];
 		if (global.pressed[device][input.ST]) {
 			if (selected == 0) selected = irandom_range(1,roomlen-1);
-			else {
+			else if !global.banlist[selected] {
 				global.stage = rooms[selected];
 				room_goto_next();
 			}
@@ -15,6 +15,16 @@ if (!global.inassign) {
 			if (global.pressed[device][input.R]) {
 				selected++;
 				audio_play_sound(snd_shield,0,0);
+			}
+			if (selected != 0) {
+				if (global.pressed[device][input.D]) {
+					global.banlist[selected] = true;
+					audio_play_sound(snd_shield,0,0);
+				}
+				if (global.pressed[device][input.U]) {
+					global.banlist[selected] = false;
+					audio_play_sound(snd_shield,0,0);
+				}
 			}
 			if (global.pressed[device][input.SE]) {
 				room_goto_previous();
