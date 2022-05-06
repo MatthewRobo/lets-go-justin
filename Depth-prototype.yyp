@@ -61,6 +61,7 @@
     {"id":{"name":"spr_Room4Prev","path":"sprites/spr_Room4Prev/spr_Room4Prev.yy",},"order":6,},
     {"id":{"name":"spr_invisible","path":"sprites/spr_invisible/spr_invisible.yy",},"order":4,},
     {"id":{"name":"obj_glitter","path":"objects/obj_glitter/obj_glitter.yy",},"order":9,},
+    {"id":{"name":"spr_blob","path":"sprites/spr_blob/spr_blob.yy",},"order":11,},
     {"id":{"name":"obj_activetrail","path":"objects/obj_activetrail/obj_activetrail.yy",},"order":5,},
     {"id":{"name":"spr_Room6Prev","path":"sprites/spr_Room6Prev/spr_Room6Prev.yy",},"order":8,},
     {"id":{"name":"obj_inputhandler","path":"objects/obj_inputhandler/obj_inputhandler.yy",},"order":3,},
