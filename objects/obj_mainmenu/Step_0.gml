@@ -1,4 +1,4 @@
-modestr[3] = "Music Volume " + string(global.musicgain);
+modestr[3] = "Music: " + string(global.musicgain*10) + "%";
 
 if (!global.inassign) {
 	for (var device = 0; device < GP+KB; device++) {
