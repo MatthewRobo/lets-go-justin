@@ -30,7 +30,7 @@ roomstr = ["Random",
 		   "Hump",
 		   "Horseshoes",
 		   "Teufort"];
-lerpfactor = 0.05;
+lerpfactor = 0.18;
 selectedlerp = 0;
 prevsize = room_width/roomlen;
 prevscale = prevsize/room_width;

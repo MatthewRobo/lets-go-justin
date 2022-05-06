@@ -1,6 +1,8 @@
 if (!global.inassign) {
-	for (var player = 0; player < PLAYERS; player++) {
-		var device = global.lookup[player];
+	for (var device = 0; device < GP+KB; device++) {
+
+	//for (var player = 0; player < PLAYERS; player++) {
+	//	var device = global.lookup[player];
 		if (global.pressed[device][input.ST]) {
 			if (selected == 0) {
 				selected = irandom_range(1,roomlen-1);
@@ -57,9 +59,10 @@ if (!global.inassign) {
 		if (selected == -1) selectedlerp += roomlen;
 		if (selected == roomlen) selectedlerp -= roomlen;
 		selected = (selected + roomlen) mod roomlen;
-		selectedlerp = lerp(selectedlerp,selected,lerpfactor);
 	}
 }
+
+selectedlerp = lerp(selectedlerp,selected,lerpfactor);
 
 prevgap = lerp(prevgap, 10, 0.2);
 zoomgap = lerp(zoomgap, (room_width-zoomsize)/2+10, 0.2);
