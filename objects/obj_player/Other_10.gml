@@ -50,8 +50,8 @@ switch shottype {
 		break;
 	case shot.wallbang:
 		shotobj = obj_wallbang;
-		bulletspeed = -10;
-		bulletmaxspeed = 10;
+		bulletspeed = -14;
+		bulletmaxspeed = 8;
 		gunrecovery = 44;
 		gunreload = 70;
 		shotactive = 240;

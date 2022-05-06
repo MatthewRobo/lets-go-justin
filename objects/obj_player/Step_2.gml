@@ -254,6 +254,8 @@ if (global.hitstop <= 0) {
 						attack.maxspd = bulletmaxspeed;
 						attack.hsp = lengthdir_x(attack.spd, attack.direction);
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
+						attack.maxhsp = lengthdir_x(bulletmaxspeed, attack.direction);
+						attack.maxvsp = lengthdir_y(bulletmaxspeed, attack.direction);
 						attack.timer = shotactive;
 						break;
 					case shot.whiffpunisher:
