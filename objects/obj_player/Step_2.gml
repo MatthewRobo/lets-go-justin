@@ -339,21 +339,34 @@ if (global.hitstop <= 0) {
 						//trail.image_blend = color;
 						
 						gap = 3;
-						for (i = 0; i < 4; i ++) {
+						for (i = 0; i < 5; i ++) {
 							for (j = -1; j <= 1; j += 2) {
 								attack = instance_create_layer(x + lengthdir_x(dist - i * gap, direction), y + lengthdir_y(dist - i * gap, direction), "hitboxes", shotobj);
 								attack.image_xscale = 2;
 								attack.image_yscale = 1;
 								attack.owner = self;
-								attack.timer = i == 1 || i == 2 ? shotactive + 2 * i : shotactive + i;
+								attack.timer = i mod 2 == 1 ? shotactive + 2 * i : shotactive + i;
 								attack.team = team;
 								attack.direction = direction + 100 * j + (i * 20 ) * j;
 								attack.image_angle = attack.direction;
-								attack.spd = i == 1 || i == 2 ? 1.5 * bulletspeed : bulletspeed;
+								attack.spd = i mod 2 == 1 ? 1.5 * bulletspeed : bulletspeed;
 								attack.hsp = lengthdir_x(attack.spd, attack.direction);
 								attack.vsp = lengthdir_y(attack.spd, attack.direction);
 							}
 						}
+						
+						//attack = instance_create_layer(x + lengthdir_x(dist - i * gap, direction), y + lengthdir_y(dist - i * gap, direction), "hitboxes", shotobj);
+						//attack.image_xscale = 2;
+						//attack.image_yscale = 1;
+						//attack.owner = self;
+						//attack.timer = shotactive * 2;
+						//attack.team = team;
+						//attack.direction = direction + 180;
+						//attack.image_angle = attack.direction;
+						//attack.spd = bulletspeed;
+						//attack.hsp = lengthdir_x(attack.spd, attack.direction);
+						//attack.vsp = lengthdir_y(attack.spd, attack.direction);
+						
 						break;
 					case shot.sin:
 						switch ammo {
