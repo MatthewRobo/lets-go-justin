@@ -17,6 +17,19 @@ previews = [spr_RoomBorder,
 			spr_Room11Prev,
 			spr_Room12Prev];
 selected = 0;
+roomstr = ["Random",
+           "Wings",
+		   "Bucket",
+		   "Umpire",
+		   "Chandeliers",
+		   "Stadium",
+		   "WarioWare",
+		   "Shaft",
+		   "3-E",
+		   "Crosshair",
+		   "Hump",
+		   "Horseshoes",
+		   "Teufort"];
 lerpfactor = 0.05;
 selectedlerp = 0;
 prevsize = room_width/roomlen;

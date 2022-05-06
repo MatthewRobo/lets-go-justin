@@ -20,6 +20,7 @@ draw_text(room_width/2,20,mode);
 
 draw_set_alpha(1);
 
+draw_set_font(fnt_tiny);
 
 //draw_text(room_width/2,room_height/2,rooms[selected]);
 for (var i = -roomlen; i < 2 * roomlen; i++) {
@@ -33,10 +34,10 @@ for (var i = -roomlen; i < 2 * roomlen; i++) {
 	//	draw_text_color(xdraw_large,ydraw_large,"Random",c_white,c_white,c_white,c_white,1);
 	//}
 
-	var xdraw_large = room_width / 2 + (i - selectedlerp) * (zoomsize + zoomgap);
 	if (imod >= array_length(previews)) imod = 0;
 	var _ydraw = ydraw;
 	if (global.banlist[imod]) _ydraw += 23;
+	draw_text_color(xdraw,_ydraw-64,roomstr[imod],global.fgcolor2,global.fgcolor2,global.fgcolor2,global.fgcolor2,selected == i ? 1 : 0.6);
 	draw_sprite_ext(previews[imod],0,xdraw,_ydraw,prevscale,prevscale,0,global.fgcolor2,selected == i ? 1 : 0.6); 
 	draw_sprite_ext(previews[imod],0,xdraw_large,ydraw_large,zoomscale,zoomscale,0,c_white,1); 
 }
