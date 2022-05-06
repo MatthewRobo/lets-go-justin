@@ -8,6 +8,8 @@ if (!global.inassign) {
 			} else if !global.banlist[selected] {
 				global.stage = rooms[selected];
 				room_goto_next();
+			} else {
+				audio_play_sound(snd_land,0,0);
 			}
 		} else {
 			if (global.pressed[device][input.L]) {
@@ -20,12 +22,20 @@ if (!global.inassign) {
 			}
 			if (selected != 0) {
 				if (global.pressed[device][input.D]) {
-					global.banlist[selected] = true;
-					audio_play_sound(snd_shield,0,0);
+					if !global.banlist[selected] {
+						global.banlist[selected] = true;
+						audio_play_sound(snd_shield,0,0);
+					} else {
+						audio_play_sound(snd_land,0,0);
+					}
 				}
 				if (global.pressed[device][input.U]) {
-					global.banlist[selected] = false;
-					audio_play_sound(snd_shield,0,0);
+					if global.banlist[selected] {
+						global.banlist[selected] = false;
+						audio_play_sound(snd_shield,0,0);
+					} else {
+						audio_play_sound(snd_land,0,0);
+					}
 				}
 			}
 			if (global.pressed[device][input.SE]) {
