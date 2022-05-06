@@ -27,3 +27,5 @@ totalframes = 0;
 seconds = totalframes div 60;
 
 //instance_create_depth(room_width/2,room_height/2,-9999,obj_camera);
+
+someonewon = false;

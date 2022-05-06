@@ -44,10 +44,31 @@ if (quit > 1) {
 	room_goto(Pad_Select);
 }
 
+if (global.pmax == 4) {
+	if (obj_player1.deaths + obj_player3.deaths >= global.firstto) {
+		someonewon = true;
+	}
 
+	if (obj_player2.deaths + obj_player4.deaths >= global.firstto) {
+		someonewon = true;
+	}
+} else {
+	if (obj_player1.deaths == global.firstto) && (obj_player2.deaths == global.firstto)
+	&& obj_player1.dead && obj_player2.dead {
+		global.firstto+=2;
+	} else {
+		if (obj_player1.deaths >= global.firstto) {
+			someonewon = true;
+		}
+		if (obj_player2.deaths >= global.firstto) {
+			someonewon = true;
+		}
+	}
+
+}
 
 
 roundstart--;
 if (roundstart == 0) audio_play_sound(snd_spawn,0,0);
-if (global.hitstop <= 0 && roundstart <= 0) totalframes++;
+if (global.hitstop <= 0 && roundstart <= 0 && !someonewon) totalframes++;
 seconds = totalframes div 60;
