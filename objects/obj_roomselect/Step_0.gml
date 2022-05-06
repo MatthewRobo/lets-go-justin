@@ -23,6 +23,18 @@ if (!global.inassign) {
 				selected++;
 				audio_play_sound(snd_shield,0,0);
 			}
+			if (selected == 0) {
+				if (global.pressed[device][input.D]) {
+					for (var i = 1; i < roomlen; i++) {
+						global.banlist[i] = true;
+					}
+				}
+				if (global.pressed[device][input.U]) {
+					for (var i = 1; i < roomlen; i++) {
+						global.banlist[i] = false;
+					}
+				}
+			}
 			if (selected != 0) {
 				if (global.pressed[device][input.D]) {
 					if !global.banlist[selected] {
