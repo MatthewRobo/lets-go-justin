@@ -19,6 +19,7 @@ if (teams) {
 	hgap = 256;
 	header = "Single VS";
 }
+hgap *= start;
 
 draw_text(xdraw + 000, ydraw, header);
 

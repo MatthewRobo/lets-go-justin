@@ -34,11 +34,11 @@ lerpfactor = 0.05;
 selectedlerp = 0;
 prevsize = room_width/roomlen;
 prevscale = prevsize/room_width;
-prevgap = 10;
+prevgap = -prevsize;
 
 zoomsize = room_width / 1.5;
 zoomscale = zoomsize / room_width;
-zoomgap = (room_width-zoomsize)/2+10;
+zoomgap = -zoomsize;
 
 ydraw = room_height-prevsize*0.75;
 ydraw_large = ydraw/2;

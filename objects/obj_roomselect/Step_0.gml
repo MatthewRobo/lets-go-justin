@@ -38,3 +38,6 @@ if (!global.inassign) {
 		selectedlerp = lerp(selectedlerp,selected,lerpfactor);
 	}
 }
+
+prevgap = lerp(prevgap, 10, 0.2);
+zoomgap = lerp(zoomgap, (room_width-zoomsize)/2+10, 0.2);

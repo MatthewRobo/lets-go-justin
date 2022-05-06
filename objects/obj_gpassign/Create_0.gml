@@ -24,3 +24,5 @@ usinganalogue = false;
 
 posdraw = array_create(GP+KB,0);
 lerpfactor = 0.4;
+
+start = 0;

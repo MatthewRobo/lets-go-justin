@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+draw_self();
 text = "Hold start to continue";
 draw_set_font(Font1);
 draw_set_halign(fa_center);

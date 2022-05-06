@@ -170,3 +170,6 @@ for (var row = 0; row < rows; row++) {
 		shotcounter++;
 	}
 }
+
+icon_htotal = lerp(icon_htotal,iconsize+icon_hgap,0.2);
+icon_vtotal = lerp(icon_vtotal,iconsize+icon_vgap,0.2);

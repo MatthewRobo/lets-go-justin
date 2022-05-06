@@ -40,8 +40,9 @@ iconsize = 64;
 iconscale = iconsize / 16;
 icon_hgap = 104;
 icon_vgap = 72;
-icon_htotal = iconsize+icon_hgap;
-icon_vtotal = iconsize+icon_vgap;
+icon_htotal = 0;
+icon_vtotal = 0;
+
 
 gbid = layer_background_get_id("background");
 layer_background_blend(gbid, global.bgcolor);

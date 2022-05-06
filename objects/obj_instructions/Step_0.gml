@@ -26,3 +26,5 @@ timer = clamp(timer,0,1);
 if (timer >= 1) {
 	room_goto(global.stage);
 }
+
+y=lerp(y,384,0.2);

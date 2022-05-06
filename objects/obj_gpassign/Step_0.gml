@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+start = lerp(start,1,0.2);
+
 pads = "";
 if (!global.inassign) {
 	for (var i = 0; i < GP+KB; i++)

@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_ControlsPreview",
+    "path": "sprites/spr_ControlsPreview/spr_ControlsPreview.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
