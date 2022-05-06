@@ -5,8 +5,10 @@ draw_set_font(Font1);
 var xdraw = room_width / 2;
 var lineheight = string_height("Single Versus");
 
-draw_set_color(global.fgcolor);
 var ydrawlerp = 512 + 6 + selectedlerp*(lineheight+12);
+draw_set_color(global.fgcolor2);
+draw_rectangle(0,ydrawlerp-lineheight/2-3,room_width,ydrawlerp+lineheight/2+3,0);
+draw_set_color(global.fgcolor);
 draw_rectangle(0,ydrawlerp-lineheight/2,room_width,ydrawlerp+lineheight/2,0);
 
 var distfromteam = 1-abs(1-selectedlerp);
