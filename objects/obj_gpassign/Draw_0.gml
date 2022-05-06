@@ -21,19 +21,25 @@ if (teams) {
 }
 
 draw_text(xdraw + 000, ydraw, header);
-draw_set_color(global.color[0]);
-draw_text(xdraw - hgap, ydraw, "Player 1");
-draw_set_color(global.color[1]);
-draw_text(xdraw + hgap, ydraw, "Player 2");
+
 if (teams) {
+	draw_set_color(global.color[0]);
+	draw_text(xdraw - hgap, ydraw, "Player 2");
+	draw_set_color(global.color[1]);
+	draw_text(xdraw + hgap, ydraw, "Player 3");
 	draw_set_color(global.color[2]);
-	draw_text(xdraw - 2 * hgap, ydraw, "Player 3");
+	draw_text(xdraw - 2 * hgap, ydraw, "Player 1");
 	draw_set_color(global.color[3]);
 	draw_text(xdraw + 2 * hgap, ydraw, "Player 4");
 
 
-	draw_text_color(xdraw - hgap * 1.5, ydraw-vgap, "Team 1",global.color[2],global.color[0],global.color[0],global.color[2],1);
-	draw_text_color(xdraw + hgap * 1.5, ydraw-vgap, "Team 2",global.color[1],global.color[3],global.color[3],global.color[1],1);
+	draw_text_color(xdraw - hgap * 1.5, ydraw-vgap, "Team Hot",global.color[2],global.color[0],global.color[0],global.color[2],1);
+	draw_text_color(xdraw + hgap * 1.5, ydraw-vgap, "Team Cool",global.color[1],global.color[3],global.color[3],global.color[1],1);
+} else {
+	draw_set_color(global.color[0]);
+	draw_text(xdraw - hgap, ydraw, "Player 1");
+	draw_set_color(global.color[1]);
+	draw_text(xdraw + hgap, ydraw, "Player 2");
 }
 
 ydraw += vgap * 2;

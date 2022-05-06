@@ -6,7 +6,7 @@ event_inherited();
 color = $00ccff;
 //color = $d000ff
 team = 2;
-teamstr = "3";
+teamstr = global.mode == gamemode.teamvs ? "1" : "3";
 
 teammate = obj_player1;
 

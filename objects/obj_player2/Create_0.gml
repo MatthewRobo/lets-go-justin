@@ -5,7 +5,7 @@
 event_inherited();
 
 team = 1;
-teamstr = "2";
+teamstr = global.mode == gamemode.teamvs ? "3" : "2";
 
 if (global.mode = gamemode.training) {
 	spr_idle = spr_p0idle;

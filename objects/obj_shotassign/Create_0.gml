@@ -62,6 +62,17 @@ for (var i = 0; i < global.pmax; i++) {
 	with (preview[i]) {
 		event_perform(ev_room_start,0);
 	}
+	if (global.mode == gamemode.teamvs) {
+		switch i {
+			case 0: preview[i].teamstr = "2"; break;
+			case 1: preview[i].teamstr = "3"; break;
+			case 2: preview[i].teamstr = "1"; break;
+			case 3: preview[i].teamstr = "4"; break;
+		}
+	} else {
+		preview[i].teamstr = string(i+1);
+
+	}
 }
 
 px = array_create(4,room_width/2);

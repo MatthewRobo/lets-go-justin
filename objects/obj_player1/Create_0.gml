@@ -5,6 +5,5 @@
 event_inherited();
 
 team = 0;
-teamstr = "1";
-
+teamstr = global.mode == gamemode.teamvs ? "2" : "1";
 

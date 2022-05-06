@@ -62,7 +62,18 @@ for (var p = 0; p < global.pmax; p++) {
 	draw_set_font(fnt_smalldesc);
 	draw_set_color(_color);
 	draw_set_valign(fa_middle);
-	draw_text(_px[p] + hvec * (iconsize / 2 + 32),_py[p] + vvec * (iconsize / 2),"P" + string(p+1));
+	var pstring = "P";
+	if (global.mode == gamemode.teamvs) {
+		switch p {
+			case 0: pstring += "2"; break;
+			case 1: pstring += "3"; break;
+			case 2: pstring += "1"; break;
+			case 3: pstring += "4"; break;
+		}
+	} else {
+		pstring += string(p+1);
+	}
+	draw_text(_px[p] + hvec * (iconsize / 2 + 32),_py[p] + vvec * (iconsize / 2),pstring);
 				
 	hvec = 0.25;
 	vvec = 0.25;

@@ -113,25 +113,25 @@ if (global.pmax == 4) {
 	|| (obj_player1.deaths + obj_player3.deaths == global.firstto + 1) {
 		draw_set_colour(global.color[1]);
 		draw_set_halign(fa_center);
-		draw_text(room_width/2, room_height/2, "TEAM 2\nWIN");
+		draw_text(room_width/2, room_height/2, "TEAM COOL\nWINS");
 	}
 
 	if (obj_player2.deaths + obj_player4.deaths == global.firstto) 
 	|| (obj_player2.deaths + obj_player4.deaths == global.firstto + 1) {
 		draw_set_colour(global.color[0]);
 		draw_set_halign(fa_center);
-		draw_text(room_width/2, room_height/2, "TEAM 1\nWIN");
+		draw_text(room_width/2, room_height/2, "TEAM HOT\nWINS");
 	}
 } else {
 	if (obj_player1.deaths == global.firstto) {
 		draw_set_colour(global.color[1]);
 		draw_set_halign(fa_center);
-		draw_text(room_width/2, room_height/2, "PLAYER 2\nWIN");
+		draw_text(room_width/2, room_height/2, "PLAYER 2\nWINS");
 	}
 	if (obj_player2.deaths == global.firstto) {
 		draw_set_colour(global.color[0]);
 		draw_set_halign(fa_center);
-		draw_text(room_width/2, room_height/2, "PLAYER 1\nWIN");
+		draw_text(room_width/2, room_height/2, "PLAYER 1\nWINS");
 	}
 }
 
