@@ -14,8 +14,8 @@
   "soundFile": "snd_land.wav",
   "duration": 0.194467,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "sfx",
+    "path": "folders/Sounds/sfx.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_land",

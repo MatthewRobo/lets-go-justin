@@ -14,8 +14,8 @@
   "soundFile": "snd_slash.wav",
   "duration": 0.145556,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "sfx",
+    "path": "folders/Sounds/sfx.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_slash",
