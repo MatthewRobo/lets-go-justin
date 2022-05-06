@@ -108,14 +108,14 @@ if (roundstart > 0) {
 	draw_set_font(fnt_win);
 	var ready = "Ready?";
 	var _xdraw = room_width/2 + 118*dtan(lerp(-80,80,roundratio));
-	draw_set_valign(fa_middle);
 	draw_set_halign(fa_center);
 	draw_set_color(global.fgcolor2);
-	draw_rectangle(_xdraw-string_width(ready)/2-10,room_height/2-string_height(ready)/2,
-	               _xdraw+string_width(ready)/2+10,room_height/2+string_height(ready)/2,0);
+	draw_rectangle(_xdraw-string_width(ready)/2-10,room_height/2-string_height(ready),
+	               _xdraw+string_width(ready)/2+10,room_height/2,0);
+	//draw_rectangle(room_width/2- 118*dtan(lerp(80,0,roundratio)), 388, room_width/2+118*dtan(lerp(80,0,roundratio)), 392,0);
 	draw_set_color(global.bgcolor);
 	draw_text(_xdraw, room_height/2, "Ready?");
-	//draw_rectangle(room_width/2-roundstart, 388, room_width/2+roundstart, 392,0);
+	
 }
 
 
