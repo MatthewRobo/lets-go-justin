@@ -31,7 +31,8 @@ if (!global.inassign) {
 						}
 						room_goto(Room_Select);
 						break;
-					case -1: game_end(); break;
+					case -1: game_end(); audio_play_sound(snd_parry,0,0); break;
+					case -2: audio_stop_sound(obj_playlist.nowplaying); audio_play_sound(snd_parry,0,0); palette = irandom(11); break;
 					default: room_goto_next(); break;
 					
 				}
