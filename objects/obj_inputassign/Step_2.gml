@@ -2,6 +2,13 @@
 // You can write your code in this editor
 
 // lockout until no one is pressing a button
+for (var device = 0; device < GP+KB; device++) {
+	for (var p = 0; p < PLAYERS; p++) {
+		if (device == global.lookup[p]) {
+			slot[device] = p;
+		}
+	}
+}
 if (lockout || !candestroy) {
 	for (var d = 0; d < GP; d++) {
 		buttonsheld = 0;
@@ -13,11 +20,6 @@ if (lockout || !candestroy) {
 	}
 } else {
 	for (var device = 0; device < GP+KB; device++) {
-		for (var p = 0; p < PLAYERS; p++) {
-			if (device == global.lookup[p]) {
-				slot[device] = p;
-			}
-		}
 		for (var j = 0; j < input.length; j++) {
 			if global.pressed[device][j] {
 				if (slot[device] == -99) {
@@ -371,8 +373,12 @@ if (lockout || !candestroy) {
 	}
 }
 
-for (var i = 1; i < PLAYERS; i++) {
-if (global.lookup[i] == GP+KB) ready[i]=true;
+for (var i = 0; i < PLAYERS; i++) {
+	if (global.lookup[i] < GP+KB && ready[i]) {
+		for (var j = 0; j < PLAYERS; j++) {
+			if (global.lookup[j] == GP+KB) ready[j]=true;
+		}
+	}
 }
 
 if (ready[0] && ready[1] && ready[2] && ready[3]) instance_destroy();

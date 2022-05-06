@@ -30,14 +30,20 @@ draw_rectangle(xgap+distfromteam*(xwid+xgap),ydrawlerp-lineheight/2+pgap,xgap+xw
 draw_set_color(global.color[1]);
 draw_rectangle(room_width-(xgap+xwid+1*(xgap+xwid)),ydrawlerp-lineheight/2+pgap,room_width-(xgap+distfromteam*(xwid+xgap)),ydrawlerp+lineheight/2-pgap,0);
 
-
+draw_set_color(global.fgcolor2);
 for (var i = 0; i < modelen; i++) {
 	
 	var ydraw = yoffset + 512 + i * (lineheight + 12);
-	draw_set_color(global.fgcolor2);
 	ydraw+=8;
 	draw_text(xdraw,ydraw,modestr[i]);
 }
 
 
-
+var gap = 3;
+draw_set_font(fnt_prompt);
+draw_set_valign(fa_bottom);
+draw_set_halign(fa_right);
+var prompt = "Press Start/[A] to confirm | Press Select/[B] to cancel";
+draw_rectangle(room_width-string_width(prompt)-gap*2,room_height-string_height(prompt)-gap,room_width,room_height,0);
+draw_set_color(global.fgcolor);
+draw_text(room_width-gap,room_height,prompt);

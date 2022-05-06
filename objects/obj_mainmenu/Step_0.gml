@@ -1,5 +1,13 @@
 if (!global.inassign) {
 	for (var device = 0; device < GP+KB; device++) {
+		if global.pressed[device][input.L] {
+			palette--;
+			audio_play_sound(snd_shield,0,0);
+		}
+		if global.pressed[device][input.R] {
+			palette++;
+			audio_play_sound(snd_shield,0,0);
+		}
 		if (expanded) {
 			if (global.pressed[device][input.ST]) {
 				if (global.mode == gamemode.training) {
@@ -18,14 +26,6 @@ if (!global.inassign) {
 				}
 				if (global.pressed[device][input.D]) {
 					selected++;
-					audio_play_sound(snd_shield,0,0);
-				}
-				if global.pressed[device][input.L] {
-					palette--;
-					audio_play_sound(snd_shield,0,0);
-				}
-				if global.pressed[device][input.R] {
-					palette++;
 					audio_play_sound(snd_shield,0,0);
 				}
 				if global.pressed[device][input.SE] {
