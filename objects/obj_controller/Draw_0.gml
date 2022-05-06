@@ -7,7 +7,7 @@ draw_set_alpha(1*!GREYBOX);
 
 var pipgap = 4;
 var centergap = 48;
-var pipwidth = ((room_width/2 - centergap - 64 + 3) - pipgap * global.firstto) / global.firstto;
+var pipwidth = ((room_width/2 - centergap - 128 + 3) - pipgap * global.firstto) / global.firstto;
 
 piptotal = pipgap + pipwidth;
 if (global.pmax==4) {

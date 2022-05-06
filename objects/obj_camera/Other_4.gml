@@ -8,7 +8,7 @@ view_set_hport(0, room_height);
 
 //Camera creation
 //Build a camera at (0,0), with size 640x480, 0 degrees of angle, no target instance, instant-jupming hspeed and vspeed, with a 32 pixel border
-camera = camera_create_view(0, 0, 1344, 768, 0, self, -1, -1, 5555, 5555);
+camera = camera_create_view(0, 0, 1366, 768, 0, self, -1, -1, 5555, 5555);
 
 //Set view0 to use the camera "camera"
 view_set_camera(0, camera);
