@@ -44,4 +44,4 @@ ydraw = room_height-prevsize/2;
 ydraw_large = ydraw/2;
 
 
-audio_play_sound(snd_parry,0,0);
+if (global.mode == gamemode.training) audio_play_sound(snd_parry,0,0);

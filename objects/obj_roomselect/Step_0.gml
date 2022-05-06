@@ -2,8 +2,10 @@ if (!global.inassign) {
 	for (var player = 0; player < PLAYERS; player++) {
 		var device = global.lookup[player];
 		if (global.pressed[device][input.ST]) {
-			if (selected == 0) selected = irandom_range(1,roomlen-1);
-			else if !global.banlist[selected] {
+			if (selected == 0) {
+				selected = irandom_range(1,roomlen-1);
+				audio_play_sound(snd_slash,0,0);
+			} else if !global.banlist[selected] {
 				global.stage = rooms[selected];
 				room_goto_next();
 			}

@@ -41,7 +41,7 @@ if (restart > 1) {
 	room_restart();
 }
 if (quit > 1) {
-	room_goto(Pad_Select);
+	room_goto(global.mode == gamemode.training ? Room_Select : Pad_Select);
 }
 
 if (global.pmax == 4) {
