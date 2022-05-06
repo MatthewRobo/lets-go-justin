@@ -50,11 +50,19 @@ for (var p = 0; p < global.pmax; p++) {
 	hvec = 1;
 	vvec = 1;
 	rot = 0;
-	switch p {
-		case 0: hvec = -1; vvec = -1; rot = 180; break;
-		case 1: hvec =  1; vvec = -1; rot =  90; break;
-		case 2: hvec = -1; vvec =  1; rot = 270; break;
-		//case 3: hvec = 1; vvec = 1; break;
+	if (global.mode == gamemode.teamvs) {
+		switch p {
+			case 0: hvec = -1; vvec = -1; rot = 180; break;
+			case 1: hvec =  1; vvec = -1; rot =  90; break;
+			case 2: hvec = -1; vvec =  1; rot = 270; break;
+			//case 3: hvec = 1; vvec = 1; break;
+		}
+	} else {
+		switch p {
+			case 0: hvec = -1; vvec =  1; rot = 180; break;
+			case 1: hvec =  1; vvec = -1; rot =  90; break;
+
+		}
 	}
 	//rot += 180;
 	_color = ready[p] ? c_white : global.color[p];
