@@ -64,18 +64,18 @@ for (var p = 0; p < global.pmax; p++) {
 	draw_set_valign(fa_middle);
 	draw_text(_px[p] + hvec * (iconsize / 2 + 32),_py[p] + vvec * (iconsize / 2),"P" + string(p+1));
 				
-	hvec = 1;
-	vvec = 1;
+	hvec = 0.25;
+	vvec = 0.25;
 
 	frame = ready[p] ? 0 : iconframes;
 	switch p {
-		case 1: frame += 4;
-		case 2: frame += 2;
+		case 1: frame += 16;
+		case 2: frame += 8;
 	}
 	frame = frame mod sprite_get_number(spr_playericon);
 	draw_sprite_ext(spr_playericon,frame,_px[p],_py[p],iconscale*hvec,iconscale*vvec,rot,_color,1);
 	if (global.pmax == 2) {
-		frame = (frame + 2) mod sprite_get_number(spr_playericon);
+		frame = (frame + 8) mod sprite_get_number(spr_playericon);
 		switch p {
 			case 0: rot = 270; break;
 			case 1: rot = 0; break;

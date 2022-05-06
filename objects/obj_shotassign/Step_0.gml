@@ -148,7 +148,7 @@ for (i = 0; i < global.pmax; i++) {
 }
 if (totalready >= global.pmax) room_goto_next();
 
-iconframes += 1/5;
+iconframes += 4/5;
 iconframes = iconframes mod sprite_get_number(spr_playericon);
 
 xdraw = (room_width - rows*icon_htotal)/2;
