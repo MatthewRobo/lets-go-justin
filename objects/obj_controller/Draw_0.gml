@@ -68,7 +68,7 @@ draw_set_valign(fa_bottom);
 //draw_rectangle(room_width/2-1, 4, room_width/2+1, 59,0);
 
 if (roundstart > 0) {
-	draw_set_font(fnt_large);
+	draw_set_font(fnt_win);
 	draw_text(room_width/2, room_height/2, "Ready?");
 	draw_rectangle(room_width/2-roundstart, 388, room_width/2+roundstart, 392,0);
 }
@@ -118,7 +118,7 @@ draw_text(centergap + hoffset2 + room_width / 2+gap,room_height,prompt2);
 //draw_rectangle(room_width/2, 768-4, room_width/2 + 2 * quit, 768-8,0);
 
 draw_set_valign(fa_middle);
-draw_set_font(fnt_large);
+draw_set_font(fnt_win);
 if (global.pmax == 4) {
 	if (obj_player1.deaths + obj_player3.deaths == global.firstto) 
 	|| (obj_player1.deaths + obj_player3.deaths == global.firstto + 1) {

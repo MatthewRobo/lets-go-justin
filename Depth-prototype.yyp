@@ -125,6 +125,7 @@
     {"id":{"name":"obj_trailer","path":"objects/obj_trailer/obj_trailer.yy",},"order":3,},
     {"id":{"name":"obj_player3","path":"objects/obj_player3/obj_player3.yy",},"order":3,},
     {"id":{"name":"spr_p3idle","path":"sprites/spr_p3idle/spr_p3idle.yy",},"order":10,},
+    {"id":{"name":"fnt_win","path":"fonts/fnt_win/fnt_win.yy",},"order":9,},
     {"id":{"name":"Pad_Select","path":"rooms/Pad_Select/Pad_Select.yy",},"order":1,},
     {"id":{"name":"obj_splatter","path":"objects/obj_splatter/obj_splatter.yy",},"order":14,},
     {"id":{"name":"spr_geyser","path":"sprites/spr_geyser/spr_geyser.yy",},"order":9,},
