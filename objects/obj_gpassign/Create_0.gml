@@ -22,3 +22,5 @@ if (global.mode != gamemode.training) audio_play_sound(snd_parry,0,0);
 
 gbid = layer_background_get_id("background");
 layer_background_blend(gbid, global.bgcolor);
+
+usinganalogue = false;

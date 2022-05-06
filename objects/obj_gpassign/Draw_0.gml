@@ -10,7 +10,7 @@ draw_set_valign(fa_top);
 xdraw = room_width / 2;
 ydraw = 60;
 vgap = string_height("(Team 12g)");
-bottomtext = "";
+var prompt = "";
 draw_set_color(c_white);
 if (teams) {
 	hgap = 180;
@@ -38,8 +38,7 @@ if (teams) {
 }
 
 ydraw += vgap * 2;
-
-
+var usedanalogue = false;
 for (var i = 0; i < GP+KB; i++;)
 {
 	draw_set_colour(global.fgcolor2);
@@ -49,7 +48,14 @@ for (var i = 0; i < GP+KB; i++;)
 		}
 		label = device_to_string(i);
 		if (i < GP) {
-			if (gamepad_axis_value(i, gp_axislh) != 0 && abs(gamepad_axis_value(i, gp_axislh)) != 1 ) bottomtext = "THIS GAME WAS MADE FOR DIGITAL INPUT\nANALOGUE WILL BE A WORSE EXPERIENCE\n";
+			
+			if (gamepad_axis_value(i, gp_axislh) != 0)
+			{
+				usedanalogue = true;
+				if (abs(gamepad_axis_value(i, gp_axislh)) != 1) {
+					usinganalogue = true;
+				}
+			}
 		}
 		posdraw = position[i];
 		switch position[i] {
@@ -64,10 +70,15 @@ for (var i = 0; i < GP+KB; i++;)
 	}
 }
 
-draw_set_colour(c_white);
+if (!usedanalogue && usinganalogue) usinganalogue = false;
 
-draw_set_font(fnt_smalldesc);
-draw_set_halign(fa_center);
+draw_set_colour(global.fgcolor2);
+var gap = 3;
+draw_set_font(fnt_prompt);
 draw_set_valign(fa_bottom);
-bottomtext += "Press left/right to select\nPress start/slash when ready\nPress select/shoot to go back";
-draw_text(xdraw, room_height - 20, bottomtext);
+draw_set_halign(fa_right);
+if (usinganalogue) prompt = "This game was made for digital input! Using analogue will be a worse experience.\n";
+prompt += "Press left/right to pick a side | Press Start/[A] to confirm | Press Select/[B] to cancel";
+draw_rectangle(room_width-string_width(prompt)-gap*2,room_height-string_height(prompt)-gap,room_width,room_height,0);
+draw_set_color(global.fgcolor);
+draw_text(room_width-gap,room_height,prompt);
