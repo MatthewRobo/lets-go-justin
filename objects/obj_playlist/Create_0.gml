@@ -28,12 +28,24 @@ StepRightUp,
 SuspiciousBlue,
 SwingMeAnother6,
 Theme,
-VsKogasa
+VsKogasa,
+Exit133Hagane,
+CloakAndRevolver,
 ]
 
 menumus = [CallOut,
 ReadyToSortie,
-StrategicBeat
+StrategicBeat,
+HellsinkerMenu1,
+HellsinkerMenu2,
+Lobby,
+Pregame,
+CCCExemia,
+CCExemia,
+ConMiSombra,
+MoundOfShigan,
+Ring27Stage1,
+WarStart,
 ]
 
 someonewon = 0;
