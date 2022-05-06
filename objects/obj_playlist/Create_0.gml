@@ -1,5 +1,7 @@
 nowplaying = noone;
-
+global.musicgain = 5;
+musicpercent = 1;
+inbattle = false;
 battlemus = [Aeronaut,
 BackdoorBlaster,
 BeginnersLuck,
@@ -33,3 +35,5 @@ menumus = [CallOut,
 ReadyToSortie,
 StrategicBeat
 ]
+
+someonewon = 0;

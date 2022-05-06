@@ -56,6 +56,7 @@ if (global.pmax == 4) {
 	if (obj_player1.deaths == global.firstto) && (obj_player2.deaths == global.firstto)
 	&& obj_player1.dead && obj_player2.dead {
 		global.firstto+=2;
+		someonewon = false;
 	} else {
 		if (obj_player1.deaths >= global.firstto) {
 			someonewon = true;

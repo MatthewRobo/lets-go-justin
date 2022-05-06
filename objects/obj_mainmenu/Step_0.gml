@@ -1,12 +1,25 @@
+modestr[3] = "Music Volume " + string(global.musicgain);
+
 if (!global.inassign) {
 	for (var device = 0; device < GP+KB; device++) {
-		if global.pressed[device][input.L] {
-			palette--;
-			audio_play_sound(snd_shield,0,0);
-		}
-		if global.pressed[device][input.R] {
-			palette++;
-			audio_play_sound(snd_shield,0,0);
+		if (global.mode != -2) {
+			if global.pressed[device][input.L] {
+				palette--;
+				audio_play_sound(snd_shield,0,0);
+			}
+			if global.pressed[device][input.R] {
+				palette++;
+				audio_play_sound(snd_shield,0,0);
+			}
+		} else {
+			if global.pressed[device][input.L] {
+				global.musicgain--;
+				audio_play_sound(snd_shield,0,0);
+			}
+			if global.pressed[device][input.R] {
+				global.musicgain++;
+				audio_play_sound(snd_shield,0,0);
+			}
 		}
 		if (expanded) {
 			if (global.pressed[device][input.ST]) {

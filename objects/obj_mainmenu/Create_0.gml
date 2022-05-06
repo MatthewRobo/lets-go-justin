@@ -2,8 +2,8 @@ gbid = layer_background_get_id("background");
 layer_background_blend(gbid, global.bgcolor);
 
 if (!global.browser) {
-	modes = [gamemode.versus, gamemode.teamvs, gamemode.training, -1];
-	modestr = ["Versus", "Team VS", "Training", "Quit"];
+	modes = [gamemode.versus, gamemode.teamvs, gamemode.training,-2, -1];
+	modestr = ["Versus", "Team VS", "Training", "Music Volume " + string(global.musicgain*10) , "Quit"];
 } else {
 	modes = [gamemode.versus, gamemode.training];
 	modestr = ["Versus", "Training"];
