@@ -104,7 +104,7 @@ var hoffset2 = _ans2*room_width/2;
 draw_rectangle(-centergap + hoffset1 + room_width/2-string_width(prompt1)-gap*2,room_height-string_height(prompt1)-gap,-centergap + room_width/2,room_height,0);
 draw_rectangle(centergap + room_width/2,room_height-string_height(prompt2)-gap, centergap + hoffset2 + room_width/2+string_width(prompt2)+gap*2,room_height,0);
 
-draw_set_color(global.fgcolor);
+draw_set_color(global.bgcolor);
 draw_text(-centergap + hoffset1 + room_width / 2-gap,room_height,prompt1);
 
 draw_set_halign(fa_left);

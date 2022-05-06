@@ -45,5 +45,5 @@ draw_set_valign(fa_bottom);
 draw_set_halign(fa_right);
 var prompt = "Press F4 (keyboard) or down + any three buttons (controller) to rebind controls | Press Start/[A] to confirm | Press Select/[B] to cancel";
 draw_rectangle(room_width-string_width(prompt)-gap*2,room_height-string_height(prompt)-gap,room_width,room_height,0);
-draw_set_color(global.fgcolor);
+draw_set_color(global.bgcolor);
 draw_text(room_width-gap,room_height,prompt);
