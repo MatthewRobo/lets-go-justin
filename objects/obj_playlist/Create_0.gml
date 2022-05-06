@@ -37,3 +37,8 @@ StrategicBeat
 ]
 
 someonewon = 0;
+
+battlevol = array_create(array_length(battlemus),1);
+menuvol = array_create(array_length(menumus),1);
+
+volscl = 1;

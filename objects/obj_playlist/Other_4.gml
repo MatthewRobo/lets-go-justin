@@ -20,3 +20,16 @@ if (inbattle) {
 }
 
 someonewon = false;
+
+for (var i = 0; i < array_length(menumus); i++) {
+	if (audio_get_name(nowplaying) == audio_get_name(menumus[i])) {
+		volscl = menuvol[i];
+	}
+}
+
+for (var i = 0; i < array_length(menumus); i++) {
+	if (audio_get_name(nowplaying) == audio_get_name(battlemus[i])) {
+		volscl = battlevol[i];
+	}
+}
+	
