@@ -10,6 +10,7 @@ if (!global.inassign) {
 				room_goto_next();
 			} else {
 				audio_play_sound(snd_land,0,0);
+				banlerp[selected] = 1.5;
 			}
 		} else {
 			if (global.pressed[device][input.L]) {
@@ -27,6 +28,7 @@ if (!global.inassign) {
 						audio_play_sound(snd_shield,0,0);
 					} else {
 						audio_play_sound(snd_land,0,0);
+						banlerp[selected] = 1.5;
 					}
 				}
 				if (global.pressed[device][input.U]) {
@@ -35,7 +37,17 @@ if (!global.inassign) {
 						audio_play_sound(snd_shield,0,0);
 					} else {
 						audio_play_sound(snd_land,0,0);
+						banlerp[selected] = -0.5;
 					}
+				}
+			} else {
+				if (global.pressed[device][input.D]) {
+					audio_play_sound(snd_land,0,0);
+					banlerp[selected] = 0.5;
+				}
+				if (global.pressed[device][input.U]) {
+					audio_play_sound(snd_land,0,0);
+					banlerp[selected] = -0.5;
 				}
 			}
 			if (global.pressed[device][input.SE]) {
@@ -51,3 +63,7 @@ if (!global.inassign) {
 
 prevgap = lerp(prevgap, 10, 0.2);
 zoomgap = lerp(zoomgap, (room_width-zoomsize)/2+10, 0.2);
+
+for (var i = 0; i < roomlen; i++) {
+	banlerp[i] = lerp(banlerp[i],global.banlist[i],0.3);
+}

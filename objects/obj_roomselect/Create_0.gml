@@ -45,3 +45,5 @@ ydraw_large = ydraw/2;
 
 
 if (global.mode == gamemode.training) audio_play_sound(snd_parry,0,0);
+
+banlerp = array_create(roomlen,0);

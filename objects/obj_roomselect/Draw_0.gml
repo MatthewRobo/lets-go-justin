@@ -35,11 +35,13 @@ for (var i = -roomlen; i < 2 * roomlen; i++) {
 	//}
 
 	if (imod >= array_length(previews)) imod = 0;
-	var _ydraw = ydraw;
-	if (global.banlist[imod]) _ydraw += 23;
-	draw_text_color(xdraw,_ydraw-64,roomstr[imod],global.fgcolor2,global.fgcolor2,global.fgcolor2,global.fgcolor2,selected == i ? 1 : 0.6);
-	draw_sprite_ext(previews[imod],0,xdraw,_ydraw,prevscale,prevscale,0,global.fgcolor2,selected == i ? 1 : 0.6); 
-	draw_sprite_ext(previews[imod],0,xdraw_large,ydraw_large,zoomscale,zoomscale,0,c_white,1); 
+	var _ydraw = ydraw + banlerp[imod] * 25;
+	var banalpha = 1-0.7*banlerp[imod];
+	var _alpha = selected == i ? 1 : 0.6;
+	_alpha *= banalpha;
+	draw_text_color(xdraw,_ydraw-64,roomstr[imod],global.fgcolor2,global.fgcolor2,global.fgcolor2,global.fgcolor2,_alpha);
+	draw_sprite_ext(previews[imod],0,xdraw,_ydraw,prevscale,prevscale,0,global.fgcolor2,_alpha); 
+	draw_sprite_ext(previews[imod],0,xdraw_large,ydraw_large,zoomscale,zoomscale,0,c_white,_alpha); 
 }
 
 var gap = 3;
