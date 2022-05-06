@@ -8,7 +8,7 @@
   "styleName": "Demi",
   "size": 36.0,
   "bold": false,
-  "italic": true,
+  "italic": false,
   "charset": 0,
   "AntiAlias": 1,
   "first": 0,
@@ -133,7 +133,7 @@
     "path": "folders/Fonts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Font1",
+  "name": "fnt_std",
   "tags": [],
   "resourceType": "GMFont",
 }

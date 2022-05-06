@@ -67,6 +67,7 @@
     {"id":{"name":"spr_Room6Prev","path":"sprites/spr_Room6Prev/spr_Room6Prev.yy",},"order":8,},
     {"id":{"name":"obj_inputhandler","path":"objects/obj_inputhandler/obj_inputhandler.yy",},"order":3,},
     {"id":{"name":"spr_dpad","path":"sprites/spr_dpad/spr_dpad.yy",},"order":0,},
+    {"id":{"name":"fnt_std","path":"fonts/fnt_std/fnt_std.yy",},"order":7,},
     {"id":{"name":"spr_probes","path":"sprites/spr_probes/spr_probes.yy",},"order":26,},
     {"id":{"name":"fnt_smalldesc","path":"fonts/fnt_smalldesc/fnt_smalldesc.yy",},"order":3,},
     {"id":{"name":"spr_bg1","path":"sprites/spr_bg1/spr_bg1.yy",},"order":1,},
