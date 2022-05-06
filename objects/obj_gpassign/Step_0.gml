@@ -54,7 +54,6 @@ if (!global.inassign) {
 				ready[position[i]] = i;
 				if !readypos[i] audio_play_sound(snd_parry,0,0);
 				readypos[i] = true;
-				
 			}
 		}
 	
