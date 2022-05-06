@@ -119,7 +119,7 @@
     {"id":{"name":"snd_parry","path":"sounds/snd_parry/snd_parry.yy",},"order":2,},
     {"id":{"name":"Room4","path":"rooms/Room4/Room4.yy",},"order":5,},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},"order":2,},
-    {"id":{"name":"Font2","path":"fonts/Font2/Font2.yy",},"order":1,},
+    {"id":{"name":"fnt_buttons","path":"fonts/fnt_buttons/fnt_buttons.yy",},"order":1,},
     {"id":{"name":"spr_beam","path":"sprites/spr_beam/spr_beam.yy",},"order":3,},
     {"id":{"name":"obj_trailer","path":"objects/obj_trailer/obj_trailer.yy",},"order":3,},
     {"id":{"name":"obj_player3","path":"objects/obj_player3/obj_player3.yy",},"order":3,},

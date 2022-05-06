@@ -14,3 +14,6 @@ audio_play_sound(snd_parry,0,0);
 xgap = 10;
 xwid = 240;
 pgap = xgap;
+
+expanded = 0;
+openlerp = 0;

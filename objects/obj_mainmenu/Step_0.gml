@@ -1,34 +1,44 @@
 if (!global.inassign) {
 	for (var device = 0; device < GP+KB; device++) {
-		if (global.pressed[device][input.ST]) {
-			if (global.mode == gamemode.training) {
-				global.lookup[0] = device;
-				for (var i = 1; i < PLAYERS; i++) {
-					global.lookup[i] = GP+KB;
+		if (expanded) {
+			if (global.pressed[device][input.ST]) {
+				if (global.mode == gamemode.training) {
+					global.lookup[0] = device;
+					for (var i = 1; i < PLAYERS; i++) {
+						global.lookup[i] = GP+KB;
+					}
+					room_goto(Room_Select);
+				} else {
+				room_goto_next();
 				}
-				room_goto(Room_Select);
 			} else {
-			room_goto_next();
+				if (global.pressed[device][input.U]) {
+					selected--;
+					audio_play_sound(snd_shield,0,0);
+				}
+				if (global.pressed[device][input.D]) {
+					selected++;
+					audio_play_sound(snd_shield,0,0);
+				}
+				if global.pressed[device][input.L] {
+					palette--;
+					audio_play_sound(snd_shield,0,0);
+				}
+				if global.pressed[device][input.R] {
+					palette++;
+					audio_play_sound(snd_shield,0,0);
+				}
+				if global.pressed[device][input.SE] {
+					expanded = 0;
+					audio_play_sound(snd_shield,0,0);
+				}
 			}
 		} else {
-			if (global.pressed[device][input.U]) {
-				selected--;
-				audio_play_sound(snd_shield,0,0);
-			}
-			if (global.pressed[device][input.D]) {
-				selected++;
-				audio_play_sound(snd_shield,0,0);
-			}
-			if global.pressed[device][input.L] {
-				palette--;
-				audio_play_sound(snd_shield,0,0);
-			}
-			if global.pressed[device][input.R] {
-				palette++;
-				audio_play_sound(snd_shield,0,0);
+			if (global.pressed[device][input.ST]) {
+				expanded = 1;
+				audio_play_sound(snd_parry,0,0);
 			}
 		}
-
 	}
 }
 
@@ -174,3 +184,5 @@ if (GREYBOX) {
 	global.fgcolor = c_white;
 	global.fgcolor2 = c_grey;
 }
+
+openlerp = lerp(openlerp,expanded,0.2);

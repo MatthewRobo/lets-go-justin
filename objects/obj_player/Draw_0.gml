@@ -197,7 +197,7 @@ draw_set_alpha(spawning/spawntime);
 draw_text_transformed(x, y-32, "[P" + teamstr + "]",textscale,textscale,0);
 draw_set_alpha(1);
 draw_set_color(color);
-draw_set_font(Font2);
+draw_set_font(fnt_buttons);
 
 if (global.mode = gamemode.training) {
 	draw_text(x-20, y-56, dir);

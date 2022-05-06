@@ -133,7 +133,7 @@
     "path": "folders/Fonts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Font2",
+  "name": "fnt_buttons",
   "tags": [],
   "resourceType": "GMFont",
 }
