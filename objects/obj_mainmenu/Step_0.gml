@@ -10,14 +10,17 @@ if (!global.inassign) {
 		}
 		if (expanded) {
 			if (global.pressed[device][input.ST]) {
-				if (global.mode == gamemode.training) {
-					global.lookup[0] = device;
-					for (var i = 1; i < PLAYERS; i++) {
-						global.lookup[i] = GP+KB;
-					}
-					room_goto(Room_Select);
-				} else {
-				room_goto_next();
+				switch global.mode {
+					case gamemode.training:
+						global.lookup[0] = device;
+						for (var i = 1; i < PLAYERS; i++) {
+							global.lookup[i] = GP+KB;
+						}
+						room_goto(Room_Select);
+						break;
+					case -1: game_end(); break;
+					default: room_goto_next(); break;
+					
 				}
 			} else {
 				if (global.pressed[device][input.U]) {

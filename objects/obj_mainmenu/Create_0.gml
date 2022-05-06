@@ -1,9 +1,9 @@
 gbid = layer_background_get_id("background");
 layer_background_blend(gbid, global.bgcolor);
 
-modes = [gamemode.versus, gamemode.teamvs, gamemode.training];
+modes = [gamemode.versus, gamemode.teamvs, gamemode.training, -1];
 modelen = array_length(modes);
-modestr = ["Versus", "Team VS", "Training"];
+modestr = ["Versus", "Team VS", "Training", "Quit"];
 selected = global.mode;
 lerpfactor = 0.2;
 selectedlerp = global.mode;
@@ -17,3 +17,4 @@ pgap = xgap;
 
 expanded = 0;
 openlerp = 0;
+ybegin = 420;
