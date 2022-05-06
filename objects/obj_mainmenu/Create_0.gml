@@ -12,5 +12,5 @@ palette = irandom(11);
 audio_play_sound(snd_parry,0,0);
 
 xgap = 10;
-xwid = 40;
+xwid = 240;
 pgap = xgap;
