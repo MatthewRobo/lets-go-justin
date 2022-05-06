@@ -72,3 +72,5 @@ roundstart--;
 if (roundstart == 0) audio_play_sound(snd_spawn,0,0);
 if (global.hitstop <= 0 && roundstart <= 0 && !someonewon) totalframes++;
 seconds = totalframes div 60;
+
+roundratio = 1-(roundstart/roundinit);

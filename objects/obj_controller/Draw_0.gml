@@ -67,12 +67,6 @@ draw_text(room_width/2,8,text);
 draw_set_valign(fa_bottom);
 //draw_rectangle(room_width/2-1, 4, room_width/2+1, 59,0);
 
-if (roundstart > 0) {
-	draw_set_font(fnt_win);
-	draw_text(room_width/2, room_height/2, "Ready?");
-	draw_rectangle(room_width/2-roundstart, 388, room_width/2+roundstart, 392,0);
-}
-
 draw_set_font(fnt_smallsemi);
 draw_set_valign(fa_bottom);
 //draw_rectangle(room_width/2-1, 768-64, room_width/2+1, 768,0);
@@ -104,11 +98,27 @@ var hoffset2 = _ans2*room_width/2;
 draw_rectangle(-centergap + hoffset1 + room_width/2-string_width(prompt1)-gap*2,room_height-string_height(prompt1)-gap,-centergap + room_width/2,room_height,0);
 draw_rectangle(centergap + room_width/2,room_height-string_height(prompt2)-gap, centergap + hoffset2 + room_width/2+string_width(prompt2)+gap*2,room_height,0);
 
-draw_set_color(global.bgcolor);
+draw_set_color(global.fgcolor);
 draw_text(-centergap + hoffset1 + room_width / 2-gap,room_height,prompt1);
 
 draw_set_halign(fa_left);
 draw_text(centergap + hoffset2 + room_width / 2+gap,room_height,prompt2);
+
+if (roundstart > 0) {
+	draw_set_font(fnt_win);
+	var ready = "Ready?";
+	var _xdraw = room_width/2 + 118*dtan(lerp(-80,80,roundratio));
+	draw_set_valign(fa_middle);
+	draw_set_halign(fa_center);
+	draw_set_color(global.fgcolor2);
+	draw_rectangle(_xdraw-string_width(ready)/2-10,room_height/2-string_height(ready)/2,
+	               _xdraw+string_width(ready)/2+10,room_height/2+string_height(ready)/2,0);
+	draw_set_color(global.bgcolor);
+	draw_text(_xdraw, room_height/2, "Ready?");
+	//draw_rectangle(room_width/2-roundstart, 388, room_width/2+roundstart, 392,0);
+}
+
+
 
 //draw_rectangle(room_width/2, 768-3, room_width/2 - 2 * restart, 768,0);
 //draw_rectangle(room_width/2, 768-3, room_width/2 + 2 * quit, 768,0);
