@@ -10,12 +10,11 @@ if (inbattle) {
 	for (var i = 0; i < array_length(menumus); i++) {
 		if (audio_get_name(nowplaying)== audio_get_name(menumus[i])) {
 			hasamenusongplaying = true;
-			show_debug_message("hahs");
 		}
 	}
 	if !hasamenusongplaying {
 		audio_stop_sound(nowplaying);
-		if (global.musicgain > 0) nowplaying = audio_play_sound(menumus[irandom(array_length(menumus)-1)],1,1);
+		if (global.musicgain > 0) nowplaying = audio_play_sound(menumus[irandom(array_length(menumus)-1)],1,0);
 	}
 }
 

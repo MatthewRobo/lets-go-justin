@@ -7,7 +7,19 @@ if (inbattle) {
 		audio_sound_gain(nowplaying,global.musicgain/10*volscl,2000);
 		someonewon = true;
 	}
+} else {
+	var hasamenusongplaying = false;
+	for (var i = 0; i < array_length(menumus); i++) {
+		if (audio_get_name(nowplaying)== audio_get_name(menumus[i])) {
+			hasamenusongplaying = true;
+		}
+	}
+	if !hasamenusongplaying {
+		audio_stop_sound(nowplaying);
+		if (global.musicgain > 0) {
+			var newsong = irandom(array_length(menumus)-1);
+			nowplaying = audio_play_sound(menumus[newsong],1,0);
+			volscl = menuvol[newsong];
+		}
+	}
 }
-
-
-
