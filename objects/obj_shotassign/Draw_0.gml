@@ -111,7 +111,7 @@ for (p = 0; p < global.pmax; p++) {
 		switch global.shots[p] {
 			case shot.bullet: desc += "Basic shot.\nFast recovery/reload.";
 			break;
-			case shot.shotgun: desc += "Spread shot.\nShort range.";
+			case shot.shotgun: desc += "Burst of bullets.\nTwo ammo.";
 			break;
 			case shot.wallbang: desc += "Big and slow.\nGoes through walls.";
 			break;

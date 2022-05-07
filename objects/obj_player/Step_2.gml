@@ -233,7 +233,7 @@ if (global.hitstop <= 0) {
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						break;
 					case shot.shotgun:
-						for (i = -45; i <= 45; i += 15) {
+						for (i = -0; i < 360; i+= 45) {
 							attack = instance_create_layer(x, y, "hitboxes", shotobj);
 							attack.owner = self;
 							attack.timer = shotactive;

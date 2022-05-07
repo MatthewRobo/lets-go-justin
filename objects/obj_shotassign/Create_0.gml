@@ -21,7 +21,7 @@ shotspr = [spr_marksman,
              spr_anarchy];
 
 shotstr = ["Marksman",
-             "Shotgun",
+             "Burst",
 			 "Whip",
 			 "Flicker",
 			 "Wallbanger",

@@ -41,12 +41,13 @@ switch shottype {
 		gunreload = 38;
 		break;
 	case shot.shotgun:
-		bulletspeed = 8*2;
-		recoilstun = 16;
-		gunrecovery = 28;
+		bulletspeed = 24;
+		recoilstun = 0;
+		gunrecovery = 9+5;
 		gunreload = 45;
-		shotactive = 28/2;
-		recoil = 20;
+		shotactive = 5;
+		recoil = 0;
+		ammomax = 2;
 		break;
 	case shot.wallbang:
 		shotobj = obj_wallbang;
