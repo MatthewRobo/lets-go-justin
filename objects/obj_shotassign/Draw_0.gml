@@ -164,7 +164,7 @@ draw_set_valign(fa_bottom);
 draw_set_halign(fa_right);
 var prompt = "Press F4 (keyboard) or down + any three buttons (controller) to rebind controls | Press Start/[A] to confirm | Press Select/[B] to cancel";
 draw_set_color(global.fgcolor2);
-var rightside = 1419;
+var rightside = room_width;
 draw_rectangle(rightside-string_width(prompt)-gap*2,room_height-string_height(prompt)-gap,rightside,room_height,0);
 draw_set_color(global.bgcolor);
 draw_text(rightside-gap,room_height,prompt);
