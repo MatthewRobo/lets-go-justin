@@ -1,6 +1,5 @@
 nowplaying = noone;
-global.musicgain = 5;
-musicpercent = 1;
+global.musicgain = 0;
 inbattle = false;
 battlemus = [Aeronaut,
 BackdoorBlaster,

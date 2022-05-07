@@ -1,5 +1,5 @@
-modestr[3] = "Music: " + string(global.musicgain*10) + "%";
-
+var volstring = global.musicgain > 0 ? string(global.musicgain*10) + "%" : "OFF";
+modestr[3] = "Music: " + volstring;
 if (!global.inassign) {
 	for (var device = 0; device < GP+KB; device++) {
 		if (global.mode != -2) {
