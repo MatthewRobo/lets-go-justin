@@ -16,7 +16,6 @@ previews = [spr_RoomBorder,
 			spr_Room10Prev,
 			spr_Room11Prev,
 			spr_Room12Prev];
-selected = 0;
 roomstr = ["Random",
            "Wings",
 		   "Bucket",
@@ -31,7 +30,8 @@ roomstr = ["Random",
 		   "Horseshoes",
 		   "Teufort"];
 lerpfactor = 0.18;
-selectedlerp = 0;
+selected = global.stageindex;
+selectedlerp = selected;
 prevsize = room_width/roomlen;
 prevscale = prevsize/room_width;
 prevgap = -prevsize;

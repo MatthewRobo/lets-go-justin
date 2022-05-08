@@ -82,3 +82,5 @@ zoomgap = lerp(zoomgap, (room_width-zoomsize)/2+10, 0.2);
 for (var i = 0; i < roomlen; i++) {
 	banlerp[i] = lerp(banlerp[i],global.banlist[i],0.3);
 }
+
+global.stageindex = selected;
