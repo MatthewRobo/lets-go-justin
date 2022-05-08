@@ -241,7 +241,11 @@ if (global.hitstop <= 0) {
 							attack.direction = i + direction;
 							attack.spd = bulletspeed;
 							attack.hsp = lengthdir_x(attack.spd, attack.direction);
+							attack.hsp += hsp;
+							//attack.hsp += lengthdir_x(attack.spd, direction);
 							attack.vsp = lengthdir_y(attack.spd, attack.direction);
+							attack.vsp += vsp;
+							//attack.vsp += lengthdir_y(attack.spd, direction);
 						}
 						break;
 					case shot.wallbang:
