@@ -118,6 +118,9 @@ if (global.hitstop <= 0) {
 		boom.image_yscale = 2.6;
 	}
 
+	if (spawning == 1) {
+		layer_background_alpha(gbid, 1);
+	}
 
 	if (spawning > 0) {
 		shoot = false;
@@ -675,8 +678,11 @@ if (global.hitstop <= 0) {
 } else {
 	image_speed = 0;
 	talpha = 1;
-	
+
+
 	//if (dead) {
+			//layer_background_alpha(gbid, 0.1);
+
 		
 	//	var _x1 = lerp(-pi,pi,global.hitstop/dead);
 	//	var _e = 2.718281828459;
