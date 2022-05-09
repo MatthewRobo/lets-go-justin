@@ -170,7 +170,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 				trail.y += lengthdir_y(rlen,rdir);
 			}
 		}
-	} else if (state != status.parry && invul != invultime) {
+	} else if (state != status.parry && invul != invultime && !spawning && !dead) {
 		instance_destroy(other);
 		freeze = other.object_index == obj_slash ? 4 : 2;
 		if (global.hitstop < freeze) global.hitstop = freeze;
