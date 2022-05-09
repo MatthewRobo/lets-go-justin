@@ -71,7 +71,6 @@
     {"id":{"name":"spr_invisible","path":"sprites/spr_invisible/spr_invisible.yy",},"order":4,},
     {"id":{"name":"obj_glitter","path":"objects/obj_glitter/obj_glitter.yy",},"order":9,},
     {"id":{"name":"spr_blob","path":"sprites/spr_blob/spr_blob.yy",},"order":11,},
-    {"id":{"name":"spr_playericon68","path":"sprites/spr_playericon68/spr_playericon68.yy",},"order":18,},
     {"id":{"name":"BackdoorBlaster","path":"sounds/BackdoorBlaster/BackdoorBlaster.yy",},"order":1,},
     {"id":{"name":"obj_activetrail","path":"objects/obj_activetrail/obj_activetrail.yy",},"order":5,},
     {"id":{"name":"spr_Room6Prev","path":"sprites/spr_Room6Prev/spr_Room6Prev.yy",},"order":8,},
