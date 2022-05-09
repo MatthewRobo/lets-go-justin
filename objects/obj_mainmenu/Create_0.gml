@@ -23,5 +23,6 @@ pgap = xgap;
 expanded = 0;
 openlerp = 0;
 ybegin = 420;
-
+ygap = 6;
 breathing = 0;
+breath = 0;

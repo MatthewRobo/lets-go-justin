@@ -11,11 +11,8 @@ trail.friction = 0.1;
 trail.direction = random(360);
 trail.gravity = random_range(0.1, 0.15);
 trail.gravity_direction = 270;
-if (room != Main_Menu) {
-	trail.image_alpha = 0.3;
+
 	trail.depth += 2;
-} else {
-	trail.depth -= 2;
-}
+
 trail.x = random_range(bbox_left, bbox_right);
 trail.y = random_range(bbox_bottom, bbox_top);

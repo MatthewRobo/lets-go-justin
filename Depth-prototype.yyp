@@ -24,7 +24,7 @@
     {"id":{"name":"spr_burst","path":"sprites/spr_burst/spr_burst.yy",},"order":2,},
     {"id":{"name":"StepRightUp","path":"sounds/StepRightUp/StepRightUp.yy",},"order":22,},
     {"id":{"name":"Init","path":"rooms/Init/Init.yy",},"order":7,},
-    {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"order":19,},
+    {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"order":9,},
     {"id":{"name":"device_to_string","path":"scripts/device_to_string/device_to_string.yy",},"order":1,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":1,},
     {"id":{"name":"obj_gradientspike","path":"objects/obj_gradientspike/obj_gradientspike.yy",},"order":15,},

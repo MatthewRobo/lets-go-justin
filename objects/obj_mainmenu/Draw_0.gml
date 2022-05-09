@@ -4,12 +4,12 @@ draw_set_valign(fa_middle);
 draw_set_font(Font1);
 var xdraw = room_width / 2;
 var lineheight = string_height("Single Versus");
-var logoscale = lerp(4,2.5,openlerp);
+var logoscale = lerp(4,2.5,openlerp+breath*0.01);
 var logooffset = lerp(140,64,openlerp);
 draw_sprite_ext(spr_logo,0,xdraw,logooffset,logoscale,logoscale,0,global.fgcolor2,1);
 var yoffset = lerp(room_height-ybegin+28,0,openlerp);
 
-var ydrawlerp = yoffset + ybegin + 6 + selectedlerp*(lineheight+12);
+var ydrawlerp = yoffset + ybegin + 6 + selectedlerp*(lineheight+ygap);
 draw_set_color(global.fgcolor2);
 draw_rectangle(0,ydrawlerp-lineheight/2-3,room_width,ydrawlerp+lineheight/2+3,0);
 draw_set_color(global.fgcolor);
@@ -33,7 +33,7 @@ draw_rectangle(room_width-(xgap+xwid+1*(xgap+xwid)),ydrawlerp-lineheight/2+pgap,
 draw_set_color(global.fgcolor2);
 for (var i = 0; i < modelen; i++) {
 	
-	var ydraw = yoffset + ybegin + i * (lineheight + 12);
+	var ydraw = yoffset + ybegin + i * (lineheight + ygap);
 	ydraw+=8;
 	draw_text(xdraw,ydraw,modestr[i]);
 }

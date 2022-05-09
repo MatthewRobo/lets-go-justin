@@ -203,5 +203,6 @@ if (GREYBOX) {
 	global.fgcolor2 = c_grey;
 }
 
-openlerp = lerp(openlerp,expanded ? expanded : dsin(breathing) * 0.03 - 0.03,0.2);
+openlerp = lerp(openlerp,expanded ? expanded : breath * 0.03 - 0.03,0.2);
 breathing++;
+breath = dsin(breathing);

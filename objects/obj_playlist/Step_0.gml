@@ -1,4 +1,6 @@
-global.musicgain = clamp(global.musicgain,0,11);
+global.musicgain = clamp(global.musicgain,-1,12);
+if (global.musicgain > 11) global.musicgain = 0;
+if (global.musicgain < 0) global.musicgain = 11;
 if (!someonewon) audio_sound_gain(nowplaying,global.musicgain/10*volscl,0);
 
 if (inbattle) {
