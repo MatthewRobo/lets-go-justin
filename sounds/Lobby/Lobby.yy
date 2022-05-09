@@ -14,8 +14,8 @@
   "soundFile": "Lobby.mp3",
   "duration": 95.97388,
   "parent": {
-    "name": "menu",
-    "path": "folders/Sounds/mus/menu.yy",
+    "name": "browser",
+    "path": "folders/Sounds/mus/menu/browser.yy",
   },
   "resourceVersion": "1.0",
   "name": "Lobby",

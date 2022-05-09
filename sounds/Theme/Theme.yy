@@ -14,8 +14,8 @@
   "soundFile": "Theme.mp3",
   "duration": 732.048,
   "parent": {
-    "name": "battle",
-    "path": "folders/Sounds/mus/battle.yy",
+    "name": "browser",
+    "path": "folders/Sounds/mus/battle/browser.yy",
   },
   "resourceVersion": "1.0",
   "name": "Theme",
