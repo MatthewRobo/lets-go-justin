@@ -22,6 +22,14 @@ if (inbattle) {
 			var newsong = irandom(array_length(menumus)-1);
 			nowplaying = audio_play_sound(menumus[newsong],1,0);
 			volscl = menuvol[newsong];
+			if (room == Main_Menu) {
+				if !obj_mainmenu.expanded {
+					var oldpalette = global.palette;
+					while (global.palette == oldpalette) {
+						global.palette = irandom(PALETTES-1);
+					}
+				}
+			}
 		}
 	}
 }
