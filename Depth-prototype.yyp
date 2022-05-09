@@ -92,6 +92,7 @@
     {"id":{"name":"spr_bg3","path":"sprites/spr_bg3/spr_bg3.yy",},"order":3,},
     {"id":{"name":"HellsinkerMenu2","path":"sounds/HellsinkerMenu2/HellsinkerMenu2.yy",},"order":4,},
     {"id":{"name":"DissatisfiedSandYellow","path":"sounds/DissatisfiedSandYellow/DissatisfiedSandYellow.yy",},"order":8,},
+    {"id":{"name":"obj_palette","path":"objects/obj_palette/obj_palette.yy",},"order":6,},
     {"id":{"name":"spr_uplift","path":"sprites/spr_uplift/spr_uplift.yy",},"order":8,},
     {"id":{"name":"PacLevelCap","path":"sounds/PacLevelCap/PacLevelCap.yy",},"order":18,},
     {"id":{"name":"spr_Room7Prev","path":"sprites/spr_Room7Prev/spr_Room7Prev.yy",},"order":12,},

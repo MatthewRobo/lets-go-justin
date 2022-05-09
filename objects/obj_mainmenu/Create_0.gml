@@ -13,7 +13,6 @@ selected = global.mode;
 lerpfactor = 0.2;
 selectedlerp = global.mode;
 
-palette = irandom(11);
 audio_play_sound(snd_parry,0,0);
 
 xgap = 10;

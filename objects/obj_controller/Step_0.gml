@@ -41,6 +41,7 @@ if (restart > 1) {
 	room_restart();
 }
 if (quit > 1) {
+	global.palette = irandom(PALETTES-1);
 	room_goto(global.mode == gamemode.training ? Room_Select : Pad_Select);
 }
 
