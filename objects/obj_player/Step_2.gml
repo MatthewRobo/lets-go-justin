@@ -54,7 +54,7 @@ if (global.hitstop <= 0) {
 		attack.team = team;
 		attack.direction = point_direction(reflectx, reflecty, reflected.x, reflected.y);
 		attack.spd = counterspeed * reflectmult;
-		attack.spd = attack.spd > 44 ? 44 : attack.spd;
+		//attack.spd = attack.spd > 44 ? 44 : attack.spd;
 
 		if (superreflect) { 
 			attack.image_xscale = 6;
@@ -529,7 +529,7 @@ if (global.hitstop <= 0) {
 		recovery--;
 		audio_play_sound(snd_heldparry, 0,0);
 		if ((!heldparry && recovery <= 0) || (recovery <= -parrymax)) {
-			recovery = parryrecovery - recovery;
+			recovery = parryrecovery - 2*recovery;
 			state = status.recovery;
 		}
 		trail = instance_create_layer(x, y, "trails", obj_playertrail);
