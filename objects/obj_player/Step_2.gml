@@ -529,7 +529,7 @@ if (global.hitstop <= 0) {
 		recovery--;
 		audio_play_sound(snd_heldparry, 0,0);
 		if ((!heldparry && recovery <= 0) || (recovery <= -parrymax)) {
-			recovery = parryrecovery - recovery;
+			recovery = parryrecovery - 2*recovery;
 			state = status.recovery;
 		}
 		trail = instance_create_layer(x, y, "trails", obj_playertrail);

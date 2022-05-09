@@ -113,7 +113,7 @@ for (p = 0; p < global.pmax; p++) {
 			break;
 			case shot.shotgun: desc += "Burst of bullets.\nTwo ammo.";
 			break;
-			case shot.wallbang: desc += "Big and slow.\nGoes through walls.";
+			case shot.wallbang: desc += "Big yet short.\nPunches through walls.";
 			break;
 			case shot.whiffpunisher: desc += "Midrange shots.\nSix ammo.";
 			break;
