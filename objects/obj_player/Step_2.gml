@@ -54,7 +54,7 @@ if (global.hitstop <= 0) {
 		attack.team = team;
 		attack.direction = point_direction(reflectx, reflecty, reflected.x, reflected.y);
 		attack.spd = counterspeed * reflectmult;
-		attack.spd = attack.spd > 44 ? 44 : attack.spd;
+		//attack.spd = attack.spd > 44 ? 44 : attack.spd;
 
 		if (superreflect) { 
 			attack.image_xscale = 6;
