@@ -2,22 +2,13 @@ var volstring = global.musicgain > 0 ? string(global.musicgain*10) + "%" : "OFF"
 modestr[3] = "Music: " + volstring;
 if (!global.inassign) {
 	for (var device = 0; device < GP+KB; device++) {
-		if (global.mode != -2) {
+		if (global.mode != -2 || !expanded) {
 			if global.pressed[device][input.L] {
 				palette--;
 				audio_play_sound(snd_shield,0,0);
 			}
 			if global.pressed[device][input.R] {
 				palette++;
-				audio_play_sound(snd_shield,0,0);
-			}
-		} else {
-			if global.pressed[device][input.L] {
-				global.musicgain--;
-				audio_play_sound(snd_shield,0,0);
-			}
-			if global.pressed[device][input.R] {
-				global.musicgain++;
 				audio_play_sound(snd_shield,0,0);
 			}
 		}
@@ -48,6 +39,16 @@ if (!global.inassign) {
 				if global.pressed[device][input.SE] {
 					expanded = 0;
 					audio_play_sound(snd_shield,0,0);
+				}
+				if (global.mode == -2) {
+					if global.pressed[device][input.L] {
+						global.musicgain--;
+						audio_play_sound(snd_shield,0,0);
+					}
+					if global.pressed[device][input.R] {
+						global.musicgain++;
+						audio_play_sound(snd_shield,0,0);
+					}
 				}
 			}
 		} else {
@@ -202,4 +203,5 @@ if (GREYBOX) {
 	global.fgcolor2 = c_grey;
 }
 
-openlerp = lerp(openlerp,expanded,0.2);
+openlerp = lerp(openlerp,expanded ? expanded : dsin(breathing) * 0.03 - 0.03,0.2);
+breathing++;
