@@ -156,20 +156,22 @@ if (global.hitstop <= 0) {
 		if (!grounded && airjumps > 0 && hover && canhover) {
 			sfx = audio_play_sound_at(snd_hover, -x + room_width/2,y,400,100,500,1,false, false);
 			audio_sound_pitch(sfx, lerp(2, 1, airjumps / jumpmax));
-			for (i = 0; i < 3; i++) {
+			repeat(3) {
 				trail = instance_create_layer(x, y, "trails", obj_glitter);
 				if (ammo <= 0) trail.image_alpha = 0.5;
 				trail.image_blend = color;
 				trail.vspeed = thrust;
 				trail.hspeed = random_range(-0.5, 0.5);
 				if (vsp > 0) {
-					vsp *= 0.8;
-					trail.vspeed += vsp;
+					trail.vspeed += vsp * 0.488;
 				}
 				trail.vspeed += random_range(-0.25, 0.25);
 				if (irandom(1)) trail.image_blend = c_white;
 				trail.x = random_range(bbox_left, bbox_right);
 				trail.y = random_range(bbox_bottom, bbox_top);
+			}
+			if (vsp > 0) {
+				vsp -= vsp * 0.488;
 			}
 			vsp -= thrust;
 			airjumps--;
