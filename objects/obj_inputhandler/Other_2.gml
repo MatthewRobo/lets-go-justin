@@ -7,7 +7,7 @@ randomize();
 #macro GP 12
 #macro KB 2
 
-#macro GREYBOX false
+#macro GREYBOX true
 
 enum input {
 	U = 0,
