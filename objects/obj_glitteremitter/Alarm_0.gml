@@ -22,4 +22,4 @@ trail.y += lerp(0,128,random_range(-1,1));
 
 //if (irandom(1)) trail.image_blend = c_white;
 
-alarm[0] = 5;
+alarm[0] = 35;
