@@ -1,3 +1,4 @@
+if !global.browser {
 global.musicgain = clamp(global.musicgain,-1,12);
 if (global.musicgain > 11) global.musicgain = 0;
 if (global.musicgain < 0) global.musicgain = 11;
@@ -34,4 +35,5 @@ if (inbattle) {
 			}
 		}
 	}
+}
 }

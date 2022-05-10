@@ -1,3 +1,4 @@
+if !global.browser{
 inbattle = false;
 for (var i = 0; i < array_length(global.rooms); i++) {
 	if (global.rooms[i] == room) inbattle = true;
@@ -31,4 +32,4 @@ for (var i = 0; i < array_length(menumus); i++) {
 		volscl = battlevol[i];
 	}
 }
-	
+}
