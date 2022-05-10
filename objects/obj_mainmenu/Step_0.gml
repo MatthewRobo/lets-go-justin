@@ -6,10 +6,12 @@ if (!global.inassign) {
 			if global.pressed[device][input.L] {
 				global.palette--;
 				audio_play_sound(snd_shield,0,0);
+				frame = -1;
 			}
 			if global.pressed[device][input.R] {
 				global.palette++;
 				audio_play_sound(snd_shield,0,0);
+				frame = -1;
 			}
 		}
 		if (expanded) {
@@ -23,7 +25,12 @@ if (!global.inassign) {
 						room_goto(Room_Select);
 						break;
 					case -1: game_end(); audio_play_sound(snd_parry,0,0); break;
-					case -2: audio_stop_sound(obj_playlist.nowplaying); audio_play_sound(snd_parry,0,0); global.palette = irandom(11); break;
+					case -2: 
+					audio_stop_sound(obj_playlist.nowplaying);
+					audio_play_sound(snd_parry,0,0);
+					global.palette = irandom(PALETTES-1);
+					frame = -1;
+					break;
 					default: room_goto_next(); break;
 					
 				}
@@ -67,3 +74,4 @@ global.mode = modes[selected];
 openlerp = lerp(openlerp,expanded ? expanded : breath * 0.03 - 0.03,0.2);
 breathing++;
 breath = dsin(breathing);
+frame= clamp(frame + 0.5,0,7);

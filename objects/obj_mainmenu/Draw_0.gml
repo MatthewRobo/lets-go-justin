@@ -6,7 +6,7 @@ var xdraw = room_width / 2;
 var lineheight = string_height("Single Versus");
 var logoscale = lerp(4,2.5,openlerp+breath*0.01);
 var logooffset = lerp(140,64,openlerp);
-draw_sprite_ext(spr_logo,0,xdraw,logooffset,logoscale,logoscale,0,global.fgcolor2,1);
+draw_sprite_ext(spr_logo,frame,xdraw,logooffset,logoscale,logoscale,0,global.fgcolor2,1);
 var yoffset = lerp(room_height-ybegin+28,0,openlerp);
 
 var ydrawlerp = yoffset + ybegin + 6 + selectedlerp*(lineheight+ygap);

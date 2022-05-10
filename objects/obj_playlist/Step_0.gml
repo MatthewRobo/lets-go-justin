@@ -24,6 +24,8 @@ if (inbattle) {
 			volscl = menuvol[newsong];
 			if (room == Main_Menu) {
 				if !obj_mainmenu.expanded {
+					obj_mainmenu.frame = 0;
+					audio_play_sound(snd_shoot,0,0);
 					var oldpalette = global.palette;
 					while (global.palette == oldpalette) {
 						global.palette = irandom(PALETTES-1);

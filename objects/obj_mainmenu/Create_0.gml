@@ -25,3 +25,5 @@ ybegin = 420;
 ygap = 6;
 breathing = 0;
 breath = 0;
+
+frame = 0;
