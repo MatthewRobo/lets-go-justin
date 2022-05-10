@@ -66,3 +66,11 @@ battlevol = array_create(array_length(battlemus),1);
 menuvol = array_create(array_length(menumus),1);
 
 volscl = 1;
+maxvol = 0;
+for (var i = 0; i < array_length(menuvol); i++) {
+	if (menuvol[i] > maxvol) maxvol = menuvol[i];
+}
+for (var i = 0; i < array_length(battlevol); i++) {
+	if (battlevol[i] > maxvol) maxvol = battlevol[i];
+}
+musscl = 1 / maxvol;
