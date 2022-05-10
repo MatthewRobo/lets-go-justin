@@ -6,6 +6,7 @@ hspeed = irandom_range(1,10);
 if (irandom(1)) hspeed *= -1;
 image_alpha = 0;
 alpha = 0;
-thickness = irandom_range(1,10);
+thickness = irandom_range(2,12);
 team = irandom(1);
 if (global.mode == gamemode.teamvs) team = irandom(3);
+alpha2 = 1;

@@ -1,4 +1,5 @@
 draw_set_color(global.fgcolor2);
+draw_set_alpha(1);
 mode = "";
 
 switch global.mode {
