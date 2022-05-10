@@ -10,3 +10,4 @@ thickness = irandom_range(2,12);
 team = irandom(1);
 if (global.mode == gamemode.teamvs) team = irandom(3);
 alpha2 = 1;
+alphamax = random_range(0.2,1);

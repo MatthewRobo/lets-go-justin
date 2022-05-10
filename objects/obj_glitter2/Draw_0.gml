@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 draw_set_color(global.color[team]);
-var _alpha = alpha * alpha2;
+var _alpha = alpha * alpha2 * alphamax;
 draw_set_alpha(_alpha);
 draw_primitive_begin(pr_trianglestrip);
 var steps = 24;

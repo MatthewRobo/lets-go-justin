@@ -13,7 +13,9 @@ selected = global.mode;
 lerpfactor = 0.2;
 selectedlerp = global.mode;
 
-audio_play_sound(snd_parry,0,0);
+audio_play_sound(snd_shoot,0,0);
+dies = audio_play_sound(snd_dies,0,0);
+audio_sound_pitch(dies,0.2);
 
 xgap = 10;
 xwid = 240;
