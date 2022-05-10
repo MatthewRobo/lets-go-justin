@@ -2,8 +2,8 @@
 // You can write your code in this editor
 
 timer = 240;
-hspeed = irandom_range(1,10);
-if (irandom(1)) hspeed *= -1;
+hspeed = irandom_range(8,32);
+if (x>room_width/2) hspeed *= -1;
 image_alpha = 0;
 alpha = 0;
 thickness = irandom_range(2,12);
