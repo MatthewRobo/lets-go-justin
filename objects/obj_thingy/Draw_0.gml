@@ -6,7 +6,7 @@ var _alpha = alpha * alpha2 * alphamax;
 draw_set_alpha(_alpha);
 draw_primitive_begin(pr_trianglestrip);
 var steps = 24;
-if (global.menubg == menubgs.wave) {
+if (global.thingy == thingies.wave) {
 for (var t = -room_width/steps; t <= room_width+room_width/steps; t += room_width/steps) {
 	_y = y+ amp*dsin(t/abs(hspeed)+x);
 	draw_vertex(t,_y-thickness);

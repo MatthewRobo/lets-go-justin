@@ -64,12 +64,12 @@ if (!global.inassign) {
 				audio_play_sound(snd_parry,0,0);
 			}
 			if global.pressed[device][input.U] {
-				global.menubg--;
+				global.thingy--;
 				audio_play_sound(snd_shield,0,0);
 				frame = -1;
 			}
 			if global.pressed[device][input.D] {
-				global.menubg++;
+				global.thingy++;
 				audio_play_sound(snd_shield,0,0);
 				frame = -1;
 			}

@@ -22,7 +22,7 @@ xwid = 240;
 pgap = xgap;
 
 expanded = 0;
-openlerp = 0;
+openlerp = -1;
 ybegin = 420;
 ygap = 6;
 breathing = 0;

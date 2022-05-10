@@ -31,7 +31,7 @@
     "path": "folders/Objects/trails.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_glitteremitter",
+  "name": "obj_thingyemitter",
   "tags": [],
   "resourceType": "GMObject",
 }

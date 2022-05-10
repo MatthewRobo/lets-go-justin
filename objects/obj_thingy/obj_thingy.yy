@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_glitter",
-    "path": "sprites/spr_glitter/spr_glitter.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -32,7 +29,7 @@
     "path": "folders/Objects/trails.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_glitter2",
+  "name": "obj_thingy",
   "tags": [],
   "resourceType": "GMObject",
 }

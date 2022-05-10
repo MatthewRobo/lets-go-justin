@@ -1,5 +1,5 @@
 #macro PALETTES 12
-enum menubgs {
+enum thingies {
 	wave,
 	rectangle,
 	length
@@ -13,4 +13,4 @@ global.color[3] = $ffcc00;
 global.bgcolor = $1d1616;
 global.fgcolor = $694f4f;
 global.fgcolor2 = $99ccff;
-global.menubg = irandom(menubgs.length-1);
+global.thingy = irandom(thingies.length-1);

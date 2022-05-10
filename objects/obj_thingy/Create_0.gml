@@ -2,12 +2,12 @@
 // You can write your code in this editor
 thickness = 1;
 timer = 240;
-switch global.menubg {
-	case menubgs.wave:
+switch global.thingy {
+	case thingies.wave:
 	hspeed = irandom_range(1,10);
 	thickness = irandom_range(2,12);
 	break;
-	case menubgs.rectangle:
+	case thingies.rectangle:
 	hspeed = irandom_range(8,20);
 	thickness = irandom_range(2,24);
 	break;

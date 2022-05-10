@@ -12,7 +12,7 @@ if (!global.inassign && instance_number(obj_controller) <= 0) {
 }
 
 global.palette = (global.palette + PALETTES) mod PALETTES;
-global.menubg = (global.menubg + menubgs.length) mod menubgs.length;
+global.thingy = (global.thingy + thingies.length) mod thingies.length;
 
 switch global.palette {
 	case 0:
