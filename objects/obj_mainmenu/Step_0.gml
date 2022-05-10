@@ -63,6 +63,16 @@ if (!global.inassign) {
 				expanded = 1;
 				audio_play_sound(snd_parry,0,0);
 			}
+			if global.pressed[device][input.U] {
+				global.menubg--;
+				audio_play_sound(snd_shield,0,0);
+				frame = -1;
+			}
+			if global.pressed[device][input.D] {
+				global.menubg++;
+				audio_play_sound(snd_shield,0,0);
+				frame = -1;
+			}
 		}
 	}
 }

@@ -8,3 +8,4 @@ if (timer < 0) instance_destroy();
 var _alpha = 0.2;
 if (room == Main_Menu) _alpha = obj_mainmenu.expanded ? 0.4 : 1;
 alpha2 = lerp(alpha2, _alpha, 0.05);
+

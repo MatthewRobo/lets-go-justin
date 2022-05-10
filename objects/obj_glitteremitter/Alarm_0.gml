@@ -1,7 +1,23 @@
 /// @description Insert description here
 // You can write your code in this editor
+var xspawn;
+switch global.menubg {
+	case menubgs.wave: 
+	alarm[0] = irandom_range(50,70); 
+	xspawn = random(room_width);
+	break;
+	case menubgs.rectangle:
+	alarm[0] = irandom_range(8,12);
+	xspawn = irandom(1) ? room_width : 0;
+	break;
+}
+
+var yspawn = irandom(1) ? 0 : room_height;
+yspawn += random_range(-128, 128);
+if (yspawn > room_height) yspawn -= room_height;
+else if (yspawn < 0) yspawn += room_height;
 color = x < room_width / 2 ? global.color[0] : global.color[1];
-trail = instance_create_layer(random(1) ? 0 : room_width, y, "instances", obj_glitter2);
+trail = instance_create_layer(xspawn, yspawn, "instances", obj_glitter2);
 trail.image_blend = color;
 //if (irandom(1)) trail.image_blend = c_white;
 
@@ -17,9 +33,7 @@ trail.depth = layer_get_depth(layer_get_id("background"))-1;
 //trail.x = random_range(bbox_left, bbox_right);
 //trail.y = random_range(bbox_bottom, bbox_top);
 
-trail.y = irandom(1) ? 0 : room_height;
-trail.y += lerp(0,128,random_range(-1,1));
 
 //if (irandom(1)) trail.image_blend = c_white;
 
-alarm[0] = 35;
+
