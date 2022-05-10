@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-var xspawn;
+var xspawn = 0;
 switch global.menubg {
 	case menubgs.wave: 
 	alarm[0] = irandom_range(50,70); 
