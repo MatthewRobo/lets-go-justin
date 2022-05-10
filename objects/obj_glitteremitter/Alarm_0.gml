@@ -14,7 +14,8 @@ trail.image_blend = color;
 
 trail.depth = layer_get_depth(layer_get_id("background"))-1;
 
-trail.x = random_range(bbox_left, bbox_right);
+//trail.x = random_range(bbox_left, bbox_right);
+trail.x = random(room_width);
 //trail.y = random_range(bbox_bottom, bbox_top);
 
 trail.y = irandom(1) ? 0 : room_height;
