@@ -98,11 +98,22 @@ if (global.pmax==4) {
 
 
 draw_set_colour(global.fgcolor2);
-draw_set_halign(fa_center);
-draw_set_valign(fa_top);
-var text = global.mode == gamemode.training ? string(fps) : string_replace_all(string_format(seconds, 2, 0), " ", "0")
-draw_text(width/2,8,text);
+
 draw_set_valign(fa_bottom);
+var text = string_replace_all(string_format(seconds, 2, 0), " ", "0");
+var textdiff = string_width(text);
+draw_set_font(fnt_prompt);
+var text = "."+string_replace_all(string_format(ms, 2, 0), " ", "0");
+textdiff -= string_width(text);
+draw_set_font(Font1);
+draw_set_halign(fa_right);
+var text = string_replace_all(string_format(seconds, 2, 0), " ", "0");
+draw_text(width/2+textdiff/2+1,64,text);
+draw_set_halign(fa_left);
+draw_set_font(fnt_prompt);
+var text = "."+string_replace_all(string_format(ms, 2, 0), " ", "0");
+draw_text(width/2+textdiff/2-1,56,text);
+
 //draw_rectangle(width/2-1, 4, width/2+1, 59,0);
 
 draw_set_font(fnt_smallsemi);
