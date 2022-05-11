@@ -258,3 +258,7 @@ if (global.mode = gamemode.training) {
 	draw_set_color(color);
 	draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,0);
 }
+
+draw_set_color(c_white);
+draw_set_alpha(abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
+draw_circle(x,y,36,0);
