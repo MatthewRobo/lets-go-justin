@@ -133,7 +133,7 @@ switch global.palette {
 		global.color[1] = $b9a601;
 		global.color[2] = $5465f2;
 		global.color[3] = $b9a601;
-		global.bgcolor = $587380;
+		global.bgcolor = $346980;
 		global.fgcolor = $966b9f;
 		global.fgcolor2 = $ffffff;
 		break;
@@ -145,6 +145,9 @@ switch global.palette {
 	//	global.fgcolor2 = c_black;
 	//	break;
 }
+
+global.color[2] = global.color[0];
+global.color[3] = global.color[1];
 
 gbid = layer_background_get_id("background");
 layer_background_blend(gbid, global.bgcolor);
