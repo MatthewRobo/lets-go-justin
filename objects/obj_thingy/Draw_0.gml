@@ -9,8 +9,9 @@ var steps = 24;
 if (global.thingy == thingies.wave) {
 for (var t = -room_width/steps; t <= room_width+room_width/steps; t += room_width/steps) {
 	_y = y+ amp*dsin(t/abs(hspeed)+x);
-	draw_vertex(t,_y-thickness);
-	draw_vertex(t,_y+thickness);
+	var dist = abs(t - x + xoffset)/room_width * 10;
+	draw_vertex(t,_y-thickness-dist);
+	draw_vertex(t,_y+thickness+dist);
 	//draw_circle(t+x,_y,thickness,0);
 }
 } else {

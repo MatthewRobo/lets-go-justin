@@ -23,3 +23,4 @@ if (global.mode == gamemode.teamvs) team = irandom(3);
 alpha2 = 1;
 alphamax = random_range(0.3,0.9);
 amp = random_range(3,8);
+xoffset = random_range(-room_width,room_width);
