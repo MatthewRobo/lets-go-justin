@@ -12,9 +12,9 @@
 //{
 //	players[i] = instance_find(obj_player,i);
 //	target = players[i];
-//	if (target.dead) {
-//		target = target.spawnpoint;
-//	}
+//	//if (target.dead) {
+//	//	target = target.spawnpoint;
+//	//}
 		
 //	x += target.x;
 //	y += target.y;
@@ -26,6 +26,8 @@
 //y = lerp(yprev,y/i,lerpfactor);
 
 //zoom_level = clamp(zoom_level, 0.1, 5);
+//zoom_level = max((clamp(abs(obj_player1.x - obj_player2.x),720,room_width)+128) / default_zoom_width,
+//(clamp(abs(obj_player1.y - obj_player2.y),540,room_height)) / default_zoom_height);
 ////Get current size
 //var view_w = camera_get_view_width(view_camera[0]);
 //var view_h = camera_get_view_height(view_camera[0]);
