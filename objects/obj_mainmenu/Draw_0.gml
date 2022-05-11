@@ -51,3 +51,7 @@ else            prompt += "Press [A=SLASH] to confirm | Press [B=SHOOT] to cance
 draw_rectangle(room_width-string_width(prompt)-gap*2,room_height-string_height(prompt)-gap,room_width,room_height,0);
 draw_set_color(global.bgcolor);
 draw_text(room_width-gap,room_height,prompt);
+
+draw_set_color(global.fgcolor2);
+draw_set_valign(fa_top);
+draw_text(room_width-gap,gap,"Made by M-AS (@matthewrobo)");
