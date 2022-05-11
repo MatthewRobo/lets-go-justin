@@ -14,8 +14,9 @@ switch global.thingy {
 
 var yspawn = irandom(1) ? 0 : room_height;
 yspawn += random_range(-128, 128);
-if (yspawn > room_height) yspawn -= room_height;
-else if (yspawn < 0) yspawn += room_height;
+//if (yspawn > room_height) yspawn -= room_height;
+//else if (yspawn < 0) yspawn += room_height;
+yspawn = random_range(bbox_top,bbox_bottom);
 color = x < room_width / 2 ? global.color[0] : global.color[1];
 trail = instance_create_layer(xspawn, yspawn, "instances", obj_thingy);
 trail.image_blend = color;
