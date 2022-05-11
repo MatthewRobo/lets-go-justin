@@ -29,16 +29,16 @@ switch global.palette {
 		global.fgcolor = $694f4f;
 		global.fgcolor2 = $99ccff;
 		break;
-	case 1:
-		global.color[0] = $ff0099;
-		global.color[1] = $0dff00;
-		global.color[2] = $ff66aa;
-		global.color[3] = $90ff90;
+	case 1: // GREEN PURPLE
+		global.color[0] = $0dff00;
+		global.color[1] = $ff0099
+		global.color[2] = $90ff90;
+		global.color[3] = $ff66aa
 		global.bgcolor = $05080f;
 		global.fgcolor = $332244;
 		global.fgcolor2 = $ffaaff;
 		break;
-	case 2:
+	case 2: // M-AS
 		global.color[0] = $6ecdff;
 		global.color[1] = $b5599b;
 		global.color[2] = $8eabff;
@@ -133,7 +133,7 @@ switch global.palette {
 		global.color[1] = $b9a601;
 		global.color[2] = $5465f2;
 		global.color[3] = $b9a601;
-		global.bgcolor = $346980;
+		global.bgcolor = $202530;
 		global.fgcolor = $966b9f;
 		global.fgcolor2 = $ffffff;
 		break;
@@ -161,6 +161,13 @@ switch global.palette {
 		global.bgcolor = $282828;
 		global.fgcolor = $999999;
 		global.fgcolor2 = c_white;
+		break;
+	case 16: // SEATTLE BASEBALL
+		global.color[0] = $696bed;
+		global.color[1] = $70cca6;
+		global.bgcolor = $281d11;
+		global.fgcolor = $49361c;
+		global.fgcolor2 = $969d46;
 		break;
 	//case 9: // PAPER
 	//	global.color[0] = c_green;
