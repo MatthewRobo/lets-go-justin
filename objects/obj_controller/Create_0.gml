@@ -19,7 +19,7 @@ audio_play_sound(snd_dies,0,0);
 
 instance_destroy(obj_thingy);
 
-global.outline = c_green;
+global.outline = global.fgcolor2;
 bgid = layer_background_get_id("Background"); 
 layer_background_blend(bgid, global.bgcolor);
 

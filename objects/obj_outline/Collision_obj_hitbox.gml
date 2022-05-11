@@ -3,5 +3,5 @@
 
 if (global.hitstop <= 0) {
 	lerpmod += 3;
-	global.outline = other.owner.color;
+	//global.outline = other.owner.color;
 }

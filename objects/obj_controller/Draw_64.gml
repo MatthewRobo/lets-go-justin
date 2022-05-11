@@ -21,30 +21,76 @@ var centergap = 48;
 var pipwidth = ((room_width/2 - centergap - 128 + 3) - pipgap * global.firstto) / global.firstto;
 var pipslant = 24;
 
-piptotal = pipgap + pipwidth;
+var piptotal = pipgap + pipwidth;
+
+draw_set_color(global.outline);
+draw_primitive_begin(pr_trianglestrip);
+draw_vertex(width/2-centergap-global.firstto*piptotal-pipslant-10,1);
+draw_vertex(width/2+centergap+global.firstto*piptotal+pipslant+10,1);
+draw_vertex(width/2-centergap-global.firstto*piptotal-3,63);
+draw_vertex(width/2+centergap+global.firstto*piptotal+3,63);
+draw_primitive_end();
+draw_set_color(global.bgcolor);
+draw_primitive_begin(pr_trianglestrip);
+draw_vertex(width/2-centergap-global.firstto*piptotal-pipslant-4,4);
+draw_vertex(width/2+centergap+global.firstto*piptotal+pipslant+4,4);
+draw_vertex(width/2-centergap-global.firstto*piptotal,60);
+draw_vertex(width/2+centergap+global.firstto*piptotal,60);
+draw_primitive_end();
+
 if (global.pmax==4) {
 	for (i = 0; i < (global.firstto - obj_player1.deaths - obj_player3.deaths); i++) {
 		draw_set_colour(global.color[0]);
 		drawpos = width / 2 - centergap - piptotal * i;
-		draw_rectangle(drawpos-pipwidth, 8, drawpos, 56,0);
+		//draw_rectangle(drawpos-pipwidth, 8, drawpos, 56,0);
+
+		draw_primitive_begin(pr_trianglestrip);
+		draw_vertex(drawpos-pipwidth-pipslant, 8);
+		draw_vertex(drawpos-pipslant, 8);
+		draw_vertex(drawpos-pipwidth, 56);
+		draw_vertex(drawpos, 56);
+		draw_primitive_end();
+		
 		if (obj_player1.dead || obj_player3.dead) {
 			draw_set_color(global.fgcolor2);
 			drawpos = width / 2 - centergap - piptotal * (i + 1);
 			var pipsum = sign(obj_player1.dead) + sign(obj_player3.dead);
 			var deadmax = max(obj_player1.dead,obj_player3.dead);
 			draw_rectangle(drawpos-(pipsum*global.hitstop*pipwidth/deadmax), 8, drawpos, 56,0);
+			
+			draw_primitive_begin(pr_trianglestrip);
+			draw_vertex(drawpos-(pipsum*global.hitstop*pipwidth/deadmax)-pipslant, 8);
+			draw_vertex(drawpos-pipslant, 8);
+			draw_vertex(drawpos-(pipsum*global.hitstop*pipwidth/deadmax), 56);
+			draw_vertex(drawpos, 56);
+			draw_primitive_end();
 		}
 	}
 	for (i = 0; i < (global.firstto - obj_player2.deaths - obj_player4.deaths); i++) {
 		draw_set_colour(global.color[1]);
 		drawpos = width / 2 + centergap + piptotal * i;
-		draw_rectangle(drawpos, 8, drawpos+pipwidth, 56,0);
+		//draw_rectangle(drawpos, 8, drawpos+pipwidth, 56,0);
+		
+		draw_primitive_begin(pr_trianglestrip);
+		draw_vertex(drawpos+pipwidth+pipslant, 8);
+		draw_vertex(drawpos+pipslant, 8);
+		draw_vertex(drawpos+pipwidth, 56);
+		draw_vertex(drawpos, 56);
+		draw_primitive_end();
+
 		if (obj_player2.dead || obj_player4.dead) {
 			draw_set_color(global.fgcolor2);
 			drawpos = width / 2 + centergap + piptotal * (i + 1);
 			var pipsum = sign(obj_player2.dead) + sign(obj_player4.dead);
 			var deadmax = max(obj_player2.dead,obj_player4.dead);
-			draw_rectangle(drawpos, 8, drawpos+(pipsum*global.hitstop*pipwidth/deadmax), 56,0);
+			//draw_rectangle(drawpos, 8, drawpos+(pipsum*global.hitstop*pipwidth/deadmax), 56,0);
+			
+			draw_primitive_begin(pr_trianglestrip);
+			draw_vertex(drawpos+(pipsum*global.hitstop*pipwidth/deadmax)+pipslant, 8);
+			draw_vertex(drawpos+pipslant, 8);
+			draw_vertex(drawpos+(pipsum*global.hitstop*pipwidth/deadmax), 56);
+			draw_vertex(drawpos, 56);
+			draw_primitive_end();
 		}
 	}
 } else {
