@@ -25,10 +25,10 @@ spawnpoint = obj_respawn;
 deaths = 0;
 
 maxsp = 128;
-runsp = 12;
-accel = 1.5;
-deccel = 1.5;
-walksp = 2;
+runsp = 8.5;
+accel = 1;
+deccel = 1;
+walksp = 1.5;
 movesp = runsp;
 stunsp = 1;
 stunaccel = 0.25;
@@ -57,12 +57,12 @@ jump = false;
 jumpmax = 30
 airjumps = jumpmax;
 maxfall = 16;
-jumpsp = 13;
+jumpsp = 9;
 hopsp = 6;
 jumpforce = jumpsp;
-thrust = 0.9;
+thrust = 0.63;
 
-grav = 0.5;
+grav = 0.35;
 recoil = 0;
 recoilstun = 0;
 
