@@ -84,4 +84,4 @@ global.mode = modes[selected];
 openlerp = lerp(openlerp,expanded ? expanded : breath * 0.03 - 0.03,0.2);
 breathing++;
 breath = dsin(breathing);
-frame= clamp(frame + 0.5,0,8);
+if (openlerp > -0.1) frame = clamp(frame + 0.5,0,8);
