@@ -17,7 +17,7 @@ if (global.mode == gamemode.training) {
 
 audio_play_sound(snd_dies,0,0);
 
-instance_destroy(obj_glitter2);
+instance_destroy(obj_thingy);
 
 global.outline = c_green;
 bgid = layer_background_get_id("Background"); 

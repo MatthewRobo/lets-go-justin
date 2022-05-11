@@ -128,6 +128,15 @@ switch global.palette {
 		global.fgcolor = $4f575f;
 		global.fgcolor2 = $aaccff;
 		break;
+	case 12: // VIDEOBALL
+		global.color[0] = $5465f2;
+		global.color[1] = $b9a601;
+		global.color[2] = $5465f2;
+		global.color[3] = $b9a601;
+		global.bgcolor = $587380;
+		global.fgcolor = $966b9f;
+		global.fgcolor2 = $ffffff;
+		break;
 	//case 9: // PAPER
 	//	global.color[0] = c_green;
 	//	global.color[1] = c_blue;
