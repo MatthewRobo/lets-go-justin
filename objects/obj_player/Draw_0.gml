@@ -49,7 +49,7 @@ if (team >= 2) {
 		tcnow = (i + tcounter + tlen) mod tlen;
 		tcnext = (tcnow + 1) mod tlen;
 		tdir = tcnext == tcounter ? point_direction(0,0,hsp,vsp-grav) : point_direction(tx[tcnow],ty[tcnow],tx[tcnext],ty[tcnext]);
-		twid = 16;
+		twid = 24;
 		//talpha = clamp(2 * (i - tlen / 2) / (tlen / 2),0,1);
 		talpha = clamp(2 * (i - 10) / 10,0,1);
 		if (ammo <= 0) talpha *= 0.4;
@@ -57,36 +57,10 @@ if (team >= 2) {
 		x1 = tx[tcnow];
 		y1 = ty[tcnow] - 2*dsin(lifetime - 6 * (tlen - i ));
 	
-		x11 = clamp(x1+lengthdir_x(twid,tdir-90),x1-8,x1+8);
-		y11 = clamp(y1+lengthdir_y(twid,tdir-90),y1-18,y1+18);
-		x12 = clamp(x1+lengthdir_x(twid+4,tdir-90),x1-8,x1+8);
-		y12 = clamp(y1+lengthdir_y(twid+4,tdir-90),y1-18,y1+18);
-
-		tcolor = c_white;
-
-		if (global.hitstop > 0) talpha = i * 2 / tlen;
-
-		draw_vertex_colour(x11, y11,tcolor,talpha);
-		draw_vertex_colour(x12, y12,tcolor,talpha);
-	}
-	draw_primitive_end();
-	draw_primitive_begin(pr_trianglestrip);
-	for (i = 0; i < tlen; i+= 1) {
-		tcnow = (i + tcounter + tlen) mod tlen;
-		tcnext = (tcnow + 1) mod tlen;
-		tdir = tcnext == tcounter ? point_direction(0,0,hsp,vsp-grav) : point_direction(tx[tcnow],ty[tcnow],tx[tcnext],ty[tcnext]);
-		twid = 16;
-		//talpha = clamp(2 * (i - tlen / 2) / (tlen / 2),0,1);
-		talpha = clamp(2 * (i - 10) / 10,0,1);
-		if (ammo <= 0) talpha *= 0.4;
-
-		x1 = tx[tcnow];
-		y1 = ty[tcnow] - 2*dsin(lifetime - 6 * (tlen - i ));
-	
-		x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-8,x1+8);
-		y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-18,y1+18);
-		x12 = clamp(x1+lengthdir_x(twid+4,tdir+90),x1-8,x1+8);
-		y12 = clamp(y1+lengthdir_y(twid+4,tdir+90),y1-18,y1+18);
+		x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-6,x1+6);
+		y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-16,y1+16);
+		x12 = clamp(x1+lengthdir_x(twid,tdir-90),x1-6,x1+6);
+		y12 = clamp(y1+lengthdir_y(twid,tdir-90),y1-16,y1+16);
 
 		tcolor = c_white;
 
@@ -102,7 +76,7 @@ for (i = 0; i < tlen; i+= 1) {
 	tcnow = (i + tcounter + tlen) mod tlen;
 	tcnext = (tcnow + 1) mod tlen;
 	tdir = tcnext == tcounter ? point_direction(0,0,hsp,vsp-grav) : point_direction(tx[tcnow],ty[tcnow],tx[tcnext],ty[tcnext]);
-	twid = team >= 2 ? 16 : 24;
+	twid = team >= 2 ? 12 : 24;
 	//talpha = clamp(2 * (i - tlen / 2) / (tlen / 2),0,1);
 	talpha = clamp(2 * (i - 10) / 10,0,1);
 	if (ammo <= 0) talpha *= 0.4;

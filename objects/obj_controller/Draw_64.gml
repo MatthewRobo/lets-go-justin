@@ -56,7 +56,7 @@ if (global.pmax==4) {
 			drawpos = width / 2 - centergap - piptotal * (i + 1);
 			var pipsum = sign(obj_player1.dead) + sign(obj_player3.dead);
 			var deadmax = max(obj_player1.dead,obj_player3.dead);
-			draw_rectangle(drawpos-(pipsum*global.hitstop*pipwidth/deadmax), 8, drawpos, 56,0);
+			//draw_rectangle(drawpos-(pipsum*global.hitstop*pipwidth/deadmax), 8, drawpos, 56,0);
 			
 			draw_primitive_begin(pr_trianglestrip);
 			draw_vertex(drawpos-(pipsum*global.hitstop*pipwidth/deadmax)-pipslant, 8);
