@@ -137,6 +137,15 @@ switch global.palette {
 		global.fgcolor = $966b9f;
 		global.fgcolor2 = $ffffff;
 		break;
+	case 13: // POLKA
+		global.color[0] = $d2aaff;
+		global.color[1] = $e79d00;
+		global.color[2] = $3221f1;
+		global.color[3] = $e6ab00;
+		global.bgcolor = $5c637c;
+		global.fgcolor = $86467a;
+		global.fgcolor2 = $d4efff;
+		break;
 	//case 9: // PAPER
 	//	global.color[0] = c_green;
 	//	global.color[1] = c_blue;
