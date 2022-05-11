@@ -1,7 +1,7 @@
 if !global.browser {
 global.musicgain = clamp(global.musicgain,-1,21);
 if (global.musicgain > 20) global.musicgain = 0;
-if (global.musicgain < 0) global.musicgain = 11;
+if (global.musicgain < 0) global.musicgain = 20;
 if (!someonewon) audio_sound_gain(nowplaying,global.musicgain/10*volscl*musscl ,0);
 
 if (inbattle) {
