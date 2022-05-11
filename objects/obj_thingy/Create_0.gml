@@ -5,7 +5,7 @@ timer = 240;
 switch global.thingy {
 	case thingies.wave:
 	hspeed = irandom_range(1,10);
-	thickness = irandom_range(2,12);
+	thickness = irandom_range(2,6);
 	break;
 	case thingies.rectangle:
 	hspeed = irandom_range(8,20);
@@ -24,3 +24,4 @@ alpha2 = 1;
 alphamax = random_range(0.3,0.9);
 amp = random_range(3,8);
 xoffset = random_range(-room_width,room_width);
+thickness2 = irandom(8);
