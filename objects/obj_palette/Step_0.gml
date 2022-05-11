@@ -146,6 +146,22 @@ switch global.palette {
 		global.fgcolor = $86467a;
 		global.fgcolor2 = $d4efff;
 		break;
+	case 14: // RED PURPLE
+		global.color[0] = $292CFF;
+		global.color[1] = $F57698;
+		global.color[2] = $3221f1;
+		global.color[3] = $e6ab00;
+		global.bgcolor = $110011;
+		global.fgcolor = $41002B;
+		global.fgcolor2 = $6DBBFF;
+		break;
+	case 15: // TRANS PRIDE
+		global.color[0] = $b8abfd;
+		global.color[1] = $f7cf2b;
+		global.bgcolor = $282828;
+		global.fgcolor = $999999;
+		global.fgcolor2 = c_white;
+		break;
 	//case 9: // PAPER
 	//	global.color[0] = c_green;
 	//	global.color[1] = c_blue;
