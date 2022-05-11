@@ -150,7 +150,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			for (i = 0; i < 60; i++) {
 				trail = instance_create_layer(x,y,"platforms",obj_splatter);
 				trail.depth -= 2;
-				trail.owner = self;
+				trail.owner = id;
 				trail.radius = random_range(1,30);
 				trail.timer = random(i);
 
