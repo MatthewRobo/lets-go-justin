@@ -50,7 +50,7 @@ if (global.hitstop <= 0) {
 	image_speed = 1;
 	if (reflected != noone) {
 		attack = instance_create_layer(reflectx, reflecty, "hitboxes", obj_bullet);
-		attack.owner = self;
+		attack.owner = id;
 		attack.team = team;
 		attack.direction = point_direction(reflectx, reflecty, reflected.x, reflected.y);
 		attack.spd = counterspeed * reflectmult;
@@ -187,7 +187,7 @@ if (global.hitstop <= 0) {
 			if (dir == 5) {
 				for (i = 0; i < 360; i += 45) {
 					attack = instance_create_layer(x, y, "hitboxes", obj_slash);
-					attack.owner = self;
+					attack.owner = id;
 					attack.team = team;
 					attack.direction = i;
 					attack.spd = nslashspeed;
@@ -199,7 +199,7 @@ if (global.hitstop <= 0) {
 				}
 			} else {
 				attack = instance_create_layer(x, y, "hitboxes", obj_slash);
-				attack.owner = self;
+				attack.owner = id;
 				attack.team = team;
 				attack.direction = direction;
 				attack.spd = slashspeed;
@@ -230,7 +230,7 @@ if (global.hitstop <= 0) {
 				switch shottype {
 					case shot.bullet:
 						attack = instance_create_layer(x, y, "hitboxes", shotobj);
-						attack.owner = self;
+						attack.owner = id;
 						attack.team = team;
 						attack.direction = direction;
 						attack.spd = bulletspeed;
@@ -240,7 +240,7 @@ if (global.hitstop <= 0) {
 					case shot.shotgun:
 						for (i = -0; i < 360; i+= 45) {
 							attack = instance_create_layer(x, y, "hitboxes", shotobj);
-							attack.owner = self;
+							attack.owner = id;
 							attack.timer = shotactive;
 							attack.team = team;
 							attack.direction = i + direction;
@@ -255,7 +255,7 @@ if (global.hitstop <= 0) {
 						break;
 					case shot.wallbang:
 						attack = instance_create_layer(x, y, "hitboxes", shotobj);
-						attack.owner = self;
+						attack.owner = id;
 						attack.team = team;
 						attack.direction = direction;
 						attack.gravdir = direction;
@@ -269,7 +269,7 @@ if (global.hitstop <= 0) {
 						break;
 					case shot.whiffpunisher:
 						attack = instance_create_layer(x, y, "hitboxes", shotobj);
-						attack.owner = self;
+						attack.owner = id;
 						attack.timer = shotactive;
 						attack.team = team;
 						attack.direction = direction;
@@ -284,7 +284,7 @@ if (global.hitstop <= 0) {
 						break;
 					case shot.booster:
 						attack = instance_create_layer(x-hsp, y-vsp, "hitboxes", shotobj);
-						attack.owner = self;
+						attack.owner = id;
 						attack.timer = shotactive;
 						attack.team = team;
 						attack.direction = direction;
@@ -292,7 +292,7 @@ if (global.hitstop <= 0) {
 						break;
 					case shot.trailer:
 						attack = instance_create_layer(x, y, "hitboxes", shotobj);
-						attack.owner = self;
+						attack.owner = id;
 						attack.timer = shotactive;
 						attack.team = team;
 						attack.direction = direction;
@@ -302,7 +302,7 @@ if (global.hitstop <= 0) {
 						break;
 					case shot.grenade:
 						attack = instance_create_layer(x, y, "hitboxes", shotobj);
-						attack.owner = self;
+						attack.owner = id;
 						attack.timer = shotactive;
 						attack.team = team;
 						attack.direction = direction;
@@ -337,7 +337,7 @@ if (global.hitstop <= 0) {
 						
 						
 						trail = instance_create_layer(x,y,"trails",obj_gradientspike);
-						trail.owner = self;
+						trail.owner = id;
 						trail.length = dist;
 						trail.direction = direction;
 						trail.thickness = 8;
@@ -346,7 +346,7 @@ if (global.hitstop <= 0) {
 						//trail.image_xscale = dist / 40;
 						//trail.image_yscale = 1/5;
 						//trail.image_angle = direction;
-						//trail.owner = self;
+						//trail.owner = id;
 						//trail.image_blend = color;
 						
 						gap = 3;
@@ -355,7 +355,7 @@ if (global.hitstop <= 0) {
 								attack = instance_create_layer(x + lengthdir_x(dist - i * gap, direction), y + lengthdir_y(dist - i * gap, direction), "hitboxes", shotobj);
 								attack.image_xscale = 2;
 								attack.image_yscale = 1;
-								attack.owner = self;
+								attack.owner = id;
 								attack.timer = i mod 2 == 1 ? shotactive + 2 * i : shotactive + i;
 								attack.team = team;
 								attack.direction = direction + 100 * j + (i * 20 ) * j;
@@ -369,7 +369,7 @@ if (global.hitstop <= 0) {
 						//attack = instance_create_layer(x + lengthdir_x(dist - i * gap, direction), y + lengthdir_y(dist - i * gap, direction), "hitboxes", shotobj);
 						//attack.image_xscale = 2;
 						//attack.image_yscale = 1;
-						//attack.owner = self;
+						//attack.owner = id;
 						//attack.timer = shotactive * 2;
 						//attack.team = team;
 						//attack.direction = direction + 180;
@@ -386,7 +386,7 @@ if (global.hitstop <= 0) {
 							case 1: shotobj = obj_tan; break;
 						}
 						attack = instance_create_layer(x, y, "hitboxes", shotobj);
-						attack.owner = self;
+						attack.owner = id;
 						attack.team = team;
 						attack.direction = direction;
 						attack.spd = bulletspeed;
@@ -398,7 +398,7 @@ if (global.hitstop <= 0) {
 						len = shotactive * bulletspeed;
 						for (i = 0; i < 360; i += 360 / 10) {
 							attack = instance_create_layer(x, y, "hitboxes", shotobj);
-							attack.owner = self;
+							attack.owner = id;
 							attack.team = team;
 							attack.direction = direction + dcos(i) * 15 * flip;
 							j = 10 + i / 20;
@@ -412,7 +412,7 @@ if (global.hitstop <= 0) {
 						len = shotactive;
 						for (i = 0; i < 25; i ++) {
 							attack = instance_create_layer(x, y, "hitboxes", shotobj);
-							attack.owner = self;
+							attack.owner = id;
 							attack.team = team;
 							attack.direction = direction;
 							j = i * 5.4 + 45;
@@ -424,7 +424,7 @@ if (global.hitstop <= 0) {
 						break;
 					case shot.random:
 						attack = instance_create_layer(x, y, "hitboxes", shotobj);
-						attack.owner = self;
+						attack.owner = id;
 						attack.team = team;
 						attack.direction = direction;
 						attack.timer = shotactive;
@@ -449,14 +449,14 @@ if (global.hitstop <= 0) {
 							dist--;
 							if (dist > maxdist) maxdist = dist;
 							attack = instance_create_layer(x+lengthdir_x(dist,angle), y+lengthdir_y(dist,angle), "hitboxes", shotobj);
-							attack.owner = self;
+							attack.owner = id;
 							attack.team = team;
 							attack.direction = angle;
 							attack.timer = shotactive + abs(i);
 						}
 						
 						trail = instance_create_layer(x,y,"trails",obj_gradientspike);
-						trail.owner = self;
+						trail.owner = id;
 						trail.length = maxdist;
 						trail.direction = direction;
 						trail.thickness = maxdist * dsin(spread/2);
