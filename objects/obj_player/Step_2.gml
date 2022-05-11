@@ -119,7 +119,7 @@ if (global.hitstop <= 0) {
 	}
 
 	if (spawning == 1) {
-		layer_background_alpha(gbid, 1);
+		//layer_background_alpha(gbid, 0.3);
 		global.outline = global.fgcolor2;
 	}
 
@@ -685,7 +685,7 @@ if (global.hitstop <= 0) {
 
 	if (dead) {
 		global.outline = color;
-			//layer_background_alpha(gbid, 0.1);
+		//layer_background_alpha(gbid, 0.1);
 
 		
 	//	var _x1 = lerp(-pi,pi,global.hitstop/dead);
