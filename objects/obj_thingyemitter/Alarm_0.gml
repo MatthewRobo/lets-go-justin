@@ -7,7 +7,7 @@ switch global.thingy {
 	xspawn = random(room_width);
 	break;
 	case thingies.rectangle:
-	alarm[0] = irandom_range(8,12);
+	alarm[0] = irandom_range(6,10);
 	xspawn = irandom(1) ? room_width : 0;
 	break;
 }

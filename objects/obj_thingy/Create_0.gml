@@ -4,7 +4,7 @@ thickness = 1;
 timer = 240;
 switch global.thingy {
 	case thingies.wave:
-	hspeed = irandom_range(1,10);
+	hspeed = irandom_range(3,10);
 	thickness = irandom_range(2,6);
 	break;
 	case thingies.rectangle:
@@ -22,6 +22,6 @@ team = irandom(1);
 if (global.mode == gamemode.teamvs) team = irandom(3);
 alpha2 = 1;
 alphamax = random_range(0.3,0.9);
-amp = random_range(3,8);
+amp = random_range(3,32);
 xoffset = random_range(-room_width,room_width);
 thickness2 = irandom(8);
