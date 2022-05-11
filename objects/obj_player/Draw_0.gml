@@ -78,7 +78,7 @@ for (i = 0; i < tlen; i+= 1) {
 	tdir = tcnext == tcounter ? point_direction(0,0,hsp,vsp-grav) : point_direction(tx[tcnow],ty[tcnow],tx[tcnext],ty[tcnext]);
 	twid = team >= 2 ? 12 : 24;
 	//talpha = clamp(2 * (i - tlen / 2) / (tlen / 2),0,1);
-	talpha = clamp(2 * (i - 10) / 10,0,1);
+	talpha = clamp(2*i/tlen,0,1);
 	if (ammo <= 0) talpha *= 0.4;
 
 	x1 = tx[tcnow];
@@ -91,7 +91,7 @@ for (i = 0; i < tlen; i+= 1) {
 
 	tcolor = color;
 
-	if (global.hitstop > 0) talpha = i * 2 / tlen;
+	if (global.hitstop > 0) talpha*=2;
 
 	draw_vertex_colour(x11, y11,tcolor,talpha);
 	draw_vertex_colour(x12, y12,tcolor,talpha);
