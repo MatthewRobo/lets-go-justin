@@ -7,9 +7,9 @@ draw_set_font(Font1);
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 
-xdraw = room_width / 2;
-ydraw = 60;
-vgap = string_height("(Team 12g)");
+var xdraw = room_width / 2;
+var ydraw = 60;
+var vgap = string_height("(Team 12g)");
 var prompt = "";
 draw_set_color(c_white);
 if (teams) {
@@ -64,8 +64,7 @@ for (var i = 0; i < GP+KB; i++;)
 			}
 		}
 
-		draw_text_transformed(xdraw+hgap*posdraw[i],ydraw,label,clamp((512+64)/string_width(label),0,1),1,0);
-		ydraw += vgap;
+		draw_text_transformed(xdraw+hgap*posdraw[i],ypos[i],label,clamp((512+64)/string_width(label),0,1),1,0);
 	}
 }
 

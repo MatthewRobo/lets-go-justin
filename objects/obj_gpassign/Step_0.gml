@@ -102,3 +102,18 @@ for (var i = 0; i < GP+KB; i++;)
 if (global.mode == gamemode.training) {
 	room_goto_previous();
 }
+draw_set_font(Font1);
+var ydraw = 60;
+var vgap = string_height("(Team 12g)");
+ydraw += vgap;
+for (var i = 0; i < GP+KB; i++;)
+{
+	draw_set_colour(global.fgcolor2);
+	if (position[i] == -99) {
+		ypos[i] = lerp(ypos[i],ydraw,lerpfactor);
+	}
+	if (position[i] != -99) {
+		ypos[i] = lerp(ypos[i],ydraw,lerpfactor);
+		ydraw += vgap;
+	}
+}
