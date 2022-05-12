@@ -4,16 +4,20 @@ inbattle = false;
 
 if (global.browser) {
 	battlemus = [
+	Title_Screen,
 	Next,
 	Theme,
 	]
 
 	menumus = [
+	Title_Screen,
 	Lobby,
 	Pregame,
 	]
 } else {
-	battlemus = [Aeronaut,
+	battlemus = [
+	Title_Screen,
+	Aeronaut,
 	BackdoorBlaster,
 	BeginnersLuck,
 	BonusRound,
@@ -41,10 +45,12 @@ if (global.browser) {
 	Theme,
 	VsKogasa,
 	Exit133Hagane,
-	CloakAndRevolver,
+	CloakAndRevolver,	
 	]
 
-	menumus = [CallOut,
+	menumus = [
+	Title_Screen,
+	CallOut,
 	ReadyToSortie,
 	StrategicBeat,
 	HellsinkerMenu1,

@@ -15,7 +15,8 @@ if (inbattle) {
 	}
 	if !hasamenusongplaying {
 		audio_stop_sound(nowplaying);
-		if (global.musicgain > 0) nowplaying = audio_play_sound(menumus[irandom(array_length(menumus)-1)],1,0);
+		//if (global.musicgain > 0) nowplaying = audio_play_sound(menumus[irandom(array_length(menumus)-1)],1,0);
+		if (global.musicgain > 0) nowplaying = audio_play_sound(menumus[0],1,0);
 	}
 }
 
