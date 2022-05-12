@@ -1,4 +1,4 @@
-if !global.browser {
+//if !global.browser {
 global.musicgain = clamp(global.musicgain,-1,21);
 if (global.musicgain > 20) global.musicgain = 0;
 if (global.musicgain < 0) global.musicgain = 20;
@@ -27,13 +27,15 @@ if (inbattle) {
 				if !obj_mainmenu.expanded {
 					obj_mainmenu.frame = 0;
 					audio_play_sound(snd_shoot,0,0);
-					var oldpalette = global.palette;
-					while (global.palette == oldpalette) {
-						global.palette = irandom(PALETTES-1);
+					if (audio_sound_is_playable(nowplaying)) {
+						var oldpalette = global.palette;
+						while (global.palette == oldpalette) {
+							global.palette = irandom(PALETTES-1);
+						}
 					}
 				}
 			}
 		}
 	}
 }
-}
+//}

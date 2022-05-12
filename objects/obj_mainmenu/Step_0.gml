@@ -1,5 +1,9 @@
 var volstring = global.musicgain > 0 ? string(global.musicgain*10) + "%" : "OFF";
-modestr[3] = "Music: " + volstring;
+for (var i = 0; i < array_length(modes); i++) {
+	if (modes[i] == -2) {
+		modestr[i] = "Music: " + volstring;
+	}
+}
 if (!global.inassign) {
 	for (var device = 0; device < GP+KB; device++) {
 		if (global.mode != -2 || !expanded) {

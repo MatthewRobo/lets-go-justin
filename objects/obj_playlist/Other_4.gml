@@ -1,11 +1,16 @@
-if !global.browser{
+//if !global.browser{
 inbattle = false;
 for (var i = 0; i < array_length(global.rooms); i++) {
 	if (global.rooms[i] == room) inbattle = true;
 }
 if (inbattle) {
-	audio_stop_sound(nowplaying);
-	if (global.musicgain > 0) nowplaying = audio_play_sound(battlemus[irandom(array_length(battlemus)-1)],1,1);
+	var next = irandom(array_length(battlemus)-1);
+	
+	if (audio_get_name(nowplaying) != audio_get_name(battlemus[next])) 
+		{
+			audio_stop_sound(nowplaying);
+			if (global.musicgain > 0) nowplaying = audio_play_sound(battlemus[next],1,1);
+		}
 } else {
 	var hasamenusongplaying = false;
 	for (var i = 0; i < array_length(menumus); i++) {
@@ -33,4 +38,4 @@ for (var i = 0; i < array_length(menumus); i++) {
 		volscl = battlevol[i];
 	}
 }
-}
+//}
