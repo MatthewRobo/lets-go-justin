@@ -175,10 +175,11 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			dink = instance_create_depth(other.x,other.y,other.depth-2,obj_dink);
 			dink.speed = max(8,other.spd);
 			dink.direction = random(360);
-			
 			dink.color = other.owner.color;
 			dink.image_xscale = 0.5;
 			dink.image_yscale = dink.image_xscale;
+			sfx = audio_play_sound(snd_dink,0,0);
+			audio_sound_pitch(sfx,random_range(0.95,1.05));
 		} else {
 			freeze = 4;
 			if (global.hitstop < freeze) global.hitstop = freeze;

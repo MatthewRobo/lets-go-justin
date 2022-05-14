@@ -177,7 +177,8 @@ if (state == status.parry) {
 	draw_sprite_ext(spr_pborder,image_index,_x,_ysin,xscale*_scale,yscale*_scale,0,c_white,1);
 }
 
-draw_sprite_ext(spr_pborder,image_index,_x,_ysin,xscale,yscale,0,c_white,1);
+var invulflash = max(0,invul mod 10 >= 5);
+draw_sprite_ext(spr_pborder,invulflash,_x,_ysin,xscale,yscale,0,c_white,1);
 draw_sprite_ext(spr_peyes,image_index,_x,_ysin+vvec,xscale,yscale,0,eyecolor,1);
 
 
@@ -202,7 +203,7 @@ switch state {
 	case status.stun:     draw_sprite_ext(spr_poverlay,0,_x,_ysin,xscale,yscale,0,c_white,0.35); break;
 }
 
-draw_sprite_ext(spr_pparry,image_index,_x,_ysin,xscale,yscale,0,c_white,abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
+//draw_sprite_ext(spr_pparry,image_index,_x,_ysin,xscale,yscale,0,c_white,abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
 if (state == status.parry) {
 	_s = (abs(dsin(recovery * 20)) + 1) / 2;
 	draw_sprite_ext(spr_probes,image_index,_x,_ysin,xscale,yscale,0,c_white,_s);
