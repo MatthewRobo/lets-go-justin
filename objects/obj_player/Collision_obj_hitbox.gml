@@ -170,10 +170,21 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 				trail.y += lengthdir_y(rlen,rdir);
 			}
 		}
-	} else if (state != status.parry && invul != invultime && !spawning && !dead) {
+	} else if (state != status.parry && !spawning && !dead) {
+		if (other.object_index != obj_slash) {
+			dink = instance_create_depth(other.x,other.y,other.depth-2,obj_dink);
+			dink.speed = max(8,other.spd);
+			dink.direction = random(360);
+			
+			dink.color = other.owner.color;
+			dink.image_xscale = 0.5;
+			dink.image_yscale = dink.image_xscale;
+		} else {
+			freeze = 4;
+			if (global.hitstop < freeze) global.hitstop = freeze;
+		}
 		instance_destroy(other);
-		freeze = other.object_index == obj_slash ? 4 : 2;
-		if (global.hitstop < freeze) global.hitstop = freeze;
+
 		global.outline = global.fgcolor2;
 		flash = true;
 	}
