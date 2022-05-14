@@ -28,7 +28,7 @@ if (lockout || !candestroy) {
 				}
 			}
 		}
-		if global.pressed[device][input.L] {
+		if !binding[device] && global.pressed[device][input.L] {
 			switch slot[device]{
 				case -1: 
 					oldside = slot[device];
@@ -38,6 +38,7 @@ if (lockout || !candestroy) {
 					global.lookup[newside] = device;
 					slot[swapdevice] = oldside;
 					ready[newside]=false;
+					pos[newside] = 10;
 					break;
 				case -2: 
 					oldside = slot[device];
@@ -47,6 +48,7 @@ if (lockout || !candestroy) {
 					global.lookup[newside] = device;
 					slot[swapdevice] = oldside;
 					ready[newside]=false;
+					pos[newside] = 10;
 					break;
 				case 1:
 					slot[device] = -1;
@@ -57,8 +59,9 @@ if (lockout || !candestroy) {
 					global.lookup[3] = GP+KB;
 					break;
 			}
+			//if (slot[device] >= 0) pos[slot[device]] = 10;
 		}
-		if global.pressed[device][input.R] {
+		if !binding[device] && global.pressed[device][input.R] {
 			switch slot[device]{
 				case -1: 
 					oldside = slot[device];
@@ -68,6 +71,7 @@ if (lockout || !candestroy) {
 					global.lookup[newside] = device;
 					slot[swapdevice] = oldside;
 					ready[newside]=false;
+					pos[newside] = 10;
 					break;
 				case -2: 
 					oldside = slot[device];
@@ -77,6 +81,7 @@ if (lockout || !candestroy) {
 					global.lookup[newside] = device;
 					slot[swapdevice] = oldside;
 					ready[newside]=false;
+					pos[newside] = 10;
 					break;
 				case 0:
 					slot[device] = -1;
@@ -87,6 +92,7 @@ if (lockout || !candestroy) {
 					global.lookup[2] = GP+KB;
 					break;
 			}
+			//if (slot[device] >= 0) pos[slot[device]] = 10;
 		}
 		if global.pressed[device][input.D] && slot[device] == -1 {
 			slot[device] = -2;
@@ -106,16 +112,16 @@ if (lockout || !candestroy) {
 	{
 		var device = global.lookup[p]; // d for DEVICE
 		if (!ready[p]) {
-			if (pos[p] >3) binding[p] = false;
-			if global.pressed[device][input.U] && !binding[p]{
+			if (pos[p] >3) binding[device] = false;
+			if global.pressed[device][input.U] && !binding[device]{
 				pos[p]--;
 			}
-			if global.pressed[device][input.D] && !binding[p]{
+			if global.pressed[device][input.D] && !binding[device]{
 				pos[p]++;
 			}
 			pos[p] = (pos[p] + total_options) mod total_options;
 			if (device >= GP && device < GP+KB && keyboard_check_pressed(vk_anykey) && keyboard_key != vk_f1 && keyboard_key != vk_f2) {
-				if (binding[p] && pos[p] <= 3) {
+				if (binding[device] && pos[p] <= 3) {
 					global.mainbind[device][pos[p]] = keyboard_key;
 					global.subbind[device][pos[p]] = keyboard_key;
 					pos[p]++;
@@ -124,15 +130,15 @@ if (lockout || !candestroy) {
 				&& keyboard_key != global.mainbind[device][input.U] && keyboard_key != global.mainbind[device][input.D]
 				&& keyboard_key != global.mainbind[device][input.L] && keyboard_key != global.mainbind[device][input.R]) {
 					if (pos[p] <= 3 && keyboard_key == global.mainbind[device][input.ST]) {
-						binding[p] = true;
+						binding[device] = true;
 					}
 					if (pos[p] > 3 && pos[p] < input.length) {
-						binding[p] = true;
+						binding[device] = true;
 						global.mainbind[device][pos[p]] = keyboard_key;
 						global.subbind[device][pos[p]] = keyboard_key;
 						if (pos[p] < input.SE) pos[p]++;
 					} else {
-						if (pos[p] >=input.length) binding[p] = false;
+						if (pos[p] >=input.length) binding[device] = false;
 						if (pos[p] == input.length + 1) {
 							if (keyboard_key == global.mainbind[device][input.ST]) {
 								var d = device;
