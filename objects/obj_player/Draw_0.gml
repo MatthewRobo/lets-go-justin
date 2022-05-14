@@ -260,5 +260,5 @@ if (global.mode = gamemode.training) {
 }
 
 draw_set_color(c_white);
-draw_set_alpha(abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
+draw_set_alpha(abs(dcos(360/30 * invul) * clamp(invul/60,0,1))*0.6);
 draw_circle(x,_ysin,36,0);
