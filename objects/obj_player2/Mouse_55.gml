@@ -3,5 +3,5 @@
 
 if (global.mode == gamemode.training)
 {
-	invul = invul > 0 ? 0 : 9999999 ;
+	dummyinvul = !dummyinvul;
 }

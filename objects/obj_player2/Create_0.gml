@@ -11,6 +11,7 @@ if (global.mode = gamemode.training) {
 	spr_idle = spr_p0idle;
 }
 dummyparry = false;
+dummyinvul = false;
 aprad = 60;
 
 
