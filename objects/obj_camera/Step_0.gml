@@ -7,18 +7,28 @@
 
 //zoom_level = 1;
 
-//var i;
-//for (var i = 0; i < instance_number(obj_player); ++i;)
-//{
-//	players[i] = instance_find(obj_player,i);
-//	target = players[i];
-//	//if (target.dead) {
-//	//	target = target.spawnpoint;
-//	//}
+var i;
+var deadcount = 0;
+var shakedir = 0;
+var screenshake = false;
+for (var i = 0; i < instance_number(obj_player); ++i;)
+{
+	players[i] = instance_find(obj_player,i);
+	target = players[i];
+	//if (target.dead) {
+	//	target = target.spawnpoint;
+	//}
 		
-//	x += target.x;
-//	y += target.y;
-//}
+	//x += target.x;
+	//y += target.y;
+	
+	if target.dead {
+		deadcount++;
+		screenshake = true;
+		shakedir += target.deadangle;
+	}
+}
+shakedir /= deadcount;
 //var lerpfactor = 0.1;
 
 //if (global.hitstop > 0) zoom_level = 0.95;
@@ -41,3 +51,11 @@
 
 x = room_width / 2;
 y = room_height / 2;
+
+
+if screenshake {
+	var shakeclock = global.hitstop*global.hitstop * 2;
+	var shakelen = dsin(shakeclock) * 8;
+	x += lengthdir_x(shakelen,shakedir);
+	y += lengthdir_y(shakelen,shakedir);
+}
