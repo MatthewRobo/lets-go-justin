@@ -5,7 +5,7 @@ global.outline = c_white;
 global.firstto = -1;
 ready = array_create(PLAYERS,false);
 cols = 5;
-rows = 3;
+rows = ceil(shot.length / cols);
 
 shotspr = [spr_marksman,
              spr_shotgun,
@@ -38,6 +38,7 @@ shotstr = ["Marksman",
 			 "Wallbanger2",
 			 "Crossbow",
 			 ];
+			 
 			 
 iconframes = 0;
 

@@ -30,7 +30,7 @@ draw_set_valign(fa_top);
 ydraw = 20;
 draw_text(xdraw,ydraw,mode);
 
-xdraw = (room_width - rows*icon_htotal)/2;
+xdraw = (room_width - (cols-1)*icon_htotal)/2;
 
 var shotcounter = 0;
 for (var row = 0; row < rows; row++) {

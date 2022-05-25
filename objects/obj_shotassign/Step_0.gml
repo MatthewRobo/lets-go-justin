@@ -151,7 +151,7 @@ if (totalready >= global.pmax) room_goto_next();
 iconframes += 4/5;
 iconframes = iconframes mod sprite_get_number(spr_playericon);
 
-xdraw = (room_width - rows*icon_htotal)/2;
+xdraw = (room_width - (cols-1)*icon_htotal)/2;
 
 shotcounter = 0;
 for (var row = 0; row < rows; row++) {
