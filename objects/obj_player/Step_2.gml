@@ -148,6 +148,12 @@ if (global.hitstop <= 0) {
 		y = y + _c * dy - _s * dx;
 		spawning--;
 	}
+	if (roundstart > 0) {
+		shoot = false;
+		parry = false;
+		slash = false;
+		roundstart--;
+	}
 
 	switch (state) {
 	case status.idle:

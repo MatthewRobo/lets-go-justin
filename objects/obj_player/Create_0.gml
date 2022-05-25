@@ -23,6 +23,7 @@ gamepad = 0;
 spawnpoint = obj_respawn;
 
 deaths = 0;
+roundstart = 0;
 
 maxsp = 128;
 runsp = 12;
@@ -44,7 +45,7 @@ invultime = 150;
 stun = 0;
 recovery = 0;
 
-teamstun = 40;
+//teamstun = 40;
 
 buffer = 6;
 shoot = false;

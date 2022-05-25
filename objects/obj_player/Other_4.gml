@@ -8,8 +8,10 @@ gamepad = global.lookup[team];
 
 color = global.color[team];
 
-recovery = instance_number(obj_controller) > 0 ? obj_controller.roundstart : recovery;
-state = status.parried;
+roundstart = instance_number(obj_controller) > 0 ? obj_controller.roundstart : recovery;
+//state = status.parried;
+
+
 
 event_user(0);
 
