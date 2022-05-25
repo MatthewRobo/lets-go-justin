@@ -35,14 +35,16 @@ xdraw = (room_width - rows*icon_htotal)/2;
 var shotcounter = 0;
 for (var row = 0; row < rows; row++) {
 	for (var col = 0; col < cols; col++) {
-		var _xdraw = xdraw+icon_htotal*col;
-		var _ydraw = ydraw_icon+icon_vtotal*row;
-		draw_sprite_ext(shotspr[shotcounter],0,_xdraw,_ydraw,iconscale,iconscale,0,global.fgcolor2,1);
-		draw_set_color(c_white);
-		draw_set_valign(fa_top);
-		draw_set_font(fnt_smallsemi);
-		draw_text(_xdraw,_ydraw+iconsize/2+16,shotstr[shotcounter]);
-		shotcounter++;
+		if (shotcounter < shot.length) {
+			var _xdraw = xdraw+icon_htotal*col;
+			var _ydraw = ydraw_icon+icon_vtotal*row;
+			draw_sprite_ext(shotspr[shotcounter],0,_xdraw,_ydraw,iconscale,iconscale,0,global.fgcolor2,1);
+			draw_set_color(c_white);
+			draw_set_valign(fa_top);
+			draw_set_font(fnt_smallsemi);
+			draw_text(_xdraw,_ydraw+iconsize/2+16,shotstr[shotcounter]);
+			shotcounter++;
+		}
 	}
 }
 

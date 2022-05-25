@@ -17,6 +17,9 @@ enum shot {
 	sin,
 	random,
 	
+
+	wallbang2,
+	crossbow,
 	length,
 	surface
 }
@@ -40,6 +43,11 @@ switch shottype {
 		gunrecovery = 22;
 		gunreload = 38;
 		break;
+	case shot.crossbow:
+		bulletspeed = 32;
+		gunrecovery = 22;
+		gunreload = 38;
+		break;
 	case shot.shotgun:
 		bulletspeed = 24;
 		recoilstun = 0;
@@ -56,6 +64,14 @@ switch shottype {
 		gunrecovery = 30;
 		gunreload = 40;
 		shotactive = 5/0.5;
+		break;
+	case shot.wallbang2:
+		shotobj = obj_wallbang2;
+		bulletspeed = -12;
+		bulletmaxspeed = 7;
+		gunrecovery = 30;
+		gunreload = 50;
+		shotactive = 400;
 		break;
 	case shot.whiffpunisher:
 		ammomax = 6;

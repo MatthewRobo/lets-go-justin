@@ -177,6 +177,7 @@
     {"id":{"name":"obj_bullettrail","path":"objects/obj_bullettrail/obj_bullettrail.yy",},"order":2,},
     {"id":{"name":"obj_dink","path":"objects/obj_dink/obj_dink.yy",},"order":16,},
     {"id":{"name":"BustAMove","path":"sounds/BustAMove/BustAMove.yy",},"order":4,},
+    {"id":{"name":"obj_wallbang2","path":"objects/obj_wallbang2/obj_wallbang2.yy",},"order":16,},
     {"id":{"name":"HellsinkerMenu1","path":"sounds/HellsinkerMenu1/HellsinkerMenu1.yy",},"order":3,},
     {"id":{"name":"spr_whip","path":"sprites/spr_whip/spr_whip.yy",},"order":4,},
     {"id":{"name":"FightingChance","path":"sounds/FightingChance/FightingChance.yy",},"order":9,},

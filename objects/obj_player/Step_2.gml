@@ -238,6 +238,21 @@ if (global.hitstop <= 0) {
 						attack.hsp = lengthdir_x(attack.spd, attack.direction);
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
 						break;
+					case shot.crossbow:
+						attack = instance_create_layer(x, y, "hitboxes", shotobj);
+						attack.owner = id;
+						attack.team = team;
+						attack.direction = direction;
+						attack.grav = 2;
+						attack.spd = bulletspeed;
+						attack.hsp = lengthdir_x(attack.spd, attack.direction);
+						attack.vsp = lengthdir_y(attack.spd, attack.direction);
+						attack.vsp += vsp * 2;
+						attack.vsp -= grav * 2;
+						attack.hsp += hsp  * 2;
+						attack.image_xscale = 0.5;
+						attack.image_yscale = attack.image_xscale;
+						break;
 					case shot.shotgun:
 						for (i = -0; i < 360; i+= 45) {
 							attack = instance_create_layer(x, y, "hitboxes", shotobj);
@@ -255,6 +270,20 @@ if (global.hitstop <= 0) {
 						}
 						break;
 					case shot.wallbang:
+						attack = instance_create_layer(x, y, "hitboxes", shotobj);
+						attack.owner = id;
+						attack.team = team;
+						attack.direction = direction;
+						attack.gravdir = direction;
+						attack.spd = bulletspeed;
+						attack.maxspd = bulletmaxspeed;
+						attack.hsp = lengthdir_x(attack.spd, attack.direction);
+						attack.vsp = lengthdir_y(attack.spd, attack.direction);
+						attack.maxhsp = lengthdir_x(bulletmaxspeed, attack.direction);
+						attack.maxvsp = lengthdir_y(bulletmaxspeed, attack.direction);
+						attack.timer = shotactive;
+						break;
+					case shot.wallbang2:
 						attack = instance_create_layer(x, y, "hitboxes", shotobj);
 						attack.owner = id;
 						attack.team = team;

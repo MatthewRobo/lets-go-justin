@@ -4,8 +4,8 @@ global.hitstop = 0;
 global.outline = c_white;
 global.firstto = -1;
 ready = array_create(PLAYERS,false);
-cols = 4;
-rows = shot.length div cols;
+cols = 5;
+rows = 3;
 
 shotspr = [spr_marksman,
              spr_shotgun,
@@ -18,7 +18,10 @@ shotspr = [spr_marksman,
              spr_booster,
 			 spr_geyser,
              spr_trig,
-             spr_anarchy];
+             spr_anarchy,
+             spr_wallbang,
+             spr_marksman,
+			 ];
 
 shotstr = ["Marksman",
              "Burst",
@@ -31,7 +34,10 @@ shotstr = ["Marksman",
 			 "Booster",
 			 "Geyser",
 			 "Trig",
-			 "Anarchy"];
+			 "Anarchy",
+			 "Wallbanger2",
+			 "Crossbow",
+			 ];
 			 
 iconframes = 0;
 
