@@ -12,6 +12,6 @@ if (global.hitstop <= 0) {
 			vsp *= maxspd / spd;
 		}
 	}
-	if (image_xscale < maxsize) image_xscale += 0.04;
-	image_yscale = image_xscale;
+	//if (image_xscale < maxsize) image_xscale += 0.04;
+	//image_yscale = image_xscale;
 }
