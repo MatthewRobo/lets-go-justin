@@ -181,6 +181,7 @@ if (global.hitstop <= 0) {
 				vsp -= vsp * 0.488;
 			}
 			vsp -= thrust;
+			if (airjumps > jumpmax - 1) vsp -= thrust * 3;
 			airjumps--;
 		}
 

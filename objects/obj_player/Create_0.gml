@@ -27,7 +27,7 @@ roundstart = 0;
 
 maxsp = 128;
 runsp = 12;
-accel = 1.5;
+accel = 2;
 deccel = 1.5;
 walksp = 2;
 movesp = runsp;
