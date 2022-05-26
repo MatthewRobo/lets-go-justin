@@ -11,6 +11,17 @@ draw_primitive_end();
 
 */
 if !GREYBOX {
+
+if (roundstart > 0 && recovery > 0) {
+	draw_set_color(color);
+	var _angle = recovery * recovery * 0.3;
+	var _dist = recovery*8;
+	for (i = 0; i < 360; i += 360 / 4) {
+		var _a = _angle + i * sign(image_xscale);
+		draw_circle(x+lengthdir_x(_dist,_a),y+lengthdir_y(_dist,_a),32+recovery,0);
+	}
+	//draw_rectangle(x-6,y-recovery*recovery,x+6,y,0);
+}
 if (dir != 5) {
 	var _c = dcos(direction);
 	var _s = dsin(direction);
