@@ -5,3 +5,4 @@
 event_inherited();
 
 grav = 0.8;
+windaffected = true;

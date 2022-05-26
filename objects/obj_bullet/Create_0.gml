@@ -10,7 +10,7 @@ cycle = 60;
 grav = 0;
 gravdir = 270;
 maxspd = spd;
-
+windaffected = false;
 
 tlen = 10;
 tcounter = 0;

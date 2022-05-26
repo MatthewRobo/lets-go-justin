@@ -257,6 +257,7 @@ if (global.hitstop <= 0) {
 						attack.vsp += vsp * 2;
 						attack.vsp -= grav * 2;
 						attack.hsp += hsp  * 2;
+						attack.windaffected = true;
 						attack.image_xscale = 0.5;
 						attack.image_yscale = attack.image_xscale;
 						break;
