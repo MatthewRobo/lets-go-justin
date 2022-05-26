@@ -25,7 +25,7 @@ collision_point(x2,y1,obj_wall,0,0)
 		if (surface_exists(obj_surface.surf)) {
 			surface_set_target(obj_surface.surf);
 			
-			draw_circle(x,y,r2,0);
+			draw_circle(x,y,r2/2,0);
 			
 			surface_reset_target();
 		}
