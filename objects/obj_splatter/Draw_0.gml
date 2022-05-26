@@ -26,17 +26,17 @@ _y1 = y - dy;
 _y2 = y + dy;
 
 if (instance_exists(obj_surface) && surface_exists(obj_surface.surf) && r2 < 64) {
-	//if (
-	//collision_point(x,y,obj_wall,0,0) &&
-	//collision_point(x1,y1,obj_wall,0,0) &&
-	//collision_point(x1,y2,obj_wall,0,0) &&
-	//collision_point(x2,y2,obj_wall,0,0) &&
-	//collision_point(x2,y1,obj_wall,0,0)
-	//) {
-	//	surface_set_target(obj_surface.surf);
-	//	draw_circle(x,y,r2,0);
-	//	surface_reset_target();
-	//}
+	if (
+	collision_point(x,y,obj_wall,0,0) &&
+	collision_point(x1,y1,obj_wall,0,0) &&
+	collision_point(x1,y2,obj_wall,0,0) &&
+	collision_point(x2,y2,obj_wall,0,0) &&
+	collision_point(x2,y1,obj_wall,0,0)
+	) {
+		surface_set_target(obj_surface.surf);
+		draw_circle(x,y,r2,0);
+		surface_reset_target();
+	}
 
 	//if (
 	//collision_point(x,y,obj_wall,0,0) &&
@@ -49,16 +49,16 @@ if (instance_exists(obj_surface) && surface_exists(obj_surface.surf) && r2 < 64)
 	//	surface_reset_target();
 	//}
 	
-	if (collision_point(x,y,obj_wall,0,0)) {
-		surface_set_target(obj_surface.surf);
-		draw_primitive_begin(pr_trianglestrip);
-		if collision_point(_x1,_y1,obj_wall,0,0) draw_vertex(_x1, _y1);
-		if collision_point(_x2,_y2,obj_wall,0,0) draw_vertex(_x2, _y2);
-		if collision_point(lastx1,lasty1,obj_wall,0,0) draw_vertex(lastx1,lasty1);
-		if collision_point(lastx2,lasty2,obj_wall,0,0) draw_vertex(lastx2,lasty2);
-		draw_primitive_end();
-		surface_reset_target();
-	}
+	//if (collision_point(x,y,obj_wall,0,0)) {
+	//	surface_set_target(obj_surface.surf);
+	//	draw_primitive_begin(pr_trianglestrip);
+	//	if collision_point(_x1,_y1,obj_wall,0,0) draw_vertex(_x1, _y1);
+	//	if collision_point(_x2,_y2,obj_wall,0,0) draw_vertex(_x2, _y2);
+	//	if collision_point(lastx1,lasty1,obj_wall,0,0) draw_vertex(lastx1,lasty1);
+	//	if collision_point(lastx2,lasty2,obj_wall,0,0) draw_vertex(lastx2,lasty2);
+	//	draw_primitive_end();
+	//	surface_reset_target();
+	//}
 
 }
 
