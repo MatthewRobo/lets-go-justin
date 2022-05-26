@@ -4,21 +4,21 @@
 enum shot {
 	bullet = 0,
 	shotgun,
+	crossbow,
 	whip,
 	whiffpunisher,
-	crossbow,
 	
 	wallbang,
 	trailer,
+	wallbang2,
 	wall2,
 	grenade,
-	wallbang2,
-	
+
 	booster,
 	geyser,
+	coin,
 	sin,
 	random,
-	coin,
 	
 	length,
 	surface

@@ -1,4 +1,4 @@
-team = other.team;
+if (other.object_index != obj_coin) team = other.team;
 if (lasthit != other) {
 	lasthit = other;
 	

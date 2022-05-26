@@ -38,11 +38,75 @@ for (var row = 0; row < rows; row++) {
 		if (shotcounter < shot.length) {
 			var _xdraw = xdraw+icon_htotal*col;
 			var _ydraw = ydraw_icon+icon_vtotal*row;
-			draw_sprite_ext(shotspr[shotcounter],0,_xdraw,_ydraw,iconscale,iconscale,0,global.fgcolor2,1);
+			var _shotspr = spr_marksman;
+			var _shotstr = "UNNAMED";
+			switch shotcounter {
+				case shot.bullet:
+					_shotstr = "Marksman";
+					_shotspr = spr_marksman;
+				break;
+				case shot.shotgun:
+					_shotstr = "Burst";
+					_shotspr = spr_shotgun;
+				break;
+				case shot.wallbang:
+					_shotstr = "Wallbanger";
+					_shotspr = spr_wallbang;
+				break;
+				case shot.whiffpunisher:
+					_shotstr = "Revolver";
+					_shotspr = spr_flicker;
+				break;
+				case shot.booster:
+					_shotstr = "Booster";
+					_shotspr = spr_booster;
+				break;
+				case shot.trailer:
+					_shotstr = "Wall";
+					_shotspr = spr_trailer;
+				break;
+				case shot.grenade:
+					_shotstr = "Grenade";
+					_shotspr = spr_grenade;
+				break;
+				case shot.geyser:
+					_shotstr = "Geyser";
+					_shotspr = spr_grenade;
+				break;
+				case shot.sin:
+					_shotstr = "Trig";
+					_shotspr = spr_trig;
+				break;
+				case shot.whip:
+					_shotstr = "Whip";
+					_shotspr = spr_whip;
+				break;
+				case shot.wall2:
+					_shotstr = "Beam";
+					_shotspr = spr_beam;
+				break;
+				case shot.random:
+					_shotstr = "Dice";
+					_shotspr = spr_anarchy;
+				break;
+				case shot.wallbang2:
+					_shotstr = "Halo";
+					_shotspr = spr_halo;
+				break;
+				case shot.crossbow:
+					_shotstr = "Crossbow";
+					_shotspr = spr_crossbow;
+				break;
+				case shot.coin:
+					_shotstr = "Coin";
+					_shotspr = spr_coin;
+				break;
+		}
+			draw_sprite_ext(_shotspr,0,_xdraw,_ydraw,iconscale,iconscale,0,global.fgcolor2,1);
 			draw_set_color(c_white);
 			draw_set_valign(fa_top);
 			draw_set_font(fnt_smallsemi);
-			draw_text(_xdraw,_ydraw+iconsize/2+16,shotstr[shotcounter]);
+			draw_text(_xdraw,_ydraw+iconsize/2+16,_shotstr);
 			shotcounter++;
 		}
 	}
@@ -139,7 +203,7 @@ for (p = 0; p < global.pmax; p++) {
 			break;
 			case shot.crossbow: desc += "Marksman with gravity.\nA high skill weapon.";
 			break;
-			case shot.coin: desc += "Flip a coin.\nSlash it to send to opponent.\nTwo ammo.";
+			case shot.coin: desc += "Flip a coin.\nHit it to send to opponent.\nTwo ammo.";
 			break;
 			default: desc += "NO DESCRIPTION EXISTS";
 			break;

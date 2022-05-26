@@ -4,3 +4,4 @@
 // Inherit the parent event
 event_inherited();
 lasthit = noone;
+windaffected = true;
