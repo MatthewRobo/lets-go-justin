@@ -721,10 +721,12 @@ if (global.hitstop <= 0) {
 		invul--;
 		invul = floor(invul);
 		//image_alpha = abs(dsin(20 * invul));
-		trail = instance_create_depth(x, y, depth-5, obj_glitter);
-		trail.vspeed = -random(4.5);
-		trail.x = random_range(bbox_left, bbox_right);
-		trail.y = random_range(bbox_bottom, bbox_top);
+		if (!spawning) {
+			trail = instance_create_depth(x, y, depth-5, obj_glitter);
+			trail.vspeed = -random(4.5);
+			trail.x = random_range(bbox_left, bbox_right);
+			trail.y = random_range(bbox_bottom, bbox_top);
+		}
 	} else {
 		image_alpha = 1;
 	}
