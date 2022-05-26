@@ -273,11 +273,14 @@ if (global.mode = gamemode.training) {
 	if (global.down[gamepad][input.JU]) draw_set_colour(c_lime);
 	draw_text(x+20, y-56, "J");
 }
+
+draw_set_color(c_white);
+draw_set_alpha(abs(dcos(360/30 * invul) * clamp(invul/60,0,1))*0.6);
+draw_circle(x,_ysin,36,0);
+
 } else {
 	draw_set_color(color);
 	draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,0);
 }
 
-draw_set_color(c_white);
-draw_set_alpha(abs(dcos(360/30 * invul) * clamp(invul/60,0,1))*0.6);
-draw_circle(x,_ysin,36,0);
+
