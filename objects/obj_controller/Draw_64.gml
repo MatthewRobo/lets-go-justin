@@ -203,14 +203,20 @@ if (roundstart > 0) {
 	draw_set_font(fnt_win);
 	var ready = "Ready?";
 	var _xdraw = width/2 + 118*dtan(lerp(-80,80,roundratio));
+	var _ydraw1 = height/2-string_height(ready);
+	var _ydraw2 = height/2
 	draw_set_halign(fa_center);
 	draw_set_color(global.fgcolor2);
-	draw_rectangle(_xdraw-string_width(ready)/2-10,height/2-string_height(ready),
-	               _xdraw+string_width(ready)/2+10,height/2,0);
+	draw_rectangle(_xdraw-string_width(ready)/2-10,_ydraw1,
+	               _xdraw+string_width(ready)/2+10,_ydraw2,0);
 	//draw_rectangle(width/2- 118*dtan(lerp(80,0,roundratio)), 388, width/2+118*dtan(lerp(80,0,roundratio)), 392,0);
 	draw_set_color(global.bgcolor);
 	draw_text(_xdraw, height/2, "Ready?");
-	
+	draw_set_color(c_black);
+	draw_set_alpha(0.5);
+	draw_rectangle(0,0,width,lerp(_ydraw1,0,roundratio*roundratio),0);
+	draw_rectangle(0,lerp(_ydraw2,height,roundratio*roundratio),width,height,0);
+	draw_set_alpha(1);
 }
 
 
