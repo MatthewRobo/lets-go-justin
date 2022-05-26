@@ -13,6 +13,18 @@ with (obj_wall) {
 				draw_line(bbox_left,i,bbox_right,i);
 			} 
 		}
+		//for (var i = bbox_top; i < bbox_bottom; i++) {
+		//	if (i mod 3 == 0) {
+		//				draw_set_alpha(0.004);
+		//		draw_line(bbox_left,i,bbox_right,i);
+		//	} 
+		//}
+		//for (var i = bbox_left; i < bbox_right; i++) {
+		//	if (i mod 3 == 0) {
+		//				draw_set_alpha(0.004);
+		//		draw_line(i,bbox_top,i,bbox_bottom);
+		//	} 
+		//}
 		surface_reset_target();
 		draw_set_alpha(1);
 	}
