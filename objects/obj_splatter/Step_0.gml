@@ -25,3 +25,5 @@ gravity_direction=point_direction(x,y,tx,ty);
 
 //if (instance_place(x,y+vspeed,obj_wall)) vspeed *= -1;
 //if (instance_place(x+hspeed,y,obj_wall)) hspeed *= -1;
+
+

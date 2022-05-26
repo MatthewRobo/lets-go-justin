@@ -33,3 +33,6 @@ ms = frames / 60 * 10;
 instance_create_depth(room_width/2,room_height/2,-9999,obj_camera);
 
 someonewon = false;
+surf = instance_create_layer(x,y,"platforms",obj_surface);
+surf.depth--;
+

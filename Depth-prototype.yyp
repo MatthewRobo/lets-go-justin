@@ -185,6 +185,7 @@
     {"id":{"name":"spr_whip","path":"sprites/spr_whip/spr_whip.yy",},"order":4,},
     {"id":{"name":"FightingChance","path":"sounds/FightingChance/FightingChance.yy",},"order":9,},
     {"id":{"name":"spr_marksman","path":"sprites/spr_marksman/spr_marksman.yy",},"order":0,},
+    {"id":{"name":"obj_surface","path":"objects/obj_surface/obj_surface.yy",},"order":7,},
     {"id":{"name":"fnt_mono","path":"fonts/fnt_mono/fnt_mono.yy",},"order":2,},
     {"id":{"name":"StrategicBeat","path":"sounds/StrategicBeat/StrategicBeat.yy",},"order":2,},
     {"id":{"name":"VsKogasa","path":"sounds/VsKogasa/VsKogasa.yy",},"order":26,},

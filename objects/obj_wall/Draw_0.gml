@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-x1 = bbox_left ;
+x1 = bbox_left;
 x2 = bbox_right;
 y1 = bbox_top ;
 y2 = bbox_bottom;

@@ -13,7 +13,7 @@ outline.y2 = bbox_bottom;
 /// @description Insert description here
 // You can write your code in this editor
 
-image_blend = c_black;
+image_blend = global.fgcolor;
 
 outline._x1 = bbox_left;
 outline._x2 = bbox_right;
