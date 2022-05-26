@@ -578,11 +578,12 @@ if (global.hitstop <= 0) {
 			recovery = parryrecovery - 2*recovery;
 			state = status.recovery;
 		}
-		//trail = instance_create_layer(x, y, "trails", obj_playertrail);
-		//trail.image_index = image_index;
-		//trail.image_blend = c_aqua;
-		//trail.image_xscale = lerp(1, 1.5, (recovery + 1) / parryrecovery) * sign(image_xscale) * scale;
-		//trail.image_yscale = lerp(1, 1.5, (recovery + 1) / parryrecovery) * scale;
+		trail = instance_create_layer(x, y, "trails", obj_playertrail);
+		trail.image_index = image_index;
+		trail.image_blend = c_aqua;
+		trail.image_xscale = lerp(1, 1.5, (recovery + 1) / parryrecovery) * sign(image_xscale) * scale;
+		trail.image_yscale = lerp(1, 1.5, (recovery + 1) / parryrecovery) * scale;
+		trail.owner = id;
 		break;
 	case status.stun:
 		lifetime = 0;
