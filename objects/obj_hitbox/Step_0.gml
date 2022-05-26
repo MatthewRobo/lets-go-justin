@@ -35,6 +35,7 @@ if (global.hitstop <= 0) {
 			x += _hsp;
 			y += _vsp;
 			disttravel++;
+			if (collision_point(x,y,obj_wall,0,0)) break;
 		}
 	} else {
 		x += hsp;
