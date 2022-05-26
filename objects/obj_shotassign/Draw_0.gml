@@ -123,7 +123,7 @@ for (p = 0; p < global.pmax; p++) {
 			break;
 			case shot.trailer: desc += "Deadly wall.\nVery slow.";
 			break;
-			case shot.grenade: desc += "Has gravity.\nExplodes.";
+			case shot.grenade: desc += "Has gravity, explodes.\nTwo ammo.";
 			break;
 			case shot.geyser: desc += "Hits far, then near.\nTwo ammo.";
 			break;
@@ -133,7 +133,11 @@ for (p = 0; p < global.pmax; p++) {
 			break;
 			case shot.wall2: desc += "Lethal beam.\nTwo ammo.";
 			break;
-			case shot.random: desc += "Get lucky?";
+			case shot.random: desc += "Get lucky?\nKind of garbage.";
+			break;
+			case shot.wallbang2: desc += "Slow ring of bullets.\nGoes through walls.";
+			break;
+			case shot.crossbow: desc += "Marksman with gravity.\nA high skill weapon.";
 			break;
 			default: desc += "NO DESCRIPTION EXISTS";
 			break;

@@ -6,20 +6,19 @@ enum shot {
 	shotgun,
 	whip,
 	whiffpunisher,
+	crossbow,
 	
 	wallbang,
 	trailer,
 	wall2,
 	grenade,
-
+	wallbang2,
+	
 	booster,
 	geyser,
 	sin,
 	random,
 	
-
-	wallbang2,
-	crossbow,
 	length,
 	surface
 }

@@ -7,37 +7,43 @@ ready = array_create(PLAYERS,false);
 cols = 5;
 rows = ceil(shot.length / cols);
 
-shotspr = [spr_marksman,
-             spr_shotgun,
-             spr_whip,
-             spr_flicker,
-             spr_wallbang,
-             spr_trailer,
-             spr_beam,
-             spr_grenade,
-             spr_booster,
-			 spr_geyser,
-             spr_trig,
-             spr_anarchy,
-             spr_wallbang,
-             spr_marksman,
-			 ];
+shotspr = [
+	spr_marksman,
+	spr_shotgun,
+	spr_whip,
+	spr_flicker,
+	spr_crossbow,
+			 
+	spr_wallbang,
+	spr_trailer,
+	spr_beam,
+	spr_grenade,
+	spr_halo,
+			 
+	spr_booster,
+	spr_geyser,
+	spr_trig,
+	spr_anarchy,
+];
 
-shotstr = ["Marksman",
-             "Burst",
-			 "Whip",
-			 "Flicker",
-			 "Wallbanger",
-			 "Wall",
-			 "Beam",
-			 "Grenade",
-			 "Booster",
-			 "Geyser",
-			 "Trig",
-			 "Anarchy",
-			 "Wallbanger2",
-			 "Crossbow",
-			 ];
+shotstr = [
+	"Marksman",
+	"Burst",
+	"Whip",
+	"Revolver",
+	"Crossbow",
+
+	"Wallbanger",
+	"Wall",
+	"Beam",
+	"Grenade",
+	"Halo",
+	
+	"Booster",
+	"Geyser",
+	"Trig",
+	"Dice",
+];
 			 
 			 
 iconframes = 0;
