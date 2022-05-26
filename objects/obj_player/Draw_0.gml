@@ -184,8 +184,14 @@ eyecolor = ammo <= 0 ? $3326A2 : $EDF7FD;
 if (state == status.parry) {
 	eyecolor = $DB9900;
 	var _scale = 1.1;
-	draw_sprite_ext(spr_ptrail,image_index,_x,_ysin,xscale*_scale,yscale*_scale,0,c_aqua,1);
+	var _scale2 = max(_scale, 1+abs(recovery-parryactive) * 0.1);
+	var _scale2 = lerp(1.1,1.5,abs(dsin(recovery * 40)+1)/2);
+	draw_sprite_ext(spr_ptrail,image_index,_x,_ysin,xscale*_scale2,yscale*_scale2,0,$ffff60,1);
 	draw_sprite_ext(spr_pborder,image_index,_x,_ysin,xscale*_scale,yscale*_scale,0,c_white,1);
+	draw_set_alpha(abs(dsin(40 * recovery))*0.6);
+	draw_set_color(c_aqua);
+	draw_circle(x,_ysin,36,0);
+	
 }
 
 var invulflash = max(0,invul mod 10 >= 5);
