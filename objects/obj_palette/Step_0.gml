@@ -181,9 +181,6 @@ switch global.palette {
 global.color[2] = global.color[0];
 global.color[3] = global.color[1];
 
-gbid = layer_background_get_id("background");
-layer_background_blend(gbid, global.bgcolor);
-
 if (GREYBOX) {
 	global.color[0] = c_yellow;
 	global.color[1] = c_aqua;
@@ -191,3 +188,8 @@ if (GREYBOX) {
 	global.fgcolor = c_white;
 	global.fgcolor2 = c_grey;
 }
+
+gbid = layer_background_get_id("background");
+layer_background_blend(gbid, global.bgcolor);
+
+
