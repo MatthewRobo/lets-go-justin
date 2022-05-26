@@ -139,6 +139,8 @@ for (p = 0; p < global.pmax; p++) {
 			break;
 			case shot.crossbow: desc += "Marksman with gravity.\nA high skill weapon.";
 			break;
+			case shot.coin: desc += "Flip a coin.\nSlash it to send to opponent.\nTwo ammo.";
+			break;
 			default: desc += "NO DESCRIPTION EXISTS";
 			break;
 		}

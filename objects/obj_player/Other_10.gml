@@ -18,6 +18,7 @@ enum shot {
 	geyser,
 	sin,
 	random,
+	coin,
 	
 	length,
 	surface
@@ -102,6 +103,15 @@ switch shottype {
 		gunrecovery = 40;
 		gunreload = 50;
 		shotactive = 40;
+		break;
+	case shot.coin:
+		shotobj = obj_coin;
+		ammomax = 2;
+		bulletspeed = 8;
+		bulletmaxspeed = 64;
+		gunrecovery = 19;
+		gunreload = 50;
+		shotactive = 999;
 		break;
 	case shot.geyser:
 		shotobj = obj_shrink;

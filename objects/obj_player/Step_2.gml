@@ -465,13 +465,28 @@ if (global.hitstop <= 0) {
 						break;
 					case shot.random:
 						attack = instance_create_layer(x, y, "hitboxes", shotobj);
+						attack.direction = direction;
 						attack.owner = id;
 						attack.team = team;
-						attack.direction = direction;
 						attack.timer = shotactive;
 						attack.spd = bulletspeed;
 						attack.hsp = lengthdir_x(attack.spd, attack.direction);
 						attack.vsp = lengthdir_y(attack.spd, attack.direction);
+						break;
+					case shot.coin:
+						attack = instance_create_layer(x, y, "hitboxes", shotobj);
+						attack.owner = id;
+						attack.timer = shotactive;
+						attack.team = team;
+						attack.direction = direction;
+						attack.grav = grav;
+						attack.spd = bulletspeed;
+						attack.maxspd = bulletmaxspeed;
+						attack.hsp = lengthdir_x(attack.spd, attack.direction);
+						attack.vsp = lengthdir_y(attack.spd, attack.direction);
+						attack.vsp -= 6;
+						attack.hsp += hsp * 0.5;
+						attack.vsp += vsp * 0.5;
 						break;
 					case shot.surface:
 						spread = 15;

@@ -24,6 +24,7 @@ shotspr = [
 	spr_geyser,
 	spr_trig,
 	spr_anarchy,
+	spr_coin,
 ];
 
 shotstr = [
@@ -43,6 +44,7 @@ shotstr = [
 	"Geyser",
 	"Trig",
 	"Dice",
+	"Coin",
 ];
 			 
 			 
