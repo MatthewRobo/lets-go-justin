@@ -5,3 +5,4 @@
 event_inherited();
 lasthit = noone;
 windaffected = true;
+cooldown = 0;
