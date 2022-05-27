@@ -165,6 +165,7 @@ if (global.hitstop <= 0) {
 			audio_sound_pitch(sfx, lerp(2, 1, airjumps / jumpmax));
 			repeat(3) {
 				trail = instance_create_layer(x, y, "trails", obj_glitter);
+				trail.color = color;
 				if (ammo <= 0) trail.image_alpha = 0.5;
 				trail.image_blend = color;
 				trail.vspeed = thrust;
