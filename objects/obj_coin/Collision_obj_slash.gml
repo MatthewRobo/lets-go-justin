@@ -1,5 +1,5 @@
 team = other.team;
-if (lasthit != other) {
+if (lasthit != other && cooldown <= 0) {
 	lasthit = other;
 	
 	var pdist = 128000;
@@ -25,4 +25,5 @@ if (lasthit != other) {
 	audio_play_sound(snd_dink,0,0);
 	image_xscale = 0.5;
 	image_yscale = 0.5;
+	cooldown = 2;
 }

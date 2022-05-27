@@ -6,3 +6,4 @@ event_inherited();
 if (grav != 0) image_yscale = max(0.1,abs(dsin(20*lifetime)));
 else windaffected = false;
 trail.color = global.color[team];
+if (global.hitstop <= 0) cooldown--;
