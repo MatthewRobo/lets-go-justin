@@ -3,7 +3,7 @@
 
 randomize();
 
-roundinit = 80;
+roundinit = 60*2.5;
 roundstart = roundinit;
 roundratio = 0;
 global.hitstop = 0;
