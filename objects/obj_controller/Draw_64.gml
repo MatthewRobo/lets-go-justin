@@ -199,7 +199,7 @@ draw_text(-centergap + hoffset1 + width / 2-gap,height,prompt1);
 draw_set_halign(fa_left);
 draw_text(centergap + hoffset2 + width / 2+gap,height,prompt2);
 
-if (roundstart > 0) {
+if (roundstart > 0 && roundfreeze <= 0) {
 	draw_set_font(fnt_win);
 	var ready = "Ready?";
 	var _xdraw = width/2 + 118*dtan(lerp(-80,80,roundratio));
@@ -213,9 +213,10 @@ if (roundstart > 0) {
 	draw_set_color(global.bgcolor);
 	draw_text(_xdraw, height/2, "Ready?");
 	draw_set_color(c_black);
-	draw_set_alpha(0.5);
-	draw_rectangle(0,0,width,lerp(_ydraw1,0,roundratio*roundratio),0);
-	draw_rectangle(0,lerp(_ydraw2,height,roundratio*roundratio),width,height,0);
+	draw_set_alpha(min(0.5,(roundinit-roundstart)*0.5/10));
+	var _roundratio = power(roundratio,4);
+	draw_rectangle(0,0,width,lerp(_ydraw1,0,_roundratio),0);
+	draw_rectangle(0,lerp(_ydraw2,height,_roundratio),width,height,0);
 	draw_set_alpha(1);
 }
 

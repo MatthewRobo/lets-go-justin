@@ -69,8 +69,8 @@ if (global.pmax == 4) {
 
 }
 
-
-roundstart--;
+roundfreeze--;
+if (roundfreeze <= 0) roundstart--;
 if (roundstart == 0) audio_play_sound(snd_spawn,0,0);
 if (global.hitstop <= 0 && roundstart <= 0 && !someonewon) totalframes++;
 seconds = totalframes div 60;

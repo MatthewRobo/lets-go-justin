@@ -44,6 +44,14 @@ case 9:
 	break;
 }
 
+if (roundfreeze > 0) roundfreeze--;
+else if (roundstart > 0) {
+	shoot = false;
+	parry = false;
+	slash = false;
+	roundstart--;
+}
+
 if (global.hitstop <= 0) {
 	// handles spawning reflected bullet
 	// code block is here so that the bullet only spawns
@@ -147,12 +155,6 @@ if (global.hitstop <= 0) {
 		x = x + _c * dx + _s * dy;
 		y = y + _c * dy - _s * dx;
 		spawning--;
-	}
-	if (roundstart > 0) {
-		shoot = false;
-		parry = false;
-		slash = false;
-		roundstart--;
 	}
 
 	switch (state) {
@@ -779,5 +781,6 @@ if (global.hitstop <= 0) {
 }
 //qt ++;
 //qt = qt mod qlen;
-		textscale = textscale + (1-textscale) * spawning/spawntime;
+textscale = textscale + (1-textscale) * spawning/spawntime;
+if (roundstart > 0) textscale = textscale + (1-textscale) * min(1, roundstart / 60);
 flash *= 0.8;

@@ -24,6 +24,7 @@ spawnpoint = obj_respawn;
 
 deaths = 0;
 roundstart = 0;
+roundfreeze = 0;
 
 maxsp = 128;
 runsp = 12;

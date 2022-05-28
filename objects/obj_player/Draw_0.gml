@@ -12,7 +12,7 @@ draw_primitive_end();
 */
 if !GREYBOX {
 
-if (roundstart > 0 && recovery > 0) {
+if (roundstart > 0 && roundfreeze > 0) {
 	draw_set_color(color);
 	var _angle = recovery * recovery * 0.3;
 	var _dist = recovery*8;
@@ -172,10 +172,10 @@ _ysin += ((1 - hjiggle) * 48 * jiggledir)/2;
 var xscale = sign(image_xscale);
 xscale *= wjiggle;
 
+if (roundfreeze <= 0) {
+
 draw_sprite_ext(spr_ptrail,image_index,_x,_ysin,_i*xscale,_i*yscale,0,c_white,1);
 draw_sprite_ext(spr_ptrail,image_index,_x,_ysin,_s*xscale,_s*yscale,0,_color,1);
-
-
 
 // SPRITE ASSEMBLY
 
@@ -198,6 +198,7 @@ if (state == status.parry) {
 var invulflash = max(0,invul mod 10 >= 5);
 draw_sprite_ext(spr_pborder,invulflash,_x,_ysin,xscale,yscale,0,c_white,1);
 draw_sprite_ext(spr_peyes,image_index,_x,_ysin+vvec,xscale,yscale,0,eyecolor,1);
+
 
 
 if (AUTOCOLOR) {
@@ -228,7 +229,7 @@ if (state == status.parry) {
 }
 
 draw_sprite_ext(spr_poverlay,image_index,_x,_ysin,xscale,yscale,0,c_white,flash);
-
+}
 
 if (state != status.idle) {
 	draw_rectangle(x,y-33,x+recovery,y-38,0);

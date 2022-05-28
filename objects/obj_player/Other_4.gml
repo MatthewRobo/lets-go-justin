@@ -8,9 +8,14 @@ gamepad = global.lookup[team];
 
 color = global.color[team];
 
-roundstart = instance_number(obj_controller) > 0 ? obj_controller.roundstart : recovery;
-recovery = 20;
-state = status.parried;
+if (instance_number(obj_controller) > 0) {
+	roundstart =  obj_controller.roundstart;
+	roundfreeze = obj_controller.roundfreeze;
+	recovery = obj_controller.roundfreeze;
+	state = status.parried;
+}
+
+
 
 
 
