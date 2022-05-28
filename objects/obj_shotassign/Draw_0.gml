@@ -71,7 +71,7 @@ for (var row = 0; row < rows; row++) {
 				break;
 				case shot.geyser:
 					_shotstr = "Geyser";
-					_shotspr = spr_grenade;
+					_shotspr = spr_geyser;
 				break;
 				case shot.sin:
 					_shotstr = "Trig";
