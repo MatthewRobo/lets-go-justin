@@ -784,3 +784,7 @@ if (global.hitstop <= 0) {
 textscale = textscale + (1-textscale) * spawning/spawntime;
 if (roundstart > 0) textscale = textscale + (1-textscale) * min(1, roundstart / 60);
 flash *= 0.8;
+
+var _outlinescale = spawning == spawntime ? (global.hitstop * global.hitstop) / 60 : 1
+if (abs(global.hitstop - dead) < 2) _outlinescale = 1;
+outlinescale = _outlinescale;

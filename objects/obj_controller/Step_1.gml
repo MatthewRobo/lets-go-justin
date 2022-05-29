@@ -1,0 +1,1 @@
+global.laststop = global.hitstop;

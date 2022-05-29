@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 global.hitstop = 0;
+global.laststop = 0;
+global.peakstop= 099999;
 global.outline = c_white;
 global.firstto = -1;
 ready = array_create(PLAYERS,false);

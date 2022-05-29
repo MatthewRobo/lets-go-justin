@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 draw_set_colour(global.outline);
+if (abs(global.hitstop - global.peakstop) < 2) draw_set_color(global.fgcolor2);
 if (!GREYBOX) {
 draw_set_alpha(1)
 draw_primitive_begin(pr_trianglestrip);

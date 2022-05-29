@@ -68,7 +68,7 @@ if (global.mode != gamemode.training) {
 					someonewon = true;
 				}
 				if (someonewon) {
-					takess = true;
+					global.takess = true;
 					show_debug_message("saved results");
 					var file = file_text_open_append("1v1results.csv");
 					var p1wins, p1shot, p2wins, p2shot, currentstage, roundtime, currenttime;
@@ -103,3 +103,4 @@ seconds = totalframes div 60;
 frames = totalframes mod 60;
 ms = abs(frames / 60 * 100);
 roundratio = 1-(roundstart/roundinit);
+

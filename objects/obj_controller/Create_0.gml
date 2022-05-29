@@ -8,6 +8,8 @@ roundinit = 60*2 + roundfreeze;
 roundstart = roundinit;
 roundratio = 0;
 global.hitstop = 0;
+global.laststop = 0;
+global.peakstop = 99999;
 restart = 0;
 quit = 0;
 global.firstto = global.pmax == 4 ? 24 : 12;
@@ -26,7 +28,7 @@ global.outline = global.fgcolor2;
 bgid = layer_background_get_id("Background"); 
 layer_background_blend(bgid, global.bgcolor);
 
-takess = GREYBOX;
+global.takess = GREYBOX;
 
 totalframes = 0;
 seconds = totalframes div 60;

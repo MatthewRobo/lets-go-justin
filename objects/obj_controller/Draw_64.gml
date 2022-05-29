@@ -252,7 +252,7 @@ if (global.pmax == 4) {
 }
 
 
-if takess {
+if global.takess {
 	if (GREYBOX) screen_save("spr_" + room_get_name(room)+"Prev.png");
 	
 	else {
@@ -262,5 +262,5 @@ if takess {
 		}
 		screen_save("gamewinners\\"+string(unix_timestamp())+ ".png");
 	}
-	takess = false;
+	global.takess = false;
 }

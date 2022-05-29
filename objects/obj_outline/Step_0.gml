@@ -4,7 +4,7 @@
 lerpmod = clamp(lerpmod,0,8);
 _w2 = w0;
 w2 = _w2+ global.hitstop / 2;
-lerpfactor = clamp(_lerpfactor + global.hitstop / 10,0,1) + lerpmod / 9;
+if (abs(global.hitstop - global.peakstop) > 2) lerpfactor = clamp(_lerpfactor + global.hitstop / 10,0,1) + lerpmod / 9;
 
 x11 = lerp(x11, _x1 - random_range(w1,w2), lerpfactor);
 x12 = lerp(x12, _x1 - random_range(w1,w2), lerpfactor);

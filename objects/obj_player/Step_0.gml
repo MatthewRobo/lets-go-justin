@@ -63,3 +63,4 @@ if (global.down[gamepad][input.PA]) {
 
 hvec = right - left;
 vvec = down - up;
+

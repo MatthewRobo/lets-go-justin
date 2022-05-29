@@ -154,3 +154,4 @@ deadangle = 0;
 reloading = false;
 
 gbid = layer_background_get_id("background");
+outlinescale = 1;
