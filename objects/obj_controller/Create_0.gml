@@ -13,6 +13,8 @@ quit = 0;
 global.firstto = global.pmax == 4 ? 24 : 12;
 if (global.mode == gamemode.training) {
 	roundstart = 0;
+	roundinit = 1;
+	roundfreeze = 0;
 	global.firstto = -1;
 }
 
