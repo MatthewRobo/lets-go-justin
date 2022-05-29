@@ -152,7 +152,9 @@ for (i = 1; i <= ammo; i += 1) {
 //	draw_circle_color(x1,y1,6,c_white,c_white,0);
 //}
 
-_s = spawning == spawntime ? (global.hitstop * global.hitstop) / 60 : 1;
+var _s = spawning == spawntime ? (global.hitstop * global.hitstop) / 60 : 1;
+if (abs(global.hitstop - dead) < 2) _s = 1;
+
 if (teammate != noone) {
 	_color = deaths + teammate.deaths == global.firstto ? c_black : color;
 } else {

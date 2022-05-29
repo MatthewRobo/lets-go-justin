@@ -1,13 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if takess {
-	screen_save("spr_" + room_get_name(room)+"Prev.png");
-	takess = false;
-}
-
-/// @description Insert description here
-// You can write your code in this editor
 draw_set_font(Font1);
 draw_set_valign(fa_top);
 
@@ -259,3 +252,15 @@ if (global.pmax == 4) {
 }
 
 
+if takess {
+	if (GREYBOX) screen_save("spr_" + room_get_name(room)+"Prev.png");
+	
+	else {
+		if !directory_exists("gamewinners")
+		{
+		    directory_create("gamewinners");
+		}
+		screen_save("gamewinners\\"+string(unix_timestamp())+ ".png");
+	}
+	takess = false;
+}

@@ -45,28 +45,54 @@ if (quit > 1) {
 	room_goto(global.mode == gamemode.training ? Room_Select : Pad_Select);
 }
 
-if (global.pmax == 4) {
-	if (obj_player1.deaths + obj_player3.deaths >= global.firstto) {
-		someonewon = true;
-	}
+if (global.mode != gamemode.training) {
+	if (global.pmax == 4) {
+		if (obj_player1.deaths + obj_player3.deaths >= global.firstto) {
+			someonewon = true;
+		}
 
-	if (obj_player2.deaths + obj_player4.deaths >= global.firstto) {
-		someonewon = true;
-	}
-} else {
-	if (obj_player1.deaths == global.firstto) && (obj_player2.deaths == global.firstto)
-	&& obj_player1.dead && obj_player2.dead {
-		global.firstto+=2;
-		someonewon = false;
+		if (obj_player2.deaths + obj_player4.deaths >= global.firstto) {
+			someonewon = true;
+		}
 	} else {
-		if (obj_player1.deaths >= global.firstto) {
-			someonewon = true;
-		}
-		if (obj_player2.deaths >= global.firstto) {
-			someonewon = true;
+		if (obj_player1.deaths == global.firstto) && (obj_player2.deaths == global.firstto)
+		&& obj_player1.dead && obj_player2.dead {
+			global.firstto+=2;
+			someonewon = false;
+		} else {
+			if (someonewon == false) {
+				if (obj_player1.deaths >= global.firstto) {
+					someonewon = true;
+				}
+				if (obj_player2.deaths >= global.firstto) {
+					someonewon = true;
+				}
+				if (someonewon) {
+					takess = true;
+					show_debug_message("saved results");
+					var file = file_text_open_append("1v1results.csv");
+					var p1wins, p1shot, p2wins, p2shot, currentstage, roundtime, currenttime;
+					
+					p1wins = string(global.firstto - obj_player1.deaths);
+					p2wins = string(global.firstto - obj_player2.deaths);
+					p1shot = string(global.shots[0]);
+					p2shot = string(global.shots[1]);
+					currentstage = global.stagename;
+					roundtime = string (seconds + ms / 100);
+					currenttime = unix_timestamp();
+					var stringarray = [p1wins, p1shot, p2wins, p2shot, currentstage, roundtime, currenttime];
+					var _string = "";
+					for (var i = 0; i < array_length(stringarray); i++) {
+						_string += string(stringarray[i]);
+						if (i < array_length(stringarray) - 1) _string += ",";
+					}
+					file_text_write_string(file, _string);
+					file_text_writeln(file);
+					file_text_close(file);
+				}
+			}
 		}
 	}
-
 }
 
 roundfreeze--;

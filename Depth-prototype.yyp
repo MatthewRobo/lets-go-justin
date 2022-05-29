@@ -108,6 +108,7 @@
     {"id":{"name":"spr_trig","path":"sprites/spr_trig/spr_trig.yy",},"order":5,},
     {"id":{"name":"obj_player1","path":"objects/obj_player1/obj_player1.yy",},"order":0,},
     {"id":{"name":"Lifeline","path":"sounds/Lifeline/Lifeline.yy",},"order":14,},
+    {"id":{"name":"unix_timestamp","path":"scripts/unix_timestamp/unix_timestamp.yy",},"order":2,},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},"order":1,},
     {"id":{"name":"snd_land","path":"sounds/snd_land/snd_land.yy",},"order":6,},
     {"id":{"name":"CCCExemia","path":"sounds/CCCExemia/CCCExemia.yy",},"order":5,},

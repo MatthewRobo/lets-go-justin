@@ -34,6 +34,7 @@ global.banlist = array_create(array_length(global.rooms),false);
 
 global.stage = Room0;
 global.stageindex = 0;
+global.stagename = "";
 
 global.gpnum = 12;
 global.gp = array_create(global.gpnum, -99);
