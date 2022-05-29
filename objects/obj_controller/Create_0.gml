@@ -39,3 +39,4 @@ someonewon = false;
 surf = instance_create_layer(x,y,"platforms",obj_surface);
 surf.depth--;
 
+totalframes = -roundstart - roundfreeze;
