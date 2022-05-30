@@ -54,4 +54,5 @@ draw_text(room_width-gap,room_height,prompt);
 
 draw_set_color(global.fgcolor2);
 draw_set_valign(fa_top);
-draw_text(room_width-gap,gap,"Made by M-AS (@matthewrobo)\nOriginal music by v1ris (@v1ris_VGM)\nAdditional level design by Jorge Velasquez (@Gorka_Man)");
+draw_text(room_width-gap,gap,
+"Made by M-AS (@matthewrobo)\nOriginal music by v1ris (@v1ris_VGM)\nAdditional level design by Jorge Velasquez (@Gorka_Man)\nBuilt on " + date_datetime_string(GM_build_date));
