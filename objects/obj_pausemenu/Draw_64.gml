@@ -29,16 +29,15 @@ if (team != -1) {
 		teamstr += string(team+1);
 	}
 } else teamstr = "Game";
+teamstr += " Paused";
+var dx = openlerp * string_width(teamstr) / 2;
+var ydraw = ycenter/2;
 
-var dx = openlerp * 256;
-var ydraw = 128;
 draw_set_color(color);
-draw_rectangle(xcenter - dx-outline, ydraw-margin-outline, xcenter+dx+outline, ydraw+string_height(teamstr)+margin+outline,0);
-draw_set_color(global.fgcolor);
-draw_rectangle(xcenter - dx, ydraw-margin, xcenter+dx, ydraw+string_height(teamstr)+margin,0);
+draw_rectangle(xcenter - dx-margin, ydraw-margin, xcenter+dx+margin, ydraw+string_height(teamstr)+margin,0);
 
-draw_set_color(global.fgcolor2);
-draw_text(xcenter,ydraw+4,teamstr + " Paused");
+draw_set_color(global.bgcolor);
+draw_text(xcenter,ydraw+4,teamstr);
 draw_set_font(fnt_pause);
 
 var lineheight = string_height("STRING HEIGHT");

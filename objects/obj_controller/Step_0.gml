@@ -73,17 +73,25 @@ if (!global.paused) {
 	roundratio = 1-(roundstart/roundinit);
 
 	for (var device = 0; device < GP+KB; device++) {
-		if global.down[device][input.ST] {
-			start[device] += 1/45;
-		} else {
-			start[device] = max(start[device] - 1/45, 0);
+		if (global.mode != gamemode.training) {
+			if global.down[device][input.ST] {
+				start[device] += 1/45;
+			} else {
+				start[device] = max(start[device] - 1/45, 0);
 			
-		}
-		if global.down[device][input.SE] {
-			select = true;
-		}
-		if (global.mode == gamemode.training && global.pressed[device][input.SE]) {
-			room_restart();
+			}
+			if global.down[device][input.SE] {
+				select = true;
+			} 
+				
+			
+		}else {
+			if (global.pressed[device][input.ST]) {
+				start[device] = 2;
+			}
+			if (global.pressed[device][input.SE]) {
+				restart = 2;
+			}
 		}
 	}
 
