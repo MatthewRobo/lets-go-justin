@@ -4,13 +4,20 @@
 draw_set_font(fnt_mono);
 draw_set_valign(fa_top);
 
+var height = room_height;
+var width = room_width;
+
+if (instance_number(obj_camera) > 0) {
+	width = camera_get_view_width(0);
+	height= camera_get_view_height(0);
+}
 
 var lineheight = string_height("abcdefghijkABCDEFTHIJK");
 var ydraw = lineheight;
 var ydraw_final = ydraw + 14 * lineheight;
 draw_set_color(c_black);
 draw_set_alpha(0.6);
-draw_rectangle(0,0,room_width,ydraw_final,0);
+draw_rectangle(0,0,width,ydraw_final,0);
 
 has4p = false;
 for (var device = 0; device < GP+KB; device++) {
@@ -20,20 +27,20 @@ for (var device = 0; device < GP+KB; device++) {
 }
 if (has4p) 
 	{
-	ydraw = room_height/2 + lineheight;
+	ydraw = height/2 + lineheight;
 	ydraw_final = ydraw + 14 * lineheight;
-	draw_rectangle(0,room_height/2,room_width,ydraw_final,0);
+	draw_rectangle(0,height/2,width,ydraw_final,0);
 }
 
 for (var p = 0; p < PLAYERS; p++) {
 	draw_set_alpha(1);
-	var ydraw = p >= 2 ? room_height/2 + lineheight : lineheight;
+	var ydraw = p >= 2 ? height/2 + lineheight : lineheight;
 	if (p mod 2 == 0) {
 		draw_set_halign(fa_left);
 		var xdraw = 10;
 	} else {
 		draw_set_halign(fa_right);
-		var xdraw = room_width -10;
+		var xdraw = width -10;
 	}
 	draw_set_color(c_white);
 	var device = global.lookup[p];
@@ -101,11 +108,11 @@ for (var device = 0; device < GP+KB; device++) {
 	draw_set_halign(fa_center);
 	draw_set_color(c_white);
 	if (slot[device] == -1) {
-		draw_text(room_width/2,ydraw,device_to_string(device));
+		draw_text(width/2,ydraw,device_to_string(device));
 		ydraw+=lineheight;
 	} else if slot[device] == -2 {
-		_ydraw = ydraw + room_height/2;
-		draw_text(room_width/2,_ydraw,device_to_string(device));
+		_ydraw = ydraw + height/2;
+		draw_text(width/2,_ydraw,device_to_string(device));
 		ydraw+=lineheight;
 	}
 
