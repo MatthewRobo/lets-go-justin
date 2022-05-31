@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+global.inassign = true;
+
 // lockout until no one is pressing a button
 for (var device = 0; device < GP+KB; device++) {
 	for (var p = 0; p < PLAYERS; p++) {

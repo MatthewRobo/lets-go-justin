@@ -5,6 +5,8 @@ extra_options = 2;
 total_options = input.length + extra_options;
 lockout = true;
 binding = array_create(GP+KB,false);
+global.inassign = true;
+
 ini_open("bindings.ini");
 
 for (var d = 0; d < GP + KB; d++) {

@@ -71,34 +71,34 @@ if (!global.paused) {
 	ms = abs(frames / 60 * 100);
 	roundratio = 1-(roundstart/roundinit);
 
-}
+	for (var i = 0; i < GP+KB; i++;)
+	{
 
-for (var i = 0; i < GP+KB; i++;)
-{
-
-	if gamepad_button_check(i, gp_start) 
-	|| keyboard_check(vk_enter) 
-	|| keyboard_check(vk_escape) 
-	|| global.down[i][input.ST] {
-		start = true;
-	} 
-	if gamepad_button_check(i, gp_select) 
-	|| keyboard_check(vk_backspace)
-	|| global.down[i][input.SE] {
-		select = true;
-	}
+		if gamepad_button_check(i, gp_start) 
+		|| keyboard_check(vk_enter) 
+		|| keyboard_check(vk_escape) 
+		|| global.down[i][input.ST] {
+			start = true;
+		} 
+		if gamepad_button_check(i, gp_select) 
+		|| keyboard_check(vk_backspace)
+		|| global.down[i][input.SE] {
+			select = true;
+		}
 	
-	if (global.mode == gamemode.training) {
-		if (global.pressed[i][input.SE]) {
-			room_restart();
+		if (global.mode == gamemode.training) {
+			if (global.pressed[i][input.SE]) {
+				room_restart();
+			}
 		}
 	}
+
+	if (start) quit+=1/45;
+	else quit-=1/45;
+	if (select) restart+=1/45;
+	else restart -=1/45;
 }
 
-if (start) quit+=1/45;
-else quit-=1/45;
-if (select) restart+=1/45;
-else restart -=1/45;
 
 if (quit < 0) quit = 0;
 if (restart < 0) restart = 0;
@@ -107,10 +107,8 @@ if (restart > 1) {
 	room_restart();
 }
 if (quit > 1) {
-	//global.palette = irandom(PALETTES-1);
-	//room_goto(global.mode == gamemode.training ? Room_Select : Pad_Select);
-	global.paused = !global.paused;
+	pausemenu = instance_create_depth(0,0,depth-1,obj_pausemenu);
+	pausemenu.team = 0;
 	quit = 0;
+	restart = 0;
 }
-
-

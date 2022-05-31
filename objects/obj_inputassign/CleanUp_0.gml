@@ -21,3 +21,5 @@ for (var d = 0; d < GP + KB; d++) {
 }
 
 ini_close();
+
+global.inassign = false;
