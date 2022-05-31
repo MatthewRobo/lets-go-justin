@@ -1,10 +1,12 @@
 global.paused = true;
-var device = global.lookup[team];
+
+var device;
+device = global.lookup[team];
 if (!global.inassign) {
 	if (global.pressed[device][input.U]) selected--;
 	if (global.pressed[device][input.D]) selected++;
 	selected = intwrap(selected, 0, o_len);
-	if (global.pressed[device][input.ST]) {
+	if (global.pressed[device][input.ST] || global.pressed[device][input.SL]) {
 		switch selected {
 			case 0: 
 			instance_destroy(); break; //["Resume Game"
@@ -19,6 +21,9 @@ if (!global.inassign) {
 			case 5: global.palette = irandom(PALETTES-1);
 			room_goto(Main_Menu); break; //"Quit to Menu"];
 		}
+	}
+	if (global.pressed[device][input.SE] || global.pressed[device][input.SH]) {
+			instance_destroy(); 
 	}
 }
 

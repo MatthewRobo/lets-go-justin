@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 // Inherit the parent event
-
+gamepad = global.lookup[team];
 if (!global.paused) {
 
 if (global.hitstop <= 0) {

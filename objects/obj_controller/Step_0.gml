@@ -5,6 +5,7 @@
 
 start = false;
 select = false;
+var pauseteam = 0;
 
 if (!global.paused) {
 
@@ -71,23 +72,19 @@ if (!global.paused) {
 	ms = abs(frames / 60 * 100);
 	roundratio = 1-(roundstart/roundinit);
 
-	for (var i = 0; i < GP+KB; i++;)
+	for (var player = 0; player < 4; player++)
 	{
-
-		if gamepad_button_check(i, gp_start) 
-		|| keyboard_check(vk_enter) 
-		|| keyboard_check(vk_escape) 
-		|| global.down[i][input.ST] {
+		var device = global.lookup[player];
+		if global.down[device][input.ST] {
 			start = true;
+			pauseteam = player;
 		} 
-		if gamepad_button_check(i, gp_select) 
-		|| keyboard_check(vk_backspace)
-		|| global.down[i][input.SE] {
+		if global.down[device][input.SE] {
 			select = true;
 		}
 	
 		if (global.mode == gamemode.training) {
-			if (global.pressed[i][input.SE]) {
+			if (global.pressed[device][input.SE]) {
 				room_restart();
 			}
 		}
@@ -108,7 +105,7 @@ if (restart > 1) {
 }
 if (quit > 1) {
 	pausemenu = instance_create_depth(0,0,depth-1,obj_pausemenu);
-	pausemenu.team = 0;
+	pausemenu.team = pauseteam;
 	quit = 0;
 	restart = 0;
 }

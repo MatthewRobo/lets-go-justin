@@ -7,8 +7,9 @@ var margin = 16;
 
 draw_set_font(Font1);
 draw_set_alpha(1);
+var teamcolor = team < 4 ? global.color[team] : global.fgcolor2;
+draw_set_color(teamcolor);
 
-draw_set_color(global.color[team]);
 
 draw_set_valign(fa_top);
 draw_set_halign(fa_center);

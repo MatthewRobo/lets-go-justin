@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (!global.paused) {
+//if (!global.paused) {
 
 if (global.hitstop <= 0) {
 	timer--;
@@ -13,4 +13,4 @@ if (global.hitstop <= 0) {
 	image_speed = 2/30;
 }
 
-}
+//}
