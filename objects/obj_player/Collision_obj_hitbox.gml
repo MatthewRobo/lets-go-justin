@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (!global.paused) {
+
 if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, false, false) == noone || other.object_index == obj_wallbang))  {
 	if (state == status.parry || (autoparry > 0 && state = status.idle)) {
 		//if (invul < autoparryactive+2) invul = autoparryactive+2;
@@ -190,4 +192,6 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		global.outline = global.fgcolor2;
 		flash = true;
 	}
+}
+
 }

@@ -36,6 +36,8 @@ global.stage = Room0;
 global.stageindex = 0;
 global.stagename = "";
 
+global.paused = false;
+
 global.gpnum = 12;
 global.gp = array_create(global.gpnum, -99);
 

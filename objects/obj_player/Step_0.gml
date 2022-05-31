@@ -3,6 +3,8 @@
 
 // Inherit the parent event
 
+if (!global.paused) {
+
 if (global.hitstop <= 0) {
 	uprelease = false;
 	slash--;
@@ -64,3 +66,4 @@ if (global.down[gamepad][input.PA]) {
 hvec = right - left;
 vvec = !up ? down : -up;
 
+}

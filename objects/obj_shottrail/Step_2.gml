@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (!global.paused) {
+
 if (global.hitstop <= 0) {
 	tx[tcounter] = x;
 	ty[tcounter] = y;
@@ -11,4 +13,6 @@ if (global.hitstop <= 0) {
 		timer--;
 		if (timer < 0) instance_destroy();
 	}
+}
+
 }

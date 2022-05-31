@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (!global.paused) {
+
 if (global.hitstop <= 0) {
 	xprev = x;
 	yprev = y;
@@ -44,3 +46,5 @@ if (global.hitstop <= 0) {
 }
 spd = point_distance(00,0,hsp,vsp);
 if (spd > 0) direction=point_direction(0,0,hsp,vsp);
+
+}

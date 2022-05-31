@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (!global.paused) {
+
 textscale = 16/72;
 // input handling
 dir = 5;
@@ -788,3 +790,5 @@ flash *= 0.8;
 var _outlinescale = spawning == spawntime ? (global.hitstop * global.hitstop) / 60 : 1
 if (abs(global.hitstop - dead) < 2) _outlinescale = 1;
 outlinescale = _outlinescale;
+
+}

@@ -3,6 +3,8 @@
 
 // Inherit the parent event
 
+if (!global.paused) {
+
 event_inherited();
 
 if (global.hitstop <= 0) {
@@ -43,4 +45,6 @@ if (windaffected) {
 			vsp *= 0.95;
 		}
 	}
+}
+
 }

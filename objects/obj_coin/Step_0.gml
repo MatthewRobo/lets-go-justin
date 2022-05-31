@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (!global.paused) {
+
 // Inherit the parent event
 event_inherited();
 if (grav != 0) {
@@ -14,3 +16,5 @@ else {
 }
 trail.color = global.color[team];
 if (global.hitstop <= 0) cooldown--;
+
+}

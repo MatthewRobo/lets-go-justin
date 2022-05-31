@@ -1,5 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+if (!global.paused) {
+	
 //xprev = x;
 //yprev = y;
 //x = 0;
@@ -58,4 +61,6 @@ if screenshake {
 	var shakelen = dsin(shakeclock) * 8;
 	x += lengthdir_x(shakelen,shakedir);
 	y += lengthdir_y(shakelen,shakedir);
+}
+
 }

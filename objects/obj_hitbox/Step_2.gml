@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (!global.paused) {
+
 if (collision_line(x,y,x-hsp,y-vsp,obj_wall,0,0) && lifetime > 1) {
 //if (collision_line(x,y,x+hsp,y+vsp,obj_wall,0,0)) {
 	x -= hsp;
@@ -13,4 +15,6 @@ if (collision_line(x,y,x-hsp,y-vsp,obj_wall,0,0) && lifetime > 1) {
 		y += _vsp;
 	}
 	instance_destroy();
+}
+
 }

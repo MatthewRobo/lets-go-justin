@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+if (!global.paused) {
+	
 if (global.hitstop <= 0) {
 
 	if (timer < 0) instance_destroy();
@@ -18,4 +19,6 @@ if (owner != noone) {
 		image_yscale = lerp(image_yscale, 0, 0.12);
 		image_blend = owner.color;
 	}
+}
+
 }

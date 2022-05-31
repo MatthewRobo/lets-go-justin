@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (!global.paused) {
+
 // Inherit the parent event
 event_inherited();
 if (global.hitstop <= 0) {
@@ -16,4 +18,6 @@ if (global.hitstop <= 0) {
 	if (timer == 1) trail.sprite_index = spr_slashwhiff;
 	
 	timer--;
+}
+
 }
