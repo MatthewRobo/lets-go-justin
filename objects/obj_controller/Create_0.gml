@@ -11,6 +11,7 @@ global.hitstop = 0;
 global.laststop = 0;
 global.peakstop = 99999;
 restart = 0;
+start = array_create(GP+KB,0);
 quit = 0;
 global.firstto = global.pmax == 4 ? 24 : 12;
 if (global.mode == gamemode.training) {

@@ -1,7 +1,5 @@
 global.paused = true;
 
-var device;
-device = global.lookup[team];
 if (!global.inassign) {
 	if (global.pressed[device][input.U]) selected--;
 	if (global.pressed[device][input.D]) selected++;

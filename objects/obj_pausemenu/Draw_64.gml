@@ -7,8 +7,7 @@ var margin = 16;
 
 draw_set_font(Font1);
 draw_set_alpha(1);
-var teamcolor = team < 4 ? global.color[team] : global.fgcolor2;
-draw_set_color(teamcolor);
+draw_set_color(color);
 
 
 draw_set_valign(fa_top);
@@ -16,18 +15,23 @@ draw_set_halign(fa_center);
 
 var teamstr;
 
-if (global.mode == gamemode.teamvs) {
-	switch team {
-		case 0: teamstr = "2"; break;
-		case 1: teamstr = "3"; break;
-		case 2: teamstr = "1"; break;
-		case 3: teamstr = "4"; break;
-	}
-} else {
-	teamstr = string(team+1);
-}
 
-draw_text(xcenter,128,"Player " + teamstr + " Paused");
+
+if (team != -1) {
+	teamstr = "Player ";
+	if (global.mode == gamemode.teamvs) {
+		switch team {
+			case 0: teamstr += "2"; break;
+			case 1: teamstr += "3"; break;
+			case 2: teamstr += "1"; break;
+			case 3: teamstr += "4"; break;
+		}
+	} else {
+		teamstr += string(team+1);
+	}
+} else teamstr = "Game";
+
+draw_text(xcenter,128,teamstr + " Paused");
 draw_set_font(fnt_pause);
 
 var lineheight = string_height("STRING HEIGHT");

@@ -3,9 +3,9 @@
 
 
 
-start = false;
+
 select = false;
-var pauseteam = 0;
+quit = 0;
 
 if (!global.paused) {
 
@@ -72,40 +72,40 @@ if (!global.paused) {
 	ms = abs(frames / 60 * 100);
 	roundratio = 1-(roundstart/roundinit);
 
-	for (var player = 0; player < 4; player++)
-	{
-		var device = global.lookup[player];
+	for (var device = 0; device < GP+KB; device++) {
 		if global.down[device][input.ST] {
-			start = true;
-			pauseteam = player;
-		} 
+			start[device] += 1/45;
+		} else {
+			start[device] = max(start[device] - 1/45, 0);
+			
+		}
 		if global.down[device][input.SE] {
 			select = true;
 		}
-	
-		if (global.mode == gamemode.training) {
-			if (global.pressed[device][input.SE]) {
-				room_restart();
-			}
+		if (global.mode == gamemode.training && global.pressed[device][input.SE]) {
+			room_restart();
 		}
 	}
 
-	if (start) quit+=1/45;
-	else quit-=1/45;
+
 	if (select) restart+=1/45;
 	else restart -=1/45;
 }
 
-
-if (quit < 0) quit = 0;
 if (restart < 0) restart = 0;
 
 if (restart > 1) {
 	room_restart();
 }
-if (quit > 1) {
-	pausemenu = instance_create_depth(0,0,depth-1,obj_pausemenu);
-	pausemenu.team = pauseteam;
-	quit = 0;
-	restart = 0;
+for (var device = 0; device < GP+KB; device++) {
+	if (start[device] > 1) {
+		pausemenu = instance_create_depth(0,0,depth-1,obj_pausemenu);
+		var team = array_find_index(global.lookup, device);
+		pausemenu.color = team != -1 ? global.color[team] : global.fgcolor2;
+		pausemenu.team = team;
+		pausemenu.device = device;
+		start[device] = 0;
+		restart = 0;
+	}
+	quit = max(quit, start[device]);
 }
