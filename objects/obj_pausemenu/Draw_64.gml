@@ -7,7 +7,6 @@ var margin = 16;
 
 draw_set_font(Font1);
 draw_set_alpha(1);
-draw_set_color(color);
 
 
 draw_set_valign(fa_top);
@@ -31,27 +30,43 @@ if (team != -1) {
 	}
 } else teamstr = "Game";
 
-draw_text(xcenter,128,teamstr + " Paused");
+var dx = openlerp * 256;
+var ydraw = 128;
+draw_set_color(color);
+draw_rectangle(xcenter - dx-outline, ydraw-margin-outline, xcenter+dx+outline, ydraw+string_height(teamstr)+margin+outline,0);
+draw_set_color(global.fgcolor);
+draw_rectangle(xcenter - dx, ydraw-margin, xcenter+dx, ydraw+string_height(teamstr)+margin,0);
+
+draw_set_color(global.fgcolor2);
+draw_text(xcenter,ydraw+4,teamstr + " Paused");
 draw_set_font(fnt_pause);
 
 var lineheight = string_height("STRING HEIGHT");
 var linewidth = string_width("Resume Game");
 
 var ydraw = ycenter;
-
+draw_set_color(color);
 var dx =         linewidth/2 + margin + outline;
+dx *= openlerp;
 var dy = o_len * lineheight  + margin + outline;
 draw_rectangle(xcenter-dx,ydraw-margin-outline,xcenter+dx,ydraw+dy,0);
 
-draw_set_color(global.bgcolor);
+draw_set_color(global.fgcolor);
 var dx =         linewidth/2 + margin;
+dx *= openlerp;
 var dy = o_len * lineheight  + margin;
 draw_rectangle(xcenter-dx,ydraw-margin,xcenter+dx,ydraw+dy,0);
 
-draw_set_color(global.fgcolor2);
+draw_set_color(global.bgcolor);
+var dy = selectedlerp * lineheight;
+draw_rectangle(xcenter-dx,ydraw+dy,xcenter+dx,ydraw+dy+lineheight,0);
+
 for (var i = 0; i < o_len; i++) {
 	var optionstr = options[i];
-	if (i == selected) optionstr = "-" + optionstr + "-";
-	draw_text(xcenter, ydraw + i * lineheight, optionstr);
-	
+	draw_set_color(global.fgcolor2);
+	if (i == selected) {
+		draw_set_color(color);
+	}
+	draw_text(xcenter, ydraw + i * lineheight + 4, optionstr);
+
 }
