@@ -8,8 +8,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "exclude_in_html5",
+    "path": "audiogroups/exclude_in_html5",
   },
   "soundFile": "SwingMeAnother6.mp3",
   "duration": 332.04245,

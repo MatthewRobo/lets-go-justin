@@ -8,11 +8,11 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "exclude_in_html5",
+    "path": "audiogroups/exclude_in_html5",
   },
   "soundFile": "BustAMove.mp3",
-  "duration": 334.915924,
+  "duration": 334.91592,
   "parent": {
     "name": "battle",
     "path": "folders/Sounds/mus/battle.yy",

@@ -8,11 +8,11 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "exclude_in_html5",
+    "path": "audiogroups/exclude_in_html5",
   },
   "soundFile": "PacLevelCap.mp3",
-  "duration": 311.823669,
+  "duration": 311.82367,
   "parent": {
     "name": "battle",
     "path": "folders/Sounds/mus/battle.yy",

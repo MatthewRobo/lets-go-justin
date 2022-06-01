@@ -8,11 +8,11 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "exclude_in_html5",
+    "path": "audiogroups/exclude_in_html5",
   },
   "soundFile": "CallOut.mp3",
-  "duration": 58.0440826,
+  "duration": 58.044083,
   "parent": {
     "name": "menu",
     "path": "folders/Sounds/mus/menu.yy",

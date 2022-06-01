@@ -1,7 +1,7 @@
 {
   "conversionMode": 0,
   "compression": 3,
-  "volume": 0.66,
+  "volume": 0.4,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -14,8 +14,8 @@
   "soundFile": "tactical.wav",
   "duration": 156.27908,
   "parent": {
-    "name": "battle",
-    "path": "folders/Sounds/mus/battle.yy",
+    "name": "browser",
+    "path": "folders/Sounds/mus/battle/browser.yy",
   },
   "resourceVersion": "1.0",
   "name": "Tactical",

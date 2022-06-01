@@ -8,11 +8,11 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "exclude_in_html5",
+    "path": "audiogroups/exclude_in_html5",
   },
   "soundFile": "HellsinkerMenu2.mp3",
-  "duration": 166.426117,
+  "duration": 166.42612,
   "parent": {
     "name": "menu",
     "path": "folders/Sounds/mus/menu.yy",

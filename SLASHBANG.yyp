@@ -67,7 +67,7 @@
     {"id":{"name":"fnt_prompt","path":"fonts/fnt_prompt/fnt_prompt.yy",},"order":8,},
     {"id":{"name":"spr_Room4Prev","path":"sprites/spr_Room4Prev/spr_Room4Prev.yy",},"order":6,},
     {"id":{"name":"spr_invisible","path":"sprites/spr_invisible/spr_invisible.yy",},"order":4,},
-    {"id":{"name":"Tactical","path":"sounds/Tactical/Tactical.yy",},"order":27,},
+    {"id":{"name":"Tactical","path":"sounds/Tactical/Tactical.yy",},"order":0,},
     {"id":{"name":"obj_glitter","path":"objects/obj_glitter/obj_glitter.yy",},"order":9,},
     {"id":{"name":"spr_blob","path":"sprites/spr_blob/spr_blob.yy",},"order":11,},
     {"id":{"name":"BackdoorBlaster","path":"sounds/BackdoorBlaster/BackdoorBlaster.yy",},"order":1,},
@@ -293,6 +293,7 @@
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
+    {"targets":-33,"resourceVersion":"1.3","name":"exclude_in_html5","resourceType":"GMAudioGroup",},
   ],
   "TextureGroups": [
     {"isScaled":true,"compressFormat":"bz2","autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
