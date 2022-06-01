@@ -125,7 +125,7 @@ scale = 1;
 image_xscale = scale;
 image_yscale = scale;
 
-tlen = 20;
+tlen = 35;
 tcounter = 0;
 tx = array_create(tlen, x);
 ty = array_create(tlen, y);
@@ -133,6 +133,7 @@ ty = array_create(tlen, y);
 layerdepth = layer_get_depth(layer);
 
 lifetime = 0;
+lifetime2 = 0;
 
 //qlen = 60;
 //dirqueue = array_create(qlen,5);

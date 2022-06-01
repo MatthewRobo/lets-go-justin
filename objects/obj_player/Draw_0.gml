@@ -49,6 +49,19 @@ if (dir != 5) {
 hrad = sprite_width / 2;
 vrad = sprite_height / 2;
 
+var _x = floor(x+0.5);
+var _ysin = floor(y + 2 * -dsin(lifetime)+0.5);
+image_index = 0;
+
+var yscale = grounded ? image_yscale : image_yscale * lerp(0.9,1.2,abs(vsp / 13));
+yscale *= hjiggle;
+
+var dy = ((1 - hjiggle) * 48 * jiggledir)/2;
+_ysin += dy;
+
+var xscale = sign(image_xscale);
+xscale *= wjiggle;
+
 steps = 24;
 draw_set_color(color);
 draw_set_alpha(1);
@@ -65,7 +78,8 @@ if (team >= 2) {
 		if (ammo <= 0) talpha *= 0.4;
 
 		x1 = tx[tcnow];
-		y1 = ty[tcnow] - 2*dsin(lifetime - 6 * (tlen - i ));
+		y1 = ty[tcnow];
+		//y1 = ty[tcnow] - 2*dsin(lifetime - 6 * (tlen - i ));
 	
 		x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-6,x1+6);
 		y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-16,y1+16);
@@ -92,16 +106,29 @@ for (i = 0; i < tlen; i+= 1) {
 	if (ammo <= 0) talpha *= 0.4;
 
 	x1 = tx[tcnow];
-	y1 = ty[tcnow] - 2*dsin(lifetime - 6 * (tlen - i ));
+	y1 = ty[tcnow];
+	//y1 += 2*dsin(i * 20 + lifetime2 * 10);
+	//twid *= i/tlen;
+	//y1 = ty[tcnow] - 2*dsin(lifetime - 6 * (tlen - i ));
 	
-	x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-6,x1+6);
-	y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-16,y1+16);
-	x12 = clamp(x1+lengthdir_x(twid,tdir-90),x1-6,x1+6);
-	y12 = clamp(y1+lengthdir_y(twid,tdir-90),y1-16,y1+16);
+
+	var xwid = 10
+	var ywid = 16;
+	xwid *= i/tlen;
+	ywid *= i/tlen;
+	x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-xwid,x1+xwid);
+	y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-ywid*yscale,y1+ywid);
+	x12 = clamp(x1+lengthdir_x(twid,tdir-90),x1-xwid,x1+xwid);
+	y12 = clamp(y1+lengthdir_y(twid,tdir-90),y1-ywid*yscale,y1+ywid);
+	//x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-xwid,x1+xwid);
+	//y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-ywid,y1+ywid);
+	//x12 = clamp(x1+lengthdir_x(twid,tdir-90),x1-xwid,x1+xwid);
+	//y12 = clamp(y1+lengthdir_y(twid,tdir-90),y1-ywid,y1+ywid);
 
 	tcolor = color;
 
 	if (global.hitstop > 0) talpha*=2;
+	if (global.hitstop > 0) talpha=1;
 
 	draw_vertex_colour(x11, y11,tcolor,talpha);
 	draw_vertex_colour(x12, y12,tcolor,talpha);
@@ -162,17 +189,6 @@ if (teammate != noone) {
 }
 
 _i = abs(dsin(360/30 * invul))*0.2 + 1;
-var _x = floor(x+0.5);
-var _ysin = floor(y + 2 * -dsin(lifetime)+0.5);
-image_index = 0;
-
-var yscale = grounded ? image_yscale : image_yscale * lerp(0.9,1.2,abs(vsp / 13));
-yscale *= hjiggle;
-
-_ysin += ((1 - hjiggle) * 48 * jiggledir)/2;
-
-var xscale = sign(image_xscale);
-xscale *= wjiggle;
 
 if (roundfreeze <= 0) {
 

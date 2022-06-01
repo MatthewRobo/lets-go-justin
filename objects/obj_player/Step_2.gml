@@ -268,7 +268,7 @@ if (global.hitstop <= 0) {
 						attack.hsp += hsp  * 2;
 						attack.windaffected = true;
 						attack.image_xscale = 0.5;
-						attack.image_yscale = attack.image_xscale;
+						attack.image_yscale = 0.2;
 						break;
 					case shot.shotgun:
 						for (i = -0; i < 360; i+= 45) {
@@ -844,3 +844,5 @@ if (abs(global.hitstop - dead) < 2) _outlinescale = 1;
 outlinescale = _outlinescale;
 hopfx--;
 }
+
+lifetime2++;
