@@ -83,7 +83,7 @@ for (var p = 0; p < PLAYERS; p++) {
 		if (a == pos[p]) {
 			draw_set_color(c_red);
 			if (device == GP || device == GP + 1) {
-				if (pos[p] < 4) k += binding[p] ? " (Press new key)" : " (Press start to bind)";
+				if (pos[p] < 4) k += binding[device] ? " (Press new key)" : " (Press start to bind)";
 			} else {
 				if (pos[p] < 4) k += " (Can't rebind movement on controllers)";
 			}
