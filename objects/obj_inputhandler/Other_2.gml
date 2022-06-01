@@ -30,7 +30,7 @@ enum gamemode {
 }
 
 var roomlist = ds_list_create();
-var i = 0;
+var i = 1;
 var roomlen = 0;
 var index = 0;
 while (true) {
