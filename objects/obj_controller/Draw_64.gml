@@ -183,7 +183,7 @@ _ans2 = clamp((_ans2*mult + 1) / 2,0,1);
 draw_set_font(fnt_prompt);
 
 var prompt1 = global.mode == gamemode.training ? "Select to restart" : "Hold Select to restart";
-var prompt2 = "Hold Start to quit";
+var prompt2 = global.mode == gamemode.training ? "Start to pause" : "Hold Start to pause";
 
 var centergap = 3;
 var gap = 3;

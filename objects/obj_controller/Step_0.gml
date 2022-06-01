@@ -54,6 +54,7 @@ if (!global.paused) {
 							_string += string(stringarray[i]);
 							if (i < array_length(stringarray) - 1) _string += ",";
 						}
+						show_debug_message(_string);
 						file_text_write_string(file, _string);
 						file_text_writeln(file);
 						file_text_close(file);
