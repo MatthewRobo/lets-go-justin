@@ -8,6 +8,14 @@ if (!global.paused) {
 event_inherited();
 
 if (global.hitstop <= 0) {
+	if (growtime > 0) {
+		growtime--;
+	} else {
+		dx = lerp(dx,0,0.1);
+		dy = lerp(dy,0,0.1);
+	}
+			x += dx;
+		y += dy;
 	if (dot_product(hsp,vsp,maxhsp,maxvsp) > 0) {
 		if (spd > maxspd) {
 			hsp *= maxspd / spd;

@@ -9,3 +9,6 @@ maxsize = 99;
 maxspd = 40;
 maxhsp = 0;
 maxvsp = 0;
+dx = 0;
+dy = 0;
+growtime = 30;
