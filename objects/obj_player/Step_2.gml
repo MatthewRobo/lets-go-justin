@@ -350,6 +350,11 @@ if (global.hitstop <= 0) {
 						attack.image_xscale = 2;
 						break;
 					case shot.booster:
+						//show_debug_message(string(hsp) + ":" + string(vsp))
+						if (abs(hsp) < vsp && (dir == 1 || dir == 3)) {
+							vsp = abs(hsp) - grav;
+							//show_debug_message(vsp);
+						}
 						attack = instance_create_layer(x-hsp, y-vsp, "hitboxes", shotobj);
 						attack.owner = id;
 						attack.timer = shotactive;
