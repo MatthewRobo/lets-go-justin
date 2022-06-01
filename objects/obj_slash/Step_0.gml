@@ -5,8 +5,13 @@ if (!global.paused) {
 
 // Inherit the parent event
 event_inherited();
-if (global.hitstop <= 0) {
 
+if (global.hitstop <= 0) {
+	dx += hsp;
+	dy += vsp;
+	x = owner.x + dx;
+	y = owner.y + dy;
+	
 	image_yscale -= 0.2;
 	if (image_yscale < 0.9) image_yscale = 0.9;
 

@@ -7,3 +7,6 @@ event_inherited();
 timer = obj_player.slashactive;
 
 image_yscale *= 2;
+
+dx = 0;
+dy = 0;
