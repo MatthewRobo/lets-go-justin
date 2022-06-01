@@ -688,12 +688,7 @@ if (global.hitstop <= 0) {
 			hsp *= maxsp / sp;
 			vsp *= maxsp / sp;
 		}
-		var nograv = instance_position(x + hsp, y + vsp, obj_uplift);
-		if (nograv != noone) {
-			vsp -= ((bbox_bottom - nograv.bbox_top) / nograv.sprite_height) * 2;
-			vsp *= 0.95;
-			if (vvec > 0 && state != status.stun) vsp += 0.25;
-		}
+		windblow();
 		
 		if place_meeting(x + hsp, y, obj_wall) || collision_line(x,y,x+hsp,y,obj_wall,0,0) {
 			while (!place_meeting(x + sign(hsp), y, obj_wall)) { //whilst the next pixel isn't a wall
