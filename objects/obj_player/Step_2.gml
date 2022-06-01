@@ -664,6 +664,13 @@ if (global.hitstop <= 0) {
 
 					canhover = false;
 					canrelease = true;
+					
+					if (vvec > 0 && state == status.idle) {
+						vsp = -ljumpvsp;
+						hsp = hvec * ljumphsp;
+						jiggle = 1.5;
+						canrelease = false;
+					}
 				} else {
 					canhover = true;
 				}

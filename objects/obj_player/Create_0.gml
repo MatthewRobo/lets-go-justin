@@ -61,6 +61,9 @@ airjumps = jumpmax;
 maxfall = 16;
 jumpsp = 13;
 hopsp = 6;
+ljumphsp = 20;
+ljumpvsp = 4;
+
 jumpforce = jumpsp;
 thrust = 0.9;
 
