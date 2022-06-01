@@ -3,7 +3,7 @@
 
 //if (!global.paused) {
 
-if (global.hitstop <= 0) {
+if (global.hitstop <= 0 || global.paused) {
 	timer--;
 	image_index = irandom(7);
 	if (image_index == 7 && timer <= 0) instance_destroy();

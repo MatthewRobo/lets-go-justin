@@ -10,3 +10,6 @@ audio_play_sound(snd_parry,0,0);
 lerpfactor = 0.2;
 openlerp = 0;
 selectedlerp = selected;
+
+hidden = 0;
+alphalerp = 0;

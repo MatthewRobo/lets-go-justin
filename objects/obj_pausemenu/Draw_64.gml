@@ -6,7 +6,11 @@ var outline = 3;
 var margin = 16;
 
 draw_set_font(Font1);
-draw_set_alpha(1);
+draw_set_color(c_black);
+draw_set_alpha(alphalerp*0.4);
+draw_rectangle(0,0,room_width,room_height,0);
+
+draw_set_alpha(alphalerp);
 
 
 draw_set_valign(fa_top);
