@@ -63,6 +63,7 @@ jumpsp = 13;
 hopsp = 6;
 ljumphsp = 20;
 ljumpvsp = 4;
+hopfx = 0;
 
 jumpforce = jumpsp;
 thrust = 0.9;

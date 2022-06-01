@@ -97,6 +97,7 @@
     {"id":{"name":"key_to_string","path":"scripts/key_to_string/key_to_string.yy",},"order":0,},
     {"id":{"name":"spr_slashwhiff","path":"sprites/spr_slashwhiff/spr_slashwhiff.yy",},"order":6,},
     {"id":{"name":"Room0","path":"rooms/Room0/Room0.yy",},"order":0,},
+    {"id":{"name":"snd_woosh","path":"sounds/snd_woosh/snd_woosh.yy",},"order":14,},
     {"id":{"name":"spr_Room8Prev","path":"sprites/spr_Room8Prev/spr_Room8Prev.yy",},"order":13,},
     {"id":{"name":"spr_Room12Prev","path":"sprites/spr_Room12Prev/spr_Room12Prev.yy",},"order":15,},
     {"id":{"name":"spr_shotgun","path":"sprites/spr_shotgun/spr_shotgun.yy",},"order":1,},

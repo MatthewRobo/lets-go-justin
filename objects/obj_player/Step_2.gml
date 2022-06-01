@@ -670,6 +670,9 @@ if (global.hitstop <= 0) {
 						hsp = hvec * ljumphsp;
 						jiggle = 1.5;
 						canrelease = false;
+						hopfx = 9;
+						sfx = audio_play_sound_at(snd_woosh, -x + room_width/2,y,400,100,500,1,false, false);
+						audio_sound_pitch(sfx, random_range(1.4,1.6));
 					}
 				} else {
 					canhover = true;
@@ -725,14 +728,31 @@ if (global.hitstop <= 0) {
 		vsp = vsp + grav < maxfall ? vsp + grav : maxfall;
 	}
 
-	/*
-	trail = instance_create_layer(x, y, "trails", obj_playertrail);
-	trail.image_index = image_index;
-	if (ammo <= 0) trail.image_alpha = 0.5;
-	trail.image_blend = color;
-	trail.image_xscale = image_xscale;
-	trail.image_yscale = image_yscale;
-	*/
+	if (hopfx > 0) {
+		//trail = instance_create_layer(x, y, "trails", obj_playertrail);
+		//trail.image_index = image_index;
+		//trail.image_blend = c_white;
+		//trail.image_xscale = image_xscale;
+		//trail.image_yscale = image_yscale;
+		
+		repeat(3) {
+			trail = instance_create_layer(x, y, "trails", obj_glitter);
+			trail.color = color;
+			if (ammo <= 0) trail.image_alpha = 0.5;
+			trail.image_blend = color;
+			trail.vspeed = random(-vsp/4);
+			trail.hspeed = random(-hsp/4);
+			trail.friction = 0.2;
+			if (irandom(1)) trail.image_blend = c_white;
+			trail.x = random_range(bbox_left, bbox_right);
+			trail.y = random_range(bbox_bottom, bbox_top);
+
+		}
+		hopfx--;
+	}
+
+	
+	
 	if (invul > 0) {
 		invul--;
 		invul = floor(invul);
@@ -801,5 +821,5 @@ flash *= 0.8;
 var _outlinescale = spawning == spawntime ? (global.hitstop * global.hitstop) / 60 : 1
 if (abs(global.hitstop - dead) < 2) _outlinescale = 1;
 outlinescale = _outlinescale;
-
+hopfx--;
 }
