@@ -678,7 +678,7 @@ if (global.hitstop <= 0) {
 				if (grounded > 0) {
 					jiggle = 0.3;
 					jiggledir = 1;
-					vsp = -jumpforce;
+					vsp = vvec > 0 ? -ljumpvsp : -jumpforce;
 					if (state == status.idle) hsp += jumpboost * hvec;
 					jump = false;
 					grounded = 0;
@@ -688,7 +688,6 @@ if (global.hitstop <= 0) {
 					canrelease = true;
 					
 					if (vvec > 0 && state == status.idle) {
-						vsp = -ljumpvsp;
 						hsp = hvec * ljumphsp;
 						jiggle = 1.5;
 						canrelease = false;

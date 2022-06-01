@@ -121,6 +121,7 @@
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},"order":1,},
     {"id":{"name":"spr_squaretrail","path":"sprites/spr_squaretrail/spr_squaretrail.yy",},"order":8,},
     {"id":{"name":"spr_ptrim","path":"sprites/spr_ptrim/spr_ptrim.yy",},"order":27,},
+    {"id":{"name":"RoomFD","path":"rooms/RoomFD/RoomFD.yy",},"order":15,},
     {"id":{"name":"obj_slash","path":"objects/obj_slash/obj_slash.yy",},"order":0,},
     {"id":{"name":"Title_Screen","path":"sounds/Title_Screen/Title_Screen.yy",},"order":2,},
     {"id":{"name":"obj_mainmenu","path":"objects/obj_mainmenu/obj_mainmenu.yy",},"order":4,},
@@ -253,6 +254,7 @@
     {"roomId":{"name":"Room12","path":"rooms/Room12/Room12.yy",},},
     {"roomId":{"name":"Room9","path":"rooms/Room9/Room9.yy",},},
     {"roomId":{"name":"Room11","path":"rooms/Room11/Room11.yy",},},
+    {"roomId":{"name":"RoomFD","path":"rooms/RoomFD/RoomFD.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
