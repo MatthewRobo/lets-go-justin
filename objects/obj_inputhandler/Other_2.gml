@@ -7,7 +7,7 @@ randomize();
 #macro GP 12
 #macro KB 2
 
-#macro GREYBOX false
+#macro GREYBOX true
 
 enum input {
 	U = 0,
@@ -29,7 +29,7 @@ enum gamemode {
 	training
 }
 
-global.rooms = [-1,Room1,Room2,Room3,Room4,Room5,Room6,Room7,Room8,Room9,Room10,Room11,Room12,Room13,Room14];
+global.rooms = [-1,Room1,Room2,Room3,Room4,Room5,Room6,Room7,Room8,Room9,Room10,Room11,Room12];
 global.banlist = array_create(array_length(global.rooms),false);
 global.takess = false;
 global.stage = Room0;

@@ -3,21 +3,14 @@ layer_background_blend(gbid, global.bgcolor);
 
 rooms = global.rooms;
 roomlen = array_length(rooms);
-previews = [spr_RoomBorder,
-            spr_Room1Prev,
-			spr_Room2Prev,
-			spr_Room3Prev,
-			spr_Room4Prev,
-			spr_Room5Prev,
-			spr_Room6Prev,
-			spr_Room7Prev,
-			spr_Room8Prev,
-			spr_Room9Prev,
-			spr_Room10Prev,
-			spr_Room11Prev,
-			spr_Room12Prev,
-			spr_RoomBorder,		//TODO roomborder is a placeholder
-			spr_RoomBorder];
+previews = array_create(roomlen,spr_RoomBorder);
+for (var i = 1; i < roomlen; i++) {
+	var name = "spr_" + room_get_name(rooms[i]) + "Prev";
+	var index = asset_get_index(name);
+	if (index != undefined) {
+		previews[i] = index;
+	}
+}
 roomstr = ["Random",
            "Wings",
 		   "Bucket",
@@ -29,9 +22,9 @@ roomstr = ["Random",
 		   "3-E",
 		   "Crosshair",
 		   "Hump",
-		   "Horseshoes",
+		   "Elevators",
 		   "Teufort",
-		   "Test13",			//TODO actual stage names needed
+		   "Test13",
 		   "Test14"];
 lerpfactor = 0.18;
 selected = global.stageindex;
