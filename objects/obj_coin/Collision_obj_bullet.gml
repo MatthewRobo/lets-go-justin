@@ -20,10 +20,10 @@ if (lasthit != other && cooldown <= 0) {
 	spd = maxspd;
 	hsp = lengthdir_x(spd, direction);
 	vsp = lengthdir_y(spd, direction);
+	instance_create_layer(x, y, "ParryFX", obj_boom);
 	x += hsp;
 	y += vsp;
 	global.hitstop = max(9,global.hitstop);
-	instance_create_layer(x, y, "ParryFX", obj_boom);
 	audio_play_sound(snd_dink,0,0);
 	image_xscale = 0.5;
 	image_yscale = 0.5;

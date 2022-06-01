@@ -5,10 +5,15 @@
 
 if (global.hitstop <= 0 || global.paused) {
 	timer--;
-	image_index = irandom(7);
+	if (rng == true) {
+		image_index = irandom(7);
+		image_xscale = scale * random_range(0.5, 2);
+	} else {
+		image_xscale = scale;
+		image_speed = 1;
+	}
 	if (image_index == 7 && timer <= 0) instance_destroy();
-	image_xscale = scale * random_range(0.5, 2);
-	image_yscale = image_xscale;	
+	image_yscale = image_xscale;
 } else {
 	image_speed = 2/30;
 }

@@ -1,6 +1,6 @@
 if !GREYBOX {
 
-for (i = 0; i < 3; i++) {
+repeat(3) {
 	trail = instance_create_layer(x, y, "trails", obj_glitter);
 	trail.image_blend = irandom(1) ? c_white : global.fgcolor2;
 	if (irandom(1)) trail.sprite_index = spr_blob;
