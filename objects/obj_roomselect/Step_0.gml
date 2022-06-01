@@ -6,7 +6,19 @@ if (!global.inassign) {
 		if (global.pressed[device][input.ST]) {
 			global.stagename = roomstr[selected];
 			if (selected == 0) {
-				selected = irandom_range(1,roomlen-1);
+				//selected = irandom_range(1,roomlen-1);
+				var list = ds_list_create();
+				for (var i = 1; i < roomlen; i++) {
+					if (!global.banlist[i]) {
+						ds_list_add(list,i);
+					}
+				}
+				if !ds_list_empty(list) {
+					selected = list[| irandom(ds_list_size(list)-1)];
+				} else {
+					banlerp[selected] = 1.5;
+				}
+				ds_list_destroy(list);
 				audio_play_sound(snd_slash,0,0);
 			} else if !global.banlist[selected] {
 				global.stage = rooms[selected];
