@@ -94,6 +94,7 @@ if (global.hitstop <= 0) {
 				lifetime = 270;
 			}
 			canhover = false;
+			canrelease = false;
 			grounded = coyote;
 		} else {
 			jiggle = 0.6;
@@ -167,6 +168,7 @@ if (global.hitstop <= 0) {
 		if (!grounded && airjumps > 0 && hover && canhover) {
 			sfx = audio_play_sound_at(snd_hover, -x + room_width/2,y,400,100,500,1,false, false);
 			audio_sound_pitch(sfx, lerp(2, 1, airjumps / jumpmax));
+			canrelease = true;
 			repeat(3) {
 				trail = instance_create_layer(x, y, "trails", obj_glitter);
 				trail.color = color;
@@ -190,8 +192,9 @@ if (global.hitstop <= 0) {
 			airjumps--;
 		}
 
-		if (vsp < 0 && uprelease) {
+		if (vsp < 0 && !jumpheld && canrelease) {
 			vsp /= 2; // cut player's jump short if player releases early
+			canrelease = false;
 		}
 		if (slash) {
 			slash = false;
@@ -232,6 +235,7 @@ if (global.hitstop <= 0) {
 				vsp += lengthdir_y(-recoil, direction) * 0.85;
 				if (vsp < 0) grounded = 0;
 				canhover = true;
+				canrelease = false;
 				spark = instance_create_layer(x, y, "parryfx", obj_parry);
 				spark.owner = id;
 				spark.direction = direction + 180;
@@ -654,10 +658,15 @@ if (global.hitstop <= 0) {
 					jiggle = 0.3;
 					jiggledir = 1;
 					vsp = -jumpforce;
+					jump = false;
 					grounded = 0;
 					audio_play_sound(snd_jump, 0, false);
+
 					canhover = false;
-				} else canhover = true;
+					canrelease = true;
+				} else {
+					canhover = true;
+				}
 			}
 			var _accel;
 			switch state {

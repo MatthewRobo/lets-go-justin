@@ -6,11 +6,10 @@ gamepad = global.lookup[team];
 if (!global.paused) {
 
 if (global.hitstop <= 0) {
-	uprelease = false;
 	slash--;
 	shoot--;
 	parry--;
-	jump = false;
+	jump--;
 }
 
 left = false;
@@ -39,15 +38,17 @@ if (global.down[gamepad][input.D]) {
 }
 
 if (global.pressed[gamepad][input.JU]) {
-	jump = true;
+	jump = buffer;
+	canrelease = true;
 }
+
+jumpheld = global.down[gamepad][input.JU];
 
 if (global.down[gamepad][input.JU]) {
 	hover = true;
 }
 
 if (global.released[gamepad][input.JU]) {
-	uprelease = true;
 	canhover = true;
 }
 
