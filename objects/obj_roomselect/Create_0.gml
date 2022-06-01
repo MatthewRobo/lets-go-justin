@@ -11,21 +11,26 @@ for (var i = 1; i < roomlen; i++) {
 		previews[i] = index;
 	}
 }
-roomstr = ["Random",
-           "Wings",
-		   "Bucket",
-		   "Umpire",
-		   "Chandeliers",
-		   "Stadium",
-		   "WarioWare",
-		   "Shaft",
-		   "3-E",
-		   "Crosshair",
-		   "Hump",
-		   "Elevators",
-		   "Teufort",
-		   "Test13",
-		   "Test14"];
+roomstr = array_create(roomlen,"");
+for (i = 0; i < roomlen; i++) {
+	switch i {
+		case 0: roomstr[i] = "Random"; break;
+		case 1: roomstr[i] = "Wings"; break;
+		case 2: roomstr[i] = "Bucket"; break;
+		case 3: roomstr[i] = "Umpire"; break;
+		case 4: roomstr[i] = "Chandeliers"; break;
+		case 5: roomstr[i] = "Stadium"; break;
+		case 6: roomstr[i] = "WarioWare"; break;
+		case 7: roomstr[i] = "Shaft"; break;
+		case 8: roomstr[i] = "3-E"; break;
+		case 9: roomstr[i] = "Crosshair"; break;
+		case 10: roomstr[i] = "Hump"; break;
+		case 11: roomstr[i] = "Elevators"; break;
+		case 12: roomstr[i] = "Teufort"; break;
+		default: roomstr[i] = "UNNAMED"; break;
+	}
+}
+
 lerpfactor = 0.18;
 selected = global.stageindex;
 selectedlerp = selected;
