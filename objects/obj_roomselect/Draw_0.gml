@@ -53,3 +53,14 @@ var prompt = "Press down to ban | Press up to unban | F4/down + 3 buttons to reb
 draw_rectangle(room_width-string_width(prompt)-gap*2,room_height-string_height(prompt)-gap,room_width,room_height,0);
 draw_set_color(global.bgcolor);
 draw_text(room_width-gap,room_height,prompt);
+
+
+draw_set_color(global.fgcolor2);
+draw_set_valign(fa_top);
+var designer = "Level design by ";
+switch selected {
+	case 1: case 5: case 6: case 8: designer += "M-AS (@matthewrobo)"; break;
+	case 0: case 7: designer += "M-AS (@matthewrobo) & Jorge Velasquez (@Gorka_Man)"; break;
+	default: designer += "Jorge Velasquez (@Gorka_Man)"; break;
+}
+draw_text(room_width-gap,gap,designer);
