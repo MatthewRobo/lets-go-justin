@@ -114,12 +114,12 @@ for (i = 0; i < tlen; i+= 1) {
 
 	var xwid = 10
 	var ywid = 16;
-	xwid *= i/tlen;
-	ywid *= i/tlen;
+	//xwid *= i/tlen;
+	//ywid *= i/tlen;
 	x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-xwid,x1+xwid);
-	y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-ywid*yscale,y1+ywid);
+	y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-ywid,y1+ywid);
 	x12 = clamp(x1+lengthdir_x(twid,tdir-90),x1-xwid,x1+xwid);
-	y12 = clamp(y1+lengthdir_y(twid,tdir-90),y1-ywid*yscale,y1+ywid);
+	y12 = clamp(y1+lengthdir_y(twid,tdir-90),y1-ywid,y1+ywid);
 	//x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-xwid,x1+xwid);
 	//y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-ywid,y1+ywid);
 	//x12 = clamp(x1+lengthdir_x(twid,tdir-90),x1-xwid,x1+xwid);

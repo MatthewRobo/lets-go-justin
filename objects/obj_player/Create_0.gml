@@ -125,7 +125,7 @@ scale = 1;
 image_xscale = scale;
 image_yscale = scale;
 
-tlen = 35;
+tlen = 20;
 tcounter = 0;
 tx = array_create(tlen, x);
 ty = array_create(tlen, y);

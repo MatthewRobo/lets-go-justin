@@ -13,6 +13,7 @@ else if (down) {
 	dir -= 3;
 	if (global.hitstop <= 0) image_index = 0;
 }
+
 //dirqueue[qt] = dir;
 // for aiming, does not affect own movement
 switch (dir) {
@@ -107,7 +108,7 @@ if (global.hitstop <= 0) {
 		lifetime = 90;
 	}
 
-
+#region spawning
 	if (spawning == spawntime) {
 		dead = false;
 		lifetime = 270;
@@ -159,7 +160,7 @@ if (global.hitstop <= 0) {
 		y = y + _c * dy - _s * dx;
 		spawning--;
 	}
-
+#endregion
 	switch (state) {
 	case status.idle:
 		if (left && !right) image_xscale = -scale;
@@ -657,7 +658,7 @@ if (global.hitstop <= 0) {
 		wjiggle = lerp(1,2,jiggle);
 		hjiggle = lerp(1,0.5,jiggle);
 		
-		// *** PHYSICS AND COLLISION ***
+		#region PHYSICS AND COLLISION
 		
 		// deccelerate when not moving
 		var _deccel = state == status.stun ? stundeccel : deccel;
@@ -746,7 +747,9 @@ if (global.hitstop <= 0) {
 		} else {
 			y += vsp;
 		}
-		vsp = vsp + grav < maxfall ? vsp + grav : maxfall;
+		vsp = vsp + grav < maxfall ? vsp + grav : vsp - 1;
+		
+		#endregion
 	}
 
 	if (hopfx > 0) {
@@ -787,9 +790,16 @@ if (global.hitstop <= 0) {
 	} else {
 		image_alpha = 1;
 	}
+	var _ysin = floor(y + 2 * -dsin(lifetime)+0.5);
+	image_index = 0;
 
+	var yscale = grounded ? image_yscale : image_yscale * lerp(0.9,1.2,abs(vsp / 13));
+	yscale *= hjiggle;
+
+	var dy = ((1 - hjiggle) * 48 * jiggledir)/2;
+	_ysin += dy;
 	tx[tcounter] = x;
-	ty[tcounter] = y;
+	ty[tcounter] = _ysin;
 	tcounter++;
 	tcounter = tcounter mod tlen;
 	
