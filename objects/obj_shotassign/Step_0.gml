@@ -53,6 +53,7 @@ if (!global.inassign) {
 				}
 				if global.pressed[i][input.SE] {
 					room_goto_previous();
+					audio_play_sound(snd_parry,0,0);
 				}
 			} else if global.pressed[i][input.SE] {
 					ready[p] = false;
@@ -95,6 +96,7 @@ if (!global.inassign) {
 				}
 				if global.pressed[i][input.SE] {
 					room_goto_previous();
+					audio_play_sound(snd_parry,0,0);
 				}
 			} else if (!ready[1]) {
 				_p = 1;
