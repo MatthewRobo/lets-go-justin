@@ -15,7 +15,9 @@ previews = [spr_RoomBorder,
 			spr_Room9Prev,
 			spr_Room10Prev,
 			spr_Room11Prev,
-			spr_Room12Prev];
+			spr_Room12Prev,
+			spr_RoomBorder,		//TODO roomborder is a placeholder
+			spr_RoomBorder];
 roomstr = ["Random",
            "Wings",
 		   "Bucket",
@@ -28,7 +30,9 @@ roomstr = ["Random",
 		   "Crosshair",
 		   "Hump",
 		   "Horseshoes",
-		   "Teufort"];
+		   "Teufort",
+		   "Test13",			//TODO actual stage names needed
+		   "Test14"];
 lerpfactor = 0.18;
 selected = global.stageindex;
 selectedlerp = selected;
