@@ -6,7 +6,7 @@ if (!global.paused) {
 // Inherit the parent event
 event_inherited();
 if (grav != 0) {
-	image_yscale = 0.5 * max(0.1,abs(dsin(20*lifetime)));
+	image_yscale = 0.5 * max(0.2,abs(dsin(20*lifetime)));
 	image_xscale = 0.5;
 	image_angle = 0;
 }
