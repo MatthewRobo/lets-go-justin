@@ -56,6 +56,7 @@ heldparry = false;
 spawning = false;
 spawntime = 20;
 jump = false;
+jumpboost = 6;
 jumpmax = 30
 airjumps = jumpmax;
 maxfall = 16;

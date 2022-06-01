@@ -658,6 +658,7 @@ if (global.hitstop <= 0) {
 					jiggle = 0.3;
 					jiggledir = 1;
 					vsp = -jumpforce;
+					if (state == status.idle) hsp += jumpboost * hvec;
 					jump = false;
 					grounded = 0;
 					audio_play_sound(snd_jump, 0, false);
