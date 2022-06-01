@@ -32,7 +32,7 @@ if (do_scanline) {
 			surface_reset_target();
 		}
 	}
-	surface_save(surf2, "surf3.png");
+	surface_save(surf2, "surf2.png");
 	do_scanline = false;
 }
 
