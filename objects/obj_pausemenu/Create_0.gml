@@ -13,3 +13,6 @@ selectedlerp = selected;
 
 hidden = 0;
 alphalerp = 0;
+
+accepting = false;
+alarm[0] = 2;

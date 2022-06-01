@@ -78,16 +78,17 @@ if (!global.paused) {
 				start[device] += 1/45;
 			} else {
 				start[device] = max(start[device] - 1/45, 0);
-			
 			}
 			if global.down[device][input.SE] {
 				select = true;
 			} 
 				
 			
-		}else {
+		} else {
 			if (global.pressed[device][input.ST]) {
-				start[device] = 2;
+				start[device] += 2;
+			} else {
+				start[device] = max(start[device] - 1/45, 0);
 			}
 			if (global.pressed[device][input.SE]) {
 				restart = 2;

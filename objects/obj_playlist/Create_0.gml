@@ -4,7 +4,7 @@ inbattle = false;
 
 if (global.browser) {
 	battlemus = [
-	Title_Screen,
+	Tactical,
 	]
 
 	menumus = [
@@ -12,7 +12,7 @@ if (global.browser) {
 	]
 } else {
 	battlemus = [
-	Title_Screen,
+	Tactical,
 	Aeronaut,
 	BackdoorBlaster,
 	BeginnersLuck,

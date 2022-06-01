@@ -11,7 +11,7 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "Title_Screen.mp3",
+  "soundFile": "title_screen.wav",
   "duration": 120.0,
   "parent": {
     "name": "browser",
