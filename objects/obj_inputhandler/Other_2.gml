@@ -29,7 +29,27 @@ enum gamemode {
 	training
 }
 
-global.rooms = [-1,Room1,Room2,Room3,Room4,Room5,Room6,Room7,Room8,Room9,Room10,Room11,Room12];
+var roomlist = ds_list_create();
+var i = 0;
+var roomlen = 0;
+var index = 0;
+while (true) {
+	index = asset_get_index("Room" + string(i));
+	show_debug_message("Room" + string(i) + " : " + string(index));
+	if (index == -1) break;
+	else {
+		ds_list_add(roomlist, index);
+		roomlen++;
+	}
+	i++;
+}
+
+global.rooms = array_create(roomlen, -1);
+for (var i = 0; i < roomlen; i++) {
+	global.rooms[i+1] = roomlist[| i];
+}
+ds_list_destroy(roomlist);
+//global.rooms = [-1,Room1,Room2,Room3,Room4,Room5,Room6,Room7,Room8,Room9,Room10,Room11,Room12];
 global.banlist = array_create(array_length(global.rooms),false);
 global.takess = false;
 global.stage = Room0;

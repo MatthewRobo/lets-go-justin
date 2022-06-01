@@ -7,7 +7,7 @@ previews = array_create(roomlen,spr_RoomBorder);
 for (var i = 1; i < roomlen; i++) {
 	var name = "spr_" + room_get_name(rooms[i]) + "Prev";
 	var index = asset_get_index(name);
-	if (index != undefined) {
+	if (index != -1) {
 		previews[i] = index;
 	}
 }
