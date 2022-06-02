@@ -28,7 +28,7 @@
   "option_ios_icon_ipad_settings_29": "icons/settings/ipad_29.png",
   "option_ios_icon_ipad_settings_58": "icons/settings/ipad_58.png",
   "option_ios_icon_itunes_artwork_1024": "icons/itunes/itunes_1024.png",
-  "option_ios_splashscreen_background_colour": 4280096278,
+  "option_ios_splashscreen_background_colour": 4278190080,
   "option_ios_launchscreen_image": "splash/launchscreen.png",
   "option_ios_launchscreen_image_landscape": "splash/launchscreen-landscape.png",
   "option_ios_launchscreen_fill": 0,
