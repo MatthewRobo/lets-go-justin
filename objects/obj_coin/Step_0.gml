@@ -13,13 +13,14 @@ if (grav != 0) {
 		_x = x+lengthdir_x(8, 47*lifetime);
 		_y = y+lengthdir_y(8, 47*lifetime);
 		var glitter = instance_create_depth(_x, _y, depth-1, obj_glitter);
-		if (irandom(1)) glitter.image_blend = owner.color;
+		if (irandom(1)) glitter.image_blend = global.fgcolor2;
 		//glitter.image_blend = irandom(1) ? global.fgcolor2 : owner.color;
 		//glitter.image_blend = irandom(1) ? global.fgcolor2 : c_white;
 		//if (! (lifetime mod 2)) glitter.image_blend = global.fgcolor2;
 		//if (irandom(1)) glitter.sprite_index = spr_blob;
 		if (lifetime mod 2) glitter.sprite_index = spr_blob;
 		//glitter.scale = 2;
+		glitter.scale = 1.5;
 		//glitter.rng = false;
 	//}
 	image_yscale = 0.5 * max(0.2,abs(_lifetime));
