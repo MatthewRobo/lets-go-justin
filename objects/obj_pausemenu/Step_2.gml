@@ -1,6 +1,14 @@
 global.paused = true;
 
-if (!global.inassign && accepting) {
+var _team = array_find_index(global.lookup, device);
+color = _team != -1 ? global.color[_team] : global.fgcolor2;
+
+if (global.insettings) {
+	accepting = false;
+	alarm[0] = 2;
+}
+
+if (!global.insettings && !global.inassign && accepting) {
 	if (global.pressed[device][input.U]) {
 		selected--;
 		hidden = false;
@@ -25,7 +33,7 @@ if (!global.inassign && accepting) {
 				case 3: global.palette = irandom(PALETTES-1);
 				room_goto(Room_Select); break; //"Change Stage", 
 				case 4: 
-				instance_create_depth(0,0,-10000,obj_inputassign); break;//"Button Assign", 
+				instance_create_depth(0,0,depth-1,obj_settingsmenu); break;//"Button Assign", 
 				case 5: global.palette = irandom(PALETTES-1);
 				room_goto(Main_Menu); break; //"Quit to Menu"];
 			}

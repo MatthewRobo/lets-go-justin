@@ -3,6 +3,7 @@
 
 // Inherit the parent event
 gamepad = global.lookup[team];
+color = global.color[team];
 if (!global.paused) {
 
 if (global.hitstop <= 0) {

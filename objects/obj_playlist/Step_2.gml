@@ -5,6 +5,10 @@ if (global.musicgain < 0) global.musicgain = 20;
 if (!someonewon) audio_sound_gain(nowplaying,global.musicgain/10*volscl*musscl ,0);
 
 if (inbattle) {
+	if (!audio_is_playing(nowplaying) && global.musicgain > 0) {
+		var newsong = irandom(array_length(battlemus)-1);
+		nowplaying = audio_play_sound(battlemus[newsong],1,0);
+	}
 	if (!someonewon && obj_controller.someonewon) {
 		audio_sound_gain(nowplaying,0,0);
 		audio_sound_gain(nowplaying,global.musicgain/10*volscl*musscl,2500);
