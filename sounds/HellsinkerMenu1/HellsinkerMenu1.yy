@@ -8,8 +8,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "nondemo_music",
+    "path": "audiogroups/nondemo_music",
   },
   "soundFile": "HellsinkerMenu1.mp3",
   "duration": 96.02612,

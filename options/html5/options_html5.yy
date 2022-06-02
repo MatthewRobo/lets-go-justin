@@ -1,5 +1,5 @@
 {
-  "option_html5_browser_title": "Let's Go Justin! -OH SHIT- edition",
+  "option_html5_browser_title": "EXPLOSIVE PORT-MORTEM ACTION",
   "option_html5_version": "1.0.0.0",
   "option_html5_foldername": "html5game",
   "option_html5_outputname": "index.html",

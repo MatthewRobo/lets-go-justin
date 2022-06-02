@@ -8,8 +8,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "exclude_in_html5",
-    "path": "audiogroups/exclude_in_html5",
+    "name": "nondemo_music",
+    "path": "audiogroups/nondemo_music",
   },
   "soundFile": "ReadyToSortie.mp3",
   "duration": 39.288162,
