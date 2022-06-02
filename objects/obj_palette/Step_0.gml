@@ -34,8 +34,10 @@ switch global.palette {
 		global.color[1] = $ff0099
 		global.color[2] = $90ff90;
 		global.color[3] = $ff66aa
+		//global.bgcolor = $001421;
+		global.fgcolor = $353741;
 		global.bgcolor = $05080f;
-		global.fgcolor = $332244;
+		//global.fgcolor = $332244;
 		global.fgcolor2 = $ffaaff;
 		break;
 	case 2: // M-AS
@@ -134,8 +136,10 @@ switch global.palette {
 		global.color[2] = $5465f2;
 		global.color[3] = $b9a601;
 		global.bgcolor = $202530;
-		global.fgcolor = $966b9f;
-		global.fgcolor2 = $ffffff;
+		global.fgcolor = $42506B;
+		global.fgcolor2 = $F1ABFF;
+		//global.fgcolor = $966b9f;
+		//global.fgcolor2 = $ffffff;
 		break;
 	case 13: // POLKA
 		global.color[0] = $d2aaff;
