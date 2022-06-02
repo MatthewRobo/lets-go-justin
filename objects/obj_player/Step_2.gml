@@ -679,8 +679,8 @@ if (global.hitstop <= 0) {
 				if (grounded > 0) {
 					jiggle = 0.3;
 					jiggledir = 1;
-					vsp = vvec > 0 ? -ljumpvsp : -jumpforce;
-					if (state == status.idle) hsp += jumpboost * hvec;
+					vsp = vvec > 0 ? -hyperhopvsp : -jumpforce;
+					if (state == status.idle && dir != 2) hsp += jumpboost * hvec;
 					jump = false;
 					grounded = 0;
 					audio_play_sound(snd_jump, 0, false);
@@ -688,11 +688,19 @@ if (global.hitstop <= 0) {
 					canhover = false;
 					canrelease = true;
 					
-					if (vvec > 0 && state == status.idle) {
-						hsp = hvec * ljumphsp;
+					if ((dir == 1 || dir == 3) && state == status.idle) {
+						hsp = hvec * hyperhophsp;
 						jiggle = 1.5;
 						canrelease = false;
 						hopfx = 9;
+						sfx = audio_play_sound_at(snd_woosh, -x + room_width/2,y,400,100,500,1,false, false);
+						audio_sound_pitch(sfx, random_range(1.4,1.6));
+					}
+					if ((dir == 2) && state == status.idle) {
+						jiggle = 2;
+						//canrelease = false;
+						hopfx = 9;
+						vsp = -superjumpsp;
 						sfx = audio_play_sound_at(snd_woosh, -x + room_width/2,y,400,100,500,1,false, false);
 						audio_sound_pitch(sfx, random_range(1.4,1.6));
 					}
