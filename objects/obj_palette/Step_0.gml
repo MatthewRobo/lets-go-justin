@@ -11,8 +11,8 @@ if (!global.inassign && instance_number(obj_controller) <= 0) {
 	}
 }
 
-global.palette = (global.palette + PALETTES) mod PALETTES;
-global.thingy = (global.thingy + thingies.length) mod thingies.length;
+global.palette = intwrap(global.palette,0,PALETTES);
+global.thingy = intwrap(global.thingy,0,thingies.length);
 
 switch global.palette {
 	case 0:

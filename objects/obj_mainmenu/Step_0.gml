@@ -1,23 +1,18 @@
-var volstring = global.musicgain > 0 ? string(global.musicgain*10) + "%" : "OFF";
-for (var i = 0; i < array_length(modes); i++) {
-	if (modes[i] == -2) {
-		modestr[i] = "Music: " + volstring;
-	}
-}
-if (!global.inassign) {
+
+if (!global.inassign && !global.insettings) {
 	for (var device = 0; device < GP+KB; device++) {
-		if (global.mode != -2 || !expanded) {
-			if global.pressed[device][input.L] {
-				global.palette--;
-				audio_play_sound(snd_shield,0,0);
-				frame = -1;
-			}
-			if global.pressed[device][input.R] {
-				global.palette++;
-				audio_play_sound(snd_shield,0,0);
-				frame = -1;
-			}
+
+		if global.pressed[device][input.L] {
+			global.palette--;
+			audio_play_sound(snd_shield,0,0);
+			frame = -1;
 		}
+		if global.pressed[device][input.R] {
+			global.palette++;
+			audio_play_sound(snd_shield,0,0);
+			frame = -1;
+		}
+
 		if (expanded) {
 			if (global.pressed[device][input.ST]) {
 				switch global.mode {
@@ -29,12 +24,7 @@ if (!global.inassign) {
 						room_goto(Room_Select);
 						break;
 					case -1: game_end(); audio_play_sound(snd_parry,0,0); break;
-					case -2: 
-					audio_stop_sound(obj_playlist.nowplaying);
-					audio_play_sound(snd_parry,0,0);
-					global.palette = irandom(PALETTES-1);
-					frame = -1;
-					break;
+					case -2: instance_create_depth(0,0,depth-1,obj_settingsmenu); break;
 					default: room_goto_next(); break;
 					
 				}
@@ -51,16 +41,16 @@ if (!global.inassign) {
 					expanded = 0;
 					audio_play_sound(snd_shield,0,0);
 				}
-				if (global.mode == -2) {
-					if global.pressed[device][input.L] {
-						global.musicgain--;
-						audio_play_sound(snd_shield,0,0);
-					}
-					if global.pressed[device][input.R] {
-						global.musicgain++;
-						audio_play_sound(snd_shield,0,0);
-					}
-				}
+				//if (global.mode == -2) {
+				//	if global.pressed[device][input.L] {
+				//		global.musicgain--;
+				//		audio_play_sound(snd_shield,0,0);
+				//	}
+				//	if global.pressed[device][input.R] {
+				//		global.musicgain++;
+				//		audio_play_sound(snd_shield,0,0);
+				//	}
+				//}
 			}
 		} else {
 			if (global.pressed[device][input.ST]) {

@@ -94,15 +94,16 @@ for (var d = 0; d < GP; d++) {
 
 if (os_browser == browser_not_a_browser)
 {
-    global.browser = 0;
+    global.browser = false;
 }
 else
 {
-    global.browser = 1;
+    global.browser = true;
 }
 
 global.mainbind = array_create(GP + KB+1, array_create(input.length, -1));
 global.subbind = array_create(GP + KB+1, array_create(input.length, -1));
 
-global.inassign = 0;
+global.inassign = false;
+global.insettings = false;
 global.pmax = 2;

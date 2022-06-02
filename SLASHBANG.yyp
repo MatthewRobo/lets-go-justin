@@ -158,6 +158,7 @@
     {"id":{"name":"fnt_win","path":"fonts/fnt_win/fnt_win.yy",},"order":9,},
     {"id":{"name":"Pad_Select","path":"rooms/Pad_Select/Pad_Select.yy",},"order":2,},
     {"id":{"name":"obj_splatter","path":"objects/obj_splatter/obj_splatter.yy",},"order":14,},
+    {"id":{"name":"obj_settingsmenu","path":"objects/obj_settingsmenu/obj_settingsmenu.yy",},"order":7,},
     {"id":{"name":"spr_geyser","path":"sprites/spr_geyser/spr_geyser.yy",},"order":9,},
     {"id":{"name":"PearlBlueSoul","path":"sounds/PearlBlueSoul/PearlBlueSoul.yy",},"order":18,},
     {"id":{"name":"fnt_large","path":"fonts/fnt_large/fnt_large.yy",},"order":4,},

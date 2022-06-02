@@ -6,6 +6,7 @@ enum thingies {
 }
 
 global.palette = irandom(PALETTES-1);
+global.palettelock = false;
 global.color[0] = $5100ff;
 global.color[1] = $ff8000;
 global.color[2] = $0051ff;
