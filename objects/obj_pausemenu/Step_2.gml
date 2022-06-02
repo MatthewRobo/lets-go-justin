@@ -28,13 +28,13 @@ if (!global.insettings && !global.inassign && accepting) {
 				instance_destroy(); break; //["Resume Game"
 				case 1: 
 				room_restart(); break; //"Restart Match"
-				case 2: global.palette = irandom(PALETTES-1);
+				case 2: global.palette = randomize_palette();
 				room_goto(Shot_Select); break; //"Change Shot",
-				case 3: global.palette = irandom(PALETTES-1);
+				case 3: global.palette = randomize_palette();
 				room_goto(Room_Select); break; //"Change Stage", 
 				case 4: 
 				instance_create_depth(0,0,depth-1,obj_settingsmenu); break;//"Button Assign", 
-				case 5: global.palette = irandom(PALETTES-1);
+				case 5: global.palette = randomize_palette();
 				room_goto(Main_Menu); break; //"Quit to Menu"];
 			}
 		}

@@ -5,6 +5,7 @@
     {"id":{"name":"HackedGrey","path":"sounds/HackedGrey/HackedGrey.yy",},"order":12,},
     {"id":{"name":"obj_respawn","path":"objects/obj_respawn/obj_respawn.yy",},"order":1,},
     {"id":{"name":"snd_reload","path":"sounds/snd_reload/snd_reload.yy",},"order":8,},
+    {"id":{"name":"randomize_palette","path":"scripts/randomize_palette/randomize_palette.yy",},"order":6,},
     {"id":{"name":"spr_halo","path":"sprites/spr_halo/spr_halo.yy",},"order":12,},
     {"id":{"name":"spr_Room10Prev","path":"sprites/spr_Room10Prev/spr_Room10Prev.yy",},"order":14,},
     {"id":{"name":"spr_p1idle","path":"sprites/spr_p1idle/spr_p1idle.yy",},"order":15,},

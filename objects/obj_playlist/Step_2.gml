@@ -32,10 +32,7 @@ if (inbattle) {
 					obj_mainmenu.frame = 0;
 					audio_play_sound(snd_shoot,0,0);
 					if (audio_sound_is_playable(nowplaying)) {
-						var oldpalette = global.palette;
-						while (global.palette == oldpalette) {
-							global.palette = irandom(PALETTES-1);
-						}
+						randomize_palette();
 					}
 				}
 			}
