@@ -8,8 +8,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "nondemo_music",
-    "path": "audiogroups/nondemo_music",
+    "name": "audiogroup_default",
+    "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "CrouchBlockingDragon.mp3",
   "duration": 228.432,

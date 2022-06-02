@@ -8,8 +8,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "nondemo_music",
-    "path": "audiogroups/nondemo_music",
+    "name": "audiogroup_default",
+    "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "SuspiciousBlue.mp3",
   "duration": 180.21878,

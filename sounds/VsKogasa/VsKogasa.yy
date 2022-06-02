@@ -8,8 +8,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "nondemo_music",
-    "path": "audiogroups/nondemo_music",
+    "name": "audiogroup_default",
+    "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "VsKogasa.mp3",
   "duration": 324.864,

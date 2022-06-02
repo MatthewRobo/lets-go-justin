@@ -8,8 +8,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "nondemo_music",
-    "path": "audiogroups/nondemo_music",
+    "name": "audiogroup_default",
+    "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "Ring27Stage1.mp3",
   "duration": 100.12735,
