@@ -23,7 +23,7 @@ if (lockout || !candestroy) {
 } else {
 	for (var device = 0; device < GP+KB; device++) {
 		for (var j = 0; j < input.length; j++) {
-			if global.pressed[device][j] {
+			if global.pressed[device][j] || device == GP || device == GP+1{
 				if (slot[device] == -99) {
 					slot[device] = -1;
 					audio_play_sound(snd_jump,0,0);

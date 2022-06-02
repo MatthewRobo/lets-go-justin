@@ -80,22 +80,33 @@ for (var p = 0; p < PLAYERS; p++) {
 		}
 		draw_set_color(c_white);
 		draw_set_alpha(1);
+		if (device != GP+KB && ready[p]) {
+			draw_set_color(global.color[p]);
+			if (p mod 2 == 1) draw_rectangle(xdraw-string_width(k),ydraw,xdraw,ydraw+lineheight,0);
+			else draw_rectangle(xdraw,ydraw,xdraw+string_width(k),ydraw+lineheight,0);
+			draw_set_color(c_black);
+		}
 		if (a == pos[p]) {
-			draw_set_color(c_red);
+			draw_set_color(global.color[p]);
 			if (device == GP || device == GP + 1) {
 				if (pos[p] < 4) k += binding[device] ? " (Press new key)" : " (Press start to bind)";
 			} else {
 				if (pos[p] < 4) k += " (Can't rebind movement on controllers)";
 			}
+			if (device != GP+KB) {
+				if (p mod 2 == 1) draw_rectangle(xdraw-string_width(k),ydraw,xdraw,ydraw+lineheight,0);
+				else draw_rectangle(xdraw,ydraw,xdraw+string_width(k),ydraw+lineheight,0);
+			}
 			//if (a == input.SH) k += " (shoot)";
 			//if (a == input.SL) k += " (slash)";
 			//if (a == input.PA) k += " (parry)";
+			draw_set_color(c_black);
 		}
 		if (global.lookup[p] < GP && a < 4) {
 			draw_set_alpha(0.75);
 		}
-
-		if (ready[p]) draw_set_color(c_aqua);
+		
+		//if (ready[p]) draw_set_color(c_aqua);
 		if (device == GP+KB) draw_set_alpha(0);
 		draw_text(xdraw,ydraw,k);
 		ydraw += lineheight;
