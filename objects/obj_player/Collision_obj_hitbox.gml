@@ -14,6 +14,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		reflectx = x;
 		reflecty = y;
 		autoparry = autoparryactive;
+		global.lastparried = other.object_index;
 		if (other.object_index == obj_anchor) {
 			reflected = other.owner;
 			superreflect = true;
@@ -36,7 +37,8 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 				}
 			}
 			counterspeed = other.spd < 32 ? 32 : other.spd;
-			if (global.hitstop < clamp(9 * counterspeed / 32,0,60)) global.hitstop = clamp(9 * counterspeed / 32,0,60);
+			var freeze = clamp(9 * counterspeed / 32,0,24);
+			global.hitstop = max(global.hitstop, freeze);
 			reflectx = other.x;
 			reflecty = other.y;
 		}
@@ -65,6 +67,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 
 
 	} else if (invul <= 0) {
+		global.lastparried = obj_bullet;
 		if (teammate != noone && other.team == teammate.team) {
 		//if true {
 			instance_destroy(other);

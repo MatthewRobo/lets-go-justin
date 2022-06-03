@@ -13,6 +13,13 @@ if (global.hitstop <= 0) {
 	jump--;
 }
 
+if (global.hitstop > 6 && global.lastparried != obj_slash) {
+	slash = false;
+	shoot = false;
+	parry = false; 
+	jump = false;
+}
+
 left = false;
 right = false;
 down = false;
