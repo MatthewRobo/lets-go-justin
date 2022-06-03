@@ -739,7 +739,7 @@ if (global.hitstop <= 0) {
 			vsp *= maxsp / sp;
 		}
 		windblow();
-		
+		if (place_meeting(x,y,obj_uplift)) airjumps = max(1,airjumps);
 		if place_meeting(x + hsp, y, obj_wall) || collision_line(x,y,x+hsp,y,obj_wall,0,0) {
 			while (!place_meeting(x + sign(hsp), y, obj_wall)) { //whilst the next pixel isn't a wall
 				x += sign(hsp);
