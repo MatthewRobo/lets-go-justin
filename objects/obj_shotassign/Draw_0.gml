@@ -36,7 +36,7 @@ var shotcounter = 0;
 for (var row = 0; row < rows; row++) {
 	for (var col = 0; col < cols; col++) {
 		if (shotcounter < shot.length) {
-			var _xdraw = xdraw+icon_htotal*col;
+			var _xdraw = xdraw+icon_htotal*col - (rows - row) * ((cols-1) / 2 - col) * slant;
 			var _ydraw = ydraw_icon+icon_vtotal*row;
 			var _shotspr = spr_marksman;
 			var _shotstr = "UNNAMED";

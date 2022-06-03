@@ -17,11 +17,11 @@ iconframes = 0;
 
 iconsize = 64;
 iconscale = iconsize / 16;
-icon_hgap = 104;
+icon_hgap = 64;
 icon_vgap = 72;
 icon_htotal = 0;
 icon_vtotal = 0;
-
+slant = 16;
 
 gbid = layer_background_get_id("background");
 layer_background_blend(gbid, global.bgcolor);

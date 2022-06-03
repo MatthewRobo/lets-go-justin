@@ -158,7 +158,7 @@ xdraw = (room_width - (cols-1)*icon_htotal)/2;
 shotcounter = 0;
 for (var row = 0; row < rows; row++) {
 	for (var col = 0; col < cols; col++) {
-		var _xdraw = xdraw+icon_htotal*col;
+		var _xdraw = xdraw+icon_htotal*col - (rows - row) * ((cols-1) / 2 - col) * slant;
 		var _ydraw = ydraw_icon+icon_vtotal*row;
 		for (var p = 0; p < global.pmax; p++) {
 			if (global.shots[p] == shotcounter) {
