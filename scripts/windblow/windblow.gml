@@ -25,7 +25,7 @@ function windblow(dampen = 0.95, use_built_in = false){
 					hspeed *= dampen;
 					break;
 				case 270:
-					hspeed += ((x - nograv.bbox_right) / nograv.sprite_height) * 2;
+					hspeed -= ((x - nograv.bbox_right) / nograv.sprite_height) * 2;
 					 hspeed *= dampen;
 					break;
 			}
@@ -44,7 +44,7 @@ function windblow(dampen = 0.95, use_built_in = false){
 					hsp *= dampen;
 					break;
 				case 270:
-					hsp += ((x - nograv.bbox_right) / nograv.sprite_height) * 2;
+					hsp -= ((x - nograv.bbox_right) / nograv.sprite_height) * 2;
 					hsp *= dampen;
 					break;
 			}
