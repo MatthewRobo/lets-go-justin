@@ -5,6 +5,7 @@ inbattle = false;
 if (global.browser) {
 	battlemus = [
 	Tactical,
+	Shmup,
 	]
 
 	menumus = [
@@ -13,6 +14,7 @@ if (global.browser) {
 } else {
 	battlemus = [
 	Tactical,
+	Shmup,
 	Aeronaut,
 	BackdoorBlaster,
 	BeginnersLuck,
