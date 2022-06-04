@@ -322,19 +322,6 @@ if (global.hitstop <= 0) {
 							attack.maxvsp = lengthdir_y(bulletmaxspeed, direction);
 							attack.timer = shotactive;
 						}
-						attack = instance_create_layer(x, y, "hitboxes", shotobj);
-						attack.owner = id;
-						attack.team = team;
-						attack.direction = i;
-						attack.gravdir = direction;
-						attack.growtime = growtime;
-						attack.spd = spd;
-						attack.maxspd = bulletmaxspeed;
-						attack.hsp = lengthdir_x(bulletspeed, 180+direction);
-						attack.vsp = lengthdir_y(bulletspeed, 180+direction);
-						attack.maxhsp = lengthdir_x(bulletmaxspeed, direction);
-						attack.maxvsp = lengthdir_y(bulletmaxspeed, direction);
-						attack.timer = shotactive;
 						break;
 					case shot.whiffpunisher:
 						attack = instance_create_layer(x, y, "hitboxes", shotobj);
