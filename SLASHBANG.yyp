@@ -216,6 +216,7 @@
     {"id":{"name":"snd_dink","path":"sounds/snd_dink/snd_dink.yy",},"order":13,},
     {"id":{"name":"snd_jump","path":"sounds/snd_jump/snd_jump.yy",},"order":5,},
     {"id":{"name":"obj_grenade","path":"objects/obj_grenade/obj_grenade.yy",},"order":6,},
+    {"id":{"name":"Room14","path":"rooms/Room14/Room14.yy",},"order":17,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":1,},
   ],
   "Options": [
@@ -259,6 +260,7 @@
     {"roomId":{"name":"Room11","path":"rooms/Room11/Room11.yy",},},
     {"roomId":{"name":"RoomFD","path":"rooms/RoomFD/RoomFD.yy",},},
     {"roomId":{"name":"Room13","path":"rooms/Room13/Room13.yy",},},
+    {"roomId":{"name":"Room14","path":"rooms/Room14/Room14.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
