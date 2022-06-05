@@ -735,21 +735,27 @@ if (global.hitstop <= 0) {
 			case 1: _x = bbox_right; break;
 		}
 		
-		var _y = bbox_bottom-16;
-		if (vsp >= 0 && place_meeting(x+hsp, y, obj_wall) && !position_meeting(_x+hsp+hvec, _y, obj_wall)) { // stair climbing
-			while (position_meeting(_x + hsp+hvec, bbox_bottom, obj_wall)) {
-				y--;
-			}
-		}
+		//var _y = bbox_bottom-16;
+		//if (vsp >= 0 && place_meeting(x+hsp, y, obj_wall) && !position_meeting(_x+hsp+hvec, _y, obj_wall)) { // stair climbing
+		//	while (position_meeting(_x + hsp+hvec, bbox_bottom, obj_wall)) {
+		//		y--;
+		//	}
+		//}
 		
 		if place_meeting(x + hsp, y, obj_wall) || collision_line(x,y,x+hsp,y,obj_wall,0,0) {
-			while (!place_meeting(x + sign(hsp), y, obj_wall)) { //whilst the next pixel isn't a wall
-				x += sign(hsp);
+			var dy = 0;
+			while ((place_meeting(x+hsp,y-dy, obj_wall) && dy <= max(abs(1*hsp),16))) dy++;
+			if (place_meeting(x+hsp,y-dy,obj_wall)) {
+				while (!place_meeting(x + sign(hsp), y, obj_wall)) { //whilst the next pixel isn't a wall
+					x += sign(hsp);
+				}
+				hsp = state == status.stun ? hsp * -0.8 : 0;
+			} else {
+				y -= dy;
 			}
-			hsp = state == status.stun ? hsp * -0.8 : 0;
-		} else {
-			x += hsp;
-		}
+		} 
+		x += hsp;
+
 		if place_meeting(x, y + vsp, obj_wall) || collision_line(x,y,x,y+vsp,obj_wall,0,0) {
 			while (!place_meeting(x, y + sign(vsp), obj_wall)) { //whilst the next pixel isn't a wall
 				y += sign(vsp);
