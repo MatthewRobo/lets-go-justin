@@ -60,7 +60,8 @@ draw_set_valign(fa_top);
 var designer = "Level design by ";
 switch selected {
 	case 1: case 5: case 6: case 8: designer += "M-AS (@matthewrobo)"; break;
-	case 0: case 7: designer += "M-AS (@matthewrobo) & Jorge Velasquez (@Gorka_Man)"; break;
+	case 0: designer += "??? (@???)"; break;
+	case 7: designer += "M-AS (@matthewrobo) & Jorge Velasquez (@Gorka_Man)"; break;
 	case 13: designer += "Irregulars (@IrregularsZR)"; break;
 	default: designer += "Jorge Velasquez (@Gorka_Man)"; break;
 }
