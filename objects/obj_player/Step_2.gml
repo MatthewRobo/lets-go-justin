@@ -727,6 +727,21 @@ if (global.hitstop <= 0) {
 		}
 		windblow();
 		if (place_meeting(x,y,obj_uplift)) airjumps = max(1,airjumps);
+		
+		var _x;
+		switch sign(hsp) {
+			case -1: _x = bbox_left; break;
+			case 0: _x = x; break;
+			case 1: _x = bbox_right; break;
+		}
+		
+		var _y = bbox_bottom-16;
+		if (vsp >= 0 && place_meeting(x+hsp, y, obj_wall) && !position_meeting(_x+hsp+hvec, _y, obj_wall)) { // stair climbing
+			while (position_meeting(_x + hsp+hvec, bbox_bottom, obj_wall)) {
+				y--;
+			}
+		}
+		
 		if place_meeting(x + hsp, y, obj_wall) || collision_line(x,y,x+hsp,y,obj_wall,0,0) {
 			while (!place_meeting(x + sign(hsp), y, obj_wall)) { //whilst the next pixel isn't a wall
 				x += sign(hsp);
