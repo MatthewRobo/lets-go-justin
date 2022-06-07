@@ -12,3 +12,7 @@ lastx1 = x;
 lastx2 = x;
 lasty1 = y;
 lasty2 = y;
+lastalpha = image_alpha;
+
+//shape = irandom(1);
+shape = 0;
