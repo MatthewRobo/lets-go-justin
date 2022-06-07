@@ -16,7 +16,7 @@ if (!surface_exists(mask)) {
 if (!surface_exists(death_log)) {
 	death_log = surface_create(room_width,room_height);
 	surface_set_target(death_log);
-	draw_set_color(c_black);
+	draw_set_color(c_grey);
 	draw_set_alpha(1);
 	with (obj_wall) {
 		draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,0);
@@ -71,7 +71,7 @@ surface_reset_target();
 
 
 surface_set_target(splatter);
-draw_clear_alpha(c_black,0);
+draw_clear_alpha(0,0);
 gpu_set_blendmode(bm_add);
 with(obj_splatter) {
 	draw_set_alpha(image_alpha);
@@ -88,7 +88,7 @@ with(obj_splatter) {
 }
 surface_reset_target();
 
-
+draw_set_alpha(1);
 draw_surface(surf,0,0);
 draw_surface(splatter,0,0);
 
