@@ -10,3 +10,6 @@ timer = 999;
 lifetime = 0;
 xprev = x;
 yprev = y;
+spawner_x = x;
+spawner_y = y;
+alarm[1] = 1;

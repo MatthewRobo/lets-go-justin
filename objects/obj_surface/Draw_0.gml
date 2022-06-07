@@ -13,6 +13,17 @@ if (!surface_exists(mask)) {
 	do_mask = true;
 }
 
+if (!surface_exists(death_log)) {
+	death_log = surface_create(room_width,room_height);
+	surface_set_target(death_log);
+	draw_set_color(c_black);
+	draw_set_alpha(1);
+	with (obj_wall) {
+		draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,0);
+	}
+	surface_reset_target();
+}
+
 if (do_scanline) {
 	draw_set_alpha(1);
 	draw_set_color(c_white);
@@ -80,3 +91,22 @@ surface_reset_target();
 
 draw_surface(surf,0,0);
 draw_surface(splatter,0,0);
+
+
+surface_set_target(death_log);
+draw_set_alpha(0.5);
+with(obj_player) {
+	if (dead && global.hitstop == 1) {
+		var _color;
+		switch team {
+			case 0: _color = c_red; break;
+			case 1: _color = c_blue; break;
+			case 2: _color = c_yellow; break;
+			case 3: _color = c_aqua; break;
+		}
+		draw_set_color(_color);
+		draw_circle(x,y,16,false);
+		draw_line(x,y,killer_x,killer_y);
+	}
+}
+surface_reset_target();

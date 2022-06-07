@@ -131,6 +131,10 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 			//}
 
 			invul = invultime;
+			
+			// logging
+			killer_x = other.spawner_x;
+			killer_y = other.spawner_y;
 		
 			for (i = 0; i < 250; i++) {
 				trail = instance_create_layer(x, y, "hitboxes", obj_glitter);

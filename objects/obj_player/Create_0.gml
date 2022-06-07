@@ -163,3 +163,6 @@ reloading = false;
 
 gbid = layer_background_get_id("background");
 outlinescale = 1;
+
+killer_x = x;
+killer_y = y;
