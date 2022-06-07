@@ -97,7 +97,7 @@ draw_set_color(c_black);
 
 with(obj_glitter) {
 	if (deathglitter != -1) {
-		draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,deathglitter,image_alpha);
+		draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,deathglitter,image_alpha * 0.4);
 	}
 }
 
@@ -121,8 +121,8 @@ with(obj_outline) {
 }
 
 
-draw_set_alpha(0.01);
-draw_rectangle(0,0,room_width,room_height,0);
+//draw_set_alpha(0.01);
+//draw_rectangle(0,0,room_width,room_height,0);
 gpu_set_blendmode(bm_normal);
 surface_reset_target();
 
