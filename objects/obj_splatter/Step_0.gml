@@ -7,10 +7,6 @@ ty = target.y;
 
 if (image_alpha > 1) decay = true;
 if (!decay) image_alpha += alphainc;
-
-	//x = lerp(x,tx,lerpfactor);
-	//y = lerp(y,ty,lerpfactor);
-	//radius *= 0.9;
 	if decay {
 		timer--;
 		radius *= 0.9;
