@@ -5,7 +5,9 @@ draw_set_alpha(image_alpha);
 //draw_circle(x,y,radius,0);
 draw_set_color(image_blend);
 
+//gpu_set_blendmode(bm_add);
 draw_circle(x,y,radius,0);
+//gpu_set_blendmode(bm_normal);
 //var r1 = max(4,radius / 2);
 //draw_line_width(x,y,x+hspeed,y+vspeed,r1);
 var r2 = max(2,radius/8);
@@ -25,40 +27,29 @@ _x2 = x + dx;
 _y1 = y - dy;
 _y2 = y + dy;
 
-if (instance_exists(obj_surface) && surface_exists(obj_surface.surf) && r2 < 64) {
-	if (
-	collision_point(x,y,obj_wall,0,0) &&
-	collision_point(x1,y1,obj_wall,0,0) &&
-	collision_point(x1,y2,obj_wall,0,0) &&
-	collision_point(x2,y2,obj_wall,0,0) &&
-	collision_point(x2,y1,obj_wall,0,0)
-	) {
-		surface_set_target(obj_surface.surf);
-		draw_circle(x,y,r2,0);
-		surface_reset_target();
+if (instance_exists(obj_surface) && surface_exists(obj_surface.surf)) {
+
+	surface_set_target(obj_surface.surf);
+	
+	
+	
+	switch shape {
+		case 0:
+			draw_circle(x,y,r2,0); break;
+		case 1:
+			draw_primitive_begin(pr_trianglestrip);
+			draw_vertex(_x1, _y1);
+			draw_vertex(_x2, _y2);
+			draw_vertex_color(lastx1,lasty1,image_blend,lastalpha);
+			draw_vertex_color(lastx2,lasty2,image_blend,lastalpha);
+
+			draw_primitive_end();
+			break;
 	}
 
-	//if (
-	//collision_point(x,y,obj_wall,0,0) &&
-	//collision_point(x+hspeed,y,obj_wall,0,0) &&
-	//collision_point(x,y+vspeed,obj_wall,0,0) &&
-	//collision_point(x+hspeed,y+vspeed,obj_wall,0,0)
-	//) {
-	//	surface_set_target(obj_surface.surf);
-	//	draw_line_width(x,y,x+hspeed,y+vspeed,r2*2);
-	//	surface_reset_target();
-	//}
+
 	
-	//if (collision_point(x,y,obj_wall,0,0)) {
-	//	surface_set_target(obj_surface.surf);
-	//	draw_primitive_begin(pr_trianglestrip);
-	//	if collision_point(_x1,_y1,obj_wall,0,0) draw_vertex(_x1, _y1);
-	//	if collision_point(_x2,_y2,obj_wall,0,0) draw_vertex(_x2, _y2);
-	//	if collision_point(lastx1,lasty1,obj_wall,0,0) draw_vertex(lastx1,lasty1);
-	//	if collision_point(lastx2,lasty2,obj_wall,0,0) draw_vertex(lastx2,lasty2);
-	//	draw_primitive_end();
-	//	surface_reset_target();
-	//}
+	surface_reset_target();
 
 }
 
