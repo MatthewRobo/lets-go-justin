@@ -4,7 +4,6 @@
 target = owner.dead ? owner.spawnpoint : owner;
 tx = target.x;
 ty = target.y;
-lastalpha = image_alpha;
 
 if (image_alpha > 1) decay = true;
 if (!decay) image_alpha += alphainc;

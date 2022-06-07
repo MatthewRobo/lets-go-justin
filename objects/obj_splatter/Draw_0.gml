@@ -6,11 +6,7 @@ draw_set_alpha(image_alpha);
 draw_set_color(image_blend);
 
 //gpu_set_blendmode(bm_add);
-if (instance_exists(obj_surface) && surface_exists(obj_surface.splatter)) {
-	surface_set_target(obj_surface.splatter);
-	draw_circle(x,y,radius,0);
-	surface_reset_target();
-}
+draw_circle(x,y,radius,0);
 //gpu_set_blendmode(bm_normal);
 //var r1 = max(4,radius / 2);
 //draw_line_width(x,y,x+hspeed,y+vspeed,r1);
@@ -34,6 +30,8 @@ _y2 = y + dy;
 if (instance_exists(obj_surface) && surface_exists(obj_surface.surf)) {
 
 	surface_set_target(obj_surface.surf);
+	
+	
 	
 	switch shape {
 		case 0:
