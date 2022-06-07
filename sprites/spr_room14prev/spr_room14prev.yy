@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "SLASHBANG",
-    "path": "SLASHBANG.yyp",
+    "name": "menu",
+    "path": "folders/Sprites/menu.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_Room14Prev",

@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"8f3e4ff1-d06a-4dfc-812a-04698fc28edd","path":"sprites/spr_Room13Prev/spr_Room13Prev.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"8f3e4ff1-d06a-4dfc-812a-04698fc28edd","path":"sprites/spr_Room13Prev/spr_Room13Prev.yy",},"LayerId":{"name":"4abab618-fd5a-44d1-b20c-bea994c76a32","path":"sprites/spr_Room13Prev/spr_Room13Prev.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_Room13Prev","path":"sprites/spr_Room13Prev/spr_Room13Prev.yy",},"resourceVersion":"1.0","name":"8f3e4ff1-d06a-4dfc-812a-04698fc28edd","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"a87270b0-b01d-4c1c-8f72-10d41adad83a","path":"sprites/spr_Room15Prev/spr_Room15Prev.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"a87270b0-b01d-4c1c-8f72-10d41adad83a","path":"sprites/spr_Room15Prev/spr_Room15Prev.yy",},"LayerId":{"name":"248552da-d087-450e-a593-e5c96b6f0f08","path":"sprites/spr_Room15Prev/spr_Room15Prev.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_Room15Prev","path":"sprites/spr_Room15Prev/spr_Room15Prev.yy",},"resourceVersion":"1.0","name":"a87270b0-b01d-4c1c-8f72-10d41adad83a","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_Room13Prev","path":"sprites/spr_Room13Prev/spr_Room13Prev.yy",},
+    "spriteId": {"name":"spr_Room15Prev","path":"sprites/spr_Room15Prev/spr_Room15Prev.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"b419fd3a-a443-412f-a430-3615e5c80fde","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"8f3e4ff1-d06a-4dfc-812a-04698fc28edd","path":"sprites/spr_Room13Prev/spr_Room13Prev.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"82a8dbf6-50fb-447f-ae7b-24cb5427574d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a87270b0-b01d-4c1c-8f72-10d41adad83a","path":"sprites/spr_Room15Prev/spr_Room15Prev.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 384,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_Room13Prev","path":"sprites/spr_Room13Prev/spr_Room13Prev.yy",},
+    "parent": {"name":"spr_Room15Prev","path":"sprites/spr_Room15Prev/spr_Room15Prev.yy",},
     "resourceVersion": "1.4",
-    "name": "spr_Room13Prev",
+    "name": "spr_Room15Prev",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4abab618-fd5a-44d1-b20c-bea994c76a32","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"248552da-d087-450e-a593-e5c96b6f0f08","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/menu.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_Room13Prev",
+  "name": "spr_Room15Prev",
   "tags": [],
   "resourceType": "GMSprite",
 }

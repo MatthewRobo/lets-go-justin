@@ -29,6 +29,7 @@ for (i = 0; i < roomlen; i++) {
 		case 12: roomstr[i] = "Teufort"; break;
 		case 13: roomstr[i] = "Sloth"; break;
 		case 14: roomstr[i] = "Hallways"; break;
+		case 15: roomstr[i] = "Grid"; break;
 		default: roomstr[i] = "UNNAMED"; break;
 	}
 }
