@@ -59,8 +59,6 @@ gpu_set_blendmode(bm_normal);
 surface_reset_target();
 
 
-draw_surface(surf,0,0);
-
 surface_set_target(splatter);
 draw_clear_alpha(c_black,0);
 gpu_set_blendmode(bm_add);
@@ -79,4 +77,6 @@ with(obj_splatter) {
 }
 surface_reset_target();
 
+
+draw_surface(surf,0,0);
 draw_surface(splatter,0,0);
