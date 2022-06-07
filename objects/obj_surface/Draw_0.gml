@@ -4,6 +4,9 @@ if (!surface_exists(surf)) {
 if (!surface_exists(splatter)) {
 	splatter = surface_create(room_width,room_height);
 }
+if (!surface_exists(glitter)) {
+	glitter = surface_create(room_width,room_height);
+}
 if (!surface_exists(scanline)) {
 	scanline = surface_create(room_width,room_height);
 	do_scanline = true;
@@ -88,10 +91,45 @@ with(obj_splatter) {
 }
 surface_reset_target();
 
+surface_set_target(glitter);
+draw_set_color(c_black);
+
+
+with(obj_glitter) {
+	if (deathglitter != -1) {
+		draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,deathglitter,image_alpha);
+	}
+}
+
+gpu_set_blendmode(bm_subtract);
+draw_surface(scanline,0,-1);
+with(obj_outline) {
+	
+	var z0 = w0 * 2;
+	var _z0 = _w0 * 2;
+	draw_primitive_begin(pr_trianglestrip);
+	draw_vertex(round(x11-z0),round(y11-z0));
+	draw_vertex(round(x21+z0),round(y12-z0));
+	draw_vertex(round(x12-z0),round(y21+z0));
+	draw_vertex(round(x22+z0),round(y22+z0));
+	draw_primitive_end();
+
+	draw_rectangle(round(x1-_z0),
+	               round(y1-_z0),
+	               round(x2+_z0),
+	               round(y2+_z0), 0);
+}
+
+
+draw_set_alpha(0.01);
+draw_rectangle(0,0,room_width,room_height,0);
+gpu_set_blendmode(bm_normal);
+surface_reset_target();
+
 draw_set_alpha(1);
 draw_surface(surf,0,0);
 draw_surface(splatter,0,0);
-
+draw_surface(glitter,0,0);
 
 surface_set_target(death_log);
 draw_set_alpha(0.5);

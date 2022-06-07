@@ -138,6 +138,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		
 			for (i = 0; i < 250; i++) {
 				trail = instance_create_layer(x, y, "hitboxes", obj_glitter);
+				trail.deathglitter = color;
 				trail.color = color;
 				trail.depth -= 2;
 				trail.image_blend = color;
