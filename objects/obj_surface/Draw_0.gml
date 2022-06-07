@@ -1,6 +1,9 @@
 if (!surface_exists(surf)) {
 	surf = surface_create(room_width,room_height);
 }
+if (!surface_exists(splatter)) {
+	splatter = surface_create(room_width,room_height);
+}
 if (!surface_exists(scanline)) {
 	scanline = surface_create(room_width,room_height);
 	do_scanline = true;
@@ -54,4 +57,26 @@ draw_surface_ext(scanline,0,0,1,1,0,c_black,0.005);
 draw_surface(mask,0,0);
 gpu_set_blendmode(bm_normal);
 surface_reset_target();
+
+
 draw_surface(surf,0,0);
+
+surface_set_target(splatter);
+draw_clear_alpha(c_black,0);
+gpu_set_blendmode(bm_add);
+with(obj_splatter) {
+	draw_set_alpha(image_alpha);
+	draw_set_color(image_blend);
+	draw_circle(x,y,radius,false);
+}
+draw_set_alpha(1);
+gpu_set_blendmode(bm_subtract);
+draw_surface(scanline,0,-1);
+gpu_set_blendmode(bm_normal);
+with(obj_splatter) {
+	draw_set_color(image_blend);
+	draw_circle(x,y,radius,true);
+}
+surface_reset_target();
+
+draw_surface(splatter,0,0);
