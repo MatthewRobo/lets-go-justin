@@ -63,7 +63,9 @@ with(obj_splatter) {
 	draw_circle(x,y,radius/8,false);
 }
 with(obj_glitter) {
-	draw_self();
+	if (deathglitter != -1) {
+		draw_self();
+	}
 }
 draw_set_alpha(1);
 gpu_set_blendmode(bm_subtract);
@@ -93,18 +95,49 @@ surface_reset_target();
 
 surface_set_target(glitter);
 
-gpu_set_blendmode_ext(bm_one,bm_inv_src_color);
+//gpu_set_blendmode_ext(bm_one,bm_inv_src_color);
 //gpu_set_blendmode(bm_add);
 with(obj_glitter) {
 	if (deathglitter != -1) {
-		draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,deathglitter,image_alpha * 0.1);
+		draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,deathglitter,image_alpha * 0.5);
 	}
 }
+//with(obj_player) {
+//	draw_set_color(color);
+//	draw_line(x,y,x+hsp,y+vsp);
+//}
+
+//with(obj_splatter) {
+//	draw_set_color(image_blend);
+	
+//var angle, dx, dy, _x1, _x2, _y1, _y2;
+//angle = direction + 90;
+//dx = lengthdir_x(radius/16,angle);
+//dy = lengthdir_y(radius/16,angle);
+//_x1 = x - dx;
+//_x2 = x + dx;
+//_y1 = y - dy;
+//_y2 = y + dy;
+
+//draw_primitive_begin(pr_trianglestrip);
+//draw_set_alpha(image_alpha/10);
+//draw_vertex(_x1, _y1,);
+//draw_vertex(_x2, _y2);
+//	draw_set_alpha(lastalpha/10);
+//draw_vertex(lastx1,lasty1);
+//draw_vertex(lastx2,lasty2);
+//draw_primitive_end();
+			
+//lastx1 = _x1;
+//lastx2 = _x2;
+//lasty1 = _y1;
+//lasty2 = _y2;
+//}
 gpu_set_blendmode(bm_subtract);
 draw_set_color(c_black);
 draw_surface(scanline,0,-1);
+draw_set_alpha(0.2);
 with(obj_outline) {
-	
 	var z0 = w0 * 2;
 	var _z0 = _w0 * 2;
 	draw_primitive_begin(pr_trianglestrip);
