@@ -92,16 +92,16 @@ with(obj_splatter) {
 surface_reset_target();
 
 surface_set_target(glitter);
-draw_set_color(c_black);
 
-
+gpu_set_blendmode_ext(bm_one,bm_inv_src_color);
+//gpu_set_blendmode(bm_add);
 with(obj_glitter) {
 	if (deathglitter != -1) {
-		draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,deathglitter,image_alpha * 0.4);
+		draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,deathglitter,image_alpha * 0.1);
 	}
 }
-
 gpu_set_blendmode(bm_subtract);
+draw_set_color(c_black);
 draw_surface(scanline,0,-1);
 with(obj_outline) {
 	
