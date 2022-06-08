@@ -100,7 +100,7 @@ for (i = 0; i < tlen; i+= 1) {
 	tcnow = (i + tcounter + tlen) mod tlen;
 	tcnext = (tcnow + 1) mod tlen;
 	tdir = tcnext == tcounter ? point_direction(0,0,hsp,vsp-grav) : point_direction(tx[tcnow],ty[tcnow],tx[tcnext],ty[tcnext]);
-	twid = team >= 2 ? 12 : 24;
+	twid = team >= 2 ? 12 : 32;
 	//talpha = clamp(2 * (i - tlen / 2) / (tlen / 2),0,1);
 	talpha = clamp(2*i/tlen,0,1);
 	if (ammo <= 0) talpha *= 0.4;
@@ -114,8 +114,12 @@ for (i = 0; i < tlen; i+= 1) {
 
 	var xwid = 10
 	var ywid = 16;
-	//xwid *= i/tlen;
-	//ywid *= i/tlen;
+	var _scale;
+	//_scale = max(1,1.5 - (i/tlen));
+	_scale = (1-(i/tlen)) * 0.2;
+	_scale++;
+	xwid *= _scale;
+	ywid *= _scale;
 	x11 = clamp(x1+lengthdir_x(twid,tdir+90),x1-xwid,x1+xwid);
 	y11 = clamp(y1+lengthdir_y(twid,tdir+90),y1-ywid,y1+ywid);
 	x12 = clamp(x1+lengthdir_x(twid,tdir-90),x1-xwid,x1+xwid);

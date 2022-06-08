@@ -173,6 +173,20 @@ switch global.palette {
 		global.fgcolor = $49361c;
 		global.fgcolor2 = $969d46;
 		break;
+	case 17: // CHATREUSE PURPLE
+		global.color[0] = $00f7d8;
+		global.color[1] = $ff00ff;
+		global.bgcolor = $110011;
+		global.fgcolor = $41002B;
+		global.fgcolor2 = $b5599b;
+		break;
+	case 18: // BLUE YELLOW
+		global.color[0] = $00FFFF;
+		global.color[1] = $FFFF00;
+		global.bgcolor = $111111;
+		global.fgcolor = $333333;
+		global.fgcolor2 = $FF00FF;
+		break;
 	//case 9: // PAPER
 	//	global.color[0] = c_green;
 	//	global.color[1] = c_blue;
