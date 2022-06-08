@@ -5,7 +5,7 @@
 
 if (global.hitstop <= 0 || global.paused) {
 	timer--;
-	if (rng == true) {
+	if (rng) {
 		image_index = irandom(7);
 		image_xscale = scale * random_range(0.5, 2);
 	} else {

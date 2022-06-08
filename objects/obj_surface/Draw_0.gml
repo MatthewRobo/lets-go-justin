@@ -69,7 +69,7 @@ draw_set_color(image_blend);
 var _scale = image_xscale;
 if (sprite_index == spr_glitter) {
 	var dx = min(image_index,4);
-	var dy = clamp(0,image_index-4,4) * _scale;
+	var dy = clamp(image_index-4,0,4) * _scale;
 	var _wid = max(1,_scale);
 	draw_line_width(x-dx, y-dy, x-dy, y-dx, _wid);
 	draw_line_width(x+dy, y-dx, x+dx, y-dy, _wid);
@@ -119,12 +119,12 @@ surface_set_target(glitter);
 //gpu_set_blendmode(bm_add);
 with(obj_glitter) {
 	if (deathglitter != -1) {
-draw_set_alpha(image_alpha * 0.5);
-draw_set_color(image_blend);
+draw_set_alpha(image_alpha*0.5);
+draw_set_color(deathglitter);
 var _scale = image_xscale;
 if (sprite_index == spr_glitter) {
 	var dx = min(image_index,4);
-	var dy = clamp(0,image_index-4,4) * _scale;
+	var dy = clamp(image_index-4,0,4) * _scale;
 	var _wid = max(1,_scale);
 	draw_line_width(x-dx, y-dy, x-dy, y-dx, _wid);
 	draw_line_width(x+dy, y-dx, x+dx, y-dy, _wid);
