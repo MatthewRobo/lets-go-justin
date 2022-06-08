@@ -178,8 +178,9 @@ draw_set_color(c_black);
 draw_surface(scanline,0,-1);
 draw_set_alpha(0.2);
 with(obj_outline) {
-	var z0 = w0 * 2;
-	var _z0 = _w0 * 2;
+	var _scale = 2;
+	var z0 = w0 * _scale;
+	var _z0 = _w0 * _scale;
 	draw_primitive_begin(pr_trianglestrip);
 	draw_vertex(round(x11-z0),round(y11-z0));
 	draw_vertex(round(x21+z0),round(y12-z0));
