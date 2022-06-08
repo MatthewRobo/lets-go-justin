@@ -106,37 +106,6 @@ with(obj_glitter) {
 		drawself();
 	}
 }
-//with(obj_player) {
-//	draw_set_color(color);
-//	draw_line(x,y,x+hsp,y+vsp);
-//}
-
-//with(obj_splatter) {
-//	draw_set_color(image_blend);
-	
-//var angle, dx, dy, _x1, _x2, _y1, _y2;
-//angle = direction + 90;
-//dx = lengthdir_x(radius/16,angle);
-//dy = lengthdir_y(radius/16,angle);
-//_x1 = x - dx;
-//_x2 = x + dx;
-//_y1 = y - dy;
-//_y2 = y + dy;
-
-//draw_primitive_begin(pr_trianglestrip);
-//draw_set_alpha(image_alpha/10);
-//draw_vertex(_x1, _y1,);
-//draw_vertex(_x2, _y2);
-//	draw_set_alpha(lastalpha/10);
-//draw_vertex(lastx1,lasty1);
-//draw_vertex(lastx2,lasty2);
-//draw_primitive_end();
-			
-//lastx1 = _x1;
-//lastx2 = _x2;
-//lasty1 = _y1;
-//lasty2 = _y2;
-//}
 gpu_set_blendmode(bm_subtract);
 draw_set_color(c_black);
 draw_surface(scanline,0,-1);
