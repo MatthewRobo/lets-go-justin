@@ -3,12 +3,12 @@
 
 if (!global.paused) {
 	
-//xprev = x;
-//yprev = y;
-//x = 0;
-//y = 0;
+xprev = x;
+yprev = y;
+x = 0;
+y = 0;
 
-//zoom_level = 1;
+zoom_level = 1;
 
 var i;
 var deadcount = 0;
@@ -22,8 +22,8 @@ for (var i = 0; i < instance_number(obj_player); ++i;)
 	//	target = target.spawnpoint;
 	//}
 		
-	//x += target.x;
-	//y += target.y;
+	x += target.x;
+	y += target.y;
 	
 	if target.dead {
 		deadcount++;
@@ -32,28 +32,28 @@ for (var i = 0; i < instance_number(obj_player); ++i;)
 	}
 }
 shakedir /= deadcount;
-//var lerpfactor = 0.1;
+var lerpfactor = 0.175;
 
-//if (global.hitstop > 0) zoom_level = 0.95;
-//x = lerp(xprev,x/i,lerpfactor);
-//y = lerp(yprev,y/i,lerpfactor);
+if (global.hitstop > 0) zoom_level = 0.95;
+x = lerp(xprev,x/i,lerpfactor);
+y = lerp(yprev,y/i,lerpfactor);
 
-//zoom_level = clamp(zoom_level, 0.1, 5);
-//zoom_level = max((clamp(abs(obj_player1.x - obj_player2.x),720,room_width)+128) / default_zoom_width,
-//(clamp(abs(obj_player1.y - obj_player2.y),540,room_height)) / default_zoom_height);
-////Get current size
-//var view_w = camera_get_view_width(view_camera[0]);
-//var view_h = camera_get_view_height(view_camera[0]);
-////Set the rate of interpolation
-//var rate = 0.05;
-////Get new sizes by interpolating current and target zoomed size
-//var new_w = lerp(view_w, zoom_level * default_zoom_width, rate);
-//var new_h = lerp(view_h, zoom_level * default_zoom_height, rate);
-////Apply the new size
-//camera_set_view_size(view_camera[0], new_w, new_h);
+zoom_level = clamp(zoom_level, 0.1, 5);
+zoom_level = max((clamp(abs(obj_player1.x - obj_player2.x),720,room_width)+128) / default_zoom_width,
+(clamp(abs(obj_player1.y - obj_player2.y),540,room_height)) / default_zoom_height);
+//Get current size
+var view_w = camera_get_view_width(view_camera[0]);
+var view_h = camera_get_view_height(view_camera[0]);
+//Set the rate of interpolation
+var rate = 0.15;
+//Get new sizes by interpolating current and target zoomed size
+var new_w = lerp(view_w, zoom_level * default_zoom_width, rate);
+var new_h = lerp(view_h, zoom_level * default_zoom_height, rate);
+//Apply the new size
+camera_set_view_size(view_camera[0], new_w, new_h);
 
-x = room_width / 2;
-y = room_height / 2;
+//x = room_width / 2;
+//y = room_height / 2;
 
 
 if screenshake {
@@ -61,6 +61,9 @@ if screenshake {
 	var shakelen = dsin(shakeclock) * 8;
 	x += lengthdir_x(shakelen,shakedir);
 	y += lengthdir_y(shakelen,shakedir);
+	camera_set_view_pos(view_camera[0],
+	camera_get_view_x(view_camera[0]) + lengthdir_x(shakelen,shakedir),
+	camera_get_view_y(view_camera[0]) + lengthdir_y(shakelen,shakedir));
 }
 
 }
