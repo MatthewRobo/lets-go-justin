@@ -1,9 +1,5 @@
-var height = room_height;
-var width = room_width;
-if (instance_number(obj_camera) > 0) {
-	width = camera_get_view_width(0);
-	height= camera_get_view_height(0);
-}
+var width = display_get_gui_width();
+var height= display_get_gui_height();
 
 var xcenter =  width/2;
 var ycenter = height/2;

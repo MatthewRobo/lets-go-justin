@@ -1,5 +1,5 @@
-var width   = camera_get_view_width(0);
-var height  = camera_get_view_height(0);
+var width = display_get_gui_width();
+var height= display_get_gui_height();
 var xcenter =  width/2;
 var ycenter = height/2;
 var outline = 3;

@@ -12,8 +12,8 @@ draw_set_valign(fa_top);
 
 draw_set_alpha(1*!GREYBOX);
 
-var width = camera_get_view_width(0);
-var height= camera_get_view_height(0);
+var width = display_get_gui_width();
+var height= display_get_gui_height();
 
 var pipgap = 4;
 var centergap = 48;
