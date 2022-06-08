@@ -86,7 +86,7 @@ if (team >= 2) {
 		x12 = clamp(x1+lengthdir_x(twid,tdir-90),x1-6,x1+6);
 		y12 = clamp(y1+lengthdir_y(twid,tdir-90),y1-16,y1+16);
 
-		tcolor = c_white;
+		tcolor = global.textcolor;
 
 		if (global.hitstop > 0) talpha = i * 2 / tlen;
 
@@ -162,7 +162,7 @@ for (i = 1; i <= ammo; i += 1) {
 	y21 = clamp(y2+lengthdir_y(twid,tdir+90),y2-18,y2+18);
 	x22 = clamp(x2+lengthdir_x(twid,tdir-90),x2-8,x2+8);
 	y22 = clamp(y2+lengthdir_y(twid,tdir-90),y2-18,y2+18);
-	tcolor = c_white;
+	tcolor = global.textcolor;
 
 	draw_vertex_colour(x11, y11,tcolor,1);
 	draw_vertex_colour(x12, y12,tcolor,1);
@@ -180,7 +180,7 @@ for (i = 1; i <= ammo; i += 1) {
 //	draw_set_alpha(0.5);
 //	draw_circle_color(x1,y1,8,global.bgcolor,global.bgcolor,0);
 //	draw_set_alpha(1);
-//	draw_circle_color(x1,y1,6,c_white,c_white,0);
+//	draw_circle_color(x1,y1,6,global.textcolor,global.textcolor,0);
 //}
 
 var _s = outlinescale;
@@ -244,7 +244,7 @@ switch state {
 	case status.stun:     draw_sprite_ext(spr_poverlay,0,_x,_ysin,xscale,yscale,0,c_white,0.35); break;
 }
 
-//draw_sprite_ext(spr_pparry,image_index,_x,_ysin,xscale,yscale,0,c_white,abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
+//draw_sprite_ext(spr_pparry,image_index,_x,_ysin,xscale,yscale,0,global.textcolor,abs(dcos(360/30 * invul) * clamp(invul/60,0,1)));
 if (state == status.parry) {
 	_s = (abs(dsin(recovery * 20)) + 1) / 2;
 	draw_sprite_ext(spr_probes,image_index,_x,_ysin,xscale,yscale,0,c_white,_s);
@@ -257,7 +257,7 @@ if (state != status.idle) {
 	draw_rectangle(x,y-33,x+recovery,y-38,0);
 	draw_rectangle(x,y-33,x-recovery,y-38,0);
 }
-draw_set_color(c_white);
+draw_set_color(global.textcolor);
 if (state == status.stun) {
 	draw_rectangle(x,y-39,x+stun,y-44,0);
 	draw_rectangle(x,y-39,x-stun,y-44,0);
@@ -270,7 +270,7 @@ draw_set_valign(fa_bottom);
 draw_set_font(fnt_large);
 
 draw_text_transformed(x, y-32, "[P" + teamstr + "]",textscale,textscale,0);
-draw_set_color(c_white);
+draw_set_color(global.textcolor);
 draw_set_alpha(spawning/spawntime);
 draw_text_transformed(x, y-32, "[P" + teamstr + "]",textscale,textscale,0);
 draw_set_alpha(1);
@@ -280,24 +280,24 @@ draw_set_font(fnt_buttons);
 if (global.mode = gamemode.training) {
 	draw_text(x-20, y-56, dir);
 	
-	draw_set_colour(c_white);
+	draw_set_colour(global.textcolor);
 	if (global.down[gamepad][input.SL]) draw_set_colour($ff8000);
 	draw_text(x-10, y-56, "A");
 
-	draw_set_colour(c_white);
+	draw_set_colour(global.textcolor);
 	if (global.down[gamepad][input.SH]) draw_set_colour($0099ff);
 	draw_text(x-0, y-56, "B");
 
-	draw_set_colour(c_white);
+	draw_set_colour(global.textcolor);
 	if (global.down[gamepad][input.PA]) draw_set_colour(c_red);
 	draw_text(x+10, y-56, "C");
 
-	draw_set_colour(c_white);
+	draw_set_colour(global.textcolor);
 	if (global.down[gamepad][input.JU]) draw_set_colour(c_lime);
 	draw_text(x+20, y-56, "J");
 }
 
-draw_set_color(c_white);
+draw_set_color(global.textcolor);
 draw_set_alpha(abs(dcos(360/30 * invul) * clamp(invul/60,0,1))*0.6);
 draw_circle(x,_ysin,36,0);
 

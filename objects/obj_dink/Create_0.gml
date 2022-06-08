@@ -4,7 +4,7 @@
 // Inherit the parent event
 gravity = 1;
 gravity_direction = 270;
-color = c_white;
+color = global.textcolor;
 
 
 tlen = 5;

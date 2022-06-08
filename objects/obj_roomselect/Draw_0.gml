@@ -32,7 +32,7 @@ for (var i = -roomlen; i < 2 * roomlen; i++) {
 	//	draw_set_font(Font1);
 	//	draw_text_color(xdraw,ydraw,"Random",global.fgcolor2,global.fgcolor2,global.fgcolor2,global.fgcolor2,selected == i ? 1 : 0.5);
 	//	draw_set_font(fnt_large);
-	//	draw_text_color(xdraw_large,ydraw_large,"Random",c_white,c_white,c_white,c_white,1);
+	//	draw_text_color(xdraw_large,ydraw_large,"Random",global.textcolor,global.textcolor,global.textcolor,global.textcolor,1);
 	//}
 
 	if (imod >= array_length(previews)) imod = 0;
@@ -42,7 +42,7 @@ for (var i = -roomlen; i < 2 * roomlen; i++) {
 	_alpha *= banalpha;
 	draw_text_color(xdraw,_ydraw-64,roomstr[imod],global.fgcolor2,global.fgcolor2,global.fgcolor2,global.fgcolor2,_alpha);
 	draw_sprite_ext(previews[imod],0,xdraw,_ydraw,prevscale,prevscale,0,global.fgcolor2,_alpha); 
-	draw_sprite_ext(previews[imod],0,xdraw_large,ydraw_large,zoomscale,zoomscale,0,c_white,_alpha); 
+	draw_sprite_ext(previews[imod],0,xdraw_large,ydraw_large,zoomscale,zoomscale,0,global.textcolor,_alpha); 
 }
 
 var gap = 3;

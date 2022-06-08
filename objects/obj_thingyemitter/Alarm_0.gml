@@ -20,7 +20,7 @@ yspawn = random_range(bbox_top,bbox_bottom);
 color = x < room_width / 2 ? global.color[0] : global.color[1];
 trail = instance_create_layer(xspawn, yspawn, "instances", obj_thingy);
 trail.image_blend = color;
-//if (irandom(1)) trail.image_blend = c_white;
+//if (irandom(1)) trail.image_blend = global.textcolor;
 
 //trail.speed = random(10);
 //trail.image_index = random(8);
@@ -35,6 +35,6 @@ trail.depth = layer_get_depth(layer_get_id("background"))-1;
 //trail.y = random_range(bbox_bottom, bbox_top);
 
 
-//if (irandom(1)) trail.image_blend = c_white;
+//if (irandom(1)) trail.image_blend = global.textcolor;
 
 

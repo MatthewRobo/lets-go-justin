@@ -181,7 +181,7 @@ if (global.hitstop <= 0) {
 					trail.vspeed += vsp * 0.488;
 				}
 				trail.vspeed += random_range(-0.25, 0.25);
-				if (irandom(1)) trail.image_blend = c_white;
+				if (irandom(1)) trail.image_blend = global.textcolor;
 				trail.x = random_range(bbox_left, bbox_right);
 				trail.y = random_range(bbox_bottom, bbox_top);
 			}
@@ -772,7 +772,7 @@ if (global.hitstop <= 0) {
 	if (hopfx > 0) {
 		//trail = instance_create_layer(x, y, "trails", obj_playertrail);
 		//trail.image_index = image_index;
-		//trail.image_blend = c_white;
+		//trail.image_blend = global.textcolor;
 		//trail.image_xscale = image_xscale;
 		//trail.image_yscale = image_yscale;
 		
@@ -784,7 +784,7 @@ if (global.hitstop <= 0) {
 			trail.vspeed = random(-vsp/4);
 			trail.hspeed = random(-hsp/4);
 			trail.friction = 0.2;
-			if (irandom(1)) trail.image_blend = c_white;
+			if (irandom(1)) trail.image_blend = global.textcolor;
 			trail.x = random_range(bbox_left, bbox_right);
 			trail.y = random_range(bbox_bottom, bbox_top);
 

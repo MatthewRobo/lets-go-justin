@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 global.hitstop = 0;
-global.outline = c_white;
+global.outline = global.textcolor;
 global.firstto = -1;
 pads = "";
 if (!global.inassign) {

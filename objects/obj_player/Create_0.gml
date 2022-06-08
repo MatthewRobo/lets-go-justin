@@ -117,7 +117,7 @@ canhover = false;
  DL     DN    DR
 */
 
-color = c_white;
+color = global.textcolor;
 image_blend = color;
 
 spr_idle = sprite_index;

@@ -13,3 +13,5 @@ yprev = y;
 spawner_x = x;
 spawner_y = y;
 alarm[1] = 1;
+
+image_blend = global.textcolor;

@@ -3,7 +3,7 @@
 
 timer = 10;
 scale = 1;
-color = c_white;
+color = global.textcolor;
 rng = true;
 deathglitter = -1;
 

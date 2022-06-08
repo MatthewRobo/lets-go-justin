@@ -28,6 +28,7 @@ switch global.palette {
 		//global.fgcolor = $3f3f3f;
 		global.fgcolor = $694f4f;
 		global.fgcolor2 = $99ccff;
+		global.textcolor = c_white;
 		break;
 	case 1: // GREEN PURPLE
 		global.color[0] = $0dff00;
@@ -39,6 +40,7 @@ switch global.palette {
 		global.bgcolor = $05080f;
 		//global.fgcolor = $332244;
 		global.fgcolor2 = $ffaaff;
+		global.textcolor = c_white;
 		break;
 	case 2: // M-AS
 		global.color[0] = $6ecdff;
@@ -48,6 +50,7 @@ switch global.palette {
 		global.bgcolor = $1d1616;
 		global.fgcolor = $332727;
 		global.fgcolor2 = $f8f8f8;
+		global.textcolor = c_white;
 		break;
 	case 3: // GREEN ORANGE
 		global.color[0] = $0080ff;
@@ -57,6 +60,7 @@ switch global.palette {
 		global.bgcolor = $231d00;
 		global.fgcolor = $071f33;
 		global.fgcolor2 = $73c0ff;
+		global.textcolor = c_white;
 		break;
 	case 4: // BLUE ORANGE
 		global.color[0] = $0080ff;
@@ -66,6 +70,7 @@ switch global.palette {
 		global.bgcolor = $461d00;
 		global.fgcolor = $023455;
 		global.fgcolor2 = $3eb6ff;
+		global.textcolor = c_white;
 		break;
 	case 5: // RED BLUE
 		global.color[0] = $3741e6;
@@ -75,6 +80,7 @@ switch global.palette {
 		global.bgcolor = $2b0a30;
 		global.fgcolor = $801e00;
 		global.fgcolor2 = $e1ff3f;
+		global.textcolor = c_white;
 		break;
 	case 6: // COOL DAY
 		global.color[0] = $8000ff;
@@ -84,6 +90,7 @@ switch global.palette {
 		global.bgcolor = $925502;
 		global.fgcolor = $2b0047;
 		global.fgcolor2 = $a851ff;
+		global.textcolor = c_white;
 		break;
 	case 7: // PAC MAN
 		global.color[0] = c_red;
@@ -93,6 +100,7 @@ switch global.palette {
 		global.bgcolor = $090909;
 		global.fgcolor = $aa0000;
 		global.fgcolor2 = c_yellow;
+		global.textcolor = c_white;
 		break;
 	case 8: // JET GRIND RADIO
 		global.color[0] = $42e4e2;
@@ -102,6 +110,7 @@ switch global.palette {
 		global.bgcolor  = $82363f;
 		global.fgcolor  = $121B80;
 		global.fgcolor2 = $504fc4;
+		global.textcolor = c_white;
 		break;
 	case 9: // VASQUEZ
 		global.color[0] = $04ccfe;
@@ -111,6 +120,7 @@ switch global.palette {
 		global.bgcolor = $829388;
 		global.fgcolor = $4d564f;
 		global.fgcolor2 = c_black;
+		global.textcolor = c_white;
 		break;
 	case 10: // WORDLE
 		global.color[0] = $3b9fb5;
@@ -120,6 +130,7 @@ switch global.palette {
 		global.bgcolor = $131212;
 		global.fgcolor = $3c3a3a;
 		global.fgcolor2 = $848381;
+		global.textcolor = c_white;
 		break;
 	case 11: // PICO-8
 		global.color[0] = $a877ff;
@@ -129,6 +140,7 @@ switch global.palette {
 		global.bgcolor = $532b1d;
 		global.fgcolor = $4f575f;
 		global.fgcolor2 = $aaccff;
+		global.textcolor = c_white;
 		break;
 	case 12: // VIDEOBALL
 		global.color[0] = $5465f2;
@@ -140,6 +152,7 @@ switch global.palette {
 		global.fgcolor2 = $F1ABFF;
 		//global.fgcolor = $966b9f;
 		//global.fgcolor2 = $ffffff;
+		global.textcolor = c_white;
 		break;
 	case 13: // POLKA
 		global.color[0] = $d2aaff;
@@ -149,6 +162,7 @@ switch global.palette {
 		global.bgcolor = $5c637c;
 		global.fgcolor = $86467a;
 		global.fgcolor2 = $d4efff;
+		global.textcolor = c_white;
 		break;
 	case 14: // RED PURPLE
 		global.color[0] = $292CFF;
@@ -158,6 +172,7 @@ switch global.palette {
 		global.bgcolor = $110011;
 		global.fgcolor = $41002B;
 		global.fgcolor2 = $6DBBFF;
+		global.textcolor = c_white;
 		break;
 	case 15: // TRANS PRIDE
 		global.color[0] = $b8abfd;
@@ -165,6 +180,7 @@ switch global.palette {
 		global.bgcolor = $282828;
 		global.fgcolor = $999999;
 		global.fgcolor2 = c_white;
+		global.textcolor = c_white;
 		break;
 	case 16: // SEATTLE BASEBALL
 		global.color[0] = $696bed;
@@ -172,6 +188,7 @@ switch global.palette {
 		global.bgcolor = $281d11;
 		global.fgcolor = $49361c;
 		global.fgcolor2 = $969d46;
+		global.textcolor = c_white;
 		break;
 	case 17: // CHATREUSE PURPLE
 		global.color[0] = $00f7d8;
@@ -179,18 +196,28 @@ switch global.palette {
 		global.bgcolor = $110011;
 		global.fgcolor = $41002B;
 		global.fgcolor2 = $b5599b;
+		global.textcolor = c_white;
 		break;
-	case 18: // BLUE YELLOW
+	case 18: // CMYK
 		global.color[0] = $00FFFF;
 		global.color[1] = $FFFF00;
 		global.bgcolor = $111111;
 		global.fgcolor = $333333;
 		global.fgcolor2 = $FF00FF;
+		global.textcolor = c_white;
+		break;
+	case 19: // RGBW
+		global.color[0] = c_red;
+		global.color[1] = c_blue;
+		global.bgcolor = c_white;
+		global.fgcolor = c_grey;
+		global.fgcolor2 = c_lime;
+		global.textcolor = c_black;
 		break;
 	//case 9: // PAPER
 	//	global.color[0] = c_green;
 	//	global.color[1] = c_blue;
-	//	global.bgcolor = c_white;
+	//	global.bgcolor = global.textcolor;
 	//	global.fgcolor = c_grey;
 	//	global.fgcolor2 = c_black;
 	//	break;
@@ -203,7 +230,7 @@ if (GREYBOX) {
 	global.color[0] = c_yellow;
 	global.color[1] = c_aqua;
 	global.bgcolor = c_black;
-	global.fgcolor = c_white;
+	global.fgcolor = global.textcolor;
 	global.fgcolor2 = c_grey;
 }
 

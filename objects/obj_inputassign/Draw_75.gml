@@ -42,7 +42,7 @@ for (var p = 0; p < PLAYERS; p++) {
 		draw_set_halign(fa_right);
 		var xdraw = width -10;
 	}
-	draw_set_color(c_white);
+	draw_set_color(global.textcolor);
 	var device = global.lookup[p];
 	if (p < 2 || has4p) {
 		draw_text(xdraw,ydraw,device_to_string(device));
@@ -78,7 +78,7 @@ for (var p = 0; p < PLAYERS; p++) {
 			k += " : " + bindstr;
 
 		}
-		draw_set_color(c_white);
+		draw_set_color(global.textcolor);
 		draw_set_alpha(1);
 		if (device != GP+KB && ready[p]) {
 			draw_set_color(global.color[p]);
@@ -117,7 +117,7 @@ ydraw=lineheight;
 draw_set_alpha(1);
 for (var device = 0; device < GP+KB; device++) {
 	draw_set_halign(fa_center);
-	draw_set_color(c_white);
+	draw_set_color(global.textcolor);
 	if (slot[device] == -1) {
 		draw_text(width/2,ydraw,device_to_string(device));
 		ydraw+=lineheight;

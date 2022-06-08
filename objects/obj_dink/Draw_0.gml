@@ -50,7 +50,7 @@ for (i = 0; i < tlen; i+= 1) {
 //draw_vertex_colour(x12-24,y12,color,0);
 draw_primitive_end();
 */
-draw_set_colour(c_white);
+draw_set_colour(global.textcolor);
 if GREYBOX draw_set_color(c_black);
 draw_primitive_begin(pr_trianglefan);
 draw_vertex(x,y);

@@ -11,6 +11,6 @@ cooldown = 0;
 
 var glitter = instance_create_depth(x, y, depth-1, obj_glitter);
 //glitter.image_blend = irandom(1) ? global.fgcolor2 : owner.color;
-glitter.image_blend = c_white;
+glitter.image_blend = global.textcolor;
 glitter.scale = 4;
 glitter.rng = false;

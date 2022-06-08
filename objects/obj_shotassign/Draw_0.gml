@@ -103,7 +103,7 @@ for (var row = 0; row < rows; row++) {
 				break;
 		}
 			draw_sprite_ext(_shotspr,0,_xdraw,_ydraw,iconscale,iconscale,0,global.fgcolor2,1);
-			draw_set_color(c_white);
+			draw_set_color(global.textcolor);
 			draw_set_valign(fa_top);
 			draw_set_font(fnt_smallsemi);
 			draw_text(_xdraw,_ydraw+iconsize/2+16,_shotstr);
@@ -131,7 +131,7 @@ for (var p = 0; p < global.pmax; p++) {
 		}
 	}
 	//rot += 180;
-	_color = ready[p] ? c_white : global.color[p];
+	_color = ready[p] ? global.textcolor : global.color[p];
 				
 	draw_set_font(fnt_smalldesc);
 	draw_set_color(_color);
@@ -222,7 +222,7 @@ for (p = 0; p < global.pmax; p++) {
 			
 		}
 		
-		draw_set_colour(c_white);
+		draw_set_colour(global.textcolor);
 		if (ready[p]) draw_set_colour(global.color[p]);
 		//draw_set_colour(global.color[p]);
 		draw_text(k,ydraw,desc);

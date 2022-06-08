@@ -77,7 +77,7 @@ global.mode = gamemode.versus;
 
 room_goto_next();
 
-global.color = array_create(4,c_white);
+global.color = array_create(4,0);
 global.color[0] = $5100ff;
 global.color[1] = $ff8000;
 global.color[2] = c_orange;
@@ -87,6 +87,7 @@ global.color[3] = c_teal;
 //color = $d000ff
 
 global.bgcolor = $1d1616;
+global.textcolor = c_white;
 
 for (var d = 0; d < GP; d++) {
 	gamepad_set_axis_deadzone(d,0.40);
