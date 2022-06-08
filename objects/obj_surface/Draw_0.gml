@@ -7,6 +7,9 @@ if (!surface_exists(splatter)) {
 if (!surface_exists(glitter)) {
 	glitter = surface_create(room_width,room_height);
 }
+if (!surface_exists(minimap)) {
+	minimap = surface_create(room_width,room_height);
+}
 if (!surface_exists(scanline)) {
 	scanline = surface_create(room_width,room_height);
 	do_scanline = true;
@@ -220,5 +223,25 @@ with(obj_player) {
 		draw_circle(x,y,16,false);
 		draw_line(x,y,killer_x,killer_y);
 	}
+}
+surface_reset_target();
+
+surface_set_target(minimap);
+gpu_set_blendmode(bm_subtract);
+draw_set_color(c_black);
+draw_set_alpha(0.05);
+draw_rectangle(0,0,room_width,room_height,0);
+gpu_set_blendmode(bm_normal);
+draw_set_alpha(1);
+draw_set_color(global.fgcolor2);
+with(obj_wall) {
+	draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,0);
+}
+with(obj_player) {
+	draw_set_color(color);
+	draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,0);
+}
+with(obj_hitbox) {
+	draw_self();
 }
 surface_reset_target();
