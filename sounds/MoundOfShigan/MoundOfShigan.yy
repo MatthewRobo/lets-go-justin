@@ -14,8 +14,8 @@
   "soundFile": "MoundOfShigan.mp3",
   "duration": 66.864,
   "parent": {
-    "name": "menu",
-    "path": "folders/Sounds/mus/menu.yy",
+    "name": "full",
+    "path": "folders/Sounds/mus/menu/full.yy",
   },
   "resourceVersion": "1.0",
   "name": "MoundOfShigan",

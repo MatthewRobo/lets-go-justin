@@ -14,8 +14,8 @@
   "soundFile": "MassiveX.mp3",
   "duration": 190.8986,
   "parent": {
-    "name": "battle",
-    "path": "folders/Sounds/mus/battle.yy",
+    "name": "full",
+    "path": "folders/Sounds/mus/battle/full.yy",
   },
   "resourceVersion": "1.0",
   "name": "MassiveX",

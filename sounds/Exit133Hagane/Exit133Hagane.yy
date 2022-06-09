@@ -14,8 +14,8 @@
   "soundFile": "Exit133Hagane.mp3",
   "duration": 251.616,
   "parent": {
-    "name": "battle",
-    "path": "folders/Sounds/mus/battle.yy",
+    "name": "full",
+    "path": "folders/Sounds/mus/battle/full.yy",
   },
   "resourceVersion": "1.0",
   "name": "Exit133Hagane",

@@ -14,8 +14,8 @@
   "soundFile": "ReadyToSortie.mp3",
   "duration": 39.288162,
   "parent": {
-    "name": "menu",
-    "path": "folders/Sounds/mus/menu.yy",
+    "name": "full",
+    "path": "folders/Sounds/mus/menu/full.yy",
   },
   "resourceVersion": "1.0",
   "name": "ReadyToSortie",

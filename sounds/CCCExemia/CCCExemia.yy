@@ -14,8 +14,8 @@
   "soundFile": "CCCExemia.mp3",
   "duration": 257.448,
   "parent": {
-    "name": "menu",
-    "path": "folders/Sounds/mus/menu.yy",
+    "name": "full",
+    "path": "folders/Sounds/mus/menu/full.yy",
   },
   "resourceVersion": "1.0",
   "name": "CCCExemia",

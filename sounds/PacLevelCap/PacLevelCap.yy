@@ -14,8 +14,8 @@
   "soundFile": "PacLevelCap.mp3",
   "duration": 311.82367,
   "parent": {
-    "name": "battle",
-    "path": "folders/Sounds/mus/battle.yy",
+    "name": "full",
+    "path": "folders/Sounds/mus/battle/full.yy",
   },
   "resourceVersion": "1.0",
   "name": "PacLevelCap",

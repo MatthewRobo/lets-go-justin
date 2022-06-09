@@ -14,8 +14,8 @@
   "soundFile": "CrouchBlockingDragon.mp3",
   "duration": 228.432,
   "parent": {
-    "name": "battle",
-    "path": "folders/Sounds/mus/battle.yy",
+    "name": "full",
+    "path": "folders/Sounds/mus/battle/full.yy",
   },
   "resourceVersion": "1.0",
   "name": "CrouchBlockingDragon",
