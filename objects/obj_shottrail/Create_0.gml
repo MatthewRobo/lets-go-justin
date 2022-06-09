@@ -12,3 +12,5 @@ timer = tlen;
 
 hsp = 0;
 vsp = 0;
+
+embiggen = false;

@@ -5,6 +5,12 @@ steps = 24;
 hrad = sprite_width / 2;
 vrad = sprite_height / 2;
 outrad = 4;
+var outradbig = outrad;
+if (embiggen) {
+	outradbig += min(48,global.hitstop*global.hitstop * 0.25);
+}
+
+
 draw_set_alpha(1*!GREYBOX);
 draw_set_color(color);
 
@@ -66,8 +72,8 @@ draw_primitive_begin(pr_trianglefan);
 angle = 360;
 
 for (i = -angle/2; i <= angle/2; i += 360 / steps) {
-	_x = lengthdir_x(hrad+outrad, i);
-	_y = lengthdir_y(vrad+outrad, i);
+	_x = lengthdir_x(hrad+outradbig, i);
+	_y = lengthdir_y(vrad+outradbig, i);
 	_c = dcos(rotation);
 	_s = dsin(rotation);
 	var _x2 = x + _c * _x + _s * _y;

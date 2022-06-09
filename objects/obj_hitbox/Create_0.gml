@@ -15,3 +15,5 @@ spawner_y = y;
 alarm[1] = 1;
 
 image_blend = global.textcolor;
+
+embiggen = false;

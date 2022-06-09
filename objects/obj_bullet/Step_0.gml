@@ -34,8 +34,15 @@ if (global.hitstop <= 0) {
 	trail.rotation = image_angle;
 	trail.hsp = hsp;
 	trail.vsp = vsp;
+	
+
 
 }
+
+	if (embiggen) {
+		trail.embiggen = true;
+		embiggen = false;
+	}
 
 if (windaffected) {
 	if (global.hitstop <= 0) {

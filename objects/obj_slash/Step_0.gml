@@ -25,4 +25,9 @@ if (global.hitstop <= 0) {
 	timer--;
 }
 
+if (embiggen) {
+	embiggen = false;
+	if (trail != noone) trail.embiggen = true;
+}
+
 }

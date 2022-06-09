@@ -4,6 +4,7 @@
 if (!global.paused) {
 
 if (global.hitstop <= 0) {
+	embiggen = false;
 	tx[tcounter] = x;
 	ty[tcounter] = y;
 	tcounter++;

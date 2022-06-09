@@ -67,6 +67,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 
 
 	} else if (invul <= 0) {
+		other.embiggen = true;
 		global.lastparried = obj_bullet;
 		if (teammate != noone && other.team == teammate.team) {
 		//if true {

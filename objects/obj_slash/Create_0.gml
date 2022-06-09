@@ -10,3 +10,5 @@ image_yscale *= 2;
 
 dx = 0;
 dy = 0;
+
+trail = noone;

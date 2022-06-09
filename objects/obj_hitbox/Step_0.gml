@@ -4,6 +4,7 @@
 if (!global.paused) {
 
 if (global.hitstop <= 0) {
+	embiggen = false;
 	xprev = x;
 	yprev = y;
 	travel = noone;
@@ -15,8 +16,8 @@ if (global.hitstop <= 0) {
 	var _num = collision_line_list(x,y,x+hsp,y+vsp, obj_player, false, true, _list, true);
 	if _num > 0
 	{
-	    for (var i = 0; i < _num; ++i;)
-	    {
+		for (var i = 0; i < _num; ++i;)
+		{
 			target = _list[|i]
 			if (target.team != team && target.invul <= 0)
 			&& !place_meeting(x+hsp,y+vsp,target) {
@@ -24,7 +25,7 @@ if (global.hitstop <= 0) {
 				nextdist = point_distance(x,y,travel.x,travel.y);
 				break;
 			}
-	    }
+		}
 	}
 	ds_list_destroy(_list);
 
