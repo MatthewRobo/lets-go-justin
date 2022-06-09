@@ -23,7 +23,7 @@ draw_sprite_stretched(global.shotsspr[0],0,xoffset,yoffset,iconsize,iconsize);
 draw_sprite_stretched(global.shotsspr[1],0,width-iconsize-xoffset,yoffset,iconsize,iconsize);
 
 var pipgap = 4;
-var centergap = 48;
+var centergap = 36;
 var pipwidth = ((64*19/2 - centergap - 3) - pipgap * global.firstto) / global.firstto;
 //var pipwidth = ((width/2 - centergap - 128 + 3) - pipgap * global.firstto) / global.firstto;
 var pipslant = 24;
@@ -182,7 +182,6 @@ if (global.pmax==4) {
 
 
 draw_set_colour(global.fgcolor2);
-
 draw_set_valign(fa_bottom);
 var text = string_replace_all(string_format(seconds, 2, 0), " ", "0");
 var textdiff = string_width(text);
