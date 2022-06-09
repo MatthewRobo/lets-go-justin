@@ -65,6 +65,10 @@ global.shots = array_create(PLAYERS, 0);
 global.shots[1] = shot.whiffpunisher;
 global.shots[2] = shot.wallbang;
 global.shots[3] = shot.grenade;
+
+global.shotsspr = array_create(PLAYERS, -1);
+global.shotsstr = array_create(PLAYERS, "");
+
 global.lookup = array_create(PLAYERS, GP+KB);
 
 // input.length[player][input]

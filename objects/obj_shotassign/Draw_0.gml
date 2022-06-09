@@ -102,6 +102,12 @@ for (var row = 0; row < rows; row++) {
 					_shotspr = spr_coin;
 				break;
 		}
+			for (var p = 0; p < PLAYERS; p++) {
+				if (global.shots[p] == shotcounter) {
+					global.shotsspr[p] = _shotspr;
+					global.shotsstr[p] = _shotstr;
+				}
+			}
 			draw_sprite_ext(_shotspr,0,_xdraw,_ydraw,iconscale,iconscale,0,global.fgcolor2,1);
 			draw_set_color(global.textcolor);
 			draw_set_valign(fa_top);

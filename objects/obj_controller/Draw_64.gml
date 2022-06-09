@@ -15,9 +15,17 @@ draw_set_alpha(1*!GREYBOX);
 var width = display_get_gui_width();
 var height= display_get_gui_height();
 
+var xoffset = 8;
+var yoffset = 16;
+var iconsize = 48;
+draw_set_color(global.fgcolor2);
+draw_sprite_stretched(global.shotsspr[0],0,xoffset,yoffset,iconsize,iconsize);
+draw_sprite_stretched(global.shotsspr[1],0,width-iconsize-xoffset,yoffset,iconsize,iconsize);
+
 var pipgap = 4;
 var centergap = 48;
-var pipwidth = ((room_width/2 - centergap - 128 + 3) - pipgap * global.firstto) / global.firstto;
+var pipwidth = ((64*19/2 - centergap - 3) - pipgap * global.firstto) / global.firstto;
+//var pipwidth = ((width/2 - centergap - 128 + 3) - pipgap * global.firstto) / global.firstto;
 var pipslant = 24;
 
 var piptotal = pipgap + pipwidth;
@@ -36,6 +44,8 @@ draw_vertex(width/2+centergap+global.firstto*piptotal+pipslant+4,4);
 draw_vertex(width/2-centergap-global.firstto*piptotal,60);
 draw_vertex(width/2+centergap+global.firstto*piptotal,60);
 draw_primitive_end();
+
+
 
 if (global.pmax==4) {
 	for (i = 0; i < (global.firstto - obj_player1.deaths - obj_player3.deaths); i++) {
