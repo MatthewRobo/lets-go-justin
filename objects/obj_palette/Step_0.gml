@@ -201,8 +201,8 @@ switch global.palette {
 	case 18: // CMYK
 		global.color[0] = $00FFFF;
 		global.color[1] = $FFFF00;
-		global.bgcolor = $111111;
-		global.fgcolor = $333333;
+		global.bgcolor = $222222;
+		global.fgcolor = $000000;
 		global.fgcolor2 = $FF00FF;
 		global.textcolor = c_white;
 		break;
