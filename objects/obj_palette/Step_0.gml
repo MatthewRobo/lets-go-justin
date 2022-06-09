@@ -206,13 +206,13 @@ switch global.palette {
 		global.fgcolor2 = $FF00FF;
 		global.textcolor = c_white;
 		break;
-	case 19: // RGBW
-		global.color[0] = c_red;
-		global.color[1] = c_blue;
-		global.bgcolor = c_white;
-		global.fgcolor = c_grey;
-		global.fgcolor2 = c_lime;
-		global.textcolor = c_black;
+	case 19: // uhhh
+		global.color[0] = c_fuchsia;
+		global.color[1] = c_lime;
+		global.bgcolor = c_black;
+		global.fgcolor = c_white;
+		global.fgcolor2 = #FF8000;
+		global.textcolor = #0080ff;
 		break;
 	//case 9: // PAPER
 	//	global.color[0] = c_green;
