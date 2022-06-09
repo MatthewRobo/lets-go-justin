@@ -13,3 +13,6 @@ accepting = false;
 alarm[0] = 2;
 
 global.insettings = true;
+
+ini_open("settings.ini");
+global.musicgain = ini_read_real("Settings", "MusicVolume", 5);

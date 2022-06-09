@@ -117,3 +117,15 @@ for (d = 0; d < GP + KB; d++) {
 	}
 }
 ini_close();
+
+
+ini_open("settings.ini");
+global.musicgain = ini_read_real("Settings", "MusicVolume", 5);
+global.palette = ini_read_real("Settings", "Palette", -1);
+if (global.palette != -1) {
+	global.palettelock = true;
+} else {
+	global.palettelock = false;
+	randomize_palette();
+}
+ini_close();

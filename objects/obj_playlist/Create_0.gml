@@ -1,5 +1,5 @@
 nowplaying = noone;
-global.musicgain = 5;
+
 inbattle = false;
 
 if (global.browser) {
