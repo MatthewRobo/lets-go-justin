@@ -68,6 +68,7 @@
     {"id":{"name":"snd_bonk","path":"sounds/snd_bonk/snd_bonk.yy",},"order":0,},
     {"id":{"name":"obj_playertrail","path":"objects/obj_playertrail/obj_playertrail.yy",},"order":0,},
     {"id":{"name":"fnt_prompt","path":"fonts/fnt_prompt/fnt_prompt.yy",},"order":8,},
+    {"id":{"name":"obj_gameend","path":"objects/obj_gameend/obj_gameend.yy",},"order":8,},
     {"id":{"name":"spr_Room4Prev","path":"sprites/spr_Room4Prev/spr_Room4Prev.yy",},"order":6,},
     {"id":{"name":"spr_invisible","path":"sprites/spr_invisible/spr_invisible.yy",},"order":4,},
     {"id":{"name":"Tactical","path":"sounds/Tactical/Tactical.yy",},"order":0,},

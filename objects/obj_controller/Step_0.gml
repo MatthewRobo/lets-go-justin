@@ -65,7 +65,30 @@ if (!global.paused) {
 		
 		if (someonewon) {
 			with (obj_player) {
-				inputlock = true;
+				if (!inputlock) {
+					pausemenu = instance_create_depth(0,0,depth-1,obj_gameend);
+					pausemenu.color = global.color[team];
+					pausemenu.team = team;
+					inputlock = true;
+				}
+			}
+			
+			ready = -1;
+			readycount = 0;
+			with (obj_gameend) {
+				other.ready = max (other.ready, ready);
+				if (ready != -1) other.readycount++;
+			}
+			if (readycount >= instance_number(obj_gameend)) {
+				switch ready {
+					case 0: room_restart(); break;
+					case 1: global.palette = randomize_palette();
+					room_goto(Shot_Select); break; //"Change Shot",
+					case 2: global.palette = randomize_palette();
+					room_goto(Room_Select); break; //"Change Stage", 
+					case 3: global.palette = randomize_palette();
+					room_goto(Main_Menu); break; //"Quit to Menu"];
+				}
 			}
 		}
 	}
@@ -116,13 +139,12 @@ if (restart > 1) {
 for (var device = 0; device < GP+KB; device++) {
 	if (start[device] > 1) {
 		pausemenu = instance_create_depth(0,0,depth-1,obj_pausemenu);
-		var team = array_find_index(global.lookup, device);
-		pausemenu.color = team != -1 ? global.color[team] : global.fgcolor2;
-		pausemenu.team = team;
+		var _team = array_find_index(global.lookup, device);
+		pausemenu.color = _team != -1 ? global.color[_team] : global.fgcolor2;
+		pausemenu.team = _team;
 		pausemenu.device = device;
 		start[device] = 0;
 		restart = 0;
 	}
 	quit = max(quit, start[device]);
 }
-
