@@ -19,8 +19,8 @@ var xoffset = 8;
 var yoffset = 16;
 var iconsize = 48;
 draw_set_color(global.fgcolor2);
-draw_sprite_stretched(global.shotsspr[0],0,xoffset,yoffset,iconsize,iconsize);
-draw_sprite_stretched(global.shotsspr[1],0,width-iconsize-xoffset,yoffset,iconsize,iconsize);
+//draw_sprite_stretched(global.shotsspr[0],0,xoffset,yoffset,iconsize,iconsize);
+//draw_sprite_stretched(global.shotsspr[1],0,width-iconsize-xoffset,yoffset,iconsize,iconsize);
 
 var pipgap = 4;
 var centergap = 36;
@@ -34,8 +34,8 @@ var pipoffset = 32;
 var pipheight = 24;
 
 var w11, w12, w21, h1, h2;
-w11 = 17;
-w12 = 3;
+w11 = 16;
+w12 = 2;
 w21 = 8;
 
 h1 = 7;
@@ -222,19 +222,41 @@ draw_set_font(fnt_prompt);
 
 var prompt1 = global.mode == gamemode.training ? "Select to restart" : "Hold Select to restart";
 var prompt2 = global.mode == gamemode.training ? "Start to pause" : "Hold Start to pause";
+var line_height = string_height(prompt1);
 
 var centergap = 3;
 var gap = 3;
 var hoffset1 = -_ans1*width/2;
 var hoffset2 = _ans2*width/2;
-draw_rectangle(-centergap + hoffset1 + width/2-string_width(prompt1)-gap*2,height-string_height(prompt1)-gap,-centergap + width/2,height,0);
-draw_rectangle(centergap + width/2,height-string_height(prompt2)-gap, centergap + hoffset2 + width/2+string_width(prompt2)+gap*2,height,0);
+draw_rectangle(-centergap + hoffset1 + width/2-string_width(prompt1)-gap*2,height-line_height-gap,-centergap + width/2,height,0);
+draw_rectangle(centergap + width/2,
+height-line_height-gap,
+centergap + hoffset2 + width/2+string_width(prompt2)+gap*2,
+height,0);
+
+var xoffset = 3;
+var xmargin = 3;
+var ymargin = -4;
+
+draw_rectangle(
+xoffset-xmargin,
+0,
+xoffset+xmargin+string_width(global.shotsstr[0]),
+ymargin+line_height,0);
+
+draw_rectangle(
+width-xoffset-xmargin-string_width(global.shotsstr[1]),
+0,
+width-xoffset+xmargin,
+ymargin+line_height,0);
 
 draw_set_color(global.fgcolor);
 draw_text(-centergap + hoffset1 + width / 2-gap,height,prompt1);
+draw_text(width-xoffset,line_height+2,global.shotsstr[1]);
 
 draw_set_halign(fa_left);
 draw_text(centergap + hoffset2 + width / 2+gap,height,prompt2);
+draw_text(xoffset,line_height+2,global.shotsstr[0]);
 
 if (roundstart > 0 && roundfreeze <= 0) {
 	draw_set_font(fnt_win);
