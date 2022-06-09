@@ -78,6 +78,7 @@ if (!global.paused) {
 			with (obj_gameend) {
 				other.ready = max (other.ready, ready);
 				if (ready != -1) other.readycount++;
+				other.start[global.lookup[team]] = 0;
 			}
 			if (readycount >= instance_number(obj_gameend)) {
 				switch ready {
