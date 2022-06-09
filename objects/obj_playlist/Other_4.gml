@@ -33,7 +33,7 @@ for (var i = 0; i < array_length(menumus); i++) {
 	}
 }
 
-for (var i = 0; i < array_length(menumus); i++) {
+for (var i = 0; i < array_length(battlemus); i++) {
 	if (audio_get_name(nowplaying) == audio_get_name(battlemus[i])) {
 		volscl = battlevol[i];
 	}

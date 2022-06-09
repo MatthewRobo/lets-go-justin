@@ -139,6 +139,7 @@
     {"id":{"name":"obj_instructions","path":"objects/obj_instructions/obj_instructions.yy",},"order":2,},
     {"id":{"name":"spr_coin","path":"sprites/spr_coin/spr_coin.yy",},"order":14,},
     {"id":{"name":"windblow","path":"scripts/windblow/windblow.yy",},"order":5,},
+    {"id":{"name":"Tactical3","path":"sounds/Tactical3/Tactical3.yy",},"order":2,},
     {"id":{"name":"spr_bg7","path":"sprites/spr_bg7/spr_bg7.yy",},"order":7,},
     {"id":{"name":"array_find_index","path":"scripts/array_find_index/array_find_index.yy",},"order":4,},
     {"id":{"name":"CallOut","path":"sounds/CallOut/CallOut.yy",},"order":0,},
@@ -314,7 +315,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2022.5.1.14",
+    "IDEVersion": "2022.5.1.16",
   },
   "resourceVersion": "1.5",
   "name": "SLASHBANG",
