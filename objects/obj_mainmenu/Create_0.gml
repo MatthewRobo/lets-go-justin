@@ -6,7 +6,7 @@ if (!global.browser) {
 	modestr = ["Versus", "Team VS", "Training", "Settings" , "Quit"];
 } else {
 	modes = [gamemode.versus, gamemode.training,-2];
-	modestr = ["Versus", "Training",-2];
+	modestr = ["Versus", "Training","Settings"];
 }
 modelen = array_length(modes);
 selected = global.mode;
