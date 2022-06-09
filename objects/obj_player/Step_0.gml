@@ -4,7 +4,7 @@
 // Inherit the parent event
 gamepad = global.lookup[team];
 color = global.color[team];
-if (!global.paused) {
+if (!global.paused || !inputlock) {
 
 if (global.hitstop <= 0) {
 	slash--;
@@ -75,4 +75,27 @@ if (global.down[gamepad][input.PA]) {
 hvec = right - left;
 vvec = !up ? down : -up;
 
+}
+
+if (inputlock) {
+		slash--;
+	shoot--;
+	parry--;
+	jump--;
+}
+
+if (inputlock) {
+	slash = false;
+	shoot = false;
+	parry = false; 
+	jump = false;
+	left = false;
+	right = false;
+	down = false;
+	up = false;
+	hover = false;
+	heldparry = false;
+	teabag = false;
+	hvec = 0;
+	vvec = 0;
 }

@@ -62,6 +62,12 @@ if (!global.paused) {
 				}
 			}
 		}
+		
+		if (someonewon) {
+			with (obj_player) {
+				inputlock = true;
+			}
+		}
 	}
 
 	roundfreeze--;
@@ -119,3 +125,4 @@ for (var device = 0; device < GP+KB; device++) {
 	}
 	quit = max(quit, start[device]);
 }
+

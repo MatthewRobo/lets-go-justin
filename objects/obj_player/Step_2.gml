@@ -110,6 +110,7 @@ if (global.hitstop <= 0) {
 
 #region spawning
 	if (spawning == spawntime) {
+		if (inputlock) visible = false;
 		dead = false;
 		lifetime = 270;
 		depth = layerdepth + 1;

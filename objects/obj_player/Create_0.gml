@@ -109,6 +109,8 @@ down = false;
 hover = false;
 canhover = false;
 
+inputlock = false;
+
 /* direction is in numpad notation
  UL     UP    UR
      7  8  9
