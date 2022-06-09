@@ -30,25 +30,51 @@ var pipslant = 24;
 
 var piptotal = pipgap + pipwidth;
 
-var pipoffset = 8;
-var pipheight = 48;
+var pipoffset = 32;
+var pipheight = 24;
 
+var w11, w12, w21, h1, h2;
+w11 = 17;
+w12 = 3;
+w21 = 8;
+
+h1 = 7;
+h2 = 4;
 draw_set_color(global.outline);
 draw_primitive_begin(pr_trianglestrip);
-draw_vertex(width/2-centergap-global.firstto*piptotal-pipslant-10,pipoffset-7);
-draw_vertex(width/2+centergap+global.firstto*piptotal+pipslant+10,pipoffset-7);
-draw_vertex(width/2-centergap-global.firstto*piptotal-3,pipoffset + pipheight + 7);
-draw_vertex(width/2+centergap+global.firstto*piptotal+3,pipoffset + pipheight + 7);
+draw_vertex(width/2-centergap-global.firstto*piptotal-pipslant-w11,pipoffset-h1);
+draw_vertex(width/2+centergap+global.firstto*piptotal+pipslant+w11,pipoffset-h1);
+draw_vertex(width/2-centergap-global.firstto*piptotal-w12,pipoffset + pipheight + h1);
+draw_vertex(width/2+centergap+global.firstto*piptotal+w12,pipoffset + pipheight + h1);
 draw_primitive_end();
+
+var offset = 3;
+
+draw_primitive_begin(pr_trianglestrip);
+draw_vertex(width/2-centergap-1-offset-24, 4+24);
+draw_vertex(width/2-centergap-1,    4-offset);
+draw_vertex(width/2-centergap-1,    4+offset+48);
+draw_vertex(width/2+centergap+1,    4-offset);
+draw_vertex(width/2+centergap+1,    4+offset+48);
+draw_vertex(width/2+centergap+1+offset+24, 4+24);
+draw_primitive_end();
+
 draw_set_color(global.bgcolor);
 draw_primitive_begin(pr_trianglestrip);
-draw_vertex(width/2-centergap-global.firstto*piptotal-pipslant-4,pipoffset - 4);
-draw_vertex(width/2+centergap+global.firstto*piptotal+pipslant+4,pipoffset - 4);
-draw_vertex(width/2-centergap-global.firstto*piptotal,pipoffset + pipheight + 4);
-draw_vertex(width/2+centergap+global.firstto*piptotal,pipoffset + pipheight + 4);
+draw_vertex(width/2-centergap-global.firstto*piptotal-pipslant-w21,pipoffset - h2);
+draw_vertex(width/2+centergap+global.firstto*piptotal+pipslant+w21,pipoffset - h2);
+draw_vertex(width/2-centergap-global.firstto*piptotal,pipoffset + pipheight + h2);
+draw_vertex(width/2+centergap+global.firstto*piptotal,pipoffset + pipheight + h2);
 draw_primitive_end();
 
-
+draw_primitive_begin(pr_trianglestrip);
+draw_vertex(width/2-centergap-24, 4+24);
+draw_vertex(width/2-centergap, 4);
+draw_vertex(width/2-centergap, 4+48);
+draw_vertex(width/2+centergap, 4);
+draw_vertex(width/2+centergap, 4+48);
+draw_vertex(width/2+centergap+24, 4+24);
+draw_primitive_end();
 
 if (global.pmax==4) {
 	for (i = 0; i < (global.firstto - obj_player1.deaths - obj_player3.deaths); i++) {
