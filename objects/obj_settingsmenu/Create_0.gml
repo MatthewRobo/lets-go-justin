@@ -16,3 +16,4 @@ global.insettings = true;
 
 ini_open("settings.ini");
 global.musicgain = ini_read_real("Settings", "MusicVolume", 5);
+ini_close();
