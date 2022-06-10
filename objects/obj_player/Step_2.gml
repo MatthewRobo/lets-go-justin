@@ -415,7 +415,7 @@ if (global.hitstop <= 0) {
 						for (i = 0; i < 5; i ++) {
 							for (j = -1; j <= 1; j += 2) {
 								attack = instance_create_layer(x + lengthdir_x(dist - i * gap, direction), y + lengthdir_y(dist - i * gap, direction), "hitboxes", shotobj);
-								attack.image_xscale = 2;
+								attack.image_xscale = 1.5;
 								attack.image_yscale = 1;
 								attack.owner = id;
 								attack.timer = i mod 2 == 1 ? shotactive + 2 * i : shotactive + i;
