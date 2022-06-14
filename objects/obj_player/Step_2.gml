@@ -413,7 +413,7 @@ if (global.hitstop <= 0) {
 						
 						var shots = 5;
 						var spread = 60;
-						for (i = 0; i < 5; i ++) {
+						for (i = 0; i < shots; i ++) {
 							for (j = -1; j <= 1; j += 2) {
 								attack = instance_create_layer(x + lengthdir_x(dist, direction), y + lengthdir_y(dist, direction), "hitboxes", shotobj);
 								attack.image_xscale = 1.5;
@@ -421,7 +421,7 @@ if (global.hitstop <= 0) {
 								attack.owner = id;
 								attack.timer = i mod 2 == 1 ? shotactive + 2 * i : shotactive + i;
 								attack.team = team;
-								attack.direction = direction + (180 - spread * j)  + (i * (spread / shots)) * j;
+								attack.direction = direction + (180 - spread * j)  + (i * (spread / shots) * (shots/(shots-1))) * j;
 								attack.image_angle = attack.direction;
 								attack.spd = i mod 2 == 1 ? 1.5 * bulletspeed : bulletspeed;
 								attack.hsp = lengthdir_x(attack.spd, attack.direction);
