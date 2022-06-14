@@ -411,16 +411,17 @@ if (global.hitstop <= 0) {
 						//trail.owner = id;
 						//trail.image_blend = color;
 						
-						gap = 3;
+						var shots = 5;
+						var spread = 60;
 						for (i = 0; i < 5; i ++) {
 							for (j = -1; j <= 1; j += 2) {
-								attack = instance_create_layer(x + lengthdir_x(dist - i * gap, direction), y + lengthdir_y(dist - i * gap, direction), "hitboxes", shotobj);
+								attack = instance_create_layer(x + lengthdir_x(dist, direction), y + lengthdir_y(dist, direction), "hitboxes", shotobj);
 								attack.image_xscale = 1.5;
 								attack.image_yscale = 1;
 								attack.owner = id;
 								attack.timer = i mod 2 == 1 ? shotactive + 2 * i : shotactive + i;
 								attack.team = team;
-								attack.direction = direction + 100 * j + (i * 20 ) * j;
+								attack.direction = direction + (180 - spread * j)  + (i * (spread / shots)) * j;
 								attack.image_angle = attack.direction;
 								attack.spd = i mod 2 == 1 ? 1.5 * bulletspeed : bulletspeed;
 								attack.hsp = lengthdir_x(attack.spd, attack.direction);
