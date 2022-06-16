@@ -50,14 +50,14 @@ draw_primitive_end();
 
 var offset = 3;
 
-draw_primitive_begin(pr_trianglestrip);
-draw_vertex(width/2-centergap-1-offset-24, 4+24);
-draw_vertex(width/2-centergap-1,    4-offset);
-draw_vertex(width/2-centergap-1,    4+offset+48);
-draw_vertex(width/2+centergap+1,    4-offset);
-draw_vertex(width/2+centergap+1,    4+offset+48);
-draw_vertex(width/2+centergap+1+offset+24, 4+24);
-draw_primitive_end();
+//draw_primitive_begin(pr_trianglestrip);
+//draw_vertex(width/2-centergap-1-offset-24, 4+24);
+//draw_vertex(width/2-centergap-1,    4-offset);
+//draw_vertex(width/2-centergap-1,    4+offset+48);
+//draw_vertex(width/2+centergap+1,    4-offset);
+//draw_vertex(width/2+centergap+1,    4+offset+48);
+//draw_vertex(width/2+centergap+1+offset+24, 4+24);
+//draw_primitive_end();
 
 draw_set_color(global.bgcolor);
 draw_primitive_begin(pr_trianglestrip);
@@ -67,12 +67,15 @@ draw_vertex(width/2-centergap-global.firstto*piptotal,pipoffset + pipheight + h2
 draw_vertex(width/2+centergap+global.firstto*piptotal,pipoffset + pipheight + h2);
 draw_primitive_end();
 
+draw_set_color(global.outline);
 draw_primitive_begin(pr_trianglestrip);
+var e = 11;
+var f = 3;
 draw_vertex(width/2-centergap-24, 4+24);
-draw_vertex(width/2-centergap, 4);
-draw_vertex(width/2-centergap, 4+48);
-draw_vertex(width/2+centergap, 4);
-draw_vertex(width/2+centergap, 4+48);
+draw_vertex(width/2-centergap,  4);
+draw_vertex(width/2-centergap+e,  4+e+48);
+draw_vertex(width/2+centergap,  4);
+draw_vertex(width/2+centergap-e,  4+e+48);
 draw_vertex(width/2+centergap+24, 4+24);
 draw_primitive_end();
 
@@ -181,7 +184,7 @@ if (global.pmax==4) {
 }
 
 
-draw_set_colour(global.fgcolor2);
+draw_set_colour(global.bgcolor);
 draw_set_valign(fa_bottom);
 var text = string_replace_all(string_format(seconds, 2, 0), " ", "0");
 var textdiff = string_width(text);
@@ -199,6 +202,7 @@ draw_text(width/2+textdiff/2-1,56,text);
 
 //draw_rectangle(width/2-1, 4, width/2+1, 59,0);
 
+draw_set_colour(global.fgcolor2);
 draw_set_font(fnt_smallsemi);
 draw_set_valign(fa_bottom);
 //draw_rectangle(width/2-1, 768-64, width/2+1, 768,0);
