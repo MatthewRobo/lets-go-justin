@@ -70,13 +70,15 @@ draw_primitive_end();
 draw_set_color(global.outline);
 draw_primitive_begin(pr_trianglestrip);
 var e = 11;
-var f = 3;
-draw_vertex(width/2-centergap-24, 4+24);
-draw_vertex(width/2-centergap,  4);
-draw_vertex(width/2-centergap+e,  4+e+48);
-draw_vertex(width/2+centergap,  4);
-draw_vertex(width/2+centergap-e,  4+e+48);
-draw_vertex(width/2+centergap+24, 4+24);
+var f = 0;
+var g = 2 * f;
+var h = 2;
+draw_vertex(width/2-centergap-24-f+h, 4+24+f);
+draw_vertex(width/2-centergap+h,  4);
+draw_vertex(width/2-centergap+e-g+h,  4+e+48);
+draw_vertex(width/2+centergap-h,  4);
+draw_vertex(width/2+centergap-e+g-h,  4+e+48);
+draw_vertex(width/2+centergap+24+f-h, 4+24+f);
 draw_primitive_end();
 
 if (global.pmax==4) {
