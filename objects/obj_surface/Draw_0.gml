@@ -66,7 +66,7 @@ with(obj_glitter) {
 	if (deathglitter != -1) {
 		draw_set_alpha(image_alpha);
 		draw_set_color(image_blend);
-		drawself();
+		drawself(0.65);
 	}
 }
 draw_set_alpha(1);
@@ -103,7 +103,7 @@ with(obj_glitter) {
 	if (deathglitter != -1) {
 		draw_set_alpha(image_alpha*0.5);
 		draw_set_color(deathglitter);
-		drawself();
+		drawself(0.75);
 	}
 }
 gpu_set_blendmode(bm_subtract);
