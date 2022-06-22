@@ -63,6 +63,7 @@ switch selected {
 	case 0: designer += "??? (@???)"; break;
 	case 7: designer += "M-AS (@matthewrobo) & Jorge Velasquez (@Gorka_Man)"; break;
 	case 13: case 15: designer += "Irregulars (@IrregularsZR)"; break;
+	case 16: designer += "Bunny"; break;
 	default: designer += "Jorge Velasquez (@Gorka_Man)"; break;
 }
 draw_text(room_width-gap,gap,designer);

@@ -30,6 +30,7 @@ for (i = 0; i < roomlen; i++) {
 		case 13: roomstr[i] = "Sloth"; break;
 		case 14: roomstr[i] = "Hallways"; break;
 		case 15: roomstr[i] = "Grid"; break;
+		case 16: roomstr[i] = "Seer"; break;
 		default: roomstr[i] = "UNNAMED"; break;
 	}
 }
