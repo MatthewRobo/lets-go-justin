@@ -274,7 +274,7 @@ if (global.hitstop <= 0) {
 						attack.image_yscale = 0.2;
 						break;
 					case shot.shotgun:
-						for (i = -0; i < 360; i+= 45) {
+						for (i = -0; i < 360; i+= 30) {
 							attack = instance_create_layer(x, y, "hitboxes", shotobj);
 							attack.owner = id;
 							attack.timer = shotactive;
