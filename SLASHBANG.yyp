@@ -58,6 +58,7 @@
     {"id":{"name":"snd_jam","path":"sounds/snd_jam/snd_jam.yy",},"order":4,},
     {"id":{"name":"obj_shottrail","path":"objects/obj_shottrail/obj_shottrail.yy",},"order":13,},
     {"id":{"name":"snd_shield","path":"sounds/snd_shield/snd_shield.yy",},"order":9,},
+    {"id":{"name":"Room16","path":"rooms/Room16/Room16.yy",},"order":19,},
     {"id":{"name":"snd_spawn","path":"sounds/snd_spawn/snd_spawn.yy",},"order":12,},
     {"id":{"name":"spr_poverlay","path":"sprites/spr_poverlay/spr_poverlay.yy",},"order":22,},
     {"id":{"name":"Init2","path":"rooms/Init2/Init2.yy",},"order":10,},
@@ -271,6 +272,7 @@
     {"roomId":{"name":"Room13","path":"rooms/Room13/Room13.yy",},},
     {"roomId":{"name":"Room14","path":"rooms/Room14/Room14.yy",},},
     {"roomId":{"name":"Room15","path":"rooms/Room15/Room15.yy",},},
+    {"roomId":{"name":"Room16","path":"rooms/Room16/Room16.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
