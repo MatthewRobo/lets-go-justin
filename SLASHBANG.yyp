@@ -156,6 +156,7 @@
     {"id":{"name":"Funkyyy","path":"sounds/Funkyyy/Funkyyy.yy",},"order":3,},
     {"id":{"name":"snd_parry","path":"sounds/snd_parry/snd_parry.yy",},"order":7,},
     {"id":{"name":"Room4","path":"rooms/Room4/Room4.yy",},"order":7,},
+    {"id":{"name":"acceldir","path":"scripts/acceldir/acceldir.yy",},"order":8,},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},"order":5,},
     {"id":{"name":"fnt_buttons","path":"fonts/fnt_buttons/fnt_buttons.yy",},"order":1,},
     {"id":{"name":"SilverLining","path":"sounds/SilverLining/SilverLining.yy",},"order":21,},
