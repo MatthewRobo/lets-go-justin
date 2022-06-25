@@ -71,6 +71,8 @@ if (keyboard_check_pressed(vk_f1)) {
 	if (!global.inassign) {
 		reassign = instance_create_depth(0,0,-999,obj_inputassign);
 		reassign.alarm[1] = 1;
+	} else {
+		reassign = obj_inputassign;
 	}
 	reassign.reset_binding(GP);
 }
@@ -79,6 +81,8 @@ if (keyboard_check_pressed(vk_f2)) {
 	if (!global.inassign) {
 		reassign = instance_create_depth(0,0,-999,obj_inputassign);
 		reassign.alarm[1] = 1;
+	} else {
+		reassign = obj_inputassign;
 	}
 	reassign.reset_binding(GP+1);
 }
