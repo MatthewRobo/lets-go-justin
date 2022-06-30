@@ -6,6 +6,7 @@ if (global.browser) {
 	battlemus = [
 	Tactical3,
 	Funkyyy,
+	Jazzy2,
 	]
 
 	menumus = [
@@ -15,6 +16,7 @@ if (global.browser) {
 	battlemus = [
 	Tactical3,
 	Funkyyy,
+	Jazzy2,
 	Aeronaut,
 	BackdoorBlaster,
 	BeginnersLuck,
