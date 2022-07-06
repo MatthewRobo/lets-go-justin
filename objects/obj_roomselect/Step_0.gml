@@ -36,6 +36,9 @@ if (!global.inassign) {
 				selected++;
 				audio_play_sound(snd_shield,0,0);
 			}
+			if (selected == -1) selectedlerp += roomlen;
+			if (selected == roomlen) selectedlerp -= roomlen;
+			selected = (selected + roomlen) mod roomlen;
 			if (selected == 0) {
 				if (global.pressed[device][input.D]) {
 					for (var i = 1; i < roomlen; i++) {
