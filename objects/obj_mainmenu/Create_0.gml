@@ -9,7 +9,7 @@ if (!global.browser) {
 	modestr = ["Versus", "Training","Settings"];
 }
 modelen = array_length(modes);
-selected = global.mode;
+selected = array_find_index(modes,global.mode);
 lerpfactor = 0.2;
 selectedlerp = global.mode;
 
