@@ -4,8 +4,8 @@ draw_set_valign(fa_middle);
 draw_set_font(Font1);
 var xdraw = room_width / 2;
 var lineheight = string_height("Single Versus");
-var logoscale = lerp(4,2.5,openlerp+breath*0.01);
-var logooffset = lerp(140,64,openlerp);
+var logoscale = lerp(2,1,openlerp+breath*0.01);
+var logooffset = lerp(64,24,openlerp);
 draw_sprite_ext(spr_logo,frame,xdraw,logooffset,logoscale,logoscale,0,global.fgcolor2,1);
 var yoffset = lerp(room_height-ybegin+28,0,openlerp);
 

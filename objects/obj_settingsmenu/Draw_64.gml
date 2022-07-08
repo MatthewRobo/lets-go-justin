@@ -3,8 +3,8 @@ var height= display_get_gui_height();
 
 var xcenter =  width/2;
 var ycenter = height/2;
-var outline = 3;
-var margin = 16;
+var outline = 1;
+var margin = 8;
 
 draw_set_font(Font1);
 draw_set_color(c_black);
