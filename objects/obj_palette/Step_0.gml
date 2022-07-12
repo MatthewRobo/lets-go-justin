@@ -209,9 +209,17 @@ switch global.palette {
 	case 19: // uhhh
 		global.color[0] = c_fuchsia;
 		global.color[1] = c_lime;
-		global.bgcolor = c_black;
-		global.fgcolor = c_white;
+		global.bgcolor = c_dkgrey;
+		global.fgcolor = c_grey;
 		global.fgcolor2 = #FF8000;
+		global.textcolor = c_white;
+		break;
+	case 20: // bisexual lighting
+		global.color[0] = #d0006f;
+		global.color[1] = #0066e0;
+		global.bgcolor = #221020;
+		global.fgcolor = #964594;
+		global.fgcolor2 = #66ccff;
 		global.textcolor = c_white;
 		break;
 	//case 9: // PAPER

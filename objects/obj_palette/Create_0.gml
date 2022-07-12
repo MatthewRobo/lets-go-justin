@@ -1,4 +1,4 @@
-#macro PALETTES 20
+#macro PALETTES 21
 enum thingies {
 	wave,
 	rectangle,
