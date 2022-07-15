@@ -14,6 +14,31 @@ if (!global.paused) {
 	}
 
 	if (global.mode != gamemode.training) {
+		
+		if (totalframes > breakthrough) {
+			breakthrough += breakthroughadd;
+			var ftless = global.firstto - 1;
+			audio_play_sound(snd_dies,0,0);
+			switch global.mode {
+				case gamemode.versus:
+					if (obj_player1.deaths < ftless) {
+						obj_player1.deaths++;
+					}
+					if (obj_player2.deaths < ftless) {
+						obj_player2.deaths++;
+					}
+					break;
+				case gamemode.teamvs:
+					if (obj_player1.deaths+obj_player3.deaths < ftless) {
+						obj_player1.deaths++;
+					}
+					if (obj_player2.deaths+obj_player4.deaths < ftless) {
+						obj_player2.deaths++;
+					}
+					break;
+			}
+		}
+		
 		if (global.pmax == 4) {
 			if (obj_player1.deaths + obj_player3.deaths >= global.firstto) {
 				someonewon = true;
