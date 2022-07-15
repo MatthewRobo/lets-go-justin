@@ -44,5 +44,5 @@ surf = instance_create_layer(x,y,"platforms",obj_surface);
 surf.depth--;
 
 totalframes = -roundstart - roundfreeze;
-breakthrough = 60 * 5;
+breakthrough = 60 * 100;
 breakthroughadd = 60 * 5;
