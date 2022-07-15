@@ -1,9 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-target = owner.dead ? owner.spawnpoint : owner;
-tx = target.x;
-ty = target.y;
+
+if (owner != noone) {
+	target = owner.dead ? owner.spawnpoint : owner;
+	tx = target.x;
+	ty = target.y;
+}
 
 lastalpha =  image_alpha;
 

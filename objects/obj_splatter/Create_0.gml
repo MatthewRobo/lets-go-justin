@@ -14,3 +14,7 @@ lastx1 = x;
 lastx2 = x;
 lasty1 = y;
 lasty2 = y;
+
+target = noone;
+tx = x;
+ty = y;

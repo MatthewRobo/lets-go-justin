@@ -23,9 +23,45 @@ if (!global.paused) {
 				case gamemode.versus:
 					if (obj_player1.deaths < ftless) {
 						obj_player1.deaths++;
+						for (i = 0; i < 20; i++) {
+							var trail = instance_create_layer(obj_player1.x,obj_player1.y,"platforms",obj_splatter);
+							trail.depth -= 2;
+							trail.radius = random_range(1,5);
+							trail.timer = random(i);
+
+							trail.image_blend = irandom(3) ? global.color[0] : global.fgcolor2;
+							trail.image_alpha = 0;
+							var rdir = random(360);
+			
+							trail.speed = random(10);
+							trail.direction = rdir;
+							trail.friction = trail.speed / 30;
+							var rlen = random_range(0,500);
+							trail.alphainc = (1/rlen)*500/(30);
+							trail.tx = room_width/2;
+							trail.ty = 0;
+						}
 					}
 					if (obj_player2.deaths < ftless) {
 						obj_player2.deaths++;
+						for (i = 0; i < 20; i++) {
+							var trail = instance_create_layer(obj_player2.x,obj_player2.y,"platforms",obj_splatter);
+							trail.depth -= 2;
+							trail.radius = random_range(1,5);
+							trail.timer = random(i);
+
+							trail.image_blend = irandom(3) ? global.color[1] : global.fgcolor2;
+							trail.image_alpha = 0;
+							var rdir = random(360);
+			
+							trail.speed = random(10);
+							trail.direction = rdir;
+							trail.friction = trail.speed / 30;
+							var rlen = random_range(0,500);
+							trail.alphainc = (1/rlen)*500/(30);
+							trail.tx = room_width/2;
+							trail.ty = 0;
+						}
 					}
 					break;
 				case gamemode.teamvs:
