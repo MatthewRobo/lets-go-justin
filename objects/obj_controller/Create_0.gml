@@ -45,4 +45,4 @@ surf.depth--;
 
 totalframes = -roundstart - roundfreeze;
 breakthrough = 60 * 100;
-breakthroughadd = 60 * 5;
+breakthroughadd = 60 * 6;
