@@ -2,7 +2,7 @@ nowplaying = noone;
 
 inbattle = false;
 
-if (global.browser) {
+if (true) {
 	battlemus = [
 	Tactical3,
 	Funkyyy,
