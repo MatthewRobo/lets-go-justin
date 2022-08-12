@@ -12,3 +12,5 @@ dx = 0;
 dy = 0;
 
 trail = noone;
+
+parrybuffer = 999;

@@ -14,7 +14,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		reflectx = x;
 		reflecty = y;
 		autoparry = autoparryactive;
-		global.lastparried = other.object_index;
+		global.parrybuffer = other.parrybuffer;
 		if (other.object_index == obj_anchor) {
 			reflected = other.owner;
 			superreflect = true;
@@ -68,7 +68,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 
 	} else if (invul <= 0) {
 		other.embiggen = true;
-		global.lastparried = obj_bullet;
+		global.parrybuffer = 6;
 		if (teammate != noone && other.team == teammate.team) {
 		//if true {
 			instance_destroy(other);

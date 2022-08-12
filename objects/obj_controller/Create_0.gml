@@ -14,7 +14,7 @@ restart = 0;
 start = array_create(GP+KB,0);
 quit = 0;
 global.firstto = global.pmax == 4 ? 24 : 12;
-global.lastparried = obj_slash;
+global.parrybuffer = 0;
 if (global.mode == gamemode.training) {
 	roundstart = 0;
 	roundinit = 1;

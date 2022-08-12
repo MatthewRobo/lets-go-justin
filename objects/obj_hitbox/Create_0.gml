@@ -17,3 +17,5 @@ alarm[1] = 1;
 image_blend = global.textcolor;
 
 embiggen = false;
+
+parrybuffer = 6;

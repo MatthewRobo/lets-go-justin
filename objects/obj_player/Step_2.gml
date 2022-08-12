@@ -60,7 +60,8 @@ if (global.hitstop <= 0) {
 	// code block is here so that the bullet only spawns
 	image_speed = 1;
 	if (reflected != noone) {
-		attack = instance_create_layer(reflectx, reflecty, "hitboxes", obj_bullet);
+		var attack = instance_create_layer(reflectx, reflecty, "hitboxes", obj_bullet);
+		attack.parrybuffer = max(1, global.parrybuffer - 1);
 		attack.owner = id;
 		attack.team = team;
 		attack.direction = point_direction(reflectx, reflecty, reflected.x, reflected.y);
