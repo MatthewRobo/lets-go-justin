@@ -100,7 +100,7 @@ for (i = 0; i < tlen; i+= 1) {
 	tcnow = (i + tcounter + tlen) mod tlen;
 	tcnext = (tcnow + 1) mod tlen;
 	tdir = tcnext == tcounter ? point_direction(0,0,hsp,vsp-grav) : point_direction(tx[tcnow],ty[tcnow],tx[tcnext],ty[tcnext]);
-	twid = team >= 2 ? 12 : 32;
+	twid = team >= 2 ? 8 : 32;
 	//talpha = clamp(2 * (i - tlen / 2) / (tlen / 2),0,1);
 	talpha = clamp(2*i/tlen,0,1);
 	if (ammo <= 0) talpha *= 0.4;
