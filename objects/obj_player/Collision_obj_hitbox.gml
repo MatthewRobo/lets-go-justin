@@ -69,6 +69,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 	} else if (invul <= 0) {
 		other.embiggen = true;
 		global.parrybuffer = 6;
+
 		if (teammate != noone && other.team == teammate.team) {
 		//if true {
 			instance_destroy(other);
@@ -91,6 +92,12 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 		} else {
 			if (!inputlock) deaths += 1;
 			flash = true;
+			if (instance_number(obj_controller) > 0) {
+				if (obj_controller.totalframes > obj_controller.breakthrough - obj_controller.breakthroughadd) {
+					show_debug_message("breakthroguhbreak");
+					obj_controller.breakthrough = obj_controller.totalframes + obj_controller.breakthroughadd;
+				}
+			}
 			deadangle = other.direction;
 			instance_create_layer(x, y, "hitboxes", obj_boom);
 			audio_play_sound(snd_dies, 1, false);
@@ -111,6 +118,7 @@ if (other.team != team && (collision_line(x, y, other.x, other.y, obj_wall, fals
 				audio_sound_pitch(ultradies, 20/120);
 			}
 			dead = global.hitstop;
+
 			spawnpoint = instance_furthest(other.owner.x, other.owner.y, obj_respawn);
 			if (other.owner.dead) spawnpoint = instance_furthest(other.owner.spawnpoint.x, other.owner.y, obj_respawn);
 			//spawnpoint = noone;

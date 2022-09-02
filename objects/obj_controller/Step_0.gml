@@ -158,10 +158,16 @@ if (!global.paused) {
 	roundfreeze--;
 	if (roundfreeze <= 0) roundstart--;
 	if (roundstart == 0) audio_play_sound(snd_spawn,0,0);
-	if ((global.hitstop <= 0 && !someonewon) || roundfreeze > 0) totalframes++;
+	if (global.mode != gamemode.training && ((global.hitstop <= 0 && !someonewon) || roundfreeze > 0)) totalframes++;
 	seconds = totalframes div 60;
 	frames = totalframes mod 60;
 	ms = abs(frames / 60 * 100);
+	
+	tremain = breakthrough - totalframes;
+	sremain = tremain div 60;
+	fremain = tremain mod 60;
+	msremain = abs(fremain / 60 * 100);
+	
 	roundratio = 1-(roundstart/roundinit);
 
 	for (var device = 0; device < GP+KB; device++) {
